@@ -1,0 +1,36 @@
+# Grundlagen R, R-Studio und jamovi
+
+## Einführung
+
+In diesem Modul beschäftigen wir uns mit den Softwares, die wir für dieses Semester verwenden werden und wir wiederholen die Inhalte aus dem Seminar Statistik I. Folgende Submodule umfasst dieses Modul:
+
+-   Software des Seminars: In diesem Submodul erfährst du, welche Softwares wir für das Seminar verwenden und wie du diese installierst.
+-   Grundlagen R: In diesem Submodul wiederholst du die grundlegenden Befehle in R und lernst, wie du mit R und R-Studio arbeiten kannst.
+-   Grundlagen tidyverse: In diesem Submodul lernst du mit der Statistik-Software Jamovi umzugehen. Wir werden Jamovi in diesem Kurs verwenden, um statistische Fragestellungen zu beantworten.
+-   Quiz Statistik I: An dieser Stelle wiederholst du zentrale Konzepte aus Statistik I, die Vorraussetzung für dieses Seminar sind.
+
+## Software des Seminars
+
+Wir werden in diesem Kurs drei Softwares verwenden. R, R-Studio und Jamovi. R und R-Studio verwenden wir, um Daten zu bereinigen, deskriptive Daten zu berechnen und die Ergebnisse unserer Tests zu dokumentieren. Jamovi verwenden wir, um statistische Fragestellungen zu beantworten. Beide Softwares lassen sich miteinander integrieren, indem wir Ergebnisse aus Jamovi als Code in R übertragen können. Der Vorteil dieser Übertragung ist, dass du hierdurch keine Befehle in R lernen musst und dadurch ohne große Mühe statistische Testverfahren in R rechnen kannst. In diesem Modul lernst du diejenigen Kentnisse in R und Jamovi, die wir in diesem Seminar immer wieder brauchen.
+
+-   [R](https://www.r-project.org/): R ist eine statistische Programmiersprache zur Analyse von Daten. Mit R werden wir in diesem Kurs Daten bereinigen und visualisieren. Datenvisualisierung ist ein zentraler Bestandteil der Datenanalyse, da wir durch Visualisierungen Muster in Daten erkennen können, die aus den Rohdaten schwer zu entnehmen sind. Zudem verwenden wir R für die Dokumentation unserer Ergebnisse. Die Dokumentation ist wichtig, da wir auch Jahre nach unserer Analyse verstehen möchten, wie wir die Daten ausgewertet haben. In SPSS oder Jamovi ist dies deutlich unübersichtlicher.
+-   [R-Studio](https://rstudio.com/): R-Studio ist eine Entwicklungsumgebung für die Programmiersprache R. Sie umfasst eine grafische Benutzeroberfläche und vereinfacht die Arbeit mit R.
+-   [Jamovi](https://www.jamovi.org/): Jamovi ist eine Software mit der man die gängigsten statistischen Verfahren in einer grafischen Benutzeroberfläche berechnen kann. In diesem Kurs verwenden wir Jamovi zur Berechnung der Verfahren und werden deren Ergebnisse in R übertragen. Zwar wird in der empirischen Sozialforschung häufig SPSS eingesetzt, allerdings ist SPSS kostenpflichtig und umfasst viele Verfahren, die wir in diesem Kurs nicht benötigen. Jamovi hat den Vorteil, dass es kostenlos ist und eine ähnliche Oberfläche wie SPSS hat. Der Transfer zu SPSS ist daher relativ einfach. Ein weiterer Grund für Jamovi ist, dass es sich sehr einfach mit R integrieren lässt.
+
+## Download der Software
+
+Die drei Softwares sind unter folgenden Links kostenfrei für Mac und Windows zugänglich. Lade dir die Softwares gleich jetzt herunter. Wir werden alle drei Softwares in jedem Modul des Kurses verwenden.
+
+-   [R \> 4.0.2](https://ftp.gwdg.de/pub/misc/cran/): Lade R in der Version 4.0.2 oder größer herunter.
+-   [R-Studio](https://rstudio.com/products/rstudio/download/): Lade die neueste Version von R-Studio herunter.
+-   [Jamovi 1.2 solid](https://www.jamovi.org/download.html): Lade die Version 1.1.9 solid von Jamovi herunter.
+
+## Warum so viele Softwares?
+
+Es ist heutzutage nicht mehr möglich Statistik ohne Software zu betreiben. Wir werden in diesem Kurs versuchen, diejenigen Softwares zu verwenden, mit denen du am einfachsten Daten analysieren und statistische Verfahren berechnen kannst. Ein paar Fragen könntest du dir an dieser Stelle dennoch stellen: 
+
+-   **Warum überhaupt R?** Keine Datenanalyse kommt ohne die Verarbeitung von Daten aus. Stell dir beispielsweise vor du möchtest neue Variablen berechnen bzw. ein Balkendiagramm erstellen. Solche Datenveränderungen und Visualisierungen lassen sich in R sehr elegant mit dem Paket [tidyverse ](https://www.tidyverse.org/)umsetzen. Zudem ermöglicht uns das Paket [ggplot2](https://ggplot2.tidyverse.org/) die Visualisierung von Daten. R ist zudem kostenfrei und kann sowohl auf Mac als auch auf Windows installiert werden.
+
+-   **Warum nicht alles in R?** R hat für Beginner eine steile Lernkurve. Viele statistische Verfahren lassen sich direkt in R berechnen (z.B. [psych](https://cran.r-project.org/web/packages/psych/index.html), [car](https://cran.r-project.org/web/packages/car/index.html)), jedoch muss man hierfür häufig mehrere Pakete installieren und diese ebenso anwenden können. Wir vermeiden dies in diesem Kurs, indem wir die Analysen in Jamovi umsetzen.
+
+-   **Warum nicht alles in SPSS?** SPSS ist eine in der Sozialforschung beliebte Software, um statistische Verfahren zu rechnen. SPSS ist allerdings kostenpflichtig. Da es kostenfreie Alternativen gibt, die alle Verfahren dieses Kurses abdecken, rechnen wir mit Jamovi. Wenn man Jamovi verstanden hat, ist der Transfer zu SPSS einfach.

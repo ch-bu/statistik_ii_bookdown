@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Grundlagen R, R-Studio und jamovi | A Minimal Book Example</title>
+<meta name="author" content="Yihui Xie">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.6.4/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.3.9000/tabs.js"></script><script src="libs/bs3compat-0.2.3.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Prerequisites</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
+<li><a class="active" href="grundlagen-r-r-studio-und-jamovi.html"><span class="header-section-number">3</span> Grundlagen R, R-Studio und jamovi</a></li>
+<li><a class="" href="methods.html"><span class="header-section-number">4</span> Methods</a></li>
+<li><a class="" href="applications.html"><span class="header-section-number">5</span> Applications</a></li>
+<li><a class="" href="final-words.html"><span class="header-section-number">6</span> Final Words</a></li>
+<li><a class="" href="final-words-1.html"><span class="header-section-number">7</span> Final Words</a></li>
+<li><a class="" href="final-words-2.html"><span class="header-section-number">8</span> Final Words</a></li>
+<li><a class="" href="final-words-3.html"><span class="header-section-number">9</span> Final Words</a></li>
+<li><a class="" href="final-words-4.html"><span class="header-section-number">10</span> Final Words</a></li>
+<li><a class="" href="final-words-5.html"><span class="header-section-number">11</span> Final Words</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="grundlagen-r-r-studio-und-jamovi" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Grundlagen R, R-Studio und jamovi<a class="anchor" aria-label="anchor" href="#grundlagen-r-r-studio-und-jamovi"><i class="fas fa-link"></i></a>
+</h1>
+<div id="einfÃ¼hrung" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> EinfÃ¼hrung<a class="anchor" aria-label="anchor" href="#einf%C3%83%C2%BChrung"><i class="fas fa-link"></i></a>
+</h2>
+<p>In diesem Modul beschÃ¤ftigen wir uns mit den Softwares, die wir fÃ¼r dieses Semester verwenden werden und wir wiederholen die Inhalte aus dem Seminar Statistik I. Folgende Submodule umfasst dieses Modul:</p>
+<ul>
+<li>Software des Seminars: In diesem Submodul erfÃ¤hrst du, welche Softwares wir fÃ¼r das Seminar verwenden und wie du diese installierst.</li>
+<li>Grundlagen R: In diesem Submodul wiederholst du die grundlegenden Befehle in R und lernst, wie du mit R und R-Studio arbeiten kannst.</li>
+<li>Grundlagen tidyverse: In diesem Submodul lernst du mit der Statistik-Software Jamovi umzugehen. Wir werden Jamovi in diesem Kurs verwenden, um statistische Fragestellungen zu beantworten.</li>
+<li>Quiz Statistik I: An dieser Stelle wiederholst du zentrale Konzepte aus Statistik I, die Vorraussetzung fÃ¼r dieses Seminar sind.</li>
+</ul>
+</div>
+<div id="software-des-seminars" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Software des Seminars<a class="anchor" aria-label="anchor" href="#software-des-seminars"><i class="fas fa-link"></i></a>
+</h2>
+<p>Wir werden in diesem Kurs drei Softwares verwenden. R, R-Studio und Jamovi. R und R-Studio verwenden wir, um Daten zu bereinigen, deskriptive Daten zu berechnen und die Ergebnisse unserer Tests zu dokumentieren. Jamovi verwenden wir, um statistische Fragestellungen zu beantworten. Beide Softwares lassen sich miteinander integrieren, indem wir Ergebnisse aus Jamovi als Code in R Ã¼bertragen kÃ¶nnen. Der Vorteil dieser Ãœbertragung ist, dass du hierdurch keine Befehle in R lernen musst und dadurch ohne groÃŸe MÃ¼he statistische Testverfahren in R rechnen kannst. In diesem Modul lernst du diejenigen Kentnisse in R und Jamovi, die wir in diesem Seminar immer wieder brauchen.</p>
+<ul>
+<li>
+<a href="https://www.r-project.org/">R</a>: R ist eine statistische Programmiersprache zur Analyse von Daten. Mit R werden wir in diesem Kurs Daten bereinigen und visualisieren. Datenvisualisierung ist ein zentraler Bestandteil der Datenanalyse, da wir durch Visualisierungen Muster in Daten erkennen kÃ¶nnen, die aus den Rohdaten schwer zu entnehmen sind. Zudem verwenden wir R fÃ¼r die Dokumentation unserer Ergebnisse. Die Dokumentation ist wichtig, da wir auch Jahre nach unserer Analyse verstehen mÃ¶chten, wie wir die Daten ausgewertet haben. In SPSS oder Jamovi ist dies deutlich unÃ¼bersichtlicher.</li>
+<li>
+<a href="https://rstudio.com/">R-Studio</a>: R-Studio ist eine Entwicklungsumgebung fÃ¼r die Programmiersprache R. Sie umfasst eine grafische BenutzeroberflÃ¤che und vereinfacht die Arbeit mit R.</li>
+<li>
+<a href="https://www.jamovi.org/">Jamovi</a>: Jamovi ist eine Software mit der man die gÃ¤ngigsten statistischen Verfahren in einer grafischen BenutzeroberflÃ¤che berechnen kann. In diesem Kurs verwenden wir Jamovi zur Berechnung der Verfahren und werden deren Ergebnisse in R Ã¼bertragen. Zwar wird in der empirischen Sozialforschung hÃ¤ufig SPSS eingesetzt, allerdings ist SPSS kostenpflichtig und umfasst viele Verfahren, die wir in diesem Kurs nicht benÃ¶tigen. Jamovi hat den Vorteil, dass es kostenlos ist und eine Ã¤hnliche OberflÃ¤che wie SPSS hat. Der Transfer zu SPSS ist daher relativ einfach. Ein weiterer Grund fÃ¼r Jamovi ist, dass es sich sehr einfach mit R integrieren lÃ¤sst.</li>
+</ul>
+</div>
+<div id="download-der-software" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Download der Software<a class="anchor" aria-label="anchor" href="#download-der-software"><i class="fas fa-link"></i></a>
+</h2>
+<p>Die drei Softwares sind unter folgenden Links kostenfrei fÃ¼r Mac und Windows zugÃ¤nglich. Lade dir die Softwares gleich jetzt herunter. Wir werden alle drei Softwares in jedem Modul des Kurses verwenden.</p>
+<ul>
+<li>
+<a href="https://ftp.gwdg.de/pub/misc/cran/">R &gt; 4.0.2</a>: Lade R in der Version 4.0.2 oder grÃ¶ÃŸer herunter.</li>
+<li>
+<a href="https://rstudio.com/products/rstudio/download/">R-Studio</a>: Lade die neueste Version von R-Studio herunter.</li>
+<li>
+<a href="https://www.jamovi.org/download.html">Jamovi 1.2 solid</a>: Lade die Version 1.1.9 solid von Jamovi herunter.</li>
+</ul>
+</div>
+<div id="warum-so-viele-softwares" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> Warum so viele Softwares?<a class="anchor" aria-label="anchor" href="#warum-so-viele-softwares"><i class="fas fa-link"></i></a>
+</h2>
+<p>Es ist heutzutage nicht mehr mÃ¶glich Statistik ohne Software zu betreiben. Wir werden in diesem Kurs versuchen, diejenigen Softwares zu verwenden, mit denen du am einfachsten Daten analysieren und statistische Verfahren berechnen kannst. Ein paar Fragen kÃ¶nntest du dir an dieser Stelle dennoch stellen:Â </p>
+<ul>
+<li><p><strong>Warum Ã¼berhaupt R?</strong>Â Keine Datenanalyse kommt ohne die Verarbeitung von Daten aus. Stell dir beispielsweise vor du mÃ¶chtest neue Variablen berechnen bzw. ein Balkendiagramm erstellen. Solche DatenverÃ¤nderungen und Visualisierungen lassen sich in R sehr elegant mit dem PaketÂ <a href="https://www.tidyverse.org/">tidyverseÂ </a>umsetzen. Zudem ermÃ¶glicht uns das PaketÂ <a href="https://ggplot2.tidyverse.org/">ggplot2</a>Â die Visualisierung von Daten. R ist zudem kostenfrei und kann sowohl auf Mac als auch auf Windows installiert werden.</p></li>
+<li><p><strong>Warum nicht alles in R?</strong>Â R hat fÃ¼r Beginner eine steile Lernkurve. Viele statistische Verfahren lassen sich direkt in R berechnen (z.B.Â <a href="https://cran.r-project.org/web/packages/psych/index.html">psych</a>,Â <a href="https://cran.r-project.org/web/packages/car/index.html">car</a>), jedoch muss man hierfÃ¼r hÃ¤ufig mehrere Pakete installieren und diese ebenso anwenden kÃ¶nnen. Wir vermeiden dies in diesem Kurs, indem wir die Analysen in Jamovi umsetzen.</p></li>
+<li><p><strong>Warum nicht alles in SPSS?</strong>Â SPSS ist eine in der Sozialforschung beliebte Software, um statistische Verfahren zu rechnen. SPSS ist allerdings kostenpflichtig. Da es kostenfreie Alternativen gibt, die alle Verfahren dieses Kurses abdecken, rechnen wir mit Jamovi. Wenn man Jamovi verstanden hat, ist der Transfer zu SPSS einfach.</p></li>
+</ul>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="intro.html"><span class="header-section-number">2</span> Introduction</a></div>
+<div class="next"><a href="methods.html"><span class="header-section-number">4</span> Methods</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#grundlagen-r-r-studio-und-jamovi"><span class="header-section-number">3</span> Grundlagen R, R-Studio und jamovi</a></li>
+<li><a class="nav-link" href="#einf%C3%BChrung"><span class="header-section-number">3.1</span> Einführung</a></li>
+<li><a class="nav-link" href="#software-des-seminars"><span class="header-section-number">3.2</span> Software des Seminars</a></li>
+<li><a class="nav-link" href="#download-der-software"><span class="header-section-number">3.3</span> Download der Software</a></li>
+<li><a class="nav-link" href="#warum-so-viele-softwares"><span class="header-section-number">3.4</span> Warum so viele Softwares?</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2020-12-29.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+</html>
