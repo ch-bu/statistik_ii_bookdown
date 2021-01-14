@@ -1,21 +1,57 @@
-# Introduction {#intro}
+# Über den Kurs {#intro}
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+* https://www.nationalgeographic.com/science/phenomena/2012/03/10/failed-replication-bargh-psychology-study-doyen/
+* https://replicationindex.com/2017/11/28/before-you-know-it-by-john-a-bargh-a-quantitative-book-review/
+* http://www.decisionsciencenews.com/2012/10/05/kahneman-on-the-storm-of-doubts-surrounding-social-priming-research/
+* https://replicationindex.com/2019/03/17/raudit-bargh/
 
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+## Aufbau
 
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
+* 13 Termine vom 19. April bis zum 24. Juli
 
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
 
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
-```
+### Termine
 
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+Mein Teil
+* 20. April - Einführung
+* 27. April - Grundlagen R und Jamovi
+* 03. Mai - Hypothesentesten
+* 11. Mai - Statistische Modellierung
+
+Teil der Studierenden (Vignetten für diese Sitzungen)
+* 18. Mai - Einfache lineare Regression
+* 25. Mai - Pfingstpause
+* 01. Juni - Multiple lineare Regression
+* 08. Juni - Einfaktorielle Varianzanalyse
+* 15. Juni - Mehrfaktorielle Varianzanalyse
+* 22. Juni - Ancova
+* 29. Juni - Mediation
+* 06. Juli - Moderation
+
+Ende
+* 13. Juli - Wiederholung und Evaluation
+* 20. Juli - Klausur (gleicher Aufbau, gleiche Idee)
+
+
+### Präsenztermine Aufbau
+
+* 14:15 - 14:25: Einführung
+* 14:25 - 15:10: Vorstellung der Studie
+* 15:10 bis 15:45: Angeleitete Diskussion
+
+
+
+## Didaktische Ideen
+
+* Studien, die untersucht wurden, nachzurechnen und erklären zu können
+  * abhängige und unabhnägige Variablen finden können
+  * berechnete Modell aufzeichnen können
+  * die Parameter der Modelle erklären können
+  * statistische Entscheidung bestimmen können
+  * gerichte von ungerichteten Hypothesen unterscheiden können
+  * die Signifikanz interpretieren können
+  * die Effektgröße interpretieren können
+  * das Konfidenzintervall interpretieren können
+  * die Ergebnisse in R und Jamovi nachrechnen können
+  * den Output aufschreiben können
+  * wenn - dann Fragen beantworten können (Freiheitsgrade der Forscher)

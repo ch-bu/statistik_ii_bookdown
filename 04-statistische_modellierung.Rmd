@@ -1,7 +1,10 @@
-# Applications
+# Statistische Modellierung
 
-Some _significant_ applications are demonstrated in this chapter.
+Vom allgemeinen linearen Modell sprechen
 
-## Example one
+## Konfidenzintervalle
 
-## Example two
+anhand der Parameter erklären und was sie bedeuten
+
+* https://thenewstatistics.com/itns/2020/07/04/3-easy-ways-to-obtain-cohens-d-and-its-ci/
+* http://www.tqmp.org/RegularArticles/vol14-4/p242/p242.pdf
