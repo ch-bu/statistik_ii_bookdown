@@ -1,0 +1,422 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={A Minimal Book Example},
+  pdfauthor={Yihui Xie},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{A Minimal Book Example}
+\author{Yihui Xie}
+\date{2021-01-26}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{einfuxfchrung}{%
+\chapter{Einführung}\label{einfuxfchrung}}
+
+This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
+
+The \textbf{bookdown} package can be installed from CRAN or Github:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
+\CommentTok{# or the development version}
+\CommentTok{# devtools::install_github("rstudio/bookdown")}
+\end{Highlighting}
+\end{Shaded}
+
+Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading \texttt{\#}.
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
+
+\hypertarget{intro}{%
+\chapter{Über den Kurs}\label{intro}}
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://www.nationalgeographic.com/science/phenomena/2012/03/10/failed-replication-bargh-psychology-study-doyen/}
+\item
+  \url{https://replicationindex.com/2017/11/28/before-you-know-it-by-john-a-bargh-a-quantitative-book-review/}
+\item
+  \url{http://www.decisionsciencenews.com/2012/10/05/kahneman-on-the-storm-of-doubts-surrounding-social-priming-research/}
+\item
+  \url{https://replicationindex.com/2019/03/17/raudit-bargh/}
+\end{itemize}
+
+\hypertarget{aufbau}{%
+\section{Aufbau}\label{aufbau}}
+
+\begin{itemize}
+\tightlist
+\item
+  13 Termine vom 19. April bis zum 24. Juli
+\end{itemize}
+
+\hypertarget{termine}{%
+\subsection{Termine}\label{termine}}
+
+Mein Teil
+* 20. April - Einführung
+* 27. April - Grundlagen R und Jamovi
+* 03. Mai - Hypothesentesten
+* 11. Mai - Statistische Modellierung
+
+Teil der Studierenden (Vignetten für diese Sitzungen)
+* 18. Mai - Einfache lineare Regression
+* 25. Mai - Pfingstpause
+* 01. Juni - Multiple lineare Regression
+* 08. Juni - Einfaktorielle Varianzanalyse
+* 15. Juni - Mehrfaktorielle Varianzanalyse
+* 22. Juni - Ancova
+* 29. Juni - Mediation
+* 06. Juli - Moderation
+
+Ende
+* 13. Juli - Wiederholung und Evaluation
+* 20. Juli - Klausur (gleicher Aufbau, gleiche Idee)
+
+\hypertarget{pruxe4senztermine-aufbau}{%
+\subsection{Präsenztermine Aufbau}\label{pruxe4senztermine-aufbau}}
+
+\begin{itemize}
+\tightlist
+\item
+  14:15 - 14:25: Einführung
+\item
+  14:25 - 15:10: Vorstellung der Studie
+\item
+  15:10 bis 15:45: Angeleitete Diskussion
+\end{itemize}
+
+\hypertarget{didaktische-ideen}{%
+\section{Didaktische Ideen}\label{didaktische-ideen}}
+
+\begin{itemize}
+\tightlist
+\item
+  Studien, die untersucht wurden, nachzurechnen und erklären zu können
+
+  \begin{itemize}
+  \tightlist
+  \item
+    abhängige und unabhnägige Variablen finden können
+  \item
+    berechnete Modell aufzeichnen können
+  \item
+    die Parameter der Modelle erklären können
+  \item
+    statistische Entscheidung bestimmen können
+  \item
+    gerichte von ungerichteten Hypothesen unterscheiden können
+  \item
+    die Signifikanz interpretieren können
+  \item
+    die Effektgröße interpretieren können
+  \item
+    das Konfidenzintervall interpretieren können
+  \item
+    die Ergebnisse in R und Jamovi nachrechnen können
+  \item
+    den Output aufschreiben können
+  \item
+    wenn - dann Fragen beantworten können (Freiheitsgrade der Forscher)
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{grundlagen-r-r-studio-und-jamovi}{%
+\chapter{Grundlagen R, R-Studio und jamovi}\label{grundlagen-r-r-studio-und-jamovi}}
+
+\hypertarget{einfuxfchrung-1}{%
+\section{Einführung}\label{einfuxfchrung-1}}
+
+In diesem Modul beschäftigen wir uns mit den Softwares, die wir für dieses Semester verwenden werden und wir wiederholen die Inhalte aus dem Seminar Statistik I. Folgende Submodule umfasst dieses Modul:
+
+\begin{itemize}
+\tightlist
+\item
+  Software des Seminars: In diesem Submodul erfährst du, welche Softwares wir für das Seminar verwenden und wie du diese installierst.
+\item
+  Grundlagen R: In diesem Submodul wiederholst du die grundlegenden Befehle in R und lernst, wie du mit R und R-Studio arbeiten kannst.
+\item
+  Grundlagen tidyverse: In diesem Submodul lernst du mit der Statistik-Software Jamovi umzugehen. Wir werden Jamovi in diesem Kurs verwenden, um statistische Fragestellungen zu beantworten.
+\item
+  Quiz Statistik I: An dieser Stelle wiederholst du zentrale Konzepte aus Statistik I, die Vorraussetzung für dieses Seminar sind.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{4} \OperatorTok{+}\StringTok{ }\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9
+\end{verbatim}
+
+\hypertarget{software-des-seminars}{%
+\section{Software des Seminars}\label{software-des-seminars}}
+
+Wir werden in diesem Kurs drei Softwares verwenden. R, R-Studio und Jamovi. R und R-Studio verwenden wir, um Daten zu bereinigen, deskriptive Daten zu berechnen und die Ergebnisse unserer Tests zu dokumentieren. Jamovi verwenden wir, um statistische Fragestellungen zu beantworten. Beide Softwares lassen sich miteinander integrieren, indem wir Ergebnisse aus Jamovi als Code in R übertragen können. Der Vorteil dieser Übertragung ist, dass du hierdurch keine Befehle in R lernen musst und dadurch ohne große Mühe statistische Testverfahren in R rechnen kannst. In diesem Modul lernst du diejenigen Kentnisse in R und Jamovi, die wir in diesem Seminar immer wieder brauchen.
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.r-project.org/}{R}: R ist eine statistische Programmiersprache zur Analyse von Daten. Mit R werden wir in diesem Kurs Daten bereinigen und visualisieren. Datenvisualisierung ist ein zentraler Bestandteil der Datenanalyse, da wir durch Visualisierungen Muster in Daten erkennen können, die aus den Rohdaten schwer zu entnehmen sind. Zudem verwenden wir R für die Dokumentation unserer Ergebnisse. Die Dokumentation ist wichtig, da wir auch Jahre nach unserer Analyse verstehen möchten, wie wir die Daten ausgewertet haben. In SPSS oder Jamovi ist dies deutlich unübersichtlicher.
+\item
+  \href{https://rstudio.com/}{R-Studio}: R-Studio ist eine Entwicklungsumgebung für die Programmiersprache R. Sie umfasst eine grafische Benutzeroberfläche und vereinfacht die Arbeit mit R.
+\item
+  \href{https://www.jamovi.org/}{Jamovi}: Jamovi ist eine Software mit der man die gängigsten statistischen Verfahren in einer grafischen Benutzeroberfläche berechnen kann. In diesem Kurs verwenden wir Jamovi zur Berechnung der Verfahren und werden deren Ergebnisse in R übertragen. Zwar wird in der empirischen Sozialforschung häufig SPSS eingesetzt, allerdings ist SPSS kostenpflichtig und umfasst viele Verfahren, die wir in diesem Kurs nicht benötigen. Jamovi hat den Vorteil, dass es kostenlos ist und eine ähnliche Oberfläche wie SPSS hat. Der Transfer zu SPSS ist daher relativ einfach. Ein weiterer Grund für Jamovi ist, dass es sich sehr einfach mit R integrieren lässt.
+\end{itemize}
+
+\hypertarget{download-der-software}{%
+\section{Download der Software}\label{download-der-software}}
+
+Die drei Softwares sind unter folgenden Links kostenfrei für Mac und Windows zugänglich. Lade dir die Softwares gleich jetzt herunter. Wir werden alle drei Softwares in jedem Modul des Kurses verwenden.
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://ftp.gwdg.de/pub/misc/cran/}{R \textgreater{} 4.0.2}: Lade R in der Version 4.0.2 oder größer herunter.
+\item
+  \href{https://rstudio.com/products/rstudio/download/}{R-Studio}: Lade die neueste Version von R-Studio herunter.
+\item
+  \href{https://www.jamovi.org/download.html}{Jamovi 1.2 solid}: Lade die Version 1.1.9 solid von Jamovi herunter.
+\end{itemize}
+
+\hypertarget{warum-so-viele-softwares}{%
+\section{Warum so viele Softwares?}\label{warum-so-viele-softwares}}
+
+Es ist heutzutage nicht mehr möglich Statistik ohne Software zu betreiben. Wir werden in diesem Kurs versuchen, diejenigen Softwares zu verwenden, mit denen du am einfachsten Daten analysieren und statistische Verfahren berechnen kannst. Ein paar Fragen könntest du dir an dieser Stelle dennoch stellen:~
+
+\begin{itemize}
+\item
+  \textbf{Warum überhaupt R?}~Keine Datenanalyse kommt ohne die Verarbeitung von Daten aus. Stell dir beispielsweise vor du möchtest neue Variablen berechnen bzw. ein Balkendiagramm erstellen. Solche Datenveränderungen und Visualisierungen lassen sich in R sehr elegant mit dem Paket~\href{https://www.tidyverse.org/}{tidyverse~}umsetzen. Zudem ermöglicht uns das Paket~\href{https://ggplot2.tidyverse.org/}{ggplot2}~die Visualisierung von Daten. R ist zudem kostenfrei und kann sowohl auf Mac als auch auf Windows installiert werden.
+\item
+  \textbf{Warum nicht alles in R?}~R hat für Beginner eine steile Lernkurve. Viele statistische Verfahren lassen sich direkt in R berechnen (z.B.~\href{https://cran.r-project.org/web/packages/psych/index.html}{psych},~\href{https://cran.r-project.org/web/packages/car/index.html}{car}), jedoch muss man hierfür häufig mehrere Pakete installieren und diese ebenso anwenden können. Wir vermeiden dies in diesem Kurs, indem wir die Analysen in Jamovi umsetzen.
+\item
+  \textbf{Warum nicht alles in SPSS?}~SPSS ist eine in der Sozialforschung beliebte Software, um statistische Verfahren zu rechnen. SPSS ist allerdings kostenpflichtig. Da es kostenfreie Alternativen gibt, die alle Verfahren dieses Kurses abdecken, rechnen wir mit Jamovi. Wenn man Jamovi verstanden hat, ist der Transfer zu SPSS einfach.
+\end{itemize}
+
+\hypertarget{statistisches-hypothesentesten}{%
+\chapter{Statistisches Hypothesentesten}\label{statistisches-hypothesentesten}}
+
+We describe our methods in this chapter.
+
+\hypertarget{was-sind-p-werte}{%
+\section{Was sind p-Werte?}\label{was-sind-p-werte}}
+
+\hypertarget{effektgruxf6uxdfen-einfuxfchren}{%
+\section{Effektgrößen einführen}\label{effektgruxf6uxdfen-einfuxfchren}}
+
+Das ist ein Quatschtext.
+
+\hypertarget{hallo-christian}{%
+\chapter{Hallo Christian}\label{hallo-christian}}
+
+\hypertarget{ich-bin-clarissa}{%
+\section{Ich bin Clarissa}\label{ich-bin-clarissa}}
+
+\begin{itemize}
+\tightlist
+\item
+  Item2
+\item
+  Item 3
+\end{itemize}
+
+\hypertarget{statistische-modellierung}{%
+\chapter{Statistische Modellierung}\label{statistische-modellierung}}
+
+Vom allgemeinen linearen Modell sprechen
+
+\hypertarget{konfidenzintervalle}{%
+\section{Konfidenzintervalle}\label{konfidenzintervalle}}
+
+anhand der Parameter erklären und was sie bedeuten
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://thenewstatistics.com/itns/2020/07/04/3-easy-ways-to-obtain-cohens-d-and-its-ci/}
+\item
+  \url{http://www.tqmp.org/RegularArticles/vol14-4/p242/p242.pdf}
+\end{itemize}
+
+\hypertarget{einfache-lineare-regression}{%
+\chapter{Einfache lineare Regression}\label{einfache-lineare-regression}}
+
+We have finished a nice book.
+
+\hypertarget{weitere-ressourcen}{%
+\section{Weitere Ressourcen}\label{weitere-ressourcen}}
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://www.r-bloggers.com/2020/12/robust-regression/}
+\end{itemize}
+
+\hypertarget{multiple-lineare-regression}{%
+\chapter{Multiple lineare Regression}\label{multiple-lineare-regression}}
+
+We have finished a nice book.
+
+\hypertarget{einfaktorielle-varianzanalyse}{%
+\chapter{Einfaktorielle Varianzanalyse}\label{einfaktorielle-varianzanalyse}}
+
+We have finished a nice book.
+
+\begin{itemize}
+\tightlist
+\item
+  Welch-Test nicht vergessen
+\end{itemize}
+
+\hypertarget{mehrfaktorielle-varianzanalyse}{%
+\chapter{Mehrfaktorielle Varianzanalyse}\label{mehrfaktorielle-varianzanalyse}}
+
+We have finished a nice book.
+
+\hypertarget{ancova}{%
+\chapter{ANCOVA}\label{ancova}}
+
+We have finished a nice book.
+
+\hypertarget{mediation}{%
+\chapter{Mediation}\label{mediation}}
+
+\hypertarget{moderation}{%
+\chapter{Moderation}\label{moderation}}
+
+\hypertarget{statistische-voraussetzungen}{%
+\chapter{Statistische Voraussetzungen}\label{statistische-voraussetzungen}}
+
+We have finished a nice book.
+
+\hypertarget{was-du-sonst-noch-wissen-musst}{%
+\chapter{Was du sonst noch wissen musst}\label{was-du-sonst-noch-wissen-musst}}
+
+\hypertarget{interraterreliabilituxe4t}{%
+\section{Interraterreliabilität}\label{interraterreliabilituxe4t}}
+
+\hypertarget{cronbachs-alpha-and-omegas-alpha}{%
+\section{Cronbach's Alpha and Omega's Alpha}\label{cronbachs-alpha-and-omegas-alpha}}
+
+\url{https://www.tandfonline.com/doi/full/10.1080/19312458.2020.1718629}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

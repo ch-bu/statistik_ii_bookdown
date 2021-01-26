@@ -7,3 +7,23 @@ We describe our methods in this chapter.
 ## Effektgrößen einführen
 
 Das ist ein Quatschtext.
+
+# Hallo Christian
+
+## Ich bin Clarissa
+
+* Item2
+* Item 3
+
+[link](www.zeit.de)
+
+Wohnung **Herd** *Text* 
+
+```{r}
+xy <- 3 
+```
+
+```{r}
+xy + 5
+```
+
