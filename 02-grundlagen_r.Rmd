@@ -97,6 +97,17 @@ Anschließend erhältst du das Ergebnis der Berechnung. Um diesen Output aus der
 
 ![](images/02_grundlagen/console.png)
 
+Wenn du eine Grafik erstellst (den Code musst du an dieser Stelle nicht verstehen), wird der Output in dem Plots Panel angezeigt, ohne dass du in der Konsole einen Output erhältst: 
+
+![](images/02_grundlagen/plot.png)
+
+### Befehle aus dem Skript ausführen
+
+Genau die gleichen Befehle kannst du aus einem Skript ausführen (Um ein neues Skript zu öffnen drücke **STRG + UMSCHALT + N** auf deiner Tastatur):
+
+![](images/02_grundlagen/befehle_skrip.png) 
+
+
 ```{r, eval=FALSE}
 install.packages("tidyverse")
 # Dann
@@ -110,3 +121,6 @@ install.packags("styler")
 > R speichert die Datei immer in das aktuelle Arbeitsverzeichnis. Dieses kannst du verändern, indem du mit dem Shortcut STRG + Umschalt + H (für Mac COMMAND + Umschalt + H) das Arbeitsverzeichnis wechselst. In diesen Ordner wird die Datei anschließend gespeichert.
 
 TODO: Konnte das Bild nicht einfügen, da....
+
+
+
