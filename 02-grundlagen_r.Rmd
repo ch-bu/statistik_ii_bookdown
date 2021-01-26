@@ -9,11 +9,6 @@ In diesem Modul beschäftigen wir uns mit den Softwares, die wir für dieses Sem
 -   Grundlagen tidyverse: In diesem Submodul lernst du mit der Statistik-Software Jamovi umzugehen. Wir werden Jamovi in diesem Kurs verwenden, um statistische Fragestellungen zu beantworten.
 -   Quiz Statistik I: An dieser Stelle wiederholst du zentrale Konzepte aus Statistik I, die Vorraussetzung für dieses Seminar sind.
 
-```{r}
-4 + 5
-```
-
-
 ## Software des Seminars
 
 Wir werden in diesem Kurs drei Softwares verwenden. R, R-Studio und Jamovi. R und R-Studio verwenden wir, um Daten zu bereinigen, deskriptive Daten zu berechnen und die Ergebnisse unserer Tests zu dokumentieren. Jamovi verwenden wir, um statistische Fragestellungen zu beantworten. Beide Softwares lassen sich miteinander integrieren, indem wir Ergebnisse aus Jamovi als Code in R übertragen können. Der Vorteil dieser Übertragung ist, dass du hierdurch keine Befehle in R lernen musst und dadurch ohne große Mühe statistische Testverfahren in R rechnen kannst. In diesem Modul lernst du diejenigen Kentnisse in R und Jamovi, die wir in diesem Seminar immer wieder brauchen.
@@ -32,10 +27,86 @@ Die drei Softwares sind unter folgenden Links kostenfrei für Mac und Windows zu
 
 ## Warum so viele Softwares?
 
-Es ist heutzutage nicht mehr möglich Statistik ohne Software zu betreiben. Wir werden in diesem Kurs versuchen, diejenigen Softwares zu verwenden, mit denen du am einfachsten Daten analysieren und statistische Verfahren berechnen kannst. Ein paar Fragen könntest du dir an dieser Stelle dennoch stellen: 
+Es ist heutzutage nicht mehr möglich Statistik ohne Software zu betreiben. Wir werden in diesem Kurs versuchen, diejenigen Softwares zu verwenden, mit denen du am einfachsten Daten analysieren und statistische Verfahren berechnen kannst. Ein paar Fragen könntest du dir an dieser Stelle dennoch stellen:
 
--   **Warum überhaupt R?** Keine Datenanalyse kommt ohne die Verarbeitung von Daten aus. Stell dir beispielsweise vor du möchtest neue Variablen berechnen bzw. ein Balkendiagramm erstellen. Solche Datenveränderungen und Visualisierungen lassen sich in R sehr elegant mit dem Paket [tidyverse ](https://www.tidyverse.org/)umsetzen. Zudem ermöglicht uns das Paket [ggplot2](https://ggplot2.tidyverse.org/) die Visualisierung von Daten. R ist zudem kostenfrei und kann sowohl auf Mac als auch auf Windows installiert werden.
+-   **Warum überhaupt R?** Keine Datenanalyse kommt ohne die Verarbeitung von Daten aus. Stell dir beispielsweise vor du möchtest neue Variablen berechnen bzw. ein Balkendiagramm erstellen. Solche Datenveränderungen und Visualisierungen lassen sich in R sehr elegant mit dem Paket [tidyverse ](https://www.tidyverse.org/)umsetzen. Zudem ermöglicht uns das Paket [ggplot2](https://ggplot2.tidyverse.org/) die Visualisierung von Daten. R ist zudem kostenfrei und kann sowohl auf Mac als auch auf Windows installiert werden.
 
--   **Warum nicht alles in R?** R hat für Beginner eine steile Lernkurve. Viele statistische Verfahren lassen sich direkt in R berechnen (z.B. [psych](https://cran.r-project.org/web/packages/psych/index.html), [car](https://cran.r-project.org/web/packages/car/index.html)), jedoch muss man hierfür häufig mehrere Pakete installieren und diese ebenso anwenden können. Wir vermeiden dies in diesem Kurs, indem wir die Analysen in Jamovi umsetzen.
+-   **Warum nicht alles in R?** R hat für Beginner eine steile Lernkurve. Viele statistische Verfahren lassen sich direkt in R berechnen (z.B. [psych](https://cran.r-project.org/web/packages/psych/index.html), [car](https://cran.r-project.org/web/packages/car/index.html)), jedoch muss man hierfür häufig mehrere Pakete installieren und diese ebenso anwenden können. Wir vermeiden dies in diesem Kurs, indem wir die Analysen in Jamovi umsetzen.
 
 -   **Warum nicht alles in SPSS?** SPSS ist eine in der Sozialforschung beliebte Software, um statistische Verfahren zu rechnen. SPSS ist allerdings kostenpflichtig. Da es kostenfreie Alternativen gibt, die alle Verfahren dieses Kurses abdecken, rechnen wir mit Jamovi. Wenn man Jamovi verstanden hat, ist der Transfer zu SPSS einfach.
+
+## Grundlagen R
+
+In diesem Submodul lernst du zentrale Befehle in R, welche du immer wieder verwenden wirst. Genauer gehen wir auf folgende Themen ein:
+
+-   Umgang mit R-Studio
+
+-   Pakete installieren und laden
+
+-   Das Arbeitsverzeichnis
+
+-   Datensätze importieren
+
+-   Grundlegende Operatoren in
+
+    -   R Rechenoperationen
+
+    -   Zuordnungsoperator
+
+    -   Der == Operator
+
+-   Funktionen Grundlegende Funktionen in R
+
+    -   View
+
+    -   colnames
+
+    -   nrow
+
+    -   ncol
+
+    -   head
+
+-   Daten exportieren
+
+### Umgang mit R-Studio
+
+R-Studio ist eine Entwicklungsumgebung für die Programmiersprache R. R-Studio vereinfacht dir die Arbeit mit R, indem es beispielsweise einen Editor integriert, in welchen du R-Code schreiben kannst. R-Studio hat vier zentrale Fenster:
+
+![](images/02_grundlagen/rstudio_panels.jpg "Die vier zentralen Fenster von R-Studio")
+
+-   Im Skript links oben findest du die R-Skripte. Dort speicherst du diejenigen Befehle, welche du auf jeden Fall speichern möchtest. Beispielsweise ein statistisches Verfahren, mit welchem du eine Hypothesen prüfst oder eine Visualisierung, die du erstellt hast.
+
+-   In der Konsole links unten probierst du verschiedene Befehle aus. Die Konsole ist flüchtig und daher kein Ort, um dauerhaft Berechnungen zu sichern. Hierfür verwendest du am besten das Skript.
+
+-   Das Environment und die History im Fenster rechts oben ist für diesen Kurs weniger relevant. Im Environment siehst du, auf welche Variablen und Daten du zugreifen kannst.
+
+-   Rechts unten findest du den Output und die Plots/Visualisierungen. In der Regel schaust du hier deine Visualisierungen an, die du im Skript bzw. in der Konsole erstellst.
+
+### Befehle aus der Konsole ausführen
+
+Befehle lassen sich sowohl in der Konsole als auch im Skript ausführen. Als Faustregel: Die Konsole dient dem Herumspielen mit den Daten, im Skript schreibst du alle Befehle auf, die du gerne behalten möchtest. Nehmen wir an, du möchtest die Zahl 5 mit der Zahl 8 addieren:
+
+```{r}
+5 + 8
+```
+
+Um den Befehl in der Konsole auszuführen, drückst du die *ENTER-Taste**:
+
+Anschließend erhältst du das Ergebnis der Berechnung. Um diesen Output aus der Konsole wieder zu entfernen, kannst du die Tastenkombination **STRG+L** verwenden. Hierdurch verschwindet der Output:
+
+![](images/02_grundlagen/console.png)
+
+```{r, eval=FALSE}
+install.packages("tidyverse")
+# Dann
+install.packages("janitor")
+# Dann
+install.packags("jmv")
+# Dann
+install.packags("styler")
+```
+
+> R speichert die Datei immer in das aktuelle Arbeitsverzeichnis. Dieses kannst du verändern, indem du mit dem Shortcut STRG + Umschalt + H (für Mac COMMAND + Umschalt + H) das Arbeitsverzeichnis wechselst. In diesen Ordner wird die Datei anschließend gespeichert.
+
+TODO: Konnte das Bild nicht einfügen, da....

@@ -12,12 +12,12 @@ Das ist ein Quatschtext.
 
 ## Ich bin Clarissa
 
-* Item2
-* Item 3
+-   Item2
+-   Item 3
 
 [link](www.zeit.de)
 
-Wohnung **Herd** *Text* 
+Wohnung **Herd** *Text*
 
 ```{r}
 xy <- 3 

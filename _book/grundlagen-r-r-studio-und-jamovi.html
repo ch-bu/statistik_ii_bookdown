@@ -35,16 +35,17 @@
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Über den Kurs</a></li>
 <li><a class="active" href="grundlagen-r-r-studio-und-jamovi.html"><span class="header-section-number">3</span> Grundlagen R, R-Studio und jamovi</a></li>
 <li><a class="" href="statistisches-hypothesentesten.html"><span class="header-section-number">4</span> Statistisches Hypothesentesten</a></li>
-<li><a class="" href="statistische-modellierung.html"><span class="header-section-number">5</span> Statistische Modellierung</a></li>
-<li><a class="" href="einfache-lineare-regression.html"><span class="header-section-number">6</span> Einfache lineare Regression</a></li>
-<li><a class="" href="multiple-lineare-regression.html"><span class="header-section-number">7</span> Multiple lineare Regression</a></li>
-<li><a class="" href="einfaktorielle-varianzanalyse.html"><span class="header-section-number">8</span> Einfaktorielle Varianzanalyse</a></li>
-<li><a class="" href="mehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> Mehrfaktorielle Varianzanalyse</a></li>
-<li><a class="" href="ancova.html"><span class="header-section-number">10</span> ANCOVA</a></li>
-<li><a class="" href="mediation.html"><span class="header-section-number">11</span> Mediation</a></li>
-<li><a class="" href="moderation.html"><span class="header-section-number">12</span> Moderation</a></li>
-<li><a class="" href="statistische-voraussetzungen.html"><span class="header-section-number">13</span> Statistische Voraussetzungen</a></li>
-<li><a class="" href="was-du-sonst-noch-wissen-musst.html"><span class="header-section-number">14</span> Was du sonst noch wissen musst</a></li>
+<li><a class="" href="hallo-christian.html"><span class="header-section-number">5</span> Hallo Christian</a></li>
+<li><a class="" href="statistische-modellierung.html"><span class="header-section-number">6</span> Statistische Modellierung</a></li>
+<li><a class="" href="einfache-lineare-regression.html"><span class="header-section-number">7</span> Einfache lineare Regression</a></li>
+<li><a class="" href="multiple-lineare-regression.html"><span class="header-section-number">8</span> Multiple lineare Regression</a></li>
+<li><a class="" href="einfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> Einfaktorielle Varianzanalyse</a></li>
+<li><a class="" href="mehrfaktorielle-varianzanalyse.html"><span class="header-section-number">10</span> Mehrfaktorielle Varianzanalyse</a></li>
+<li><a class="" href="ancova.html"><span class="header-section-number">11</span> ANCOVA</a></li>
+<li><a class="" href="mediation.html"><span class="header-section-number">12</span> Mediation</a></li>
+<li><a class="" href="moderation.html"><span class="header-section-number">13</span> Moderation</a></li>
+<li><a class="" href="statistische-voraussetzungen.html"><span class="header-section-number">14</span> Statistische Voraussetzungen</a></li>
+<li><a class="" href="was-du-sonst-noch-wissen-musst.html"><span class="header-section-number">15</span> Was du sonst noch wissen musst</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -68,9 +69,6 @@
 <li>Grundlagen tidyverse: In diesem Submodul lernst du mit der Statistik-Software Jamovi umzugehen. Wir werden Jamovi in diesem Kurs verwenden, um statistische Fragestellungen zu beantworten.</li>
 <li>Quiz Statistik I: An dieser Stelle wiederholst du zentrale Konzepte aus Statistik I, die Vorraussetzung fÃ¼r dieses Seminar sind.</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fl">4</span> <span class="op">+</span> <span class="fl">5</span></code></pre></div>
-<pre><code>## [1] 9</code></pre>
 </div>
 <div id="software-des-seminars" class="section level2" number="3.2">
 <h2>
@@ -104,12 +102,80 @@
 <h2>
 <span class="header-section-number">3.4</span> Warum so viele Softwares?<a class="anchor" aria-label="anchor" href="#warum-so-viele-softwares"><i class="fas fa-link"></i></a>
 </h2>
-<p>Es ist heutzutage nicht mehr mÃ¶glich Statistik ohne Software zu betreiben. Wir werden in diesem Kurs versuchen, diejenigen Softwares zu verwenden, mit denen du am einfachsten Daten analysieren und statistische Verfahren berechnen kannst. Ein paar Fragen kÃ¶nntest du dir an dieser Stelle dennoch stellen:Â </p>
+<p>Es ist heutzutage nicht mehr mÃ¶glich Statistik ohne Software zu betreiben. Wir werden in diesem Kurs versuchen, diejenigen Softwares zu verwenden, mit denen du am einfachsten Daten analysieren und statistische Verfahren berechnen kannst. Ein paar Fragen kÃ¶nntest du dir an dieser Stelle dennoch stellen:</p>
 <ul>
-<li><p><strong>Warum Ã¼berhaupt R?</strong>Â Keine Datenanalyse kommt ohne die Verarbeitung von Daten aus. Stell dir beispielsweise vor du mÃ¶chtest neue Variablen berechnen bzw. ein Balkendiagramm erstellen. Solche DatenverÃ¤nderungen und Visualisierungen lassen sich in R sehr elegant mit dem PaketÂ <a href="https://www.tidyverse.org/">tidyverseÂ </a>umsetzen. Zudem ermÃ¶glicht uns das PaketÂ <a href="https://ggplot2.tidyverse.org/">ggplot2</a>Â die Visualisierung von Daten. R ist zudem kostenfrei und kann sowohl auf Mac als auch auf Windows installiert werden.</p></li>
-<li><p><strong>Warum nicht alles in R?</strong>Â R hat fÃ¼r Beginner eine steile Lernkurve. Viele statistische Verfahren lassen sich direkt in R berechnen (z.B.Â <a href="https://cran.r-project.org/web/packages/psych/index.html">psych</a>,Â <a href="https://cran.r-project.org/web/packages/car/index.html">car</a>), jedoch muss man hierfÃ¼r hÃ¤ufig mehrere Pakete installieren und diese ebenso anwenden kÃ¶nnen. Wir vermeiden dies in diesem Kurs, indem wir die Analysen in Jamovi umsetzen.</p></li>
+<li><p><strong>Warum Ã¼berhaupt R?</strong> Keine Datenanalyse kommt ohne die Verarbeitung von Daten aus. Stell dir beispielsweise vor du mÃ¶chtest neue Variablen berechnen bzw. ein Balkendiagramm erstellen. Solche DatenverÃ¤nderungen und Visualisierungen lassen sich in R sehr elegant mit dem PaketÂ <a href="https://www.tidyverse.org/">tidyverseÂ </a>umsetzen. Zudem ermÃ¶glicht uns das PaketÂ <a href="https://ggplot2.tidyverse.org/">ggplot2</a> die Visualisierung von Daten. R ist zudem kostenfrei und kann sowohl auf Mac als auch auf Windows installiert werden.</p></li>
+<li><p><strong>Warum nicht alles in R?</strong> R hat fÃ¼r Beginner eine steile Lernkurve. Viele statistische Verfahren lassen sich direkt in R berechnen (z.B.Â <a href="https://cran.r-project.org/web/packages/psych/index.html">psych</a>,Â <a href="https://cran.r-project.org/web/packages/car/index.html">car</a>), jedoch muss man hierfÃ¼r hÃ¤ufig mehrere Pakete installieren und diese ebenso anwenden kÃ¶nnen. Wir vermeiden dies in diesem Kurs, indem wir die Analysen in Jamovi umsetzen.</p></li>
 <li><p><strong>Warum nicht alles in SPSS?</strong>Â SPSS ist eine in der Sozialforschung beliebte Software, um statistische Verfahren zu rechnen. SPSS ist allerdings kostenpflichtig. Da es kostenfreie Alternativen gibt, die alle Verfahren dieses Kurses abdecken, rechnen wir mit Jamovi. Wenn man Jamovi verstanden hat, ist der Transfer zu SPSS einfach.</p></li>
 </ul>
+</div>
+<div id="grundlagen-r" class="section level2" number="3.5">
+<h2>
+<span class="header-section-number">3.5</span> Grundlagen R<a class="anchor" aria-label="anchor" href="#grundlagen-r"><i class="fas fa-link"></i></a>
+</h2>
+<p>In diesem Submodul lernst du zentrale Befehle in R, welche du immer wieder verwenden wirst. Genauer gehen wir auf folgende Themen ein:</p>
+<ul>
+<li><p>Umgang mit R-Studio</p></li>
+<li><p>Pakete installieren und laden</p></li>
+<li><p>Das Arbeitsverzeichnis</p></li>
+<li><p>DatensÃ¤tze importieren</p></li>
+<li>
+<p>Grundlegende Operatoren in</p>
+<ul>
+<li><p>R Rechenoperationen</p></li>
+<li><p>Zuordnungsoperator</p></li>
+<li><p>Der == Operator</p></li>
+</ul>
+</li>
+<li>
+<p>Funktionen Grundlegende Funktionen in R</p>
+<ul>
+<li><p>View</p></li>
+<li><p>colnames</p></li>
+<li><p>nrow</p></li>
+<li><p>ncol</p></li>
+<li><p>head</p></li>
+</ul>
+</li>
+<li><p>Daten exportieren</p></li>
+</ul>
+<div id="umgang-mit-r-studio" class="section level3" number="3.5.1">
+<h3>
+<span class="header-section-number">3.5.1</span> Umgang mit R-Studio<a class="anchor" aria-label="anchor" href="#umgang-mit-r-studio"><i class="fas fa-link"></i></a>
+</h3>
+<p>R-Studio ist eine Entwicklungsumgebung fÃ¼r die Programmiersprache R. R-Studio vereinfacht dir die Arbeit mit R, indem es beispielsweise einen Editor integriert, in welchen du R-Code schreiben kannst. R-Studio hat vier zentrale Fenster:</p>
+<div class="inline-figure"><img src="images/02_grundlagen/rstudio_panels.jpg" title="Die vier zentralen Fenster von R-Studio"></div>
+<ul>
+<li><p>Im Skript links oben findest du die R-Skripte. Dort speicherst du diejenigen Befehle, welche du auf jeden Fall speichern mÃ¶chtest. Beispielsweise ein statistisches Verfahren, mit welchem du eine Hypothesen prÃ¼fst oder eine Visualisierung, die du erstellt hast.</p></li>
+<li><p>In der Konsole links unten probierst du verschiedene Befehle aus. Die Konsole ist flÃ¼chtig und daher kein Ort, um dauerhaft Berechnungen zu sichern. HierfÃ¼r verwendest du am besten das Skript.</p></li>
+<li><p>Das Environment und die History im Fenster rechts oben ist fÃ¼r diesen Kurs weniger relevant. Im Environment siehst du, auf welche Variablen und Daten du zugreifen kannst.</p></li>
+<li><p>Rechts unten findest du den Output und die Plots/Visualisierungen. In der Regel schaust du hier deine Visualisierungen an, die du im Skript bzw. in der Konsole erstellst.</p></li>
+</ul>
+</div>
+<div id="befehle-aus-der-konsole-ausfÃ¼hren" class="section level3" number="3.5.2">
+<h3>
+<span class="header-section-number">3.5.2</span> Befehle aus der Konsole ausfÃ¼hren<a class="anchor" aria-label="anchor" href="#befehle-aus-der-konsole-ausf%C3%83%C2%BChren"><i class="fas fa-link"></i></a>
+</h3>
+<p>Befehle lassen sich sowohl in der Konsole als auch im Skript ausfÃ¼hren. Als Faustregel: Die Konsole dient dem Herumspielen mit den Daten, im Skript schreibst du alle Befehle auf, die du gerne behalten mÃ¶chtest. Nehmen wir an, du mÃ¶chtest die Zahl 5 mit der Zahl 8 addieren:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fl">5</span> <span class="op">+</span> <span class="fl">8</span></code></pre></div>
+<pre><code>## [1] 13</code></pre>
+<p>Um den Befehl in der Konsole auszufÃ¼hren, drÃ¼ckst du dieÂ <strong>ENTER-Taste</strong>:Â </p>
+<p>AnschlieÃŸend erhÃ¤ltst du das Ergebnis der Berechnung. Um diesen Output aus der Konsole wieder zu entfernen, kannst du die Tastenkombination <strong>STRG+L</strong>Â verwenden. Hierdurch verschwindet der Output:Â </p>
+<div class="inline-figure"><img src="images/02_grundlagen/console.png"></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span>
+<span class="co"># Dann</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"janitor"</span><span class="op">)</span>
+<span class="co"># Dann</span>
+<span class="fu">install.packags</span><span class="op">(</span><span class="st">"jmv"</span><span class="op">)</span>
+<span class="co"># Dann</span>
+<span class="fu">install.packags</span><span class="op">(</span><span class="st">"styler"</span><span class="op">)</span></code></pre></div>
+<blockquote>
+<p>R speichert die Datei immer in das aktuelle Arbeitsverzeichnis. Dieses kannst du verÃ¤ndern, indem du mit dem Shortcut STRG + Umschalt + H (fÃ¼r Mac COMMAND + Umschalt + H) das Arbeitsverzeichnis wechselst. In diesen Ordner wird die Datei anschlieÃŸend gespeichert.</p>
+</blockquote>
+
+</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -123,6 +189,12 @@
 <li><a class="nav-link" href="#software-des-seminars"><span class="header-section-number">3.2</span> Software des Seminars</a></li>
 <li><a class="nav-link" href="#download-der-software"><span class="header-section-number">3.3</span> Download der Software</a></li>
 <li><a class="nav-link" href="#warum-so-viele-softwares"><span class="header-section-number">3.4</span> Warum so viele Softwares?</a></li>
+<li>
+<a class="nav-link" href="#grundlagen-r"><span class="header-section-number">3.5</span> Grundlagen R</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#umgang-mit-r-studio"><span class="header-section-number">3.5.1</span> Umgang mit R-Studio</a></li>
+<li><a class="nav-link" href="#befehle-aus-der-konsole-ausf%C3%BChren"><span class="header-section-number">3.5.2</span> Befehle aus der Konsole ausführen</a></li>
+</ul>
+</li>
 </ul>
 
       <div class="book-extra">
@@ -139,7 +211,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2021-01-18.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2021-01-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
