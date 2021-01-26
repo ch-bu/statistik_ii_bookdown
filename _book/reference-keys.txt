@@ -1,5 +1,9 @@
 einführung
 intro
+aufbau
+termine
+präsenztermine-aufbau
+didaktische-ideen
 grundlagen-r-r-studio-und-jamovi
 einführung-1
 software-des-seminars
@@ -8,7 +12,7 @@ warum-so-viele-softwares
 statistisches-hypothesentesten
 was-sind-p-werte
 effektgrößen-einführen
-statistisches-modellierung
+statistische-modellierung
 konfidenzintervalle
 einfache-lineare-regression
 weitere-ressourcen
@@ -16,10 +20,9 @@ multiple-lineare-regression
 einfaktorielle-varianzanalyse
 mehrfaktorielle-varianzanalyse
 ancova
-mediationsanalyse
+mediation
 moderation
 statistische-voraussetzungen
-messwiederholung
 was-du-sonst-noch-wissen-musst
 interraterreliabilität
 cronbachs-alpha-and-omegas-alpha
