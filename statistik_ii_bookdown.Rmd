@@ -1,3 +1,100 @@
+--- 
+title: "A Minimal Book Example"
+author: "Yihui Xie"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+---
+
+# Einführung
+
+This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+
+The **bookdown** package can be installed from CRAN or Github:
+
+```{r eval=FALSE}
+install.packages("bookdown")
+# or the development version
+# devtools::install_github("rstudio/bookdown")
+```
+
+Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+<!--chapter:end:index.Rmd-->
+
+# Über den Kurs {#intro}
+
+* https://www.nationalgeographic.com/science/phenomena/2012/03/10/failed-replication-bargh-psychology-study-doyen/
+* https://replicationindex.com/2017/11/28/before-you-know-it-by-john-a-bargh-a-quantitative-book-review/
+* http://www.decisionsciencenews.com/2012/10/05/kahneman-on-the-storm-of-doubts-surrounding-social-priming-research/
+* https://replicationindex.com/2019/03/17/raudit-bargh/
+
+## Aufbau
+
+* 13 Termine vom 19. April bis zum 24. Juli
+
+
+### Termine
+
+Mein Teil
+* 20. April - Einführung
+* 27. April - Grundlagen R und Jamovi
+* 03. Mai - Hypothesentesten
+* 11. Mai - Statistische Modellierung
+
+Teil der Studierenden (Vignetten für diese Sitzungen)
+* 18. Mai - Einfache lineare Regression
+* 25. Mai - Pfingstpause
+* 01. Juni - Multiple lineare Regression
+* 08. Juni - Einfaktorielle Varianzanalyse
+* 15. Juni - Mehrfaktorielle Varianzanalyse
+* 22. Juni - Ancova
+* 29. Juni - Mediation
+* 06. Juli - Moderation
+
+Ende
+* 13. Juli - Wiederholung und Evaluation
+* 20. Juli - Klausur (gleicher Aufbau, gleiche Idee)
+
+
+### Präsenztermine Aufbau
+
+* 14:15 - 14:25: Einführung
+* 14:25 - 15:10: Vorstellung der Studie
+* 15:10 bis 15:45: Angeleitete Diskussion
+
+
+
+## Didaktische Ideen
+
+* Studien, die untersucht wurden, nachzurechnen und erklären zu können
+  * abhängige und unabhnägige Variablen finden können
+  * berechnete Modell aufzeichnen können
+  * die Parameter der Modelle erklären können
+  * statistische Entscheidung bestimmen können
+  * gerichte von ungerichteten Hypothesen unterscheiden können
+  * die Signifikanz interpretieren können
+  * die Effektgröße interpretieren können
+  * das Konfidenzintervall interpretieren können
+  * die Ergebnisse in R und Jamovi nachrechnen können
+  * den Output aufschreiben können
+  * wenn - dann Fragen beantworten können (Freiheitsgrade der Forscher)
+
+<!--chapter:end:01-intro.Rmd-->
+
 # Grundlagen R, R-Studio und jamovi
 
 ## Einführung
@@ -561,189 +658,127 @@ Wenn wir Daten importieren möchten, wollen wir sie auch exportieren können. Wi
 
 -   path steht für den Dateinamen in denen wir die Datei speichern. Achte darauf, diesen Pfad immer mit Anführungsstrichen " zu umrunden.
 
+
     write_csv(NAME_GEREINIGER_DATENSATZ, "datensatz_gereinigt.csv")
 
 > R speichert die Datei immer in das aktuelle Arbeitsverzeichnis. Diese kannst du verändern, indem du mit dem Shortcut STRG + Umschalt + H (für Mac COMMAND + Umschalt + H) das Arbeitsverzeichnis wechselt. In diesen Ordner wird die Datei anschließend gespeichert.
 
 ## Grundlagen tidyverse
 
-Tidyverse ist eine  Sammlung an Paketen zur Datenanalyse, welche von [Hadley Wickam ](http://hadley.nz/)entwickelt wurde. Hadley Wickam ist Chief Data Scientist bei R-Studio und versucht mit der Entwicklung von tidyverse die Analyse von Daten in R zu vereinfachen. Alle Pakete haben eine einheitliche Philosophie und arbeiten reibungslos miteinander. Da tidyverse aktuell die beste Software zur Datenanalyse in R ist, verwenden wir dieses Paket.
 
-Genauer werden wir in diesem Seminar tidyverse verwenden, um Daten zu bereinigen und zu visualisieren. Denn nicht immer liegen Daten in der Form vor, die wir für die Analyse der Daten benötigen. Bevor wir statistische Fragestellungen mit Jamovi berechnen, werden wir immer auf tidyverse zurück kommen, um unsere Daten in das Format zu bringen, welches wir für unsere Verfahren benötigen. Genauer gehen wir in diesem Seminar auf folgende Funktionen und Operatoren ein, die wir immer wieder verwenden:
 
--   Der Pipe %\>% Operator
+<!--chapter:end:02-grundlagen_r.Rmd-->
 
--   *glimpse:* Variablen in einem Datensatz betrachten
+# Statistisches Hypothesentesten
 
--   *count:* Diskrete Variablen zählen
+We describe our methods in this chapter.
 
--   *select*: Variablen aus einem Datensatz selektieren
+## Was sind p-Werte?
 
--   *arrange:* Datensätze nach Variablen sortieren
+## Effektgrößen einführen
 
--   *filter:* Reihen aus einem Datensatz filtern
+Das ist ein Quatschtext.
 
--   *mutate:* Neue Variablen erstellen
+# Hallo Christian
 
--   Mehrere Befehle nacheinander ausführen
+## Ich bin Clarissa
 
-> **Bevor du mit diesem Modul beginnst, stelle sicher, dass du das Paket tidyverse und den Datensatz *human_resources.csv* geladen hast. Der Datensatz stammt von [dieser Seite](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset) und umfasst Daten über die Mitarbeitende einer fiktiven Firma. Unter anderem umfasst der Datensatz das Einkommen der Mitarbeitenden, ihre Entfernung zum Arbeitsort, ihre Position im Unternehmen und ihr Bildungsniveau**
+-   Item2
+-   Item 3
 
-TODO: Einfügen Datei human resources. csv
+[link](www.zeit.de)
 
-### Der Pipe %\>% Operator
-
-Häufig führen wir nur eine Funktion aus, wenn wir einfache Berechnungen in R umsetzen möchten. Beispielsweise kann man mit einer Zeile den Mittelwert einer Variable berechnen. Was passiert allerdings, wenn wir mehrere Funktionen nacheinander ausführen müssen? Ein Beispiel: Stell Dir vor, du möchtest aus einem Vektor mit Zahlen den Mittelwert berechnen, aus dem Mittelwert anschließend die Wurzel ziehen und diesen Wert mit der Zahl 5 addieren. Dies wäre ein möglicher Lösungsweg:
+Wohnung **Herd** *Text*
 
 ```{r}
-sum(sqrt(mean(c(4, 5, 6))), 5)
+xy <- 3 
 ```
-
-Dieser Code sieht nicht nur kompliziert aus, er ist es auch. Beispielsweise ist es schwer zu erkennen, welche Klammer zu welcher Funktion gehört. Alternativ könnten wir den Output der Funktionen (z.B. mean(c(4, 5, 6))) in Variablen speichern und die Berechnung sequentiell ausführen:
-
-    mittelwert <- mean(c(4, 5, 6))
-    wurzel <- sqrt(mittelwert)
-    sum(wurzel, 5)
-
-    ## [1] 7.236068
-
-Die Lösung ist bereits eleganter aber immer noch nicht perfekt, da wir Variablen erstellen, die wir später nicht mehr benötigen; wir möchten schließlich nur das Ergebnis wissen. Eine Alternative, dieses Problem zu lösen, ist der Pipe-Operator. Unser Problem der verschachtelten Funktionen können wir mit Hilfe des Pipe-Operators folgendermaßen lösen:
-
-    mean(c(4, 5, 6)) %>%
-      sqrt(.) %>%
-      sum(., 5)
-
-    ## [1] 7.236068
-
-Was ist hier passiert? Die Idee ist folgende: Jede Funktion nimmt Daten auf, verarbeitet diese und gibt diese weiter. Eine Analogie wären Fabriken. Die erste Fabrik fällt Holz und fertigt aus diesem Holz Bretter an. Das Holz ist der Input der Fabrik, Bretter der Output. Diese Bretter werden nun an die nächste Fabrik geschickt, welche anschließend die Bretter schleift. Die geschliffenen Bretter gehen anschließen an die Gitarrenbauerin, die aus ihnen eine Gitarre baut. Das Prinzip ist folgendes: Es gibt eine serielle Verarbeitung der Produkte. Genauso funktioniert der Pipe-Operator. Er übergibt den Output einer Funktion in die nächste Funktion. Hier ein weiteres Beispiel:
-
-    mean(c(9, 10, 8)) %>%
-      sqrt(.)
-
-    ## [1] 7.236068
-
-Was ist hier passiert? Die Idee ist folgende: Jede Funktion nimmt Daten auf, verarbeitet diese und gibt diese weiter. Eine Analogie wären Fabriken. Die erste Fabrik fällt Holz und fertigt aus diesem Holz Bretter an. Das Holz ist der Input der Fabrik, Bretter der Output. Diese Bretter werden nun an die nächste Fabrik geschickt, welche anschließend die Bretter schleift. Die geschliffenen Bretter gehen anschließen an die Gitarrenbauerin, die aus ihnen eine Gitarre baut. Das Prinzip ist folgendes: Es gibt eine serielle Verarbeitung der Produkte. Genauso funktioniert der Pipe-Operator. Er übergibt den Output einer Funktion in die nächste Funktion. Hier ein weiteres Beispiel:
-
-    mean(c(9, 10, 8)) %>%
-      sqrt(.)
-
-    ## [1] 3
-
-Die Funktion mean(c(9, 10, 8)) berechnet den Mittelwert aus dem Vektor mit den Zahlen 9, 10, 8 (= 9). Diese Zahl 9 wird an die Funktion sqrt übergeben. Du siehst, dass in der Funktion sqrt(.) ein Punkt notiert ist. Dieser Punkt steht für den Output der vorherigen Funktion (hier mean -\> 9). Wir könnten diesen Punkt ebenso weglassen:
-
-    mean(c(9, 10, 8)) %>%
-      sqrt()
-
-TODO: Bildunterschrift: "Beispiel, dass der Pipe-Operator %\>% den Output auch implizit übergibt, ohne, dass wir den . als Argument angeben.
-
-    ## [1] 3
-
-Ein anderes Beispiel: Wir berechnen die Summe aus zwei Zahlen mit der Funktion sum. Die erste Zahl der Summe übergeben wir allerdings mithilfe des Pipe-Operators:
-
-    3 %>% sum(., 3)
-
-    ## [1] 6
-
-Alternativ können wir den Punkt . entfernen:
-
-    3 %>% sum(3)
-
-    ## [1] 6
-
-Diese Befehle sind äquivalent zu folgendem Code:
 
 ```{r}
-sum(3, 3)
+xy + 5
 ```
 
-Der Vorteil des Pipe-Operators wird dir vermutlich erst im Verlaufe des Kurses deutlich, wenn wir mehrere Manipulationen an Daten vornehmen. An dieser Stelle sei gesagt, dass wir den Pipe-Operator immer wieder verwenden werden, da er die Lesbarkeit unseres Codes erhöht. In den nächsten Erklärungen wirst du sehen, weshalb der Operator so wichtig ist.
+<!--chapter:end:03-hypothesentesten_i.Rmd-->
 
-> Der Pipe Operator ist häufig schwierig mit der Tastatur zu schreiben. In R-Studio gibt es einen Shortcut um den Pipe-Operator einzufügen: Ctrl + Umschalt + M. Dies ist ein Shortcut, den es sich lohnt zu lernen.
+# Statistische Modellierung
 
-### Grundlegende tidyverse-Befehle 
+Vom allgemeinen linearen Modell sprechen
 
-Es gibt ein paar Funktionen in der Datenanalyse, die wir immer wieder brauchen. Beispielsweise möchten wir häufig neue Variablen berechnen, bestimmte Reihen aus einem Datensatz filtern oder die Häufigkeit des Vorkommens bestimmter Werte zählen. Wir werden den Rest dieses Submoduls verbringen, diese Befehle kennen zu lernen. Im Verlaufe des Seminars wirst du diese Befehle immer wieder verwenden. Es ist daher ratsam, dass du dir diese Befehle gut einprägst.
+## Konfidenzintervalle
 
-#### Glimpse: Variablen in einem Datensatz ansehen
+anhand der Parameter erklären und was sie bedeuten
 
-In Excel sieht man die Daten jederzeit, in R nicht. Um einen Datensatz beispielsweise in R zu sehen, musst du ihn über die Konsole ausgeben lassen:
+* https://thenewstatistics.com/itns/2020/07/04/3-easy-ways-to-obtain-cohens-d-and-its-ci/
+* http://www.tqmp.org/RegularArticles/vol14-4/p242/p242.pdf
 
-![](images/02_grundlagen/data_ausgeben.png)
+<!--chapter:end:04-statistische_modellierung.Rmd-->
 
-Das funktioniert, allerdings wirst du nicht immer alle Variablen sehen können. Von den 17 Variablen in diesem Datensatz sind 9 nur namentlich erwähnt und du siehst nicht, was in den Variablen steckt. Eine Möglichkeit alle Variablen anzusehen ist die [glimpse-Funktion](https://tibble.tidyverse.org/reference/glimpse.html). Glimpse ordnet die Variablen in Reihen und nicht in Spalten an und erlaubt dir dadurch einen umfassenderen Einblick in die Daten:
+# Einfache lineare Regression
 
-![](images/02_grundlagen/var.png)
+We have finished a nice book.
 
-Nun siehst du alle 17 Variablen des Datensatzes. Ebenso siehst du, dass der Datensatz 1470 Reihen enthält. Glimpse solltest du immer dann verwenden, wenn du sehen möchtest, welche Variablen ein Datensatz enthält und was in diesen Variablen drinsteckt. 
 
-#### ***count:*** **Diskrete Variablen zählen**
+## Weitere Ressourcen
 
-Mit Hilfe von [count ](https://dplyr.tidyverse.org/reference/tally.html)können wir die Häufigkeit diskreter (nominalskalierter) Daten zählen. Beispielsweise können wir in unserem Datensatz prüfen, wie viele Männer und wie viele Frauen in der Firma arbeiten:
+* https://www.r-bloggers.com/2020/12/robust-regression/
 
-![](images/02_grundlagen/gender.png)
+<!--chapter:end:05-einfache_lineare_regression.Rmd-->
 
-Es gibt 588 Frauen und 882 Männer in dem Datensatz. Wie du siehst, habe ich den Pipe-Operator verwendet, um diese Häufigkeiten zu berechnen. In Worten sage ich folgendes: Nimm den Datensatz und übergib ihn als erstes Argument in die Funktion count.
+# Multiple lineare Regression
 
-Um zu verstehen, weshalb der Pipe-Operator für die Funktion count funktioniert, müssen wir uns nochmal ansehen, wie Funktionen funktionieren. Funktionen haben häufig Argumente, das heißt sie enthalten Informationen, mit denen sie Berechnungen ausführen. Schauen wir uns die Argumente der count-Funktion an. Wenn du count() in der Konsole tippst, erscheint folgender Hinweis:
+We have finished a nice book.
 
-![](images/02_grundlagen/count.png)
+<!--chapter:end:06-multiple_lineare_regression.Rmd-->
 
-Die ersten beiden Argumente der Funktion sind x und ... x steht für einen Datensatz, die drei Punkte ... für Variablen des Datensatzes (wenn du wissen möchtest, woher ich das weiß tippe ?count in der Konsole und schaube bei Help unter Arguments).
+# Einfaktorielle Varianzanalyse
 
-Wir hätten aus diesem Grund ebenso den Datensatz innerhalb der Funktion als Argument übergeben können und zudem die Variablen nennen können, für die wir die einzelnen Ausprägungen (z.B. Mann und Frau) zählen möchten:
+We have finished a nice book.
 
-![](images/02_grundlagen/gender_count.png)
 
-Wie du siehst, haben wir nun das erste Argument x explizit angegeben. Wir sagen R damit: "Bitte berechne mir die Häufigkeit der Ausprägungen der Variable gender für den Datensatz human_resources."
+* Welch-Test nicht vergessen
 
-![](images/02_grundlagen/gender_count1.png)
+<!--chapter:end:07-einfaktorielle_varianzanalyse.Rmd-->
 
-Da der Pipe-Operator nichts anderes macht als Informationen von einer Funktion oder einem Befehl in eine andere Funktion zu übergeben, können wir nun den Datensatz in die Funktion count übergeben. Was der Pipe-Operator übergibt, wird immer mit einem Punkt (.) gekennzeichnet.
+# Mehrfaktorielle Varianzanalyse
 
-![](images/02_grundlagen/gender_count2.png)
+We have finished a nice book.
 
-Da nun x das erste Argument der Funktion count ist, können wir es weglassen und nur den Punkt erwähnen. Ebenso können wir den Punkt weglassen und erhalten dennoch unseren Output.
+<!--chapter:end:08-mehrfaktorielle_varianzanalyse.Rmd-->
 
-Die Logik dieses Pipe-Operators gilt für alle nachfolgenden Funktionen. Versuche daher selbst einmal mit dem Pipe-Operator und dem count-Befehl zu spielen, um zu verstehen, wie der Pipe-Operator arbeitet. 
+# ANCOVA
 
-Zuletzt können wir mit dem count-Befehl ebenso weitere, komplexere Fragen beantworten. Beispielsweise können wir uns fragen, welche Ausbildung Männer und Frauen haben. Im Datensatz gibt es eine Variable mit dem Namen education, in der der höchste Bildungsabschluss für jeden Mitarbeiter / jede Mitarbeiterin gespeichert ist:
+We have finished a nice book.
 
-![](images/02_grundlagen/bildungsabschluss.png)
+<!--chapter:end:09-ancova.Rmd-->
 
-Beispielsweise kannst du erkennen, dass 22 Frauen einen Doktorabschluss haben. Bei den Männern sind es 26. 
+# Mediation
 
-Im Grunde könntest du unendlich viele nominalskalierte Variablen in die Funktion count eintragen, allerdings würde dies unübersichtlich werden. In der Regel reichen eine oder zwei Variablen.
 
-#### **select: Variablen aus einem Datensatz selektieren**
+<!--chapter:end:10-mediation.Rmd-->
 
-Datensätze haben manchmal viele Variablen. Um den Überblick zu behalten, können wir uns mit [select ](https://dplyr.tidyverse.org/reference/select.html)nur ein paar wenige Variablen ansehen. Zum Beispiel können wir aus unserem Datensatz nur die Variablen id und age selektieren:
+# Moderation
 
-![](images/02_grundlagen/select1.png)
+<!--chapter:end:11-moderation.Rmd-->
 
-Der Aufbau der select-Funktion ist identisch mit den Funktionen glimpse und count. Das erste Argument ist der Datensatz, dann werden die Variablen aufgelistet, mit der die Funktion rechnen soll.
+# Statistische Voraussetzungen
 
-![](images/02_grundlagen/select2.png)
+We have finished a nice book.
 
-Beispielsweise könnten wir ebenso drei Variablen aus dem Datensatz selektieren.
+<!--chapter:end:12-statistische_voraussetzungen.Rmd-->
 
-> Im Übrigen. Wenn du dich fragt, woher man weiß, welche Variablen in einem Dtensatz sind. Mit der glimpse-Funktion kannst du dir die Variablennamen in einem Datensatz immer wieder ansehen.
+# Was du sonst noch wissen musst
 
-Manchmal wollen wir allerdings genau das Gegenteil. Variablen aus einem Datensatz entfernen. Dies können wir mit select erreichen, indem wir ein Minus vor die Variable setzen, die wir entfernen möchten:
+## Interraterreliabilität
 
-![](images/02_grundlagen/select3.png)
+## Cronbach's Alpha and Omega's Alpha
 
-TODO: Bildunterschrift: In diesem Datensatz wurde die Variable gender entfernt.
+https://www.tandfonline.com/doi/full/10.1080/19312458.2020.1718629
 
-Oder, stell dir vor, du möchtest mehrere Variablen aus dem Datensatz entfernen, die beieinander liegen. Nehmen wir beispielsweise an, du möchtest die Variablen education bis monthly_income aus dem Datensatz selektieren, welche laut dem glimpse-Befehl hintereinander stehen:
+<!--chapter:end:13-the_rest.Rmd-->
 
-![](images/02_grundlagen/select4.png)
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
 
-![](images/02_grundlagen/select5.png)
+<!--chapter:end:20-references.Rmd-->
 
-Um diese Variablen aus dem Datensatz zu selektieren, musst du die erste und die letzte Variable benennen und mit einem Doppelpunkt trennen.
-
-![](images/02_grundlagen/select6.png)
-
-Möchtest du hingegen, dass genau diese Variablen aus dem Datensatz entfernt werden, musst du die Variablen mit einer Klammer umschließen und ein - davor schreiben.
-
-#### arrange: Datensätze nach Variablen sortieren
