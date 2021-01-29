@@ -660,7 +660,7 @@ Der Vorteil des Pipe-Operators wird dir vermutlich erst im Verlaufe des Kurses d
 
 > Der Pipe Operator ist häufig schwierig mit der Tastatur zu schreiben. In R-Studio gibt es einen Shortcut um den Pipe-Operator einzufügen: Ctrl + Umschalt + M. Dies ist ein Shortcut, den es sich lohnt zu lernen.
 
-### Grundlegende tidyverse-Befehle 
+### Grundlegende tidyverse-Befehle
 
 Es gibt ein paar Funktionen in der Datenanalyse, die wir immer wieder brauchen. Beispielsweise möchten wir häufig neue Variablen berechnen, bestimmte Reihen aus einem Datensatz filtern oder die Häufigkeit des Vorkommens bestimmter Werte zählen. Wir werden den Rest dieses Submoduls verbringen, diese Befehle kennen zu lernen. Im Verlaufe des Seminars wirst du diese Befehle immer wieder verwenden. Es ist daher ratsam, dass du dir diese Befehle gut einprägst.
 
@@ -747,3 +747,225 @@ Um diese Variablen aus dem Datensatz zu selektieren, musst du die erste und die 
 Möchtest du hingegen, dass genau diese Variablen aus dem Datensatz entfernt werden, musst du die Variablen mit einer Klammer umschließen und ein - davor schreiben.
 
 #### arrange: Datensätze nach Variablen sortieren
+
+Stell dir vor, du möchtest wissen, wer die ältesten Mitarbeitende in der Firma sind. In Excel würdest du hierfür den Datensatz nach dem Alter der Mitarbeitenden sortieren. In tidyverse kannst du das gleiche mit der Funktion [arrange ](https://dplyr.tidyverse.org/reference/arrange.html)schaffen:
+
+![](images/02_grundlagen/arrange.png)
+
+Wie du siehst sind die Mitarbeitenden von jung nach alt sortiert. Dich interessieren allerdings die älteren Mitarbeitende. Hierfür müssen wir arrange zusätzlich sagen, dass die Variable von hoch nach niedrig angezeigt wird.
+
+![](images/02_grundlagen/arrange_edit.png)
+
+Nun siehst du, dass die ältesten Mitarbeitende 60 Jahre alt sind. Ebenso erkennst du, dass die Mitarbeitende von alt nach jung sortiert sind. 
+
+Wir können aber genausogut zwei Variablen sortieren. Die Reihenfolge der Variablen, die wir in die Funktion arrange eingeben, gibt an, welche Variable zuerst sortiert wird. Zum Beispiel können diejenigen Mitarbeitende innerhalb eines Alters (z.B. alle 60 Jahre alt) nach der Distanz sortieren, die sie zur Arbeit fahren müssen:
+
+![](images/02_grundlagen/arrange1.png)
+
+Wie du siehst sind die Mitarbeitende, welche 60 Jahre alt sind, nun danach sortiert, wie weit sie von dem Arbeitsplatz entfernt wohnen. Der Mitarbeiter mit der id 1210 beispielsweise wohnt nur einen Kilometer vom Arbeitsplatz entfernt, die Mitarbeitende mit der id 428 wohnt 28 Kilometer.
+
+#### filter: Reihen aus einem Datensatz filtern
+
+Eine weitere häufige Funktion ist das Filtern von Daten. Stell dir beispielsweise vor, du möchtest alle Männer aus dem Datensatz entfernen. Das heißt, jede Reihe bzw. Person, für die in der Variable gender *Male* steht, soll aus dem Datensatz entfernt werden. Dies können wir mit [filter ](https://dplyr.tidyverse.org/reference/filter.html)erreichen:
+
+![](images/02_grundlagen/filter.png)
+
+Die Funktion lässt sich am besten verstehen, wenn wir die Operatoren ==, !=, \>, \< und %in% im einzelnen durchgehen. Beginnen wir mit dem Operator !=. != steht für "ist nicht". In unserem Beispiel haben wir tidyverse gesagt: "Behalte alle Reihen, in der die Variable gender nicht "Male" ist.
+
+![](images/02_grundlagen/filter1.png)
+
+Etwas einfacher sehen wir den gleichen Effekt, wenn wir uns fragen, ob zwei Zahlen gleich oder verschieden ist. Du weißt, dass 3 nicht 4 ist (TRUE). Du weißt ebenso, dass die Aussage 3 ist nicht 3 falsch ist (FALSE). Ebenso würdest du zustimmen, wenn ich sage 4 ist gleich 4 (TRUE). Wenn ich aber sage, dass 3 gleich 4 ist würdest du sagen, dass ist falsch (FALSE).
+
+Auf Variablen übertragen fragen wir uns bei der Funktion filter immer, ob die **Ausprägung** einer Variable gleich oder ungleich eines bestimmten Wertes ist. Diejenigen Berechnungen, die TRUE ergeben, werden behalten, diejenigen, die FALSE ergeben, werden aus dem Datensatz entfernt. Wenn ich demnach sage gender != "Male" entferne ich alle Reihen, in denen die Ausprägung der Variable gender "Male" ist.
+
+> Wenn du übrigens nicht weißt, welche Ausprägungen es für eine Variable gibt, kannst du diese mit der count-Funktion finden: z.B. count(human_resources,gender)
+
+Mit dem Wissen um TRUE und FALSE können wir komplexere Berechnungen mit filter durchführen. Zum Beispiel möchten wir nur Mitarbeitende in dem Datensatz behalten, die älter als 50 Jahre sind.
+
+![](images/02_grundlagen/filter2.png)
+
+Wie du siehst, hat der Datensatz nur noch 143 Mitarbeitende. Zwar haben wir in diesem Beispiel nicht den Operator != oder ==, sondern den Operator \> verwendet. Dennoch gibt uns die Aussage age \> 50 einen wahren Wert (TRUE) oder einen falschen Wert (FALSE) zurück. Wer beispielsweise 30 Jahre alt ist, wird nicht in den Datensatz übernommen (30 \> 50 -\> FALSE). Eine Mitarbeiterin, die 52 Jahre alt ist, wird in den Datensatz übernommen (52 \> 50 -\> TRUE).
+
+Manchmal möchten wir allerdings mehrere Zeilen gleichzeitig aus einem Datensatz entfernen beziehungsweise behalten. Stell dir vor, wir möchten alle Mitarbeitende aus dem Datensatz filtern, die über 50 Jahre sind **und** die weiblich sind. Hierfür haben wir zwei Möglichkeiten:
+
+![](images/02_grundlagen/filter3.png)
+
+Einerseits können wir die Aussagen mit einem Komma trennen, andererseits können wir ein & (und) dazwischen setzen. Beide Varianten behalten nur diejenigen Mitarbeiterinnen, die über 50 sind und weiblich sind. 
+
+Das Gegenteil wären Mitarbeitende, die entweder über 50 Jahre alt sind oder weiblich sind. Hierfür verwenden wir den \| (oder) Operator:
+
+![](images/02_grundlagen/filter4.png)
+
+Du siehst, dass der Datensatz nun 667 Mitarbeitende enthält. Bei unserem vorherigen und-Befehl waren es 64 Mitarbeitende. 
+
+Stell dir weiterhin vor, du möchtest alle Mitarbeitende aus dem Datensatz filtern, die entweder einen Bachelor- oder Masterabschluss haben. Momentan können wir diese Frage mit dem Oder-Operator (\|) beantworten. Es geht allerdings eleganter mit dem %in%-Operator:
+
+![](images/02_grundlagen/filter5.png)
+
+Beide Befehle kommen zu dem gleichen Ergebnis. Die Variante mit dem %in%-Operator ist allerdings kürzer und daher zu bevorzugen. Diese Variante eignet sich beispielsweise auch, um Probanden mit einer bestimmten ID aus einem Datensatz zu entfernen.
+
+#### *mutate*: Neue Variablen berechnen
+
+Manchmal möchten wir neue Variablen aus einem Datensatz berechnen. Stell dir vor, du möchtest das Einkommen der Mitarbeitenden von Dollar in Euro umrechnen. Oder, du möchtest aus dem monatlichen Einkommen der Mitarbeiter, das Jahreseinkommen berechnen. Diese Berechnungen kannst du mit dem [mutate ](https://dplyr.tidyverse.org/reference/mutate.html)Befehl umsetzen. Berechnen wir einmal das Jahreseinkommen der Mitarbeitenden:
+
+![](images/02_grundlagen/mutate.png)
+
+Zunächst musst du den Namen der neuen Variable linksseitig nennen (yearly_income). Anschließend folgt ein =. Hinter dem = schreibst du auf, wie die Variable berechnet wird. In diesem Fall haben wir das monatliche Einkommen mal 12 berechnet, da ein Jahr 12 Monate hat. 
+
+Ein anders Beispiel. Stell dir vor, wir möchten eine Variable erstellen, die anzeigt, ob eine Mitarbeiterin / ein Mitarbeiter mehr oder weniger als das Jahreseinkommen verdient:
+
+![](images/02_grundlagen/mutate1.png)
+
+Drei Dinge lernen wir aus diesem Beispiel. 
+
+1.  Zunächst siehst du, dass du mehrere neue Variablen gleichzeitig berechnen kannst. In diesem Beispiel haben wir sowohl die Variable yearly_income als auch salary_above_average berechnet. 
+
+2.  Ebenso kannst du erkennen, dass wir eine neue Variable direkt verwenden können, um eine weitere Variable zu berechnen. Beispielsweise haben wir die Variable yearly_income im ersten Schritt erzeugt und im zweiten Schritt zur Berechnung der Variable salary_above_average verwendet. 
+
+3.  Zuletzt erkennst du, dass wir zur Berechnung der Variable salary_above_average die Funktion mean verwendet haben. Vermutlich ist deine Annahme, dass der Mittelwert nur berechnet werden kann, wenn auch der Datensatz vorher angegeben wird. Zum Beispiel: mean(human_resources\$yearly_income). Innerhalb der tidyverse-Funktionen musst du den Datensatz allerdings nie angeben, sondern kannst lediglich die Variablennamen angeben. Aus diesem Grund funktioniert der mean-Befehl an dieser Stelle.
+
+### Mehrere Befehle nacheinander ausführen
+
+Mit diesen Befehlen können wir bereits recht komplexere Operationen an Datensätzen ausführen. Nur, bei einem Befehl bleibt es selten, häufig möchten wir mehrere dieser Befehle nacheinander ausführen. Nur wie?
+
+TODO: Auf Rise sah das so aus. Wusste nicht ob ich es einfach im Blockquote schreiben sollte?
+
+> Du kannst mehrere tidyverse-Befehle nacheinander ausführen, indem du sie mit dem Pipe-Operator %\>% verbindest.
+
+![](images/Bildschirmfoto%202021-01-28%20um%2016.23.56.png)
+
+Der Trick besteht darin, mehrere dieser Befehle mit dem Pipe-Operator zusammen zu führen. Nehmen wir ein Beispiel: Du möchtest aus dem Datensatz alle Frauen filtern und anschließend prüfen, welchen Bildungsabschluss die Frauen in dem Unternehmen haben:
+
+![](images/02_grundlagen/connect.png)
+
+Wie du siehst, habe ich zunächst den Datensatz nach den Frauen gefiltert und anschließend gezählt, welcher Bildungsabschluss unter den Frauen wie häufig auftritt. Vlt. möchest du die Häufigkeit zusätzlich sortieren?
+
+![](images/02_grundlagen/connect1.png)
+
+Wie du siehst, haben wir nun zusätzlich die Funktion arrange verwendet, um die Häufigkeit von hoch nach niedrig zu sortieren. Die meisten Frauen in der Firma haben offensichtlich einen Bachelor-Abschluss. 
+
+Oder, stell dir vor, du möchtest wissen, welche Mitarbeitende besonders weit von der Arbeitsstelle wohnen, um ihnen evtl. die Möglichkeit für zusätzliche Home-Office Tage zu geben. Dabei interessiert dich das Alter der Mitarbeitenden, deren id und deren Distanz zum Arbeitsort:
+
+![](images/02_grundlagen/connect2.png)
+
+Insgesamt wohnen 25 Mitarbeitende mehr als 25 Kilometer vom Arbeitsort entfernt. Wer wohnt eigentlich am weitesten entfernt?
+
+![](images/02_grundlagen/connect3.png)
+
+Es sind mehrere Personen, mit einer Distanz von 29 Kilometer. Und wie alt ist die älteste Person, die so weit zur Arbeit fahren muss?
+
+![](images/02_grundlagen/connect4.png)
+
+57 Jahre alt. Wie du siehst, können wir mit diesen Befehlen bereits sehr schnell Fragen an den Datensatz beantworten. Tidyverse hat noch eine Vielzahl an Funktionen, mit denen wir noch viel komplexere Berechnungen ausführen können (siehe [tidyverse](https://www.tidyverse.org/)). Für dieses Seminar beschränken wir uns auf diese zentralen Funktionen und werden diese immer wieder im Seminar verwenden.
+
+![](images/Bildschirmfoto%202021-01-28%20um%2016.22.19-01.png)
+
+Solange du den Output dieser Funktionen nicht speicherst, geht er verloren. Stell dir vor, du möchtest einen neuen Datensatz speichern, der nur die weiblichen Mitarbeiterinnen enthält. Diese Variante würde zwar die Berechnungen ausführen, allerdings den Datensatz nicht dauerhaft speichern:
+
+![](images/02_grundlagen/multi1.png)
+
+Mit dieser Variante würdest du den neuen Datensatz mit allen weiblichen Mitarbeiterinnen zwar in der Konsole ausgeben. Sobald R-Studio schließt, ist der Datensatz allerdings wieder verloren.
+
+Um den Datensatz dauerhaft zu behalten, hast du zwei Möglichkeiten. Zunächst kannst du den neuen Datensatz als Variable speichern:
+
+![](images/02_grundlagen/multi2.png)
+
+Indem du den Datensatz in einer Variable speicherst, kannst du ihn innerhalb einer R-Session (so lange du R geöffnet hast) aufrufen. Speicherst du den Code in einem Skript, kannst du den Datensatz jedes mal neu berechnen. In der Konsole geht der Code verloren, sobald du R schließt.
+
+Um den Datensatz dauerhaft zu speichern, kannst du ihn als CSV-Datei exportieren (siehe vorheriges Submodul). Hierfür solltest du allerdings wissen, in welchen Order der Datensatz gespeichert wird. Dies kannst du mit getwd() erfahren. Um das Arbeitsverzeichnis zu wechseln, drücke Strg + Umschalt + H auf deiner Tastatur (siehe auch [hier](https://stackoverflow.com/questions/22432344/how-do-you-change-the-default-directory-in-rstudio-or-r)).
+
+![](images/02_grundlagen/multi3.png)
+
+### Weitere Informationen 
+
+Wir haben in diesem Submodul eine Reihe an wichtigen Befehlen kennen gelernt, mit denen wir bereits komplexe Berechnungen in R durchführen können. Nimm dir Zeit, diese Befehle kennen zu lernen, wir werden sie in den Übungen ohnehin mehrmals wiederholen. Solltest du mehr Interesse an tidyverse haben, schau dir folgende Links an:
+
+-   [David Robinson Screencasts](https://www.youtube.com/user/safe4democracy/videos)
+
+-   [R for Data Science](https://r4ds.had.co.nz/)
+
+-   [ModernDive - Statistical Inference via Data Science - Data Wrangling](https://moderndive.com/3-wrangling.html)
+
+## Grundlagen Jamovi 
+
+Jamovi ist eine Statistik-Software, die die Vorteile von einem Grafikprogramm und der Flexibilität einer Programmiersprache verbindet. Einerseits ähnelt die Oberfläche von Jamovi der bekannten, aber kostenpflichtigen Statistik-Software SPSS, andererseits ermöglicht Jamovi die Integration der Ergebnisse in R und ist damit die perfekte Schnittstelle für diesen Kurs. Wir werden in diesem Submodul die Grundlagen von Jamovi kennen lernen, um später mit Jamovi statistische Fragestellungen zu beantworten.
+
+> Für dieses Submodul nehme ich an, dass du Jamovi bereits herunter geladen hast und dir ebenso den Datensatz human_resources.cvs herunter geladen hast (siehe Datensatz unter dieser Infobox).
+
+TODO: Einfügen Datei human_resources.csv
+
+### Datensätze mit Jamovi einlesen 
+
+Öffnest du Jamovi, siehst du lediglich ein leeres Fenster:
+
+![](images/02_grundlagen/jamovi.png)
+
+Wir müssen daher zunächst die Daten in Jamovi einfügen. Hierfür klickst du auf Open -\> Import und wählst den Datensatz von deinem PC aus.
+
+![](images/02_grundlagen/jamovi1.png)
+
+Im Anschluss solltest du den Datensatz in Jamovi sehen können.
+
+![](images/02_grundlagen/jamovi2.png)
+
+### Die Benutzeroberfläche von Jamovi 
+
+Optisch ähnelt Jamovi Excel oder SPSS und ist daher vermutlich intuitiver zu bedienen als R. Wir werden in diesem Semester daher die bekannten statistischen Verfahren mit Jamovi rechnen und R für die Dokumentation deiner Ergebnisse und verschiedener Berechnungen verwenden. 
+
+Unter Analyse findest du verschiedene Buttons, mit denen du sowohl statistische Verfahren berechnen kannst, als auch deskriptive Daten des Datensatzes berechnen kannst:
+
+![](images/02_grundlagen/surface.jpg)
+
+Diese Bezeichnungen sagen dir vermutlich zu diesem Zeitpunkt nicht viel, das ist auch nicht schlimm, da wir diese Bezeichnungen Stück für Stück in diesem Seminar lernen werden. Im Verlaufe des Semesters werden wir uns ausführlich mit *t*-Tests, ANOVAs und der Regression beschäftigen.
+
+Unter Data findest du verschiedene Befehle, mit denen du die Daten manipulieren kannst. Wir werden diese Leiste in diesem Seminar kaum benutzen und die Datenmanipulation in R machen.
+
+![](images/02_grundlagen/surface1.jpg)
+
+### Deskriptive Daten mit Jamovi berechnen 
+
+Nutzen wir Jamovi, um ein paar Einsichten in unseren Datensatz zu gewinnen. Fragen wir uns beispielsweise, wie viel die Mitarbeitende des Unternehmens im Durchschnitt verdienen. Aus dem letzten Semester weißt du, dass man hierzu den Mittelwert einer Variable berechnen muss. In Jamovi klickst du hierfür auf Exploration und anschließend auf Descriptives:
+
+![](images/02_grundlagen/surface2.jpg)
+
+Nun hast du die Möglichkeit eine Variable auszuwählen und verschiedene Maße der zentralen Tendenz und der Streuung zu berechnen. In unserem Fall möchten wir das mittlere Einkommen aller Mitarbeitenden berechnen:
+
+![](images/02_grundlagen/surface3.png)
+
+Wie du siehst, habe ich unter Central Tendency Mean ausgewählt und erhalte ein monatliches Bruttoeinkommen von 6503 Euro. 
+
+Wir könnten ebenso untersuchen, wie hoch das mittlere Einkommen für Personen mit verschiedenen Bildungsabschlüssen ist. Also, verdienen Mitarbeitende mit einem Masterabschluss mehr als Mitarbeitende mit einem Bachelorabschluss?
+
+![](images/02_grundlagen/surface4.jpg)
+
+Offensichtlich ja. Im Schnitt verdienen Mitarbeidende mit einem Bachelorabschluss 6517 Euro brutto, mit einem Masterabschluss 6832 Euro brutto. Du erkennst im Bild ebenso, dass ich mir die Standardabweichung der Variablen ausgegeben habe. 
+
+Ebenso kannst du dir die Verteilung der Einkommen pro Bildungsabschluss als Visualisierung ausgeben lassen. Hierzu klickst du auf Plots und anschließend auf Histogram:
+
+![](images/02_grundlagen/surface5.jpg)
+
+### Jamovi in R exportieren 
+
+Ein Trick, den wir über das ganze Semester verwenden werden, ist es, den Output von Jamovi in R zu übertragen. Wir machen das, um unsere Berechnungen dauerhaft in einem Skript zu speichern und um somit unsere Ergebnisse zu dokumentieren. 
+
+Um den den Output in R zu übertragen, musst du zunächst auf die drei Punkte rechts oben in Jamovi klicken:
+
+![](images/02_grundlagen/export.jpg)
+
+Anschließend öffnet sich ein Fenster, in welchem du den Syntax mode aktivierst:
+
+![](images/02_grundlagen/export1.jpg)
+
+Wie du sehen kannst, erstellt Jamovi den Output deiner Berechnungen in Form von R-Code. Diesen R-Code kannst du anschließend kopieren.
+
+![](images/02_grundlagen/export2.png)
+
+Im nächsten Schritt musst du mehrere Dinge beachten. Zunächst musst du sicher stellen, dass das Paket [jmv ](https://www.jamovi.org/jmv/)geladen ist (library(jmv)). jmv ist die Schnittstelle zu R. Ist das Paket nicht geladen, wird der Code einen Fehler anzeigen. Ebenso solltest du sicher stellen, dass dein Datensatz importiert ist (siehe Zeile 4 im nächsten Bild). Zuletzt musst du im Jamovi-Code immer den Namen des Datensatzes anpassen (siehe Zeile 8 im nächsten Bild). Ansonsten kann es zu Fehlern kommen.
+
+![](images/02_grundlagen/eport3.png)
+
+Wie du siehst, erhälst du den gleichen Output wie in Jamovi. Wann solltest du allerdings den Code von Jamovi in R übertragen? Das R-Skript dient der Dokumentation deiner Berechnungen. Alle Berechnungen, die du daher dauerhaft behalten möchtest, sollten in einem R-Skript gespeichert werden. Alle Berechnungen, die du nur einmal ausprobierst, müssen nicht in das R-Skript.
+
+### Zusammenfassung 
+
+Die eben beschriebenen Schritte wirst du in diesem Semester immer wieder ausführen, bis du sie auswendig kennst. In diesem Submodul hast du einen kurzen Überblick über die Möglichkeiten von Jamovi erhalten und du hast gesehen, wie Daten in Jamovi importiert werden können. Ebenso hast du gelernt, wie man deskriptive Daten in Jamovi berechnet und in R überführt.
