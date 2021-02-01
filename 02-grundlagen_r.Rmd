@@ -876,7 +876,7 @@ Um den Datensatz dauerhaft zu speichern, kannst du ihn als CSV-Datei exportieren
 
 ![](images/02_grundlagen/multi3.png)
 
-### Weitere Informationen 
+### Weitere Informationen
 
 Wir haben in diesem Submodul eine Reihe an wichtigen Befehlen kennen gelernt, mit denen wir bereits komplexe Berechnungen in R durchführen können. Nimm dir Zeit, diese Befehle kennen zu lernen, wir werden sie in den Übungen ohnehin mehrmals wiederholen. Solltest du mehr Interesse an tidyverse haben, schau dir folgende Links an:
 
@@ -886,7 +886,7 @@ Wir haben in diesem Submodul eine Reihe an wichtigen Befehlen kennen gelernt, mi
 
 -   [ModernDive - Statistical Inference via Data Science - Data Wrangling](https://moderndive.com/3-wrangling.html)
 
-## Grundlagen Jamovi 
+## Grundlagen Jamovi
 
 Jamovi ist eine Statistik-Software, die die Vorteile von einem Grafikprogramm und der Flexibilität einer Programmiersprache verbindet. Einerseits ähnelt die Oberfläche von Jamovi der bekannten, aber kostenpflichtigen Statistik-Software SPSS, andererseits ermöglicht Jamovi die Integration der Ergebnisse in R und ist damit die perfekte Schnittstelle für diesen Kurs. Wir werden in diesem Submodul die Grundlagen von Jamovi kennen lernen, um später mit Jamovi statistische Fragestellungen zu beantworten.
 
@@ -894,7 +894,7 @@ Jamovi ist eine Statistik-Software, die die Vorteile von einem Grafikprogramm un
 
 TODO: Einfügen Datei human_resources.csv
 
-### Datensätze mit Jamovi einlesen 
+### Datensätze mit Jamovi einlesen
 
 Öffnest du Jamovi, siehst du lediglich ein leeres Fenster:
 
@@ -908,7 +908,7 @@ Im Anschluss solltest du den Datensatz in Jamovi sehen können.
 
 ![](images/02_grundlagen/jamovi2.png)
 
-### Die Benutzeroberfläche von Jamovi 
+### Die Benutzeroberfläche von Jamovi
 
 Optisch ähnelt Jamovi Excel oder SPSS und ist daher vermutlich intuitiver zu bedienen als R. Wir werden in diesem Semester daher die bekannten statistischen Verfahren mit Jamovi rechnen und R für die Dokumentation deiner Ergebnisse und verschiedener Berechnungen verwenden. 
 
@@ -922,7 +922,7 @@ Unter Data findest du verschiedene Befehle, mit denen du die Daten manipulieren 
 
 ![](images/02_grundlagen/surface1.jpg)
 
-### Deskriptive Daten mit Jamovi berechnen 
+### Deskriptive Daten mit Jamovi berechnen
 
 Nutzen wir Jamovi, um ein paar Einsichten in unseren Datensatz zu gewinnen. Fragen wir uns beispielsweise, wie viel die Mitarbeitende des Unternehmens im Durchschnitt verdienen. Aus dem letzten Semester weißt du, dass man hierzu den Mittelwert einer Variable berechnen muss. In Jamovi klickst du hierfür auf Exploration und anschließend auf Descriptives:
 
@@ -944,7 +944,7 @@ Ebenso kannst du dir die Verteilung der Einkommen pro Bildungsabschluss als Visu
 
 ![](images/02_grundlagen/surface5.jpg)
 
-### Jamovi in R exportieren 
+### Jamovi in R exportieren
 
 Ein Trick, den wir über das ganze Semester verwenden werden, ist es, den Output von Jamovi in R zu übertragen. Wir machen das, um unsere Berechnungen dauerhaft in einem Skript zu speichern und um somit unsere Ergebnisse zu dokumentieren. 
 
@@ -966,6 +966,6 @@ Im nächsten Schritt musst du mehrere Dinge beachten. Zunächst musst du sicher 
 
 Wie du siehst, erhälst du den gleichen Output wie in Jamovi. Wann solltest du allerdings den Code von Jamovi in R übertragen? Das R-Skript dient der Dokumentation deiner Berechnungen. Alle Berechnungen, die du daher dauerhaft behalten möchtest, sollten in einem R-Skript gespeichert werden. Alle Berechnungen, die du nur einmal ausprobierst, müssen nicht in das R-Skript.
 
-### Zusammenfassung 
+### Zusammenfassung
 
 Die eben beschriebenen Schritte wirst du in diesem Semester immer wieder ausführen, bis du sie auswendig kennst. In diesem Submodul hast du einen kurzen Überblick über die Möglichkeiten von Jamovi erhalten und du hast gesehen, wie Daten in Jamovi importiert werden können. Ebenso hast du gelernt, wie man deskriptive Daten in Jamovi berechnet und in R überführt.
