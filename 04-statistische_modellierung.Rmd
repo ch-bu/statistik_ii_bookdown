@@ -1,6 +1,6 @@
 # Statistische Modellierung
 
-## Einführung 
+## Einführung
 
 Dieses Modul beschäftigt sich ausführlicher mit der statistischen Modellierung im Prozess des statistischen Hypothesentestens. Du wirst in diesem Modul lernen, wie du die Null- und Alternativhypothese in mathematische Modelle übertragen kannst und wie diese Modelle genutzt werden, um Hypothesen zu testen. Erneut werden wir uns mit Konzepten beschäftigen, die uns das ganze Semester begleiten werden. Je solider dieses Fundament sitzt, desto einfacher werden für dich die nächsten Module. Und erneut testen wir in diesem Modul die Fragestellung aus dem letzten Modul:
 
@@ -24,11 +24,11 @@ Genauer werden wir in diesem Modul den *t*-Test für eine Stichprobe, welche wir
 
 -   **Notation statistische Modelle**: Zum Schluss werden wir das Vokabular der statistischen Modellierung vertiefen, indem wir lernen, welche Symbole für was stehen.
 
-## Übersicht statistische Modellierung und Prozess des statistischen Hypothesentestens 
+## Übersicht statistische Modellierung und Prozess des statistischen Hypothesentestens
 
 In drei Videos versuche ich, dir zwei zentrale Ideen dieses Kurses zu erklären: Wie wir Hypothesen statistisch modellieren und wir diese Modelle nutzen, um Hypothesen zu testen.
 
-### Statistische Modellierung 
+### Statistische Modellierung
 
 TODO: Einfügen Video
 
@@ -36,15 +36,15 @@ TODO: Einfügen Datei: statistical_models.pdf
 
 TODO: Einfügen Video
 
-### Statistische Modellierung 
+### Statistische Modellierung
 
 TODO: Einfügen Video
 
 TODO: Einfügen Datei: statistisches_hypothenthesten.pdf
 
-## Statistische Modellierung der Null- und Alternativhypothese 
+## Statistische Modellierung der Null- und Alternativhypothese
 
-### Fragestellung dieses Moduls 
+### Fragestellung dieses Moduls
 
 Im letzten Modul hatten wir die Fragestellung getestet, ob Studierende mehr als 10 Bücher pro Jahr lesen. Hierzu hatten wir 30 Studierende willkürlich gefragt, wie viele Bücher sie letztes Jahr gelesen haben. Wir fanden einen signifkanten Effekt und konnten damit zeigen, dass die Annahme, Studierende lesen 10 Bücher pro Jahr gegeben der Daten sehr unwahrscheinlich ist. Daher hatten wir die Nullhypothese abgelehnt. In diesem Modul wiederholen wir den gleichen Test, nur dass wir diesemal statistische Modelle verwenden, um die Hypothese zu beantworten. Am Ende des Moduls werden wir zeigen, dass wir mit diesem Verfahren zu den gleichen Ergebnissen wie mit dem *t*-Test für eine Stichprobe kommen. Zur Erinnerung, dies war das Ergebnis unseres Tests:
 
@@ -52,7 +52,7 @@ Im letzten Modul hatten wir die Fragestellung getestet, ob Studierende mehr als 
 
 Achte darauf, dass wir momentan noch nicht wissen, was die Zahl 29 in diesem Output bedeutet. Wir werden am Ende dieses Submoduls nochmal darauf zu sprechen kommen.
 
-### Null- und Alternativhypothese der Fragestellung 
+### Null- und Alternativhypothese der Fragestellung
 
 Zu Beginn eines jeden statistischen Tests müssen wir eine Null- und Alternativhypothese aufstellen. Bei unserer Hypothese handelt es sich zunächst um eine *Unterschiedshypothese*. Wir glauben, dass Studierende mehr als 10 Bücher pro Jahr lesen. Die Null- und Alternativhypothese lauten folgendermaßen:
 
@@ -62,7 +62,7 @@ Zu Beginn eines jeden statistischen Tests müssen wir eine Null- und Alternativh
 
 ![](images/04_statistische_modellierung/ablauf.png)
 
-### DATA = MODEL + ERROR 
+### DATA = MODEL + ERROR
 
 Die statistische Modellierung kann in einem Satz zusammen gefasst werden: DATA = MODEL + ERROR. In anderen Worten, die wahren Werte setzten sich immer aus unserem mathematischen Modell und den Fehlern, die dieses Model macht, zusammen.
 
@@ -70,7 +70,7 @@ Mit **DATA** bezeichnen wir die **abhängige Variable**, jene Werte, die wir vor
 
 Da mathematische Modelle nie perfekt sind, gibt es immer Fehler in der Vorhersage. Diese Fehler nennen wir **ERROR**. Wenige Studierende lesen exakt 10 Bücher pro Jahr. In anderen Worten ist die abhängige Variable immer die Kombination aus einem mathematischen Modell und dem Fehler, den wir mit diesem Modell machen.
 
-### Statistische Modellierung der Null- und Alternativhypothese 
+### Statistische Modellierung der Null- und Alternativhypothese
 
 Das Ziel der statistischen Modellierung ist es, das sprachliche Hypothesenpaar in ein mathematisches Hypothesenpaar zu überführen. Beginnen wir mit der Frage, wie das kompakte und das erweiterte Modell statistisch modelliert werden.
 
@@ -126,7 +126,7 @@ Dieses Modell ist exakt gleich zum vorherigen Modell. Nur, in diesem Fall sprech
 
 Dieses Modell gibt die tatsächliche Anzahl der Bücher an, die jede Person pro Jahr gelesen hat. Du siehst, dass *Y* kein Dach mehr hat und dass wir einen Fehlerterm hinzugefügt haben (*e~i~*). Wir verwenden ein kleines *e* bei Fehlern, wenn wir die Fehler auf Grundlage unserer geschätzten und nicht der wahren Parameter verwenden. In unserem Fall haben wir *b~0~* geschätzt und verwenden daher *e~i~*.
 
-### Freiheitsgrade 
+### Freiheitsgrade
 
 An dieser Stelle müssen wir einen neuen Begriff einführen. Den Begriff der Freiheitsgrade. Um zu verstehen, was ein Freiheitsgrad ist, müssen wir zwei Feststellungen treffen:
 
@@ -174,15 +174,15 @@ Nun können wir auflösen, was die **Zahl 29** in unserem Output bedeutet. Die Z
 
 > "Um zu prüfen, ob Studierende pro Jahr mehr als 10 Bücher pro Jahr lesen, wurde ein *t*-Test für eine Stichprobe berechnet. Der *t*-Test ergab einen signifikanten Effekt, *t*(**29**) = 4.91, *p* \< .001, *d* = 0.90 (großer Effekt), was darauf hinweist, dass Studierende mehr als 10 Bücher pro Jahr lesen."
 
-### Zusammenfassung 
+### Zusammenfassung
 
 Wir haben nun etabliert, in welchen unterschiedlichen Formen statistische Modelle aufgeschrieben werden können. Wir haben gelernt, dass die Nullhypothese in ein kompaktes Modell und die Alternativhypothese in ein erweitertes Modell übersetzt wird. Das erweiterte Modell heißt so, da es immer mehr Parameter hat als das kompakte Modell. Ebenso haben wir erfahren, dass der Begriff Freiheitsgrad angibt, wie viele Parameter noch in ein Modell hinzufügt werden können. Im nächsten Submodul werden wir diese beiden Modelle visualisieren und was man in diesen Modellen unter Fehlern versteht.
 
-## Fehler in statistischen Modellen: SSE_A, SSE_C, SSR und PRE 
+## Fehler in statistischen Modellen: SSE_A, SSE_C, SSR und PRE
 
 Wir haben im letzten Modul bereits angedeutet, dass unsere Modelle nicht perfekt sind. Wenn wir vorhersagen, dass alle Studierende 10 Bücher pro Jahr liest, werden wir selten richtig liegen. Manche werden mehr lesen, manche werden weniger lesen. Ebenso haben wir gelernt, dass jedes Modell in der Formel DATA = MODEL + ERROR beschrieben werden kann. In diesem Submodul werden wir uns genauer mit dem Begriff des ERRORs auseinandersetzen und lernen, dass wir die Fehler berechnen, indem wir die quadrierte Abweichung der Fehler berechnen.
 
-### Fehler im kompakten Modell 
+### Fehler im kompakten Modell
 
 Beginnen wir mit einer Visualisierung. In der folgenden Visualisierung siehst du für alle Studierende, wie akkurat das kompakte Modell die Anzahl der gelesenen Bücher geschätzt hat. Für die Studentin mit der ID 2 beispielsweise hat das kompakte Modell 10 Bücher geschätzt, die Studentin hat aber in Wirklichkeit 15 Bücher gelesen (siehe y-Achse).
 
@@ -202,7 +202,7 @@ Du siehst anhand der Visualisierung, dass wir im kompakten Modell die Anzahl der
 
 Die Fehler des kompakten Modells definieren wir daher als die Summe der quadrierten Abweichungen der realen Werte von den geschätzten Werten des kompakten Modells. Im Bilde der obigen Visualisierung gesprochen, summieren wir die Fläche der blauen Quadrate (der Fehler) auf.
 
-### Fehler im erweiterten Modell 
+### Fehler im erweiterten Modell
 
 Das Gegenstück der Fehler im kompakten Modell ist der Fehler im erweiterten Modell. Erinnere dich, dass das erweiterte Modell vorhergesagt hat, dass jede studierende Person jeweils 12.45 Bücher pro Jahr liest. Im unteren Bild haben wir dieses Modell als orangene Linie dargestellt. Die real gelesenen Bücher pro Person sind als orangener Punkt dargestellt. Die orangenen Flächen kennzeichnen die quadrierten Fehler für jede Person:
 
@@ -216,7 +216,7 @@ Wie du siehst, macht auch das erweiterte Modell Fehler. Die Berechnung der Fehle
 
 Die Fehler des erweiterten Modells definieren wir daher als die Summe der quadrierten Abweichungen der realen Werte von den geschätzten Werten des erweiterten Modells. Im Bilde der obigen Visualisierung gesprochen,summieren wir die Fläche der orangenen Quadrate (der Fehler) auf.
 
-### SSR: Reduktion des Fehlers 
+### SSR: Reduktion des Fehlers
 
 Legen wir nun beide Fehler übereinander und vergleichen diese miteinander. Uns fällt auf, dass das kompakte Modell größere Fehler macht als das erweiterte Modell. Beispielsweise ist der Fehler im kompakten Modell bei Person 2, 7, 9, 12 und 14 größer als im erweiterten Modell (die blauen Quadrate sind größer als die orangenen Quadrate)
 
@@ -232,7 +232,7 @@ SSR berechnet sich aus der Differenz zwischen den Fehlern des kompakten Modells 
 
 Je größer SSR ist, desto genauer bildet das erweiterte Modell die echten Daten ab, oder, desto besser kann das erweiterte Modell die Daten im Vergleich zum kompakten Modell vorhersagen. Beachte allerdings, dass bei gleichem SSR ein erweitertetes Modell mit wenigen Parametern beeindruckender ist als ein erweitertes Modell mit vielen Parametern. Wir wissen, das mehr Parameter zu einer besseren Vorhersage der abhängigen Variable führen. Wenn also ein Modell mit einem weiteren Parameter die Fehler gleich stark reduziert wie ein Modell mit fünf weiteren Parametern, werden wir das erweiterte Modell mit weniger Parametern bevorzugen, da es einfacher ist als das komplexere Modell.
 
-### PRE (Proportional Reduction in Error) 
+### PRE (Proportional Reduction in Error)
 
 Als nächstes lernen wir den Begriff PRE kennen, welcher uns im Verlaufe des Seminars in anderen Worten immer wieder über den Weg laufen wird. PRE steht für Proportional Reduction in Error und ist ein Maß, welches angibt, wie viel Prozent der Fehler des kompakten Modells durch das erweiterte Modell aufgeklärt werden. Beispielsweise könnte PRE den Wert .80 annehmen. Dieser Wert würde bedeutet, dass das erweiterte Modell 80% der Fehler des kompakten Modells reduziert. Berechnet wird PRE wie folgt:
 
@@ -244,7 +244,7 @@ Zwei Dinge sind bei der Berechnung von PRE wichtig. Erstens, wir müssen SSE~A~ 
 
 PRE kann Werte zwischen 0 und 1 annehmen. 1 würde bedeuten, dass das erweiterte Modell alle Fehler des kompakten Modells erklärt. Nicht jedes PRE ist jedoch gleich beeindruckend. Nehmen wir an, du erhältst ein PRE von .02. Das erweiterte Modell hat fünf Parameter mehr als das kompakte Modell. Welches Modell ist nun besser? Wir gehen davon aus, dass das Modell, welches mit den wenigsten Parametern ähnliche Ergebnisse erzielt und daher sparsamer ist, besser ist. Aus diesem Grund würden wir in diesem Beispiel sagen, dass das kompakte Modell besser ist, schließlich hat es deutlich weniger Parameter als das erweitertes Modell und wir erhalten ein geringes PRE. Nur, ab welchem Wert ist PRE groß genug oder klein genug? Dies hängt von mehreren Faktoren ab. Wenn PRE substantiell durch nur einen Parameter reduziert wird, ist dies besser, als wenn PRE durch mehrere Parameter reduziert wird. Schließlich suchen wir sparsame Modelle mit wenigen Parametern.
 
-### Tabellarische Darstellung der Ergebnisse 
+### Tabellarische Darstellung der Ergebnisse
 
 Fassen wir zum Schluss dieses Submoduls unsere Ergebnisse zusammen. Ich habe die Werte für dich berechnet. In der ersten Spalte stehen die drei verschiedenen Arten von Fehlern. SSR steht für die Fehler des kompakten Modells, welche durch das erweiterte Modell reduziert werden. Ebenso gibt es die Fehler, die das erweiterte Modell noch macht, SSE~A~. Zum Schluss, die Fehler, die das kompakte Modell macht. Zudem haben wir einen Freiheitsgrad, der sich aus PA - PC berechnet. Dieser Wert gibt an, wie viele Parameter das erweiterte Modell mehr hat als das kompakte Modell. PRE beläuft sich bei unserem Beispiel auf 0.45. Das heißt, das erweiterte Modell klärt 45% der Fehler im kompakten Modell auf.
 
@@ -254,13 +254,13 @@ Fassen wir zum Schluss dieses Submoduls unsere Ergebnisse zusammen. Ich habe die
 
 In diesem Submodul haben wir die Begriffe SSE~C~, SSE~A~, SSR und PRE etabliert. Fortan bezeichnen wir mit diesen Begriffen die Fehler, welche das kompakte und das erweiterte Modell machen. Mit SSR bezeichnen wir die Reduzierung der Fehler des kompakten Modells durch das erweiterte Modell.
 
-## F-Wert und F-Verteilungen 
+## F-Wert und F-Verteilungen
 
 Im letzten Modul haben wir verschiedene Fehler des kompakten und erweiterten Modells kennen gelernt. In unserem Prozess des statistischen Hypothesentestens müssen wir als nächstes einen Kennwert aus diesen Modellen berechnen. Wir werden fortan *F*- und *t*-Werte für unsere Hypothesen berechnen und sehen, dass beide äquivalent zueinander sind. In diesem Submodul werden unsere bisherige Bücherhypothese anhand der F-Verteilung prüfen. Das heißt, wir vollziehen den kompletten Prozess des statistischen Hypothesentestens und treffen eine statistische Entscheidung für oder gegen die Nullhypothese.
 
 ![](images/04_statistische_modellierung/ablauf.png)
 
-### Die Größe der Fehler abhängig der Parameter des Modells 
+### Die Größe der Fehler abhängig der Parameter des Modells
 
 Bisher haben wir die quadrierten Fehler des kompakten Modells (SSE~C~) und die quadrierten Fehler des erweiterten Modells (SSE~A~) beschrieben. Zudem haben wir SSR als ein Maß definiert, welches angibt, wie viel Fehler des kompakten Modells durch das erweiterte Modell aufgeklärt werden. 
 
@@ -310,7 +310,7 @@ Zusammengefasst können wir die Ergebnisse in einer Tabelle festhalten:
 
 ![](images/Bildschirmfoto%202021-02-02%20um%2014.37.09.png)
 
-### F-Verteilung 
+### F-Verteilung
 
 Um diesen Wert von einer anderen Sichtweise zu verstehen, lass uns zurück zu unserer Hypothese gehen. Unsere Nullhypothese besagt, dass Studierende im Schnitt 10 Bücher pro Jahr lesen. Versuchen wir an dieser Stelle eine Simulation. Stell dir vor, es gibt wirklich keinen Effekt und Studierende lesen 10 Bücher pro Jahr. Dein erweitertes Modell würde in diesem Fall in den meisten Fällen *b~0~* um die 10 bestimmen (ungefähr der Mittelwert der Population). In diesem Fall wäre dein erweitertes Modell fast identisch mit dem kompakten Modell. Das erweiterte Modell sollte von daher die Fehler des kompakten Modells nicht viel besser aufklären können als das kompakte Modell. In jedem Fall wird es die Fehler besser aufklären können, da das erweiterte Modell einen Parameter mehr hat als das kompakte Modell. Wir würden allerdings keinen großen *F*-Wert erwarten. Aus folgendem Grund: 
 
@@ -322,7 +322,7 @@ Bleiben wir bei der Idee, dass es keinen Effekt gibt: Wir wiederholen die gleich
 
 Du siehst, dass wir mit steigender Anzahl an Studierenden eine rechtschiefe Verteilung erhalten. Diese Verteilung nennen wir *F*-Verteilung. Die *F*-Verteilung zeigt uns an, wie das Verhältnis zwischen den aufgeklärten Fehlern und den übrigen Fehlern im kompakten Modell wäre, sollte die Nullhypothese stimmen. Du siehst an der Verteilung, dass wir in der Regel Werte zwischen 0 und 1 erwarten würden. Das heißt, der zusätzliche Parameter im erweiterten Modell sollte meist nicht besser sein als ein Parameter, der keinen Beitrag zur Fehleraufklärung leistet. Ganz selten erhalten wir *F*-Wete größer als 4 oder 5. In anderen Worten, *F*-Werte über 5 sind sehr ungewöhnlich, die Parameter leisten einen besseren Beitrag zur Fehlerreduktion als wir erwarten würden.
 
-### Beispiele F-Verteilungen 
+### Beispiele F-Verteilungen
 
 Ganz ähnlich zu der *t*-Verteilung gibt es unterschiedliche *F*-Verteilungen. Wie die *F*-Verteilung aussieht, hängt mit den beiden Freiheitsgraden des kompakten und des erweiterten Modells zusammen. In der nächsten Visualisierung siehst du beispielsweise drei verschiedene *F*-Verteilungen, welche sich in ihren Freiheitsgraden unterscheiden:
 
@@ -348,27 +348,154 @@ An dieser Stelle führen wir einen weiteren neuen Begriff ein: Eta-Quadrat (*η*
 
 In unserem Fall belief sich PRE auf 0.45. Das heißt, das erweiterte Modell war in der Lage, 45% der Fehler im kompaten Modell aufzuklären.
 
-### Tabellarische Darstellung der Ergebnisse 
+### Tabellarische Darstellung der Ergebnisse
 
 Wir sind damit an das Ende unseres Tests gekommen. Begonnen haben wir mit der Frage, ob Studierende mehr als 10 Bücher pro Jahr lesen. Mit Hilfe der statistischen Modellierung haben wir den *F*-Wert berechnet und sind zu dem Schluss gekommen, dass der Kennwert unter der Nullhypothese sehr unwahrscheinlich und damit signifikant ist. Wir verwerfen daher die Nullhypothese und gehen davon aus, dass Studierende mehr als 10 Bücher pro Jahr lesen. Fassen wir die Ergebnisse in einer Tabelle zusammen:
 
 ![](images/Bildschirmfoto%202021-02-02%20um%2014.43.08.png)
 
-### Zusammenfassung 
+### Zusammenfassung
 
 Wir haben in diesem Submodul den *F*-Wert und die *F*-Verteilung kennen gelernt. Fortan werden wir für alle Hypothesen einen *F*-Test rechnen und die gleichen Berechnungen mit ein paar Unterschieden ausführen. Den F-Wert haben wir in diesem Submodul als einen Wert kennen gelernt, der das Verhältnis zwischen den aufklärten Fehlern durch die weiteren Parameter und den restlichen Fehlern des kompakten Modells angibt. Hohe *F*-Werte sind unter der Annahme der Nullhypothese unwahrscheinlich. *F*-Werte unter 1 bedeuten, dass die zusätzlichen Parameter nicht viel besser sind als willkürliche Parameter, die keinen wesentlichen Beitrag zur Fehlerreduzierung leisten. Im nächsten Submodul werden wir zeigen, dass der *F*-Wert und der *t*-Wert äquivalent sind.
 
-## Äquivalenz F und t 
+## Äquivalenz F und t
 
+In diesem Submodul werden wir zeigen, dass der *F*- und der *t*-Wert äquivalent sind. Genauer werden wir zeigen, dass der *t*-Wert die Wurzel aus dem *F*-Wert ist. Für uns bedeutet dies, dass wir herkömmliche *t*-Tests immer als *F*-Tests darstellen können und damit den Prozess des statistischen Hypothesentestens, welchen wir in diesem Modul kennen gelernt haben, auch für Fragestellungen verwenden können, die herkömmlicherweise durch einen *t*-Test gelöst werden. Ebenso werden wir zeigen, wie man einen *F*-Test berichtet.
 
+### Ergebnis des bisherigen t-Tests für eine Stichprobe
 
+Beginnen wir dazu mit dem Ergebnis des *t*-Tests für eine Stichprobe, welchen wir im vorherigen Modul berechnet haben:
 
+> "Um zu prüfen, ob Studierende pro Jahr mehr als 10 Bücher pro Jahr lesen, wurde ein *t*-Test für eine Stichprobe berechnet. Der *t*-Test ergab einen signifikanten Effekt, *t*(29) = 4.91, *p* \< .001, *d* = 0.90 (großer Effekt), was darauf hinweist, dass Studierende mehr als 10 Bücher pro Jahr lesen."
 
+Würden wir die gleiche Hypothese in Jamovi rechnen, bekämen wir folgendes Ergebnis:
 
+![](images/04_statistische_modellierung/sample.png)
 
-TODO: Das war vorher schon drin?
+Bei dem Bericht des Ergebnisses haben wir demnach die Informationen aus Jamovi in einer bestimmten Schreibweise übertragen. Genauer haben wir den *t*-Test folgendermaßen berichtet:
+
+![](images/04_statistische_modellierung/tdf.png)
+
+Zunächst schreiben wir ein *t* und in Klammern die restlichen Parameter, die das erweiterte Modell noch aufnehmen kann (df~2~). Anschließend schreiben wir die Wahrscheinlichkeit für diesen *t*-Wert unter der Nullhypothese auf (P~WERT~). Dann berichten wir die Effektgröße Cohen's *d* (D~WERT~). Zudem werden sowohl der Buchstabe *t*, *p* als auch *d* kursiv geschrieben.
+
+Du siehst demnach, dass wir damals bei dem *t*-Test für eine Stichprobe bereits Informationen verwendet haben, die wir in diesem Modul gelernt haben. Genauer berichten wir bei dem *t*-Test immer die Freiheitsgrade des erweiterten Modells, das heißt die Anzahl der Parameter, die das erweiterte Modell noch aufnehmen kann. Zudem ist der *t*-Wert mit dem *F*-Wert verwandt.
+
+### ***t*** **ist die Wurzel aus *F***
+
+Unser *F*-Test aus dem letzten Submodul hat folgende Ergebnisse erbracht. Zusätzlich habe ich der Tabelle den *t*-Wert und die Effektgröße Cohen's *d* hinzugefügt. Ich will deine Aufmerksamkeit auf die Spalten *F* und *t* lenken.
+
++-----------------------------------------------+--------------------+----------+----------+----------+------------+---------+-----------+---------+
+| **Source**                                    | **Sum of Squares** | ***df*** | ***MS*** | ***F***  | ***t*****\ | ***p*** | ***PRE*** | ***d*** |
+|                                               |                    |          |          |          | **         |         |           |         |
++===============================================+====================+==========+==========+==========+============+=========+===========+=========+
+| Reduktion der Fehler durch erweitertes Modell | 180.63             | 1        | 18.26    | **24.1** | **4.91**   | \< .001 | 0.450\    | 0.896   |
++-----------------------------------------------+--------------------+----------+----------+----------+------------+---------+-----------+---------+
+| Restliche Fehler des erweiterten Modells      | 217.38             | 29       | 7.5      | \-       | \-         | ##      | \-        | \-      |
++-----------------------------------------------+--------------------+----------+----------+----------+------------+---------+-----------+---------+
+| Fehler kompaktes Modell\                      | 389.00             | 30       | \-       | \-       | \-         | \-      | \-        | \-      |
++-----------------------------------------------+--------------------+----------+----------+----------+------------+---------+-----------+---------+
+
+![](images/04_statistische_modellierung/tf.png)
+
+Der *F*-Wert ist 24.1 und der *t*-Wert ist 4.91. Der *t*-Wert ist demnach nichts anderes als die Wurzel aus dem *F*-Wert. Wir haben damit gezeigt, dass *F* und *t* direkt miteinander verwandt sind.
+
+Ob wir nun einen *F*-Test oder einen *t*-Test berechnen, macht für die Ergebnisse keinen Unterschied. Außer mit einer kleinen Ausnahme, zu der wir jetzt zu sprechen kommen.
+
+### **Der *F*-Test testet ungerichtet**
+
+Hypothesen können entweder gerichtet oder ungerichtet getestet werden. Unsere Bücherhypothese war gerichtet, das heißt wir nahmen an, dass Studierende **mehr** als 10 Bücher pro Jahr lesen. Stellen wir uns ausnahmsweise vor, der empirische *t*-Wert lag bei dem Wert 2:
+
+![](images/04_statistische_modellierung/pd.png)
+
+Die Wahrscheinlichkeit für ein *t*-Wert größer als 2 liegt bei 5.69%. Allerdings bei einer gerichteten Hypothese. Hätten wir ungerichtet getestet und wäre der empirische *t*-Wert bei 2, müssten wir auch die andere Annahme hinzufügen, dass Studierende weniger als 10 Bücher pro Jahr lesen:
+
+![](images/04_statistische_modellierung/pdh.png)
+
+In diesem Fall läge die Wahrscheinlichkeit für P(D\|H0) bei 5.69 \* 2 = 11.38%. Während wir nun bei einem *t*-Test gerichtet als auch ungerichtet testen können, testet der *F*-Test immer nur ungerichtet. Das heißt, der *p*-Wert, welchen wir durch unseren *F*-Test erhalten haben, gibt uns an, wie wahrscheinlich es ist, dass Studierende mehr oder weniger als 10 Bücher pro Jahr lesen, sollte es stimmen, dass Studierende im Schnitt nur 10 Bücher pro Jahr lesen. Wir können den *p*-Wert bei einem F-Test teilen, wenn folgende Bedingung vorherrscht:
+
+Der Mittelwert der Stichprobe ist größer als der angenommene Mittelwert. Da der Mittelwert der Stichprobe bei 12.45 lag und wir einen Mittelwert von 10 angenommen haben, dürfen wir den *p*-Wert teilen. 
+
+Achte daher bei jedem F-Test darauf, ob du eine gerichtete oder ungerichtete Hypothese testest. *F*-Tests berichten dir Jamovi und SPSS immer ungerichtete Hypothesen. Es ist allerdings legitim, bei einer gerichteten Hypothese unter bestimmten Bedinungen den *p*-Wert bei einem *F*-Test zu teilen.
+
+### **F-Tests berichten**
+
+Zuletzt wollen wir noch lernen, wie der *F*-Test in Fachartikeln berichtet wird. Formulieren wir dazu ein Beispiel für unseren Test aus:
+
+> "Um zu prüfen, ob Studierende pro Jahr mehr als 10 Bücher pro Jahr lesen, wurde ein *t*-Test für eine Stichprobe berechnet. Der *F*-Test ergab einen signifikanten Effekt, *F*(1, 29) = 24.1, *p* \< .001, *d* = 0.89 (großer Effekt), was darauf hinweist, dass Studierende mehr als 10 Bücher pro Jahr lesen."
+>
+> Avani Sadana
+
+Du siehst, dass wir bei einem *F*-Test sowohl den Unterschied in den Parametern des kompakten und des erweiterten Modells angeben als auch den Freiheitsgrad des erweiterten Modells angeben. Allgemein können wir die Schreibweise wie folgt darstellen:
+
+![](images/04_statistische_modellierung/fdf.png)
+
+### **Zusammenfassung**
+
+In diesem Submodul haben wir gezeigt, dass wir für jeden *t*-Test auch einen *F*-Test rechnen können und dass beide Kennwerte miteinander verwandt sind. Genauer haben wir festgestellt, dass der *t-*Wert die Wurzel des *F*-Wertes ist. Wir können daher jeden *t*-Test in eine *F*-Test übersetzen. Fortan werden wir allerdings hauptsächlich *F*-Tests zur Überprüfung von Hypothesen verwenden.
+
+## Notation statistische Modelle
+
+Dieses Submodul fasst die wesentlichen Notationen der statistischen Modelle zusammen. Verwende diese Seite als Nachschlagewerk, wenn wir in den nächsten Wochen immer statistische Modellpaare aufstellen.
+
+![](images/04_statistische_modellierung/yy.png)
+
+Steht für den Einzelwert von DATA, den Werten, welche wir vorhersagen, beziehungsweise den Werte unserer abhängigen Variable. Das kleine *i* steht für das Untersuchungsobjekt, welches wir gerade betrachten. In der Regel sind das einzelne Menschen beziehungsweise Probanden.
+
+![](images/04_statistische_modellierung/yy1.png)
+
+Steht für unseren auf Grundlage des Modells vorhergesagten Werte. Der reale Wert setzt sich aus der Schätzung und dem Fehler zusammen.
+
+![](images/04_statistische_modellierung/x.png)
+
+Steht für die Variablen, welche wir in unser Modell hinzufügen. *i* steht für das Untersuchungsobjekt, *j* steht für die Nummer der Variable (wir werden später mehrere dieser Variablen in unseren Modellen haben).
+
+![](images/04_statistische_modellierung/b0.png)
+
+Steht für die Parameter unseres Modells, welche wir finden möchten. Wir werden diese Werte allerdings nie exakt bestimmen können, da wir nie Daten von ganzen Populationen haben. Als Faustregel gilt: Sobald ein Epsilon in der Gleichung enthalten ist, spricht man von Parametern, die in der Population gelten.
+
+![](images/04_statistische_modellierung/b.png)
+
+Stehen für die Parameter, welche man auf Grundlage der Stichproben berechnet. Beispielsweise schätzt man den Mittelwert der Population auf Grundlage des Mittelwerts einer Stichprobe.
+
+![](images/04_statistische_modellierung/b1.png)
+
+Steht für keinen Parameter, sondern für einen Koeffizienten in einem Modell, den wir a-priori annehmen. Zum Beispiel, dass Studierende im Schnitt 10 Bücher pro Jahr lesen.
+
+![](images/04_statistische_modellierung/e.png)
+
+Stehen für die Fehler, die wir aus dem Modell berechnen. *e* wird also immer im Zusammenhang mit *b* verwendet und nie mit β und wird immer im Zusammenhang mit Stichproben verwendet.
+
+![](images/04_statistische_modellierung/e1.png)
+
+Steht für den Fehler, der sich ergibt, wenn man *β~i~* kennt. Da sich *β~i~* von *b~i~* unterscheidet, unterscheidet sich auch *e* von ɛ . ɛ wird immer verwendet, wenn wir von der Population sprechen.
+
+![](images/04_statistische_modellierung/u.png)
+
+Mittelwert der Population 
+
+![](images/04_statistische_modellierung/mittel.png)
+
+Mittelwert der Stichprobe
+
+![](images/04_statistische_modellierung/o.png)
+
+Standardabweichung der Population
+
+![](images/04_statistische_modellierung/s.png)
+
+Standardabweichung der Stichprobe 
+
+## Berechnung in Jamovi
+
+In diesem Submodul zeige ich dir, wie du einen *t*-Test für eine Stichprobe in Jamovi und R berechnen kannst. Den Datensatz findest du hier:
+
+TODO: Einfügen Dokument books.csv
+
+TODO: Einfügen Video
 
 ## Konfidenzintervalle
+
+TODO: Das Kapitel war vorher schon drin, soll das bleiben?
 
 anhand der Parameter erklären und was sie bedeuten
 
