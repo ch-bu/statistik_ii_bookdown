@@ -26,7 +26,7 @@ Um diese beiden Probleme zu lösen, werden wir sogenannte Kontrastkodierungen ke
 
 Wir werden in diesem Modul zwei verschiedene Tests kennen lernen, die allerdings das gleiche Verfahren anwenden, welches wir bisher kennen gelernt haben. Genauer werden wir den ***t*****-Test für unabhängige Stichproben** und die **einfaktorielle Varianzanalyse** kennen lernen. Für beide Verfahren werden wir *F*-Tests berechnen. Der Unterschied zwischen dem *t*-Test für unabhängige Stichproben und der einfaktoriellen Varianzanalyse liegt darin, dass sie sich darin unterscheiden, wie viel Gruppen man miteinander vergleicht. Beim *t*-Test für unabhängige Stichproben werden zwei Gruppen miteinander verglichen, bei der einfaktoriellen Varianzanalyse mehr als zwei Gruppen. Sobald du allerdings die Kontrastkodierung verstehst, wirst du sehen, dass beide Tests ähnlich statistisch modelliert werden.
 
-### Datensätze dieses Moduls 
+### Datensätze dieses Moduls
 
 Wir werden in diesem Modul zwei verschiedene Datensätze verwenden. Bei beiden Datensätzen handelt es sich um Replikationsstudien bekannter Studien.
 
@@ -62,7 +62,7 @@ Für diese Studie interessieren uns folgende Variablen:
 
 -   **test2tot**: Prozentueller Anteil der korrekten Fragen des Tests zwei Tage nach dem Aufschreiben der Notizen.
 
-## Kontrastkodierungen 
+## Kontrastkodierungen
 
 In der Einführung dieses Moduls haben wir gesagt, dass wir zwei Probleme lösen müssen. Wir müssen kategorielle Werte, wie beispielsweise ob Studierende ihr Wissen getestet haben oder eine Concept-Map erstellt haben, in numerische Werte überführen. Ebenso müssen wir einen Weg finden, die Parameter in unseren statistischen Modellen als spezifische Hypothesen zu kodieren. Die Lösung dieser beider Probleme sind Kontrastkodierungen.
 
@@ -135,7 +135,7 @@ Berechnen wir das erweiterte Modell auf Grundlage dieser Kontrastgewichte, erhal
 Du siehst, dass das Modell drei Parameter und zwei Prädiktoren hat. *b~1~* kodiert den Mittelwertsunterschied zwischen der Laptopgruppe mit allen anderen Gruppen. *b~2~* kodiert den Mitelwertsunterschied zwischen der E-Writer Gruppe mit allen anderen Gruppen. Beweisen können wir dies dadurch, indem wir uns die Mittelwerte der Gruppen ansehen:
 
 +----------------------------------------+---------+
-| **Gruppen**\                           | ***M*** |
+| **Gruppen**\\                          | ***M*** |
 +========================================+=========+
 | per Hand\                              | 0.269   |
 +----------------------------------------+---------+
@@ -179,7 +179,7 @@ Berechnet man auf Grundlage dieser Kontraste das erweiterte Modell erhält man f
 Ein Blick auf die untere Tabelle verrät uns, dass *b~0~* nichts anderes ist als der Mittelwert der Gruppe, welche per Hand mitgeschrieben hat. *b~1~* kodiert den Mittelwertsunterschied zwischen der Laptopgruppe und der Gruppe, die per Hand mitgeschrieben hat: 0.2333 - 0.269 = -0.036. *b~2~* kodiert den Mittelwertsunterschied der E-Book Gruppe und der Gruppe, die per Hand mitgeschrieben hab: 0.250 - 0.269 = -0.019.
 
 +-------------------------------+---------+
-| **Gruppen**\                  | ***M*** |
+| **Gruppen**\\                 | ***M*** |
 +===============================+=========+
 | per Hand\                     | 0.269   |
 +-------------------------------+---------+
@@ -299,7 +299,7 @@ Verwenden wir dieses Set an Kontrasten, erhalten wir folgendes Modell:
 Mit Blick auf die untere Tabelle sehen wir erneut, dass *b~0~* den Mittelwert der Gruppenmittelwerte kodiert. *b~1~* kodiert den Mittelwertsunterschied der Laptopgruppe und der Gruppe, die per Hand mitgeschrieben hat: 0.2333 - 0.269 = -0.0357 (mit kleinen Rundungsfehlern). *b~2~* kodiert den Mittelwertsunterschied zwischen der E-Writer Gruppe und den anderen beiden Gruppen: 0.250 - ((0.2692308+ 0.2333) / 2) = -0.00127.
 
 +-------------------------------+---------+
-| **Gruppen**\                  | ***M*** |
+| **Gruppen**\\                 | ***M*** |
 +===============================+=========+
 | per Hand\                     | 0.269   |
 +-------------------------------+---------+
@@ -343,7 +343,7 @@ Erneut können wir zeigen, dass wir durch diese Kodierung die in der Tabelle bes
 *b~0~* kodiert erneut den Mittelwert der Gruppenmittelwerte. *b~1~* kodiert den Mittelwertsunterschied der Gruppe, die per Hand mitschreibt und den anderen beiden Gruppen: 0.269 - ((0.23333+ 0.250) / 2) = 0.027. *b~2~* kodiert den Mittelwertsunterschied zwischen der Laptopgruppe und der E-Writer-Gruppe: 0.2333 - 0.250 = -0.0167.
 
 +-------------------------------+---------+
-| **Gruppen**\                  | ***M*** |
+| **Gruppen**\\                 | ***M*** |
 +===============================+=========+
 | per Hand\                     | 0.269   |
 +-------------------------------+---------+
@@ -357,5 +357,247 @@ Erneut können wir zeigen, dass wir durch diese Kodierung die in der Tabelle bes
 ### Zusammenfassung
 
 Wir haben in diesem Submodul gelernt, wie wir Gruppen als numerische Werte kodieren können. Dabei sind wir verschiedene Kontrastkodierungssysteme durchgegangen. Durch die Wahl der Kontrastekodierung stellen wir unterschiedliche statistische Modelle auf, mit denen wir unterschiedliche Hypothesen testen können. In diesem Submodul haben wir darauf verzichtet, zu zeigen, wie diese Parameter aus den Modellen berechnet werden. Das Prinzip bleibt allerdings das gleiche. Wir suchen das Modell, welches die geringste quadrierte Abweichung der tatsächlichen Werte von den vorhergesagten Werten hat (Ordinal Least Squares Methode). Auf Grundlage dieser berechneten Parameter haben gesehen, dass bei Helmert- bzw. Reverse-Helmert-Kontrasten die Parameter spezifische Mittelwertsunterschiede der Gruppen kodieren. Dieser Tatsache machen wir uns im nächsten Submodul zu Nutze, um sowohl einen *t*-Test für unabhängige Stichproben als auch eine einfaktorielle Varianzanalyse zu berechnen.
+
+## t-Test für unabhängige Stichproben
+
+Das Ziel dieses Submoduls ist folgende Forschungsfrage zu beantworten: Lernen Studierende, die ihr Wissen testen, mehr konzeptuelles Wissen als Studierende, die eine Concept-Map anfertigen. Zur Erinnerung, [Buttrick et al. (2018)](https://osf.io/2h3g6/) replizierten eine Studie von [Karpicke und Blunt (2011)](https://science.sciencemag.org/content/331/6018/772.abstract), welche genau dies herausgefunden hatte. Den vollständigen Bericht der Studie von Buttrick et al. findest du in der unteren Datei:
+
+\
+TODO: Karpicke & Blunt (2011) - Replication Report.pdf
+
+Karpicke berichten folgendes Ergebnis zu dieser Forschungsfrage:
+
+> "The hypothesis that retrieval practice would lead to better recall one week later than concept-mapping was supported by the data. Those assigned to retrieval practice (*n* = 23) recalled more in the one-week follow-up test than those assigned to concept-mapping (*n* = 26): Retrieval *M* = 62.3% recalled, *SD* = 19%; Concept-Mapping *M* = 46.9% recalled, *SD* = 19%; *t*(48)=2.88, *p* = 0.006, *r* = 0.39 [95% CI: 0.11, 0.71]."
+>
+> Buttrick et al. (2018, S. 4)
+
+Wir werden in diesem Submodul zeigen, wie dieses Ergebnis zu Stande kommt, das heißt, wie es mit unserem bekannten Verfahren des Hypothesentestens berechnet werden kann.
+
+### **Aufstellen der Kontrastkodierung**
+
+Beginnen wir damit, die Kontraste zu kodieren. Wir wissen, dass wir zwei Gruppenmittelwerte miteinander vergleichen möchten, die Gruppe der Studierenden, die eine Concept-Map anfertigt mit der Gruppe der Studierenden, die ihr Wissen testet. Da wir zwei Gruppen haben, benötigen wir lediglich einen Prädiktor in unserem erweiterten Modell (*k* - 1 = 2 - 1 = 1). Wenngleich wir im letzten Submodul mehrere Kodierungssysteme kennen gelernt haben, haben wir bei zwei Gruppen nicht viele Möglichkeiten. Entweder verwenden wir eine Dummy-Kodierung mit einer 0 und einer 1, oder wir verwenden eine Helmert-Kodierung, bei der wir die Kodierung auf -1 und 1 setzen. Beide Kodierungen führen zu den gleichen Ergebnissen. Folgendermaßen könnten wir unsere Hypothese kodieren:
+
+| **Gruppe**  | ***X~1~***\\ |
+|-------------|--------------|
+| Concept Map | -1 / 2       |
+| Testing     | 1 / 2        |
+
+Diese Konstrastkodierung führt dazu, dass der Parameter *b~1~* die Mittelwertsdifferenz der beiden Gruppen kodiert. Indem wir *b~1~* im kompakten Modell auf 0 setzen, können wir testen, ob die Mittelwerte der beiden Gruppen gleich sind. Dies können wir tun, da eine 0 hieße, dass es keine Differenz zwischen den Mittelwerten der beiden Gruppen gibt.
+
+### Aufstellen des statistischen Hypothesenpaares
+
+Wir können den Mittelwertsunterschied der beiden Gruppen durch folgendes Modellpaar testen:
+
+![](images/07_einfaktorielle_varianzanalyse/modela.png)\
+
+Wie du siehst, umfasst das erweiterte Modell zwei Parameter und einen Prädiktor. Das kompakte Modell umfasst nur einen Parameter, da dort der Parameter *b~1~* auf 0 gesetzt wurde. Im kompakten Modell kodiert *b~0~* den Mittelwert der abhängigen Variable. Dies ist in unserem Fall das konzeptuelle Wissen, welches die Studierenden zum Thema Seeotter hatten.
+
+### **Berechnung der Sum of Squares und der Kennwerte**
+
+Nun, da wir das erweiterte und das kompakte Modell kennen, können wir sowohl die Sum of Squares als auch die zentralen Kennwerte berechnen. Es stellt sich heraus, dass der *F*-Wert bei 8.33 liegt für einen solchen Mittelwertsunterschied dieser beiden Gruppen unter der Annahme, dass die Gruppen sich nicht im Mittelwert unterscheiden bei 0.6% liegt. Wir haben damit ein signifikantes Ergebnis.
+
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+| **Source**                                       | ***SS*** | ***df*** | ***MS*** | ***F*** | ***p*** | ***PRE*** |
++==================================================+==========+==========+==========+=========+=========+===========+
+| Reduktion der Fehler durch das erweiterte Modell | 0.290    | 1        | 0.290    | 8.33    | .006\   | 0.15\     |
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+| Error                                            | 1.638    | 47       | 0.035\   | \-      | \-      | \-        |
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+| Total Error\                                     | 1.928    | 48\      | \-       | \-      | \-      | \-        |
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+
+Falls du diese Zahlen nachrechnen möchtest und sehen möchtest, wie ich auf dieses Ergebnis gekommen bin, schau dir die folgende R-Datei an. Dort sind alle Schritte in R nachgerechnet.
+
+TODO: Einfügen Datei buttrick_anova_in_r.R
+
+Nun Buttrick et al. (2018) berichten statt einem *F*-Test einen *t*-Test. Damit meinen sie einen *t*-Test für unabhängige Stichproben: *t*(48) = 2.88, *p* = .006, *r* = 0.39 [95% CI: 0.11, 0.71]. Dieser wird eingesetzt, wenn man die Mittelwerte zweier Gruppen vergleichen möchte. Ebenso berichten sie die Effektgröße *r* = 0.39 als auch ein Konfidenzintervall für die Effektgröße. Zunächst können wir den *t*-Wert berechnen, indem wir die Wurzel auf *F* ziehen. Die Wurzel aus 8.33 ist in der Tat 2.88. Als nächstes berichten Buttrick et al. die gleiche Wahrscheinlichkeit von *p* = .006. Da unser *F*-Test die gleiche Wahrscheinlichkeit ergibt, wissen wir, dass Buttrick et al. *ungerichtet* getestet haben. Sie haben daher getestet, ob Studierende, die sich testen *mehr* oder *weniger* konzeptuelles Wissen erwerben als Studierende, die Concept-Maps erstellen. In der *t*-Verteilung dargestellt, haben sie folgenden beiden Flächen abgetragen:
+
+![](images/07_einfaktorielle_varianzanalyse/pdh.png)
+
+Wäre ihre Hypothese gewesen, dass Studierende, die sich testen, *mehr* konzeptuelles Wissen erwerben als Studierende, die eine Concept-Map anfertigen, hätten sie gerichtet getestet. In diesem Fall hätten sie nur die Fläche rechts des empirischen *t*-Wertes abtragen müssen.
+
+![](images/07_einfaktorielle_varianzanalyse/pdh1.png)
+
+Hierdurch hätte sich die Wahrscheinlichkeit für einen solchen *t*-Wert unter Annahme der Nullhypothese halbiert (von .006 auf 0.0029). 
+
+Ebenso berichten Buttrick et al. eine Effektgröße von *r* = 0.39. Für *t*-Tests ist es in der Regel üblicher eine Effektgröße von Cohen's *d* anzugeben. [Rosnow und Rosenthal (2003)](https://psycnet.apa.org/journals/met/1/4/331.html?uid=1996-06601-001) berichten folgende Formel zur Berechnung der Effektgröße *r* bei einem *t*-Test für unabhängige Stichproben:
+
+![](images/07_einfaktorielle_varianzanalyse/r.png)
+
+*t* kennzeichnet den empirischen *t*-Wert und *df* die Freiheitsgrade des erweiterten Modells. Setzen wir diese Werte in die Formel ein, erhalten wir das gleiche Ergebnis wie Buttrick et al. (2018):
+
+![](images/07_einfaktorielle_varianzanalyse/r1.png)
+
+Wir hätten es uns aber auch einfacher machen können, indem wir *r* aus der Wurzel aus *PRE* berechnen. Erinnere dich aus dem Modul zur einfachen linearen Regression, dass *PRE* auch als *R^2^* bezeichnet wird und das Quadrat des Korrelationskoeffizienten *r* ist. Wenn wir daher die Wurzel aus PRE ziehen, sollten wir *r* erhalten:
+
+![](images/07_einfaktorielle_varianzanalyse/r3.png)
+
+Und so ist es auch. Der Vollständigkeit halber können wir zudem noch die Effektgröße Cohen's *d* berechnen. Du hast bereits gesehen, dass wir *r* dem *t*-Wert und den Freiheitsgraden des erweiterten Modells berechnen können. Ebenso können wir aus diesen beiden Werte durch folgende Formel Cohen's *d* bei einem *t*-Test für unabhängige Stichproben berechnen:
+
+![](images/07_einfaktorielle_varianzanalyse/d.png)
+
+Mehr Informationen zur Umrechnung von Effektgrößen findest du [hier](https://www.psychometrica.de/effect_size.html).
+
+### Zusammenfassung
+
+Entscheidend für uns ist an dieser Stelle, dass wir gezeigt haben, dass wir den *t*-Test für unabhängige Stichproben durch unser gängiges Verfahren berechnen konnten. Ein entscheidender Schritt dorthin war die Aufstellung eines Kontrastes, der es ermöglicht die Gruppenzugehörigkeit in numerische Werte zu überführen. Durch die Wahl eines Helmert-Kontrasts konnten wir das erweiterte Modell so aufstellen, dass der Parameter *b~1~* für den Mittelwertsunterschied der beiden Gruppen steht. Zum Schluss haben wir gezeigt, dass der *t*-Wert die Wurzel aus dem *F*-Wert ist und dass man Effektgrößen mit verschiedenen Formeln umrechnen kann.
+
+## Einfaktorielle Varianzanalyse (ANOVA)
+
+Das Ziel dieses Submoduls ist folgende Forschungsfrage zu beantworten: Macht es für die Erinnerungsleistung aus einem Vortrag einen Unterschied, mit welchem Medium Studierende während des Vortrags mitschreiben. Genauer möchten wir in diesem Submodul mit Hilfe des Datensatzes von [Morehead et al. (2014)](https://link.springer.com/article/10.1007/s10648-019-09468-2) klären, ob Studierende, die während einem Vortrag per Hand mitschreiben mehr aus einem Vortrag behalten als Studierende, die mit einem Laptop beziehungsweise einem E-Writer mitschreiben. Morehead et al. (2014) haben diese Fragestellung zwar nicht in dieser Form explizit in ihrem Artikel gestellt, da sie eine sogenannte mehrfaktorielle Varianzanalyse berechnet haben, allerdings zweckentfremden wir den Datensatz in diesem Fall für unsere Fragestellung, da wir bisher noch nichts über die mehrfaktorielle Varianzanalyse erfahren haben.
+
+Wir werden erneut folgendes Prozedere verwenden: Zunächst überlegen wir uns die Kontrastkodierung für unsere Gruppen. Anschließend berechnen wir das erweiterte und kompakte Modell auf Grundlage dieser Kontrastkodierung. Anschließend berechnen wir zwei Tests. Einen allgemeinen *F*-Test mit einem Freiheitsgrad von 2, mit welchem wir prüfen, ob es überhaupt Mittelwertsunterschiede zwischen den drei Gruppen gibt. Dieser Test wird allerdings nicht unsere eigentliche Fragestellung beantworten. Daher testen wir als nächstes einen spezifischen Kontrast, der prüft, ob Studierende, die während einem Vortrag per Hand mitschreiben mehr aus einem Vortrag behalten als Studierende, die mit einem Laptop beziehungsweise einem E-Writer mitschreiben.
+
+### **Aufstellen der Kontrastkodierung**
+
+Beginnen wir erneut damit, die Kontraste zu definieren. Und verwenden wir erneut einen Helmert-Kontrast, welcher uns ermöglicht, die Parameter des erweiterten Modells als Mittelwertsunterschiede der Gruppen darzustellen. Da wir drei Gruppen haben, benötigen wir in unserem erweiterten Modell zwei Prädiktoren und drei Parameter. Folgende Kontrastkodierung kodiert unsere Fragestellung (siehe *X~1~*):
+
++------------+------------+------------+
+| **Gruppe** | ***X~1~*** | ***X~2~*** |
++============+============+============+
+| per Hand   | 2 / 3      | 0          |
++------------+------------+------------+
+| Laptop     | -1 / 3     | 1 / 2      |
++------------+------------+------------+
+| E-Writer\  | -1 / 3     | -1 / 2     |
++------------+------------+------------+
+
+Diese Konstrastkodierung führt dazu, dass der Parameter *b~1~* die Mittelwertsdifferenz der Gruppe der Studierenden, welche per Hand schreiben und der anderen beiden Gruppen kodiert. Wir werden gleich zeigen, dass das stimmt. Der zweite Kontrast führt dazu, dass *b~2~* die Mittelwertsdifferenz der Laptopgruppe und der E-Writer-Gruppe kodiert.
+
+### Allgemeiner F-Test
+
+Wir haben zu Beginn dieses Submoduls gesagt, dass wir zwei *F*-Tests berichten. Zunächst berechnen wir einen allgemeinen *F*-Test, durch welchen wir prüfen können, ob sich irgendwelche Mittelwerte zwischen den drei Gruppen unterscheiden. Dieser Test heißt allgemein, da der Freiheitsgrad des erweiterten Modells größer als 1 ist. Immer wenn dies der Fall ist, ist eine Interpretation der Ergebnisse schwierig. Beispielsweise können wir auf Grundlage dieses Ergebnisses nicht herausfinden, welche Gruppen sich voneinander unterscheiden. Dennoch, der allgemeine *F*-Test wird durch alle gängigen Softwares berichtet und wir sollten daher wissen, welche Fragestellung er testet.
+
+#### **Aufstellen des Hypothesenpaares**
+
+Bei dem allgemeinen *F*-Test prüfen wir, ob es irgendwelche Mittelwertsunterschiede zwischen den drei Gruppen gibt. Hierzu setzen wir sowohl die Parameter *b~1~* und *b~2~* im kompakten Modell auf 0:
+
+![](images/07_einfaktorielle_varianzanalyse/modelac.png)
+
+Da wir einen Helmert-Kontrast verwenden, wissen wir, dass *b~0~* im erweiterten Modell den Mittelwert der drei Gruppenmittelwerte kodiert. *b~1~* kodiert den Mittelwertsunterschied zwischen den Studierenden, die per Hand mitschrieben und den Studierenden, die mit einem E-Writer bzw. einem Laptop mitschrieben. *b*~2~ kodiert den Mittelwertsunterschied zwischen diejenigen Studierenen, die mit dem Laptop mitschrieben und diejenigen Studierenden, die mit einem E-Writer mitschrieben. 
+
+*b~0~* im kompakten Modell kodiert den Mittelwert der abhängigen Variable. In unserem Fall ist die abhängige Variable das konzeptuelle Wissen der Studierenden aus dem Vortrag.
+
+Folgende Modelle erhalten wir:
+
+![](images/07_einfaktorielle_varianzanalyse/modelac1.png)
+
+Ein Blick auf die Mittelwerte der Gruppen zeigt uns, dass die Parameter in der Tat die Mittelwertsunterschiede der Gruppen kodieren. Beispielsweise liegt *b~1~* bei 0.028. Dies ist der Mittelwertsunterschied der per Hand-Gruppe und den restlichen beiden Gruppen: 0.269 - ((0.25 + 0.233) / 2) = 0.028.
+
+![](images/07_einfaktorielle_varianzanalyse/morehead.png)
+
+#### Berechnung der Kennwerte
+
+Nun, da wir das Modellpaar kennen, können wir den F-Wert berechnen:
+
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+| **Source**\\                                     | ***SS*** | ***df*** | ***MS*** | ***F*** | ***p*** | ***PRE*** |
++==================================================+==========+==========+==========+=========+=========+===========+
+| Reduktion der Fehler durch das erweiterte Modell | 0.017    | 2        | 0.0085   | 0.386   | 0.68    | 0.01\     |
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+| Error                                            | 1.770    | 80       | 0.022    | \-      | \-      | \-        |
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+| Total Error                                      | 1.787\   | 82       | \-       | \-      | \-      | \-        |
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+
+Die genauen Schritte zur Berechnung dieser Kennwerte kannst du erneut in folgendem R-Skript nachrechnen. Ich erwarte nicht, dass du das Skript komplett verstehst. Es ist eher für interessierte Studierende gedacht, die wissen wollen, wie die Kennwerte berechnet werden.
+
+TODO: Einfügen Datei morehead_allgemeiner_f\_test.R
+
+Wir erhalten ein nicht-signifkantes Ergebnis. Das heißt, der Mittelwertsunterschied, welchen wir in unserer Stichprobe erhalten haben, ist nicht sonderlich unwahrscheinlich, wenn wir annehmen, dass es in Wirklichkeit keinen Mittelwertsunterschied zwischen den Gruppen gibt. Wir bleiben daher bei der Nullhypothese, dass es keinen Mittelwertsunterschied zwischen den drei Gruppen gibt.
+
+### Testen der spezifischen Hypothese
+
+Der allgemeine *F*-Test wird von fast allen Softwares berichtet, er beantwortet allerdings nicht unsere Fragestellung. Wir wollten wissen, ob Studierende, die per Hand mitschreiben mehr aus einem Vortrag lernen als Studierende, die mit einem technischen Gerät mitschreiben (Laptop oder E-Writer). Es kann der Fall eintreten, dass der allgemeine *F*-Test keine Signifikanz zeigt, ein spezifischer Kontrast aber schon. Prüfen wir daher diese Hypothese mit Hilfe einer Kontrastanalyse.
+
+#### **Aufstellen des statistischen Modellpaares**
+
+Beginnen wir mit den beiden Modellen. Das erweiterte Modell ist das gleiche Modell wie beim allgemeinen *F*-Test. Die beiden Parameter *b~1~* und *b~2~* kodieren die im Helmert-Kontrast kodierten Kontraste. Im kompakten Modell nehmen wir an, dass der Mittelwertsunterschied zwischen den Studierenden, die per Hand mitschreiben mit den Studierenden, die mit einem technischen Gerät mitschreiben gleich ist. Wir berechnen daher ein Modell, bei dem *b~1~* auf 0 gesetzt wird.
+
+![](images/07_einfaktorielle_varianzanalyse/modela2.png)
+
+Folgende Modelle erhalten wir (siehe Bild unten). Wie du siehst, sind die Werte bei *b~0~* und *b~2~* zwischen beiden Modellen unterschiedlich. Dies ist dadurch zu erklären, dass wir die Parameter für jedes Modell eigens berechnen. Die Zahlen ändern sich allerdings nur minimal, da wir orthogonale Kontraste berechnet haben.
+
+![](images/07_einfaktorielle_varianzanalyse/modela3.png)
+
+#### Berechnung der Kennwerte
+
+Nun, da wir die Modelle berechnet haben, können wir die Kennwerte berechnen und berichten:
+
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+| **Source**\\                                     | ***SS*** | ***df*** | ***MS*** | ***F*** | ***p*** | ***PRE*** |
++==================================================+==========+==========+==========+=========+=========+===========+
+| Reduktion der Fehler durch das erweiterte Modell | 0.013    | 1        | 0.014    | 0.61    | 0.436   | 0.008\    |
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+| Error                                            | 1.770    | 80       | 0.022    | \-      | \-      | \-        |
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+| Total Error                                      | 1.784\   | 81       | \-       | \-      | \-      | \-        |
++--------------------------------------------------+----------+----------+----------+---------+---------+-----------+
+
+Erneut findest du anbei das R-Skript, mit denen ich diese Kennwerte berechnet habe:
+
+TODO: Einfügen Datei morehead_spezifischer_test.R
+
+Wir erhalten erneut ein nicht-signifikantes Ergebnis. Dies bedeutet, dass wir weiter davon ausgehen, dass Studierende, die per Hand bei einem Vortrag mitschreiben sich an genauso viel aus dem Vortrag erinnern wie Studierende, die mit einem technischen Gerät mitschreiben.
+
+Zum Schluss müssen wir noch eine Korrektur vornehmen: Wir wollten wissen, ob Studierende, die per Hand mitschreiben *mehr* aus einem Vortrag lernen als Studierende, die mit einem technischen Gerät mitschreiben. Der *F*-Test testet allredings ungerichtet, weshalb wir in unserem Fall den *p*-Wert halbieren müssen. Das können wir, da die Mittelwerte der Gruppen hypothesenkonform sind. Das heißt, die Differenz des Mittelwerts der Studierenden, die per Hand mitgeschrieben haben ist um 0.02758 größer als der Studierenden, die mit einem technischen Gerät mitgeschrieben haben. Der korrekte *p*-Wert lautet daher *p* = .218.
+
+### Zusammenfassung
+
+Wir haben in diesem Modul gezeigt, wie und was wir mit einer einfaktoriellen Varianzanalyse berechnen. Dabei haben wir gesehen, dass der *t*-Test für unabhängige Stichproben und die einfaktorielle Varianzanalyse sich nur in der Anzahl der Parameter im erweiterten Modell unterscheiden. Beim *t*-Test für unabhängige Stichproben hat das erweiterte Modell zwei Parameter und maximal einen Kontrast. Bei einer einfaktoriellen Varianzanalyse gibt es unendliche viele Möglichkeiten in der Anzahl der Parameter. Beide Tests verwenden allerdings die gleiche Prozedur, welche wir bereits kennen.
+
+## Post-Hoc Analysen
+
+In den letzten beiden Submodulen haben wir Hypothesen getestet. Das heißt, wir hatten Annahmen, die wir statistisch geprüft haben. Das Gegenteil dieser Vorgehensweise sind sogenannte Post-Hoc Tests oder explorative Tests. Manchmal haben wir keine konkrete Hypothese und möchten alle Gruppenvergleiche in einer einfaktoriellen Varianzanalyse testen. Dies schafft allerdings das Problem der Alpha-Fehler Kumulierung.
+
+### Alpha-Fehler Kumulierung
+
+Wir wissen aus dem Modul zum statistischen Hypothesentesten, dass wir bei einem Alpha-Niveau von 5% in 5% der Fälle die Nullhypothese fälschlicherweise ablehnen. Beispielsweise könnte es sein, dass Studierende, die per Hand mitschreiben tatsächlich mehr aus einem Vortrag lernen als Studierende, die mit einem technischen Gerät mitschreiben. Je mehr Tests wir allerdings rechnen, desto höher wird die Wahrscheinlichkeit, dass wir einen Alpha-Fehler erhalten. Wir können diese Wahrscheinlichkeit berechnen. Im folgenden siehst du, wie diese sogenannte Family-Wise-Error-Rate berechnet wird:
+
+![](images/07_einfaktorielle_varianzanalyse/fwe.png)\
+
+α steht für das Alpha-Niveau und *c* für die Anzahl der Tests. Nehmen wir an, du hast zu Beginn deiner Studie keine Hypothesen und vergleichst 3 Gruppen nach ihrer Signifikanz. Beispielsweise jene drei Gruppen aus unserem letzten Submodul (Mitschrift per Hand, Laptop und E-Writer). In diesem Fall läge die Wahrscheinlichkeit für einen Alpha-Fehler (sofern die Nullhypothese stimmt) bei 14.3%. Bei 10 Tests wiederum läge diese Wahrscheinlichkeit bei 40%. Bei 20 Tests wiederum bei 64%. Grafisch dargestellt siehst du, dass bei 80 Tests die Chance für einen Alpha-Fehler bei fast 100% liegt.
+
+![](images/07_einfaktorielle_varianzanalyse/alpha.png)
+
+### **Bedeutung der Alpha-Fehler Kumulierung für die statistische Praxis**
+
+Stell dir folgenden ethisch-fragwürdigen Forscher mit dem Namen Professor Müller vor: Professur Müller möchte auf jeden Fall zeigen, dass er signifikante Ergebnisse in einem Experiment gefunden hast. Zwar weißt du mittlerweile, dass die Signifikanz nicht mit der praktischen Bedeutsamkeit gleichzusetzen ist, allerdings glaubt Professor Müller dennoch, signifikanz bedeutet wichtig. Herr Müller hatte eine Hypothese, die er anhand von 5 Gruppen und einer einfaktoriellen Varianzanalyse getestet hat. Er erhielt ein nicht-signifikantes Ergebnis und war enttäuscht. Er will jedoch etwas "rausbekommen". Daher vergleicht er einfach alle Mittelwertsvergleiche durch *t*-Tests. Bei fünf Tests liegt die Wahrscheinlichkeit für einen Alpha-Fehler bei 22,6%. Tatsächlich findet er ein signifikantes Ergebnis und schreibt seinen Artikel so um als hätte er von Beginn an, an diesen Mittelwertsunterschied geglaubt.
+
+Dieses Verfahren wird auch als [Harking ](https://journals.sagepub.com/doi/pdf/10.1207/s15327957pspr0203_4)bezeichnet (Hypothesizing after the results are known). Harking geschieht, wenn Wissenschaftler\*innen explorative Analysen als Hypothesen ausgeben, die sie von Anfang an aufgestellt haben. Harking ist problematisch, da es dazu führt, dass mehr Alpha-Fehler als Effekte berichtet werden als wenn Wissenschaftler\*innen bei ihren Hypothesen bleiben, die sie vor einem Experiment aufgestellt haben. Und eine Methode hierfür ist, bei einer einfaktoriellen Varianzanalyse alle Gruppenvergleiche zu rechnen und nur die signifikanten zu berichten. In anderen Worten, eine explorative Analyse wird als Hypothese ausgegeben (siehe auch [Gernsbacher, 2018)](https://journals.sagepub.com/doi/abs/10.1177/2515245918754485). Wir sollten daher bei explorativen Analysen immer sogenannte Post-Hoc Tests (explorative Analysen) die Alpha-Fehler-Kumulierung kontrollieren. Es gibt viele Tests, die uns das ermöglichen. Wir lernen an dieser Stelle die bekannteste kennen: Die Bonferroni-Korrektur.
+
+### Bonferroni-Korrektur
+
+Die einfachste Methode, um sicher zu stellen, dass sich die Alpha-Fehler nicht mit der Anzahl der Tests kumulieren ist die Bonferroni-Korrektur. Bei der Bonferroni-Korrektur wird der Alpha-Fehler durch die Anzahl der Tests geteilt:
+
+![](images/07_einfaktorielle_varianzanalyse/bon.png)
+
+Wenn du beispielsweise drei Gruppenvergleiche explorativ testest, teilst du das Alpha-Niveau von 0.05 durch 3. Dadurch entscheidest du dich für ein signifikantes Ereignis nur dann, wenn *p* für jeden Test unter den Wert 0.0167 fällt. 
+
+Die Bonferroni-Korrektur hat den Nachteil, dass sie sehr konservativ ist und zu einer geringeren Power führt (siehe [VanderWeele & Mathur, 2019](https://academic.oup.com/aje/article/188/3/617/5193218)). Falls also ein Effekt vorliegt, verringert sich durch dieses Korrekturverfahren die Wahrscheinlichkeit, dass wir diesen Effekt finden. Dies ist dadurch zu erklären, dass wir die Nullhypothese erst ablehnen, wenn der empirische *p*-Wert unter dem korrigiertem kritischen *p*-Wert fällt.
+
+In Jamovi wird die Bonferroni-Korrektur nicht dadurch angegeben, dass der kritische *p*-Wert adjustiert wird, sondern, indem der empirische *p*-Wert angepasst wird. Dies geschieht, indem der empirische *p*-Wert mal der Anzahl der Tests gerechnet wird. Erhält man aus drei Tests beispielsweise die *p*-Werte .03, .01 und .02, dann werden diese jeweils mal drei gerechnet: .09, .03, .06.
+
+### Zusammenfassung und weitere Korrekturmethoden
+
+Es gibt eine ganze Reihe weiterer Korrekturverfahren, die wir in diesem Seminar nicht beantworten werden. Mehr Informationen zu diesen Testverfahren kannst du bei [Shaffer (1995)](https://www.annualreviews.org/doi/pdf/10.1146/annurev.ps.46.020195.003021) finden. Für unsere Zwecke ist es wichtig zu wissen, dass der Alpha-Fehler bei einer Reihe explorativer Tests kontrolliert werden sollte. Ansonsten läuft man Gefahr, zu oft Alpha-Fehler zu machen.
+
+## Berechnung in Jamovi
+
+In den folgenden Videos erkläre ich dir, wie die drei Tests dieses Moduls in Jamovi berechnet werden.
+
+### t-Test für unabhängige Stichproben
+
+TODO: Einfügen Video
+
+### einfaktorielle Varianzanalyse
+
+TODO: Einfügen Video
+
+### Kontrastanalyse
+
+TODO: Einfügen Video
+
+TODO: Stand vorher schon drin:
 
 -   Welch-Test nicht vergessen

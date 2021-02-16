@@ -1,6 +1,6 @@
 # Multiple lineare Regression
 
-## Einführung 
+## Einführung
 
 Im letzten Modul haben wir herausgefunden, dass sich Studierende besser an die Inhalte eines Vortrags erinnern können, je mehr sie während des Vortrags mitschreiben. Wir haben allerdings auch heraus gefunden, dass der Effekt klein ist, da er nur 5% der Varianz in der Erinnerungsfähigkeit aufklären konnte. Nun möchten wir zwei Zusammenhangsypothesen testen. Du hast beobachtet, dass viele deiner Kommilitonen eine wortwörtliche Mitschrift des Vortrags anfertigen. Sie kopieren sozusagen die Worte der Professorin exakt so ab wie die Professorin spricht. Du hast allerdings gehört, dass Organisations- und Elaborationsstrategien hilfreich sind, um sich viel aus einer Vorlesung zu merken. Indem man zum Beispiel das neue Wissen mit dem bestehenden Wissen verbinden (Elaboration) oder die Konzepte für sich strukturiert (Organisation). Du glaubst daher, dass die wörtliche Überlappung der Mitschrift einen negativen Einfluss auf die Erinnerungsfähigkeit aus der Vorlesung haben sollte. Oder in anderen Worten, je mehr Überlappung es gibt, desto schlechter sollten Studierende bei einem späteren Test abschneiden. Nun könntest du erneut eine einfache lineare Regression mit der Überlappung als Prädiktor testen. Besser wäre es jedoch beide Fragestellungen gleichzeitig in einem Modell zu kodieren und zu testen. Und dies sind die Fragestellungen, die wir in diesem Modul testen werden:
 
@@ -24,7 +24,7 @@ Die Erklärung der Variablen findest du hier:
 
 TODO: Einfügen Doc variablen.dox
 
-## Statistisches Modell der multiplen Regression 
+## Statistisches Modell der multiplen Regression
 
 Im letzten Modul haben wir das Modell der einfachen linearen Regression kennen gelernt. Der Parameter *ß~1~* des Modells kodierte die Korrelation der abhängigen und unabhängigen Variable. Zudem hatte das Modell einen metrischen Prädiktor *X~1.~*
 
@@ -46,7 +46,7 @@ Nun möchten wir zwei Zusammenhänge testen: Steht die wörtliche Überlappung u
 
 Im Unterschied zur einfachen lineraen Regression können wir uns dieses Modell nicht mehr als Linie vorstellen. Bei zwei Prädiktoren kann man das Modell hingegen als eine Fläche darstellen. Bei mehr als zwei Prädiktoren lässt sich die multiple lineare Regression nicht mehr grafisch darstellen.
 
-### Berechnung des Modells 
+### Berechnung des Modells
 
 Für die Berechnung der Regressionskoeffizienten gilt erneut, dass wir das Modell mit den Parametern suchen, welches die quadrierten Fehler maximal reduziert:
 
@@ -66,7 +66,7 @@ Du kannst du Parameter des Modells sehr schnell berechnen, indem du folgendem Co
 
 Wir haben nun etabliert, was die multiple Regression von der einfachen linearen Regression unterscheidet. Als nächstes werden wir heraus finden, wie wir die Koeffzienten dieses Modells interpretieren können.
 
-## Partielle Regressionskoeffizienten 
+## Partielle Regressionskoeffizienten
 
 ### ***b~1~*** **der einfachen Regression ist nicht *b~1~* der multiplen Regression mit dem gleichen Prädiktor**
 
@@ -94,7 +94,7 @@ Der Regressionskoeffizient *b~1~* der multiplen linearen Regression ist demnach 
 
 Ebenso müssen wir *b~2~* in Abhängigkeit der anderen Variable definieren. Diese würden wir wie folgt definieren: Für jedes Prozent Überlappung, welches eine Studentin in Anbetracht der Worte ihrer Mitschrift mehr hat, erwarten wir, dass diese Studentin 0.061134 Prozentpunkte besser abschneidet als man für die Anzahl der Wörter in der Mitschrift erwarten würde.
 
-### Zusammenfassung 
+### Zusammenfassung
 
 Wir haben in diesem Submodul gezeigt, dass der Regressionskoeffizient einer einfachen linearen Regression bei dem gleichen Prädiktor nicht mit dem Regressionskoeffizient einer multiplen linearen Regression gleichzusetzen ist. Dies liegt darin, dass Prädiktoren in der Regel miteinander korrelieren und daher einen Teil der Varianz in der abhängigen Variable gemeinsam aufklären. Was wir in der multiplen linearen Regression erhalten sind partielle Regressionskoeffizienten. Das bedeutet, die Regressionskoeffizienten in der multiplen linearen Regression werden immer in Abhängigkeit des anderen Prädiktors definiert. Im statistischen Sprachgebrauch würden wir auch sagen, wir *kontrollieren für einen anderen Prädiktor*. Das heißt, wir fragen uns, welchen Einfluss ein Prädiktor auf die abhängige Variable hat, wenn der andere Prädiktor gleich gehalten wird. Für die Interpretation der statistischen Tests macht diese veränderte Definition der Koeffizienten keinen Unterschied. Indem wir die Prädiktoren bei der Nullhypothese auf Null setzen, können wir immer noch den Zusammenhang zweier Variablen testen.
 
@@ -116,19 +116,19 @@ Hypothesen, die auf diesem Modellpaar beruhen, sind allerdings nicht sonderlich 
 
 Rechnen wir diesen Test, erhalten wir folgendes Ergebnis:
 
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
-| **Source**                                       | ***SS*** | ***df*** | ***MS*** | ***F*** | ***p*** | ***PRE / R^2^***\ |
-+==================================================+==========+==========+==========+=========+=========+===================+
-| Reduktion der Fehler durch das erweiterte Modell | 0.145    | 2        | 0.0726   | 2.95    | 0.058   | 0.068\            |
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
-| Error\                                           | 1.99     | 81\      | 0.0245   | \-      | \-      | \-                |
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
-| Total Error                                      | 2.136    | \-       | \-       | \-      | \-      | \-                |
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
+| **Source**                                       | ***SS*** | ***df*** | ***MS*** | ***F*** | ***p*** | ***PRE / R^2^***\\ |
++==================================================+==========+==========+==========+=========+=========+====================+
+| Reduktion der Fehler durch das erweiterte Modell | 0.145    | 2        | 0.0726   | 2.95    | 0.058   | 0.068\             |
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
+| Error\                                           | 1.99     | 81\      | 0.0245   | \-      | \-      | \-                 |
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
+| Total Error                                      | 2.136    | \-       | \-       | \-      | \-      | \-                 |
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
 
 Wir erhalten ein nicht-signifikantes Ergebnis. Wir behalten demnach die Annahme, dass der Zusammenhang aller Prädiktoren mit der abhängigen Variable gleich ist.
 
-### **Angepasstes  *R^2^ (adjusted R^2^)***
+### **Angepasstes *R^2^ (adjusted R^2^)***
 
 Sobald wir mehrere Prädiktoren in eine multiple Regression hinzu nehmen, sollten wir vorsichtig sein, *R^2^* zu interpretieren. Denn, mit jedem Parameter, den wir in die multiple Regression hinzufügen, verbessert sich *R^2^* automatisch. Ein trickreiche Forscherin könnte daher künstlich ein hohes *R^2^* schaffen, indem sie viele Parameter in das Modell hinzufügt. Um diesem Trick zu entgehen, müssen wir einen Weg finden, ein *R^2^* zu finden, welches unabhängig der Anzahl der weiteren Parameter des erweiterten Modells ist. Folgende Formel ermöglicht diese Anpassung:
 
@@ -141,7 +141,7 @@ Berechnen wir das angepasste *R^2^* erhalten wir einen Wert von 4.5%.
 
 Das angepasste *R^2^* ist daher kleiner als *R^2^.* Es ist allerdings dem herkömmlichen *R^2^* vorzuziehen, da es für die Anzahl der weiteren Parameter kontrolliert. Wenn du zukünftig daher eine multiple lineare Regression aufstellst, ist es wichtig das angepasste *R^2^* zu verwenden.
 
-### Der Zusammenhang zwischen der Anzahl der Worte und der Erinnerungsleistung aus dem Vortrag 
+### Der Zusammenhang zwischen der Anzahl der Worte und der Erinnerungsleistung aus dem Vortrag
 
 Unsere eigentliche Frage allerdings der Zusammenhang der beiden Variablen mit der Erinnerungsleistung aus dem Vortrag. Beginnen wir mit dem Zusammenhang zwischen der Anzahl der Worte und der Erinnerungsleistung. Wir wissen, dass der Parameter *b~1~* für den Zusammenhang zwischen der Variable *wordcount* und der Erinnerungsleistung aus dem Vortrag steht. Indem wir nur diesen Parameter im kompakten Modell auf Null setzen, können wir den Zusammenhang der beiden Variablen testen. Wir werden immer wieder in diesem Kurs so vorgehen: Parameter kodieren unsere Fragestellungen an den Datensatz. Bei der einfachen und multiplen Regression kodieren die Parameter den Zusammenhang zweier Variablen. Die Nullhypothese nimmt an, dass dieser Zusammenhang 0 beträgt, daher setzen wir den Parameter im kompakten Modell auf 0. Tun wir dies, erhalten wir folgendes Modellpaar:
 
@@ -155,25 +155,25 @@ TODO: Einfügen Video
 
 Zusammengefasst lauten die Ergebnisse des Tests folgendermaßen:
 
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
-| **Source**                                       | ***SS*** | ***df*** | ***MS*** | ***F*** | ***p*** | ***PRE / R^2^***\ |
-+==================================================+==========+==========+==========+=========+=========+===================+
-| Reduktion der Fehler durch das erweiterte Modell | 0.1346   | 1        | 0.13     | 5.48    | 0.022   | 0.063\            |
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
-| Error\                                           | 1.99     | 81\      | 0.0245   | \-      | \-      | \-                |
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
-| Total Error                                      | 2.125    | \-       | \-       | \-      | \-      | \-                |
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
+| **Source**                                       | ***SS*** | ***df*** | ***MS*** | ***F*** | ***p*** | ***PRE / R^2^***\\ |
++==================================================+==========+==========+==========+=========+=========+====================+
+| Reduktion der Fehler durch das erweiterte Modell | 0.1346   | 1        | 0.13     | 5.48    | 0.022   | 0.063\             |
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
+| Error\                                           | 1.99     | 81\      | 0.0245   | \-      | \-      | \-                 |
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
+| Total Error                                      | 2.125    | \-       | \-       | \-      | \-      | \-                 |
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
 
 Aufgrund des signifikanten Ergebnisses gehen wir nun davon aus, dass die Annahme, dass die beiden Variablen nicht miteinander korrelieren, falsch ist. Wir entscheiden uns daher gegen die Nullhypothese.
 
-### t-Test als Alternative 
+### t-Test als Alternative
 
 Wie immer können wir bei einem erweiterten Modell, welches einen Parameter mehr hat als das kompakte Modell einen *t*-Test berechnen. *t* ist die Wurzel aus *F*, daher beträgt *t* 2.34. Der p-Wert ändert sich durch diese Umstellung nicht, da wir eine ungerichtete Hypothese haben; es gibt einen Zusammenhang, wir sagen nicht, in welche Richtung der Zusammenhang liegt. Wir können daher das Ergebnis berichten:
 
-> "Um zu testen, ob die Anzahl der Worte in der Mitschrift mit der Erinnerungsleistung des Vortrags im Zusammenhang steht, wurde eine multiple lineare Regression mit der Anzahl der Worte als unabhängige und dem Erinnerungsleistungstest als abhängige Variable gerechnet. Wir fanden einen signifikanten Zusammenhang, *t*(81) = 2.34, *p* = .022, *R^2^ **=*** 0.63."
+> "Um zu testen, ob die Anzahl der Worte in der Mitschrift mit der Erinnerungsleistung des Vortrags im Zusammenhang steht, wurde eine multiple lineare Regression mit der Anzahl der Worte als unabhängige und dem Erinnerungsleistungstest als abhängige Variable gerechnet. Wir fanden einen signifikanten Zusammenhang, *t*(81) = 2.34, *p* = .022, *R^2^**=*** 0.63."
 
-### Der Zusammenhang zwischen der Anzahl der Worte und der Erinnerungsleistung aus dem Vortrag 
+### Der Zusammenhang zwischen der Anzahl der Worte und der Erinnerungsleistung aus dem Vortrag
 
 Als nächstes möchten wir heraus finden, ob die wörtliche Überlapppung in den Texten in einem negativen Zusammenhang mit der Erinnerungsleistung im Test steht. Wir sind davon ausgegangen, dass Lernende durch das wörtliche Abschreiben des Vortrags wenige Elaborations- und Organisationsstrategien verwenden und daher weniger von der Mitschrift profitieren sollten als Lernende, die wenig wörtlich mitschreiben.
 
@@ -183,15 +183,15 @@ Um diese Hypothese zu testen, setzen wir im kompakten Modell den Parameter *β~2
 
 Ist *ß~2~* wirklich 0, sprich gibt es keine Zusammenhang der beiden Variablen, sollten wir in nur 5% der Fälle ein signifikantes Ergebnis bei diesem Test erhalten. Folgende Ergebnisse erhalten wir durch diesen Test:
 
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
-| **Source**                                       | ***SS*** | ***df*** | ***MS*** | ***F*** | ***p*** | ***PRE / R^2^***\ |
-+==================================================+==========+==========+==========+=========+=========+===================+
-| Reduktion der Fehler durch das erweiterte Modell | 0.035    | 1        | 0.035    | 1.43    | 0.2348  | 0.017\            |
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
-| Error\                                           | 1.99     | 81\      | 0.0245   | \-      | \-      | \-                |
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
-| Total Error                                      | 2.026    | \-       | \-       | \-      | \-      | \-                |
-+--------------------------------------------------+----------+----------+----------+---------+---------+-------------------+
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
+| **Source**                                       | ***SS*** | ***df*** | ***MS*** | ***F*** | ***p*** | ***PRE / R^2^***\\ |
++==================================================+==========+==========+==========+=========+=========+====================+
+| Reduktion der Fehler durch das erweiterte Modell | 0.035    | 1        | 0.035    | 1.43    | 0.2348  | 0.017\             |
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
+| Error\                                           | 1.99     | 81\      | 0.0245   | \-      | \-      | \-                 |
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
+| Total Error                                      | 2.026    | \-       | \-       | \-      | \-      | \-                 |
++--------------------------------------------------+----------+----------+----------+---------+---------+--------------------+
 
 Das Ergebnis zeigt uns, dass unsere Annahme inkorrekt ist. Der *p*-Wert ist nicht signifikant und liegt bei 23.48%. Dieses Ergebnis ist unter Annahme der Nullhypothese durchaus vorstellbar.
 
@@ -209,7 +209,7 @@ Wenn du beide Wahrscheinlichkeiten zusammen rechnest, erhältst du den *p*-Wert,
 
 Wir sind davon ausgegangen, dass der Korrelationskoeffizient kleiner als 0 ist, daher müssen wir die Fläche links des empirischen *t*-Wertes abtragen. Und diese Wahrscheinlichkeit beträgt 88.3%. Jamovi und andere statistische Softwares haben nicht immer eine Funktion Korrelationen gerichtet zu testen. Du erkennst daher an diesem Beispiel, dass wir in der Auswertung statistischer Ergebnisse nicht blind den Ergebnissen der Tests folgen sollten, sondern unsere Ergebnisse immer mit unseren Hypothesen abgleichen müssen.
 
-### Konfidenzintervalle 
+### Konfidenzintervalle
 
 Unsere beiden Tests konnten uns zeigen, ob wir uns auf Grundlage der Daten für die Null- oder Alternativhypothese entscheiden sollen. In anderen Worten, der *F*-Test oder der *t*-Test zeigt uns, wie wir handeln sollen. Die Ergebnisse der Tests deuten darauf hin, dass wir annehmen sollten, dass die Anzahl der Worte der Mitschrift in einem Zusammenhang mit der Erinnerungsleistung aus dem Vortrag steht und dass die wörtliche Überlappung in der Mitschrift in keinem Zusammenhang mit der Erinnerungsleistung aus dem Vortrag steht.
 
@@ -235,11 +235,11 @@ Wir könnten das gleiche für den anderen Parameter des Prädiktors machen. Dies
 
 TODO: Einfügen Datei ci_overlap.R
 
-### Zusammenfassung 
+### Zusammenfassung
 
 Wir haben in diesem Submodul drei Fragestellungen der multiplen linearen Regression getestet. Zunächst haben wir einen allgemeinen *F*-Test mit einem Freiheitsgrad von 2 gerechnet und erkannt, dass dieser Test uns keine hilfreichen Informationen zu unseren Hypothesen gibt. Im Anschluss haben wir zwei Tests gerechnet, bei denen wir getestet haben, ob die Anzahl der Worte und die Überlappung in der Mitschrift mit der Erinnerungsleistung aus dem Vortrag korreliert. Wir haben erkannt, dass wir für beide Tests ebenso einen *t*-Test berechnen können, da bei beiden Modellpaaren das erweiterte Modell einen Parameter mehr hat als das kompakte Modell. Ebenso haben wir gezeigt, dass wir bei der Interpretation des *p*-Wertes immer die Hypothese im Hinterkopf behalten müssen, um den p-Wert korrekt zu ermitteln. Am Ende des Submoduls haben wir gezeigt, wie standardisierte Konfidenzintervalle bei der multiplen Regression berechnet werden.
 
-## Berechnung in Jamovi 
+## Berechnung in Jamovi
 
 In folgendem Video siehst du, wie die multiple Regression in Jamovi und R berechnet werden kann:
 
