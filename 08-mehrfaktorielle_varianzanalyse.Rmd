@@ -1,4 +1,4 @@
-# Mehrfaktorielle Varianzanalyse
+# tatusMehrfaktorielle Varianzanalyse
 
 ## Einführung
 
@@ -298,11 +298,15 @@ Bei einem Interaktionseffekt prüfen wir in der Regel die Interaktion aller Fakt
 
 Wie du erkennst, haben wir die Parameter *b~4~* und *b~5~* auf 0 geschaltet. Mit dem zugehörigen *F*-Test prüfen wir, ob der Haupteffekt der Lehrstrategie abhängig ist von der Expertise der Personen. Wir wissen aber auch, dass der Haupteffekt nur sagt, dass sich Gruppen voneinander unterscheiden, nicht, welche Gruppen sich voneinander unterscheiden. Bei einem signifikanten Effekt können wir daher lediglich sagen, dass es beispielsweise bei den Noviz\*innen einen Effekt der Lehrstrategien gibt, nicht aber bei den Expert\*innen. Testen wir diese Annahme:
 
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
 | **Source**                                      | ***SS*** | ***df***\\  | ***MS*** | ***F*** | ***p*** | ***PRE*** |
-|-------------------------------------------------|----------|-------------|----------|---------|---------|-----------|
++=================================================+==========+=============+==========+=========+=========+===========+
 | Reduktion der Fehler durch das erweiterte Model | 33.90    | 6 - 4 = 2   | 16.95    | 3.15    | 0.049   | 0.08      |
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
 | Error                                           | 376.33   | 76 - 6 = 70 | 5.38     | \-      | \-      | \-        |
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
 | Total Error                                     | 410.23   | 76 - 4 = 72 | \-       | \-      | \-      | \-        |
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
 
 Tatsächlich, wir finden einen signifikanten Effekt. Der Effekt der Lehrstrategie ist von der Expertise der Personen abhängig. Du siehst allerdings auch, dass der *p*-Wert gerade unter dem Alpha-Niveau liegt. Läge der p-Wert bei 0.051, würden wir die Nullhypothese annehmen. Da der *p*-Wert allerdings drei Nachkommastellen kleiner ist, lehnen wir die Nullhypothese ab. Wenn dir das spitzfindig erscheint, ist dem auch so. Beachte allerdings, dass wir eine Hypothese nicht mit einem Test widerlegen können. Wiederholen wir viele dieser Tests werden wir mit der Dauer die richtigen Entscheidungen treffen (sofern der Test richtig konstruiert ist; z.B. wenn er eine ausreichend große Power hat). Dabei kann es durchaus sein, dass wir wie in diesem Beispiel eine knappe Entscheidung treffen müssen. Egal wie der *p*-Wert ausfällt, wir treffen die Entscheidung auf der Grundlage unseres Alpha-Niveaus. Daher lehnen wir in diesem Fall die Nullhypothese ab. Im Übrigen versuchen Wissenschaftler\*innen häufig verzweifelt, dennoch von einem signifikanten Effekt zu sprechen, wenn der *p*-Wert bei 0.051 oder ähnlich liegt. Eine amüsante Liste, welche Ausdrücke Wissenschaftler\*innen dafür verwenden, findest du [hier](https://mchankins.wordpress.com/2013/04/21/still-not-significant-2/). Diese Versuche sind allerdings fehl am Platz und sollten nicht praktiziert werden.
 
@@ -379,3 +383,89 @@ Ehrlich gesagt, haben wir weder die erste noch die zweite Frage bisher beantwort
 Als wir das erweiterte Modell aufgestellt haben, hatten wir eine Helmert-Kontrastkodierung für den Faktor Lehrstrategie gewählt, bei der der Parameter *b~1~* für den Mittelwertsunterschied zwischen der direkten Instruktion und den anderen beiden Lehrstrategiegruppen steht. Durch diese clevere Konstruktion der Kontraste können wir *b~1~* auf 0 setzen und testen, ob die Lehrstrategie direkte Instruktion lernwirksamer ist als die andere beiden Lehrstrategien. Das tun wir, indem wir prüfen, wie wahrscheinlich es ist, dass die Mittelwerte sich so weit voneinander unterschieden, wenn es in Wirklichkeit keinen Unterschied macht, welche Lehrstrategie benutzt wird. Dementprechend sehen unsere Modellpaare wie folgt aus:
 
 ![](images/08_mehrfaktorielle_varianzanalyse/modelac3.png)
+
+Wie immer müssen wir nun lediglich einen *F*-Test berechnen, um unsere Hypothese zu prüfen:
+
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
+| **Source**                                      | ***SS*** | ***df***\   | ***MS*** | ***F*** | ***p*** | ***PRE*** |
++=================================================+==========+=============+==========+=========+=========+===========+
+| Reduktion der Fehler durch das erweiterte Model | 49.67\   | 6 - 5 = 1   | 49.67    | 9.24\   | .003\   | 0.12\     |
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
+| Error                                           | 376.33   | 76 - 6 = 70 | 5.38     | \-      | \-      | \-        |
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
+| Total Error\                                    | 426.001\ | \-          | \-       | \-      | \-      | \-        |
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
+
+Wir finden ein signifikantes Ergebnis. Wir müssen die Annahme, dass die direkte Instruktion gleich lerneffektiv ist wie die anderen beiden Lehrstrategien verwerfen und entscheiden uns daher vorerst für die Annahme, dass die direkte Instruktion lehrwirksamer ist als die anderen beiden Lehrstrategien. Wir sollten allerdings zudem darauf achten, dass wir eine gerichtete Hypothese haben. Wir können daher (auch, da die deskriptiven Daten hypothesenkonform sind), den *p*-Wert teilen.
+
+Wir werden zudem die Ergebnisse später als *t*-Test berichten. Gewöhnlich wird bei einem *t*-Test die Effektgröße Cohen's *d* angegben. Die Formel zur Berechnung von Cohen's *d* bei einer einfaktoriellen und mehrfaktoriellen Varianzanalyse haben wir bereits im letzten Modul kennngelernt:
+
+![](images/08_mehrfaktorielle_varianzanalyse/d.png)
+
+Da der *t*-Wert die Wurzel aus *F* ist, liegt der *t*-Wert bei 3.04. Der Freiheitsgrad des erweiterten Modells liegt bei 70. Daraus ergibt sich folgende Effektgröße:
+
+![](images/08_mehrfaktorielle_varianzanalyse/d1.png)
+
+Ebenso könntest du das *PRE* einfach unter [folgender Webseite](https://www.psychometrica.de/effect_size.html) unter 14. Transformation of the effect sizes eingeben. Wie du sehen wirst, ergibt sich das gleiche Cohen's *d* aus dieser Webseite. Diesen Effekt bezeichnen wir als mittelgroß. 
+
+Das Ergebnis des Tests kannst du hier in R nachrechnen:
+
+TODO: Einfügen specific_constrast_direct_instruction.R
+
+### Die Interaktion des Effekts der direkten Instruktion 
+
+Jetzt kommen wir schlussendlich zu unserer eigentlichen Fragestellung. Wir haben nun heraus gefunden, dass die direkte Instruktion wirksamer ist (zumindest auf Grundlage der Signifikanz) als die anderen beiden Lehrmethoden. Die Frage ist nun, ob dieser Effekt bei Noviz\*innen und nicht bei Expert\*innen zu finden ist. Diese Frage können wir beantworten, indem wir den Parameter *b~4~* im erweiterten Modell auf 0 setzen. Aus dem Beginn dieses Moduls wissen wir noch, dass dieser Parameter die Differenz der Mittelwertsunterschiede zwischen der direkten Instruktion und den anderen beiden Lehrstrategien zwischen den Expert\*innen und Noviz\*innen darstellt. Liegt dieser Parameter bei 0, wirkt die direkte Instruktion bei Expert\*innen genauso gut wie bei Noviz\*innen. Ist dieser Parameter positiv, wirkt die direkte Instruktion bei Noviz\*innen besser als bei Expert\*innen. Wird testen diese Fragestellung mit folgendem Modellpaar:
+
+![](images/08_mehrfaktorielle_varianzanalyse/modelac4.png)
+
+Der *F*-Test ergibt folgendes Ergebnis:
+
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
+| **Source**                                      | ***SS*** | ***df***\   | ***MS*** | ***F*** | ***p*** | ***PRE*** |
++=================================================+==========+=============+==========+=========+=========+===========+
+| Reduktion der Fehler durch das erweiterte Model | 31.18\   | 6 - 5 = 1   | 31.18    | 5.80\   | .019\   | 0.076\    |
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
+| Error                                           | 376.33   | 76 - 6 = 70 | 5.38     | \-      | \-      | \-        |
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
+| Total Error\                                    | 407.50\  | \-          | \-       | \-      | \-      | \-        |
++-------------------------------------------------+----------+-------------+----------+---------+---------+-----------+
+
+Nun haben wir die Antwort auf unsere Hypothese. Der Effekt der direkten Instruktion ist anscheinend abhängig vom Vorwissen der Personen. Noviz\*innen scheinen mit der direkten Instruktion mehr zu lernen als mit den anderen beiden Lehrstrategien, bei den Expert\*innen scheint die direkte Instruktion gleich effektiv zu sein wie die anderen beiden Lehrstrategien. Der Effekt liegt bei *PRE* = 0.076 oder bei Cohen's *d* = 0.57 (mittlerer Effekt).
+
+Das Ergebnis des Tests kannst du hier in R nachrechnen:
+
+TODO: Einfügen Datei specific_contrast_interaktion.R
+
+### Ergebnisse berichten
+
+Wir haben die Ergebnisse auf unsere Tests berechnet, nun können wir diese berichten:
+
+> "Um zu prüfen, ob die direkte Instruktion lernwirksamer ist als problem- bzw. projektbasiertes Lernen und um zu prüfen, ob der Effekt der direkten Instruktion abhängig vom Vorwissen der Lernenden ist, wurde eine mehrfaktorielle Varianzanalyse gerechnet. Als abhängige Variable wurde der Wissenszuwachs während des Trainings verwendet. Als Faktoren wurden die Lehrstrategien (direkte Instruktion, problembasiertes Lernen und projektbasiertes Lernen) und die Expertise der Lernenden (Expert\*innen und Novize) verwendet. Wir fanden einen signifikanten Haupteffekt der Lehrstrategie, *F*(2, 70) = 4.62, *p* = .013, η^*2*^~p~ = 0.12, und einen signifkanten Interaktionseffekt, *F*(2, 70) = 3.15, *p* = .049, η^*2*^~p~ = 0.08. Spezifische Kontrastanalysen zeigten, dass die direkte Instruktion lernwirksamer war als die anderen beiden Lehrstrategien, *t*(70) = 3.04, *p* = .002, *d* = 0.73 (mittlerer Effekt). Eine weitere Kontrastanalyse ergab einen signifikanten Interaktionseffekt zwischen dem Effekt der direkten Instruktion und der Expertise der Lernenden, *t*(70) = 2.41, *p* = .019, *d* = 0.57 (mittlerer Effekt). Die Ergebnisse deuten darauf hin, dass Noviz\*innen von der direkten Instruktion profitieren, während die Wahl der Lehrstrategie für die Expert\*innen keinen Unterschied macht."
+
+### Zusammenfassung 
+
+Wir haben in diesem Submodul erfolgreich die Hypothese getestet und berichtet, welche wir zu Beginn des Moduls aufgestellt haben. Dabei haben wir heraus gefunden, dass die direkte Instruktion eine besonders wirksame Lehrstrategie für Noviz\*innen ist und die Wahl der Lehrstrategie bei Expert\*innen keinen Einfluss auf den Wissenszuwachs hat. Wir haben insbesondere durch dieses Submodul gesehen, dass Haupteffekte und Interaktionen nicht immer die Fragen beantworten, die wir gerne beantwortet sehen und, dass spezifische Kontraste häufig mehr Aufschluss über unsere Fragen geben. Es ist daher wichtig, sich vor dem Prüfen einer Hypothese bei einer mehrfaktoriellen Varianzanalyse genaue Vorstellungen zu machen, wie die Kodierung gestaltet sein muss, damit man später die eigenen Fragestellungen testen kann.
+
+## Berechnung in Jamovi 
+
+In den folgenden Videos erkläre ich dir, wie man alle Verfahren, die wir in diesem Modul kennen gelernt haben, in Jamovi und R berechnen kannst.
+
+### Haupteffekte 
+
+TODO: Einfügen Video
+
+### Interaktionseffekt
+
+TODO: Einfügen Video
+
+### Simple Effects
+
+TODO: Einfügen Video 1
+
+TODO: Einfügen Video 2
+
+### Spezifische Kontraste
+
+TODO: Einfügen Video 1
+
+TODO: Einfügen Video 2
