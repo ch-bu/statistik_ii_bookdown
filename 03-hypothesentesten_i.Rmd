@@ -306,7 +306,7 @@ Wir könnten uns ebenso fragen, wie wahrscheinlich es ist, einen Mittelwert klei
 
 Wie du siehst, ist diese Wahrscheinlichkeit das Komplement der anderen Wahrscheinlichkeit. Die Wahrscheinlichkeit für einen z-Wert kleiner als 1.49 liegt bei 93.19%. Rechnen wir beide Wahrscheinlichkeiten zusammen, erhalten wir 100%: 93.19 + 6.81 = 100%.
 
-### Zentrale Eigenschaften der Wahrscheinlichkeitsrechung 
+### Zentrale Eigenschaften der Wahrscheinlichkeitsrechung
 
 Versuchen wir an dieser Stelle einen allgemeineren Blick auf die Berechnungen von Wahrscheinlichkeiten durch Stichprobenkennwertverteilungen zu werfen. 
 
@@ -328,13 +328,13 @@ Wie wahrscheinlich ist es einen z-Wert zwischen -1 und 2 zu erhalten? (22%/82%/4
 
 ![](images/03_hypothesentesten/kurve3.png)
 
-### t-Verteilung(en) 
+### t-Verteilung(en)
 
 Eine besondere Gruppe an Stichprobenkennwertverteilung, die mit der Standardnormalverteilung verwandt sind, nennt man *t*-Verteilungen. **Wir verwenden eine *t*-Verteilung anstatt einer Standardnormalverteilung zur Überprüfung von Hypothesen, wenn wir die Standardabweichung der Population nicht kennen.** Dies ist meistens der Fall, daher werden in der Sozialforschung selten die Populationsparameter kennen (z.B. Mittelwert und Standardabweichung). Während es nur eine Standardnormalverteilung gibt, gibt es mehrere *t*-Verteilungen. Die *t*-Verteilungen ergeben sich aus der Größe der Stichprobe. Im Folgenden siehst du verschiedene *t*-Verteilungen, welche sich offensichtlich in ihrer Breite und Höhe unterscheiden:
 
 ![](images/03_hypothesentesten/kurve4.png)
 
-#### Simulation einer t-Verteilung auf Grundlage einer Stichprobe 
+#### Simulation einer t-Verteilung auf Grundlage einer Stichprobe
 
 Eine logische und berechtigte Frage ist, wie kommt man zu einer solchen *t*-Verteilung? Stell dir erneut vor, du möchtest überprüfen, wie wahrscheinlich es ist, in einer Gruppe von 5 Personen einen Intelligenzquotienten von 110 zu erhalten? **Diesmal kennst du allerdings nicht die Standardabweichung der Intelligenz in der Population**. Um den Mittelwert des Intelligenzquotienten eurer Gruppe zu standardisieren, musst du daher den Standardfehler auf Grundlage der Stichprobenstandardabweichung schätzen:
 
@@ -352,7 +352,7 @@ Du siehst an der Simulation, dass sich die *t*-Werte auf deiner Simulation mit s
 
 Wie du siehst, sind beide *t*-Verteilungen relativ ähnlich. Allerdings ist die *t*-Verteilung bei einer Stichprobe von 10 Personen (blau) etwas breiter als die *t*-Verteilung bei einer Stichprobe von 30 Personen (schwarz). Die passendere Verteilung ist offensichtlich die *t*-Verteilung mit 10 Personen, wenn auch nur minimal. Um daher die Wahrscheinlichkeit von Mittelwerten auf Grundlage einer *t*-Verteilung korrekt zu bestimmen, ist es notwendig, dass man die richtige *t*-Verteilung in Abhängigkeit der Stichprobengröße bestimmt.
 
-#### Simulation einer t-Verteilung auf Grundlage von zwei Stichproben 
+#### Simulation einer t-Verteilung auf Grundlage von zwei Stichproben
 
 Wir haben gerade gesehen, dass wir t-Verteilungen und Standardnormalverteilungen verwenden können, um die Wahrscheinlichkeit einzelner Mittelwerte anhand eines Populationsmittelwertes zu testen. Zum Beispiel, indem wir fragen, wie wahrscheinlich es ist, einen Intelligenzquotienten größer als 110 in einer Stichprobe zu erhalten.
 
@@ -374,11 +374,11 @@ Erneut erkennst du anhand der Simulation, dass sich die *t*-Werte bei zwei Stich
 
 Wie du siehst, liegt die Wahrscheinlichkeit bei etwa 33%. Es ist also nicht äußerst unwahrscheinlich, aber auch nicht sehr wahrscheinlich, einen solch großen Unterschied aus einer Population zu finden.
 
-### Zusammenfassung 
+### Zusammenfassung
 
 In diesem Submodul haben wir gelernt, was Stichprobenkennwertverteilungen sind. Zunächst haben wir gelernt, dass Variablen in unterschiedlichen Skalenniveaus vorliegen können. Liegen Variablen als nominalskalierte oder ordinalskalierte Verteilungen dar, können wir sie durch diskrete Verteilungen darstellen. Liegen Variablen metrisch vor (intervall- oder verhältnisskaliert), können wir sie durch stetige Verteilungen darstellen. Diese stetigen Verteilungen bildeten den Rest dieses Submoduls. Wir haben gesehen, dass Stichprobenkennwertverteilungen genau das sind, was das Wort andeutet: Die Verteilung von Kennwerten aus Stichproben. Dabei haben wir erkannt, dass die Stichprobenkennwertverteilung des Mittelwerts immer eine Normalverteilung annimmt (zentrales Grenzwerttheorem). Die Standardnormalverteilung ist eine besondere Form der Normalverteilung, da sie immer einen Mittelwert von 0 und eine Standardabweichung von 1 hat. Wir haben ebenso gelernt, dass wir die Wahrscheinlichkeit von Kennwerten in stetigen Verteilungen wie der Standardnormalverteilung anhand des Integrals unter der Fläche der Verteilungen berechnen können. Diese Berechnungen sind Kern des restlichen Seminars, da wir durch Stichprobenkennwertverteilungen Hypothesen testen können. Zuletzt haben wir die *t*-Verteilungen kennen gelernt. *t*-Verteilungen sind eine besondere Form der Standardnormalverteilungen, in denen der Standardfehler der t-Werte anders berechnet wird als der Standardfehler der z-Werte. Im nächsten Modul werden wir sehen, wie Stichprobenkennwertverteilungen genutzt werden, um Hypothesen zu testen.
 
-## Prozesse des statistischen Hypothesentestens 
+## Prozesse des statistischen Hypothesentestens
 
 In diesem Submodul wirst du verstehen, wie Stichprobenkennwertverteilungen verwendet werden um Hypothesen in der Bildungsforschung zu testen. Wir werden hierzu jeden einzelnen Schritt von der Hypothese bis zu der statistischen Entscheidung kennen lernen. Dieses Verfahren wird uns das ganze Semester begleiten, indem wir für jede Hypothese den gleichen Prozess durchlaufen. Folgende Inhalte behandelt dieses Submodul:
 
@@ -400,7 +400,7 @@ In diesem Submodul wirst du verstehen, wie Stichprobenkennwertverteilungen verwe
 
 ![](images/03_hypothesentesten/ablauf.png)
 
-### Überblick über den Prozess des statistischen Hypothesentestens 
+### Überblick über den Prozess des statistischen Hypothesentestens
 
 Beginnen wir mit einem Überblick über den Prozess des statistischen Hypothesentestens (siehe Bild oben). Am Anfang eines jeden Experiments steht die Hypothese. Genauer ein Hypothesenpaar. Schau dir beispielsweise folgende drei Hypothesen aus drei verschiedenen Fachartikeln an:
 
@@ -415,13 +415,13 @@ Stull & Mayer (2017): In der folgenden Studie haben sich die Wissenschaftler gef
 Müller & Oppenheimer (2014): In dieser Studie hatten die Wissenschaftler die Hypothese, dass es lernwirksamer ist in einer Vorlesung per Hand als mit dem Laptop mitzuschreiben.
 
 \
-[Mueller, P. A., & Oppenheimer, D. M. (2014). The pen is mightier than the keyboard: Advantages of longhand over laptop note taking. Psychological Science, 25(6), 1159-1168. <https://doi.org/10.1177/0956797614524581> ](https://journals.sagepub.com/doi/full/10.1177/0956797614524581)
+[Mueller, P. A., & Oppenheimer, D. M. (2014). The pen is mightier than the keyboard: Advantages of longhand over laptop note taking. Psychological Science, 25(6), 1159-1168. \<https://doi.org/10.1177/0956797614524581\> ](https://journals.sagepub.com/doi/full/10.1177/0956797614524581)
 
 ![](images/03_hypothesentesten/text.png)
 
 Hoggerheide et al. (2019): In dieser Studie untersuchten die Wissenschaftler\*innen, ob es lernwirksamer ist, anderen etwas zu erklären, als Lernmaterial wiederholt zu lernen.
 
-[Hoogerheide, V., Renkl, A., Fiorella, L., Paas, F., & van Gog, T. (2019). Enhancing example-based learning: Teaching on video increases arousal and improves problem-solving performance. Journal of Educational Psychology, 111(1), 45--56. <https://doi.org/10.1037/edu0000272>](https://psycnet.apa.org/record/2018-14245-001)
+[Hoogerheide, V., Renkl, A., Fiorella, L., Paas, F., & van Gog, T. (2019). Enhancing example-based learning: Teaching on video increases arousal and improves problem-solving performance. Journal of Educational Psychology, 111(1), 45--56. \<https://doi.org/10.1037/edu0000272\>](https://psycnet.apa.org/record/2018-14245-001)
 
 ![](images/03_hypothesentesten/text1.png)
 
@@ -439,7 +439,7 @@ Zuletzt treffen wir eine statistische Entscheidung auf Grundlage dieser Wahrsche
 
 Zuletzt berichten wir den Prozess des statistischen Hypothesentestens, indem wir den Kennwert, die Wahrscheinlichkeit für den Kennwert und unsere statistische Entscheidung berichten. Als nächstes besprechen wir diese Schritte ausführlicher.
 
-### Hypothesenpaar aufstellen 
+### Hypothesenpaar aufstellen
 
 Beginnen wir mit einer Hypothese. Nehmen wir an, du glaubst an die [Lerntypentheorie](https://de.wikipedia.org/wiki/Lerntyp). Du behauptest, dass Lernende, die von sich behaupten visuell bzw. auditiv zu lernen mit ihrem präferiertem Medium besser lernen als mit ihrem nicht-präferiertem Medium. Zwar stellst du nur eine Hypothese auf (die Unterschiedshypothese), du nimmst allerdings implizit zwei Hypothesen an: Eine **Nullhypothese (H0)**, die von keinem Unterschied zwischen den beiden Gruppen ausgeht und eine **Alternativhypothese (H1)**, die von einem Unterschied ausgeht. Vor dem Experiment weißt du nicht, welche der Hypothesen korrekt ist. 
 
@@ -463,7 +463,7 @@ Für jede Hypothese gilt, dass sie allgemeingültig und probabilistisch ist. 
 
 Ebenso sind Hypothesen **probabilistisch**. Das bedeutet, wir machen Aussagen über die Tendenz von Gruppen, aber nicht über Einzelwerte von Gruppen. Beispielsweise kann ich auf Grundlage von Experimenten behaupten, dass es lernwirksamer per Hand als mit dem Laptop mitzuschreiben. Ich sage damit allerdings nicht, dass es ausgeschlossen ist, dass eine Perosn, die per Laptop schreibt mehr lernt als eine Person, die mit per Hand schreibt. Dieser Unterschied tritt häufig in der Kommunikation mit statistischen Laien auf. Du sagst zum Beispiel, dass langes Schlafen dem Lernen hilft, deine Freundin kennt aber den Onkel Harald, der nur fünf Stunden schläft und trotzdem gut lernt. Onkel Harald ist allerdings ein Einzelfall und kann durchaus trotz wenig Schlaf gut lernen. Onkel Harald falsifiziert in anderen Worten deine Hypothese nicht.
 
-### Statistische Modellierung des Hypothesenpaares 
+### Statistische Modellierung des Hypothesenpaares
 
 Sobald wir unser Hypothesenpaar bestimmt haben, müssen wir diese Hypothesen statistisch modellieren. Wir werden im nächsten Modul die statistische Modellierung ausführlicher besprechen, an dieser Stelle genügt ein kleines Beispiel, um die statistische Modellierung im Groben zu verstehen.
 
@@ -489,7 +489,7 @@ Ein statistisches Modell wird nun genutzt, um Werte vorherzusagen. Für jedes Hy
 
 -   **Erweitertes Modell (MODEL~A~)**: Das Modell für die Alternativhypothese müsste lauten: Die Anzahl der Bücher entspricht dem Mittelwert der Population (μ). Wir gehen davon aus, dass dieser Mittelwert größer als 10 ist. In der Grafik ist der Populationsmittelwert durch das Symbol μ (ausgesprochen mü) gekennzeichnet.
 
-### Kennwerte berechnen 
+### Kennwerte berechnen
 
 Auf Grundlage dieser beiden Modelle berechnen wir als nächstes Kennwerte. In diesem Kurs werden wir vor allem *t*- und *F*-Werte kennen lernen. Im Verlauf des Kurses werden wir sehen, dass *t*- und *F*-Werte miteinander verwandt sind. Wir werden daher vor allem *F*-Werte berechnen. Folgende Verallgemeinerung können wir an dieser Stelle bezüglich der Kennwerte treffen: 
 
@@ -505,7 +505,7 @@ In anderen Worten, wir fragen uns immer, ob die Kennwerte unter Annahme der Null
 
 > ***P*****(D\|H~0~)** bezeichnet die **Wahrscheinlichkeit eines Kennwertes unter Annahme der Nullhypothese. *P*(D\|H~0~)** wird auch als **p-Wert** bezeichnet.
 
-### Statistische Entscheidungen 
+### Statistische Entscheidungen
 
 Zu Beginn dieses Moduls haben wir gesagt, dass die Falsifikation das Herzstück der Statistik ist. Wir können keine Hypothesen bestätigen, sie allerdings widerlegen. Genau das machen wir durch statistische Entscheidungen. Genauer lehnen wir die Nullhypothese ab, wenn der Kennwert unter Annahme der Nullhypothese sehr unwahrscheinlich ist. Ebenso lehnen wir die Alternativhypothese ab, wenn der Kennwert unter Annahme der der Nullhypothese wahrscheinlich ist. Diese Form einer binären Entscheidungen geht auf die Statistiker, [Jerzy Neyman](https://de.wikipedia.org/wiki/Jerzy_Neyman) und [Egon Pearson](https://de.wikipedia.org/wiki/Egon_Pearson) zurück. Sie sagten, dass man die Nullhypothese bei einer Wahrscheinlichkeit von unter 5% ablehnen (**das Alpha-Niveau**) sollte und die Nullhypothese bei einer Wahrscheinlichkeit von über 5% vorläufig annehmen sollte:
 
@@ -519,7 +519,7 @@ Die Entscheidung für oder gegen die Nullhypothese hilft der Theoriebildung folg
 
 Dieses Beispiel zeigt uns, dass statistische Entscheidungen auf lange Sicht helfen, eine Theorie zu falsifizieren. Im Grunde versuchen wir bei jedem Experiment einen Test zu entwickeln, der uns hilft dieser Schlussfolgerung näher zu kommen. Die Erkenntnis liegt bei diesem Vorgehen nicht in einem Experiment, sondern in vielen Experimenten. Daher wir diese Art der Statistik auch als [Frequentistischer Wahrscheinlichkeitsbegriff](https://de.wikipedia.org/wiki/Frequentistischer_Wahrscheinlichkeitsbegriff) bezeichnet. Dieser Ansatz eignet sich, wenn wir für unser Handeln Entscheidungen treffen müssen. Zum Beispiel, sollten Lernende mit ihrem präferiertem Lernmaterial lernen oder nicht? Ist es besser einen Text wiederholt zu lesen, oder sein Wissen frei abzufragen? Stellen wir beispielsweise wiederholt fest, dass die die Annahme wiederholtes Lesen sei gleich effektiv wie die freie Wissensabfrage widerlegt wird, können wir auf Dauer eine Entscheidung treffen, Lernende zu empfehlen, eine bestimmte Lerntechnik einer anderen vorzuziehen. Der frequentistische Wahrscheinlichkeitsbegriff entwickelt Erkentnisse daher erst nach einer Fülle an Experimenten.
 
-### Ausführliches Beispiel: t-Test für eine Stichprobe 
+### Ausführliches Beispiel: t-Test für eine Stichprobe
 
 Stell dir vor, du glaubst, dass Studierende pro Jahr mehr als 10 Bücher lesen. Um deine Hypothese zu prüfen, befragst du 30 Studierende willkürlich an deiner Universität, wie viel Bücher sie im letzten Jahr gelesen haben. Im Schnitt stellst du fest, dass deine Stichprobe 12.45 Bücher (Mittelwert) im letzten Jahr gelesen hat:
 
@@ -568,17 +568,17 @@ Zuletzt berichten wir unser Ergebnis. Hierfür formulieren wir folgenden Textabs
 
 Wie die Ergebnisse berichtet werden, lernen wir im Verlaufe des Seminars ausführlich kennen.
 
-### Zusammenfassung 
+### Zusammenfassung
 
 ![](images/03_hypothesentesten/ablauf.png)
 
 In diesem Submodul haben wir gelernt, wie man von einer Hypothese zu einem Ergebnis in einer Studie kommt. Dieser Prozess umfasst verschiedene Schritte, die wir in diesem Kurs immer wieder wiederholen werden. Zu Beginn einer jeden Forschungsfrage steht eine Hypothese, die wir als Hypothesenpaar formulieren. Dieses Hypothesenpaar werden wir statistisch modellieren. Dieser Schritt ist an dieser Stelle vermutlich noch unklar, er wird dir allerdings klarer, wenn wir uns mit dem *F*-Wert beschäftigen, da der *F*-Wert aus diesen statistischen Modellen berechnet wird. Sobald wir den Kennwert haben, berechnen wir die Wahrscheinlichkeit für den Kennwert unter der Nullhypothese. Kennwerte machen Aussagen über unsere Hypothesen. Ein *t*-Wert beispielsweise kann eine Aussage über den Mittelwertsunterschied zwischen Gruppen machen. Ein *t*-Wert kann aber auch sagen, wie viele Standardabweichung eine Korrelation von 0 entfernt ist. Indem wir die Wahrscheinlichkeit dieser Kennwerte unter der Nullhypothese berechnen, geben wir an, wie unwahrscheinlich ein Mittelwertsunterschied oder ein standardsierter Unterschied eine Korrelation von 0 ist, wenn es zum Beispiel keinen Mittelwertsunterschied zwischen Gruppen gibt oder wenn es keine Korrelation zwischen zwei Variablen gibt. Auf Grundlage dieser Wahrscheinlichkeit treffen wir eine binäre statistische Entscheidung: Wir lehnen die Nullhypothese ab oder behalten sie. Liegt die Wahrscheinlichkeit für den Kennwert unter 5%, lehnen wir die Nullhypothese ab, liegt die Wahrscheinlichkeit über 5%, akzeptieren wir die Nullhypothese vorläufig. Am Ende dieses Prozess berichten wir das Ergebnis des Tests.
 
-## Alpha- und Betafehler und Power 
+## Alpha- und Betafehler und Power
 
 In diesem Submodul lernen wir weitere wichtige Begriffe der Statistik kennen, die wir im Verlaufe des ganzen Kurses verwenden werden. Wir werden in diesem Submodul lernen, dass die statistischen Entscheidungen, welche wir auf Grundlage des *p*-Wertes ermitteln, falsch sein können und, dass wir diese Entscheidungen nur auf dem Hintergrund der Power einer Studie interpretiert sollten. Genauer werden wir lernen, dass wir die Stichprobengröße vor einem Experiment mit Bedacht wählen sollten, um in der langen Sicht zu richtigen Entscheidungen zu kommen.
 
-### Alpha- und Betafehler 
+### Alpha- und Betafehler
 
 In unserem letzten Modul haben wir gezeigt, dass wir in der Statistik binäre Entscheidungen treffen. Entweder lehnen wir die Nullhypothese ab oder wir behalten sie vorläufig. Ist die Wahrscheinlichkeit eines Kennwertes unter Annahme der Nullhypothese geringer als 5% lehnen wir die Nullhypothese ab, ist die Wahrscheinlichkeit unter Annahme der Nullhypothese höher, akzeptieren wir die Nullhypothese vorläufig. Dieser 5%-Wert ist ein Beispiel für ein **Alpha-Niveau**. Das Alpha-Niveau gibt an, unter welcher Wahrscheinlichkeit wir die Nullhypothese verwerfen, unter der Bedingung, dass es keinen Effekt in der Population gibt. 
 
@@ -590,7 +590,7 @@ Was passiert nun, wenn die Nullhypothese in der Population korrekt ist, aber uns
 
 ![](images/Bildschirmfoto%202021-02-01%20um%2011.07.09.png)
 
-### Die Welt der Nullhypothese: Der Alpha-Fehler 
+### Die Welt der Nullhypothese: Der Alpha-Fehler
 
 Um diese beiden Fehler besser zu verstehen, gehen wir von zwei Welten aus. In der einen Welt ist die Nullhypothese korrekt (z.B. es gibt keinen Mittelwertsunterschied zwischen zwei Gruppen). In der anderen Welt ist die Nullhypothese falsch (z.B. es gibt einen Mittelwertsunterschied). Die Welt, in der wir uns gerade befinden, stelle ich als durchängige Verteilung dar. Die andere Welt, stelle ich als gestrichelte Verteilung dar.
 
@@ -604,7 +604,7 @@ Wir können den Alpha-Fehler aber auch in einer anderen Art und Weise visualisie
 
 Wie du erkennst, sehen die Verteilungen gleich aus. Sie sind stetig. Die Botschaft dieser Visualisierung ist, dass der Alpha-Fehler von der Stichprobengröße unabhängig ist. In der Welt der Nullhypothese machen wir immer mit einer Wahrscheinlichkeit von 5% einen Alpha-Fehler. Egal, wie groß die Stichprobe ist.
 
-### Die Welt der Alternativhypothese: Beta-Fehler 
+### Die Welt der Alternativhypothese: Beta-Fehler
 
 In der Welt der Alternativhypothese gehen wir davon aus, dass die Nullhypothese inkorrekt ist. Das heißt, wir nehmen beispielsweise an, dass es einen Mittelwertsunterschied zwischen zwei Gruppen gib (beispielsweise einen Mittelwertsunterschied von 1 bei einer Standardabweichung von 2.1 zwischen zwei Gruppen in der Population). Auch in dieser Welt können wir einen Fehler machen. Diesen Fehler nennen wir **Beta-Fehler**. Der Beta-Fehler tritt auf, wenn wir die Nullhypothese annehmen, obwohl sie inkorrekt ist. Oder, wenn wir die Alternativhypothese ablehnen, obwohl sie korrekt ist.
 
@@ -628,13 +628,13 @@ Zur besseren Verständlichkeit können wir beide Visualisierungen miteinander ko
 
 ![](images/03_hypothesentesten/beta3.png)
 
-### Vergleich von Alpha- und Betafehler 
+### Vergleich von Alpha- und Betafehler
 
 Sowohl in der Welt der Nullhypothese als auch in der Welt der Alternativhypothese können wir statistische Fehlentscheidungen treffen. Wir nennen diese Fehlentscheidungen Alpha- und Beta-Fehler. Die beiden Fehler werden als Wahrscheinlichkeiten angegeben und geben uns Hinweise darauf, mit welcher Wahrscheinlichkeit wir falsche statistische Entscheidungen treffen. Welche Welt die korrekte ist, wissen wir meist nicht. Wir führen Studien durch, um diese Frage zu beantworten. Wiederholen wir viele Studien mit dem gleichen Versuchsaufbau werden wir auf lange Sicht mit einer bestimmten Wahrscheinlichkeit Fehler machen. 
 
 Wir haben gesehen, dass die Wahrscheinlichkeit für einen Alpha-Fehler immer bei 5% liegt. Die Wahrscheinlichkeit für einen Beta-Fehler varriiert abhängig der Stichprobe. Je größer die Stichprobe, desto kleiner die Wahrscheinlichkeit für einen Beta-Fehler. Für uns als Wissenschaftler\*innen bedeutet dies, dass wir die Stichprobengröße bei einem Experiment mit Bedacht wählen sollten, da wir ansonsten Gefahr laufen, zu häufig einen Beta-Fehler zu machen. Stell dir vor, du führst ein aufwändiges Experiment durch, welches allerdings mit einer Wahrscheinlichkeit von 80% einen Beta-Fehler macht (das weißt du natürlich vorher nicht). In nur 20% der Fälle würdest du korrekt schließen, dass es einen Effekt gibt. In den meisten Fällen würdest du allerdings fälschlicherweise annehmen, dass es keinen Effekt gibt.
 
-### Power (Teststärke) 
+### Power (Teststärke)
 
 Power oder Teststärke ist das Gegenstück zum Beta-Fehler. Liegt der Beta-Fehler bei 40%, liegt die Power bei 60%. Liegt der Beta-Fehler bei 20%, liegt die Power bei 80%. Kurzum, Power errechnet sich durch 100%- Beta-Fehler. 
 
@@ -652,7 +652,7 @@ Du siehst, dass die Power mit steigender Stichprobengröße steigt. In anderen W
 
 In der Regel versucht man in einer Studie eine **hohe** Power zu erzielen. Eine Richtgröße ist eine Power von über 80%. Wir wollen Experimente erstellen, in denen wir - bei einem bestehenden Effekt - mit einer Wahrscheinlichkeit von über 80% die richtige statistische Entscheidung fällen. Nämlich, dass wir die Nullhypothese ablehnen, da sie inkorrekt ist. Im Umkehrschluss bedeutet dies, dass jeder Effekt bei genügend großer Stichprobe signifikant wird. Selbst wenn es einen minimalen Effekt zwischen zwei Gruppen gibt, kannst du mit einer großen Stichprobe zeigen, dass der Unterschied zwischen den Gruppen signifikant ist. Aus diesem Grund sollte die Stichprobengröße bei einem Experiment nicht willkürlich gewählt werden. Ist deine Power zu klein, hast du geringe Chance, einen Effekt zu erzielen. Wir lernen mit geringer Power quasi gar nichts, da unser Test nicht sensitiv genug ist, einen Effekt zu finden. Liegt deine Power bei 100%, wirst du selbst bei trivialen Unterschieden zu signifikanten Ergebnissen kommen.
 
-### Power-Analysen: Ein Exkurs 
+### Power-Analysen: Ein Exkurs
 
 Gehen wir zurück zu unserem ursprünglichen Experiment. Du hast geglaubt, dass visuelle Lernende besser mit visuellem als mit auditivem Lernmaterial lernen. Um diese Hypothese zu prüfen, entscheidest du dich pro Gruppe (visuelle Lerner mit visuellem Material und visuelle Lerner mit auditivem Material) 20 Personen zu testen, ohne vorab eine Power-Analyse zu machen. Was du nicht weißt, ist, dass der Effekt sehr sehr klein ist. Genauer gibt es folgende Kennwerte in der Population: Würde man alle Lernende die Tests durchführen lassen, würde die Gruppe mit dem präferiertem Lernmaterial 6.1 Punkte bei einer Standardabweichung von 1.6 bekommen und die Gruppe mit dem nicht-präferiertem Lernmaterial 6.0 Punkte bei einer Standardabweichung von 1.6. Die Frage ist nun, wie hoch ist deine Power bei einer Stichprobengröße von 20 Personen pro Gruppe? 
 
@@ -676,19 +676,19 @@ G\*Power sagt uns nun, dass wir 6334 Versuchspersonen erheben müssten, um eine 
 
 Wir können ebenso die tatsächliche Power deines Experiments bestimmen. Diese liegt bei 20 Personen pro Gruppe bei 8%. Somit wirst du in nur 8% der Fälle (solltet ihr das Experiment häufig wiederholen) ein signifikantes Ergebnis erzielen. Du wirst demnach mit ziemlicher Sicherheit zu dem Schluss kommen, dass es keinen Unterschied zwischen den Gruppen gibt. Dies Feststellung ist auch korrekt, da der Unterschied minimal und damit zu vernachlässigen ist.
 
-### Zusammenfassung 
+### Zusammenfassung
 
 In diesem Submodul haben wir uns ausführlicher mit Fehlschlüssen in statistischen Entscheidungen befasst. Aus dem letzten Submodul haben wir erfahren, dass wir in der Statistik binäre Entscheidungen treffen. Wir entscheiden uns für oder gegen die Nullhypothese. In diesem Submodul haben wir gelernt, dass wir für diese beiden Entscheidungen Fehler machen können. (1) Wir können uns gegen die Nullhypothese entscheiden, obwohl diese korrekt ist (Alpha-Fehler); und (2) wir können uns für die Nullhypothese entscheiden, obwohl sie inkorrekt ist (Beta-Fehler). Der Alpha-Fehler ist fixiert, das heißt er wird per Konvention auf einen bestimmten Wert definiert. In der Lehr- und Lernforschung verwendet man ein Alpha-Niveau von 5%. Der Beta-Fehler ist varriabel und hängt unter anderem von der Stichprobengröße ab. Beide Fehler werden als Wahrscheinlichkeiten angegeben. Wiederholt man das gleiche Experiment hunderte Male, wird man diese Wahrscheinlichkeiten erhalten. Das Gegenstück vom Beta-Fehler ist die Power. Die Power kennzeichnet die Wahrscheinlichkeit ein signifikantes Ergebnis zu erzielen. In der Regel versucht man durch die richtige Wahl der Stichprobengröße die Power auf über 80% zu halten.
 
 ## Die Effektstärke Cohen's d
 
-### Was sagen uns Signifikanztests? 
+### Was sagen uns Signifikanztests?
 
 Bevor wir das Modul abschließen, ist es noch wichtig, dass wir den Begriff der Effektstärken und insbesondere die Effektstärke Cohen's *d* kennen lernen. Wir haben mittlerweile etabliert, dass wir bei dem statistischen Hypothesentesten prüfen, ob ein Kennwert unter der Annahme der Nullhypothese unwahrscheinlich ist. Dieser Prozess hilft uns auf die lange Sicht, Entscheidungen zu treffen. Zum Beispiel, ob wir eine Lernmethode einer anderen bevorzugen sollen. Oder, ob zwei Variablen miteinander korrelieren (z.B. Rauchen und Lungenkrebs). Das bedeutet Signifikanztests zeigen uns, wie wir handeln sollen.
 
 > **Signifikanztests** geben an, wie wir **handeln** sollten; **Effektstärken** zeigen, wie groß ein Effekt ist und ob er **praktisch nützlich** ist.
 
-### Was sagen uns Effektstärken? 
+### Was sagen uns Effektstärken?
 
 Effektstärken wiederum beantworten uns eine andere Frage. Effektstärken geben uns an, wie groß ein Effekt ist. Beispielsweise mag es sein, dass eine Lernmethode effektiver ist als eine andere, aber wie viel effektiver ist sie? Ebenso mag es sein, dass zwei Variablen miteinander korrelieren, aber wie hoch korrelieren diese beiden Variablen miteinander? Während uns Signifikanztests auf Dauer helfen, Entscheidungen zu treffen, helfen uns Effektstärken einzuschätzen, ob Entscheidungen praktisch nützlich sind. Stell dir beispielsweise vor, du findest dass eine Lernmethode A minimal besser ist als eine andere Lernmethode B. Lernmethode A ist allerdings deutlich teurer. In diesem Fall macht es viellicht Sinn trotz des minimalen Vorteils der Lernmethode A, sich für Lernmethode B zu entscheiden. Andererseits kann es sein, dass ein Deliktinterventionsprogramm bei Jugendlichen minimal wirksam ist (siehe [Wilson et al., 2003](https://journals.sagepub.com/doi/abs/10.1177/1049731502238754)). Wenn aber nur 3 aus 100 Jugendlichen aufgrund dieses Programms keine Straftat begehen, werden weniger Menschen verletzt, oder gar umgebracht. Der geringe Effekt hat demnach eine praktische Bedeutsamkeit, da selbst der minimal Effekt fundamentale Auswirkungen auf wenige Menschen hat.
 
@@ -700,7 +700,7 @@ Cohen's *d* gibt an, wie viele Standardabweichungen zwei Mittelwerte voneinander
 
 ![](images/03_hypothesentesten/cohensd.png)
 
-#### Cohens' d bei nur einer Stichprobe 
+#### Cohens' d bei nur einer Stichprobe
 
 Stell dir beispielsweise vor, du möchtest die Effektstärke bei einem *t*-Test für eine Stichprobe testen. In diesem Fall hast du nur eine Stichprobe und damit auch nur einen Mittelwert. Im letzten Modul beispielsweise haben wir getestet, ob Studierende mehr als 10 Bücher pro Jahr lesen. Der Mittelwert der Stichprobe betrug 12.49. Nehmen wir nun an, dass die Standardabweichung der Stichprobe der 30 Studierenden bei 3 lag.
 
@@ -708,7 +708,7 @@ Stell dir beispielsweise vor, du möchtest die Effektstärke bei einem *t*-Test
 
 In diesem Fall berechnet sich Cohen's *d* wie folgt: Du ziehst den erwarteten Mittelwert (10 von deinem empirischen Mittelwert ab. Diese Differenz teilst du durch die Standardaweichung deiner Stichprobe. Cohen's d beträgt demnach 0.90.
 
-#### Cohens' d bei zwei Stichproben 
+#### Cohens' d bei zwei Stichproben
 
 Stell dir nun vor, du vergleichst den Mittelwert von zwei Gruppen miteinander. Du möchtest wissen, ob Studierende, die eine Concept-Map erstellen mehr lernen als Studierende, die einen Text erneut lesen. Dein Test hat maximal 10 Punkte. Folgende deskriptive Daten erhälst du:
 
