@@ -6,10 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 6 Einfache lineare Regression | A Minimal Book Example</title>
 <meta name="author" content="Yihui Xie">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.6.4/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.3.9000/tabs.js"></script><script src="libs/bs3compat-0.2.3.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
+<meta name="description" content="6.1 Einführung In diesem Modul beschäftigen wir uns mit der Frage, wie wir Zusammenhangshypothesen testen können. Genauer werden wir in diesem Modul folgende Fragestellung zu beantworten...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Einfache lineare Regression | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="6.1 Einführung In diesem Modul beschäftigen wir uns mit der Frage, wie wir Zusammenhangshypothesen testen können. Genauer werden wir in diesem Modul folgende Fragestellung zu beantworten...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Einfache lineare Regression | A Minimal Book Example">
+<meta name="twitter:description" content="6.1 Einführung In diesem Modul beschäftigen wir uns mit der Frage, wie wir Zusammenhangshypothesen testen können. Genauer werden wir in diesem Modul folgende Fragestellung zu beantworten...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -39,7 +47,7 @@
 <li><a class="active" href="einfache-lineare-regression.html"><span class="header-section-number">6</span> Einfache lineare Regression</a></li>
 <li><a class="" href="multiple-lineare-regression.html"><span class="header-section-number">7</span> Multiple lineare Regression</a></li>
 <li><a class="" href="einfaktorielle-varianzanalyse.html"><span class="header-section-number">8</span> Einfaktorielle Varianzanalyse</a></li>
-<li><a class="" href="mehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> Mehrfaktorielle Varianzanalyse</a></li>
+<li><a class="" href="tatusmehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> tatusMehrfaktorielle Varianzanalyse</a></li>
 <li><a class="" href="ancova.html"><span class="header-section-number">10</span> ANCOVA</a></li>
 <li><a class="" href="mediation.html"><span class="header-section-number">11</span> Mediation</a></li>
 <li><a class="" href="moderation.html"><span class="header-section-number">12</span> Moderation</a></li>
@@ -57,10 +65,471 @@
 <h1>
 <span class="header-section-number">6</span> Einfache lineare Regression<a class="anchor" aria-label="anchor" href="#einfache-lineare-regression"><i class="fas fa-link"></i></a>
 </h1>
-<p>We have finished a nice book.</p>
-<div id="weitere-ressourcen" class="section level2" number="6.1">
+<div id="einführung-4" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">6.1</span> Weitere Ressourcen<a class="anchor" aria-label="anchor" href="#weitere-ressourcen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> Einführung<a class="anchor" aria-label="anchor" href="#einf%C3%BChrung-4"><i class="fas fa-link"></i></a>
+</h2>
+<p>In diesem Modul beschäftigen wir uns mit der Frage, wie wir Zusammenhangshypothesen testen können. Genauer werden wir in diesem Modul folgende Fragestellung zu beantworten versuchen:</p>
+<blockquote>
+<p><strong>Erinnern sich Studierende mehr an die Inhalte eines Vortrages, je mehr Worte sie während des Vortrags mitschreiben?</strong></p>
+</blockquote>
+<p>Solche eine Zusammenhangshypothese können wir anhand eines erweiterten Modells testen, dass wir gemeinhin als <strong>einfache lineare Regression</strong> bezeichnen. Eine Besonderheit dieser Modelle zum bisherigen Modell des <em>t</em>-Tests für eine Stichprobe ist, dass dieses Modell einen <strong>Prädiktor</strong> umfasst. Prädiktoren sind Variablen, die wir in die statistischen Modelle einfügen und uns individuelle Informationen über Versuchspersonengeben. In unserem Beispiel ist der Prädiktor die Anzahl der Wörter, die Studierende in ihren Notizen während der Vorlesung aufschreiben. Der restliche Verlauf des statistischen Hypothesentestens bleibt so, wie wir es in den letzten beiden Modulen kennen gelernt haben.</p>
+<div id="datensatz-dieses-moduls" class="section level3" number="6.1.1">
+<h3>
+<span class="header-section-number">6.1.1</span> <strong>Datensatz dieses Moduls</strong><a class="anchor" aria-label="anchor" href="#datensatz-dieses-moduls"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir werden in diesem Modul einen echten Datensatz verwenden, der in der Studie von <a href="https://link.springer.com/article/10.1007/s10648-019-09468-2">Morehead, Dunlosky und Rawson (2014) </a>erhoben wurde. In dieser Studie wiederholten Morehead und Kollegen eine Studie, die ursprünglich von <a href="https://journals.sagepub.com/doi/abs/10.1177/0956797614524581">Mueller und Oppenheimer (2014)</a> durchgeführt wurde. In beiden Studien wurde untersucht, ob die Mitschrift einer Vorlesung mit verschiedenen Medien einen Einfluss auf die Erinnerungsleistung von Studierenden hat. Mueller und Oppenheimer führten die erste Studie durch und fanden, dass Studierende, die Notizen mit dem Laptop anfertigten, ein geringeres konzeptuelles Wissen erwarben als Studierende, die die Mitschrift per Hand anfertigten. Ebenso schrieben Studierende, die per Laptop mitschrieben, mehr wörtliche Zitate aus der Vorlesung auf als Studierende, die per Hand mitschrieben. </p>
+<p>Morehead und Kollegen wollten diese Hypothese genauer prüfen und führten eine <a href="https://dorsch.hogrefe.com/stichwort/replikationsstudie">Replikation </a>dieser Studie durch. In dieser Studie prüften sie die Studierenden nicht nur direkt nachdem sie die Notizen aufschrieben, sie testeten die Studierenden ebenso zwei Tage später, um zu testen, ob der Effekte des Schreibmediums von Dauer ist. Ebenso liesen sie Studierende mit einem digitalen Medium (eWriter) schreiben, welches Mueller und Oppenheimer nicht prüften. Ihre Ergebnisse zeigten, dass das Medium keinen Einfluss auf die Erinnerungsleistung der Studierenden hatte. Damit stellten sie die von Mueller und Oppenheimer gefunden Ergebnisse in Frage und erweiterten die Diskussion um den Einfluss von Schreibmedien auf das Lernen.</p>
+</div>
+<div id="hypothese-und-datensatz-dieses-moduls" class="section level3" number="6.1.2">
+<h3>
+<span class="header-section-number">6.1.2</span> <strong>Hypothese und Datensatz dieses Moduls</strong><a class="anchor" aria-label="anchor" href="#hypothese-und-datensatz-dieses-moduls"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir werden in diesem Modul die Daten der Studie von Morehead und Kollegen verwenden, um heraus zu finden, ob Studierende mehr aus einer Vorlesung lernen, je mehr sie während der Vorlesung mitschreiben. Morehead und Kollegen haben die Ergebnisse in ihrer Studie <a href="https://osf.io/dyga5/">online auf der Plattform OSF</a> zur Verfügung gestellt. In diesem Datensatz gibt es zwei Variablen, die wir für dieses Modul verwenden werden:</p>
+<ul>
+<li><p><strong>wordcount</strong>: Die Anzahl der Wörter der Mitschrift der Studierenden.</p></li>
+<li><p><strong>test1tot</strong>: Prozentueller Anteil der korrekten Fragen des Tests direkt nach dem Aufschreiben der Notizen.</p></li>
+</ul>
+<p>Den folgenden Datensatz habe ich für unsere Zwecke aus dem originalen Datensatz von Morehead und Kollegen ein wenig gereinigt. Beispielsweise umfasst der Datensatz nur die Daten des ersten Experiments von Morehead und Kollegen. Ebenso umfasst der Datensatz nur Versuchspersonen, die Notizen während des Betrachtens der Vorlesungen angefertigt haben und Versuchspersonen, die sowohl den sofortigen als auch den Tests zwei Tage nach dem Experiment durchführten. Insgesamt gibt es 84 Versuchspersonenin dem Datensatz. Lade dir den Datensatz am besten direkt herunter. Wir werden später in Jamovi die Ergebnisse unserer Tests mit diesem Datensatz berechnen.</p>
+<p>TODO: Einfügen Datei morehead_experiment1.csv</p>
+<p>Der Datensatz umfasst zudem sehr viele Variablen. Wenn du einen Überblick haben möchtest (ich erwarte das nicht von dir in diesem Modul), schau dir folgende Datei mit den Variablen im Detail an.</p>
+<p>TODO: Einfügen Doc variablen.docx</p>
+<p>Im folgenden Modul werden wir die Fragestellung ausführlich testen und die uns bekannten Methoden verwenden, um diese Hypothese zu testen.</p>
+</div>
+</div>
+<div id="das-statistische-modell-der-einfachen-linearen-regression" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Das statistische Modell der einfachen linearen Regression<a class="anchor" aria-label="anchor" href="#das-statistische-modell-der-einfachen-linearen-regression"><i class="fas fa-link"></i></a>
+</h2>
+<div id="darstellung-der-regressionsgeraden-der-einfachen-linearen-regression" class="section level3" number="6.2.1">
+<h3>
+<span class="header-section-number">6.2.1</span> Darstellung der Regressionsgeraden der einfachen linearen Regression<a class="anchor" aria-label="anchor" href="#darstellung-der-regressionsgeraden-der-einfachen-linearen-regression"><i class="fas fa-link"></i></a>
+</h3>
+<p>Beginnen wir mit einem Streudiagram. In folgendem Bild siehst du ein Streudiagram, bei dem auf der x-Achse die Anzahl der Wörter abgetragen sind, die die Studierenden in der Vorlesung mitgeschrieben haben und bei der auf der y-Achse die Anzahl der Punkte im Test direkt nach der Mitschrift der Vorlesung dargestellt sind.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/reg.png"></div>
+<p>Wie würdest du den Zusammenhang dieser beiden Variablen beschreiben? Ich erkenne beispielsweise einen leichten Trend, dass Studierende, die mehr schreiben, besser im Test abschneiden. Ich erkenne diesen Trend, da es wenige Studierende gibt, die viel schreiben und schlecht im Test abschneiden. Es gibt hingegen deutlich mehr Studierende, die wenig mitschreiben und wenig Punkte im Test hatten. </p>
+<p>Eine Möglichkeit, diesen Zusammenhang mathematisch zu beschreiben, ist die Regressionsgerade. Diese sieht in unserem Fall so aus:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/reg1.png"></div>
+<p>Die Regressionsgerade stellt grafisch dar, was wir gerade sprachlich versucht haben zu beschreiben. Sie beschreibt den Zusammenhang zweier Variablen x und y. In diesem Fall ist die Steigung der Geraden positiv. Die Regressionsgerade zeigt damit an, dass Studierende <em>besser</em> im Test abschnitten, je <em>mehr</em> Wörter sie mitschreiben. Allerdings nur bedingt. Erstens ist die Vorhersage der Punktzahl auf Grundlage der Anzahl der Wörter nicht perfekt. Fast alle Punkte liegen <strong>nicht</strong> auf der Regressionsgerade. Eine Regressionsgerade stellt nämlich nie einen deterministischen (“so wird es auf jeden Fall sein”), sondern einen probabilistischen Zusammenhang (“so wird es wahrscheinlich sein”) dar.</p>
+</div>
+<div id="vorhersagen-auf-grundlage-der-regressionsgeraden" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> Vorhersagen auf Grundlage der Regressionsgeraden<a class="anchor" aria-label="anchor" href="#vorhersagen-auf-grundlage-der-regressionsgeraden"><i class="fas fa-link"></i></a>
+</h3>
+<p>Alle statistischen Modelle, so auch die Regressionsgerade, erlauben uns Vorhersagen für abhängige Variablen (das Kriterium) zu machen. Beispielsweise können wir auf Grundlage der Anzahl der Wörter, die eine Studentin während einer Vorlesung aufschreibt vorher sagen, wie gut diese Person in einem Test abschneiden wird. Nehmen wir einmal an, eine Studentin schreibt 200 Wörter während der Vorlesung auf. Unser Modell besagt, dass diese Studentin 31.1% der Punkte im Test erreichen wird. Um diese Vorhersage zu erhalten, suchen wir uns der x-Achse den Wert 200 und schauen, auf welcher Höhe die Gerade an dieser Stelle auf der y-Achse liegt:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/reg2.png"></div>
+<p>Wird diese Person wirklich 31.1% der Punkte im Test erreichen? Nein, da es ein probabilistisches Modell ist. Genau deswegen sprechen wir von einem Modell. Wir versuchen damit, die Daten so gut wir können zu beschreiben.</p>
+</div>
+<div id="vergleich-des-modells-der-einfachen-linearen-regression-mit-dem-mittelwert-der-abhängigen-variable-als-modell" class="section level3" number="6.2.3">
+<h3>
+<span class="header-section-number">6.2.3</span> <strong>Vergleich des Modells der einfachen linearen Regression mit dem Mittelwert der abhängigen Variable als Modell</strong><a class="anchor" aria-label="anchor" href="#vergleich-des-modells-der-einfachen-linearen-regression-mit-dem-mittelwert-der-abh%C3%A4ngigen-variable-als-modell"><i class="fas fa-link"></i></a>
+</h3>
+<p>Vergleichen wir als nächstes das Modell der einfachen linearen Regression mit dem erweiterten Modell, welches wir im letzten Modul beim <em>t</em>-Test für eine Stichprobe kennen gelernt haben. Erinnere dich, dass das erweiterte Modell beim <em>t</em>-Test für eine Stichprobe die abhängige Variable einer Person auf Grundlage des Mittelwerts dieser abhängigen Variable vorhergesagt hat.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/vergleich.jpg"></div>
+<p>Du siehst, dass beide Modelle unterschiedliche Vorhersagen bei einer Person machen, die 200 Wörter während der Vorlesung mitgeschrieben hat. Das Modell der einfachen linearen Regression sagt voraus, dass eine solche Person 31.1% der Punkte erreichen wird, das Modell mit dem Mittelwert der abhängigen Variable sagt voraus, dass eine solche Person 27.9% der Punkte erreichen wird. Dieses Beispiel zeigt, dass die Wahl des Modells zu unterschiedlichen Vorhersagen führt. Ich zeige dir diesen Vergleich, da wir ihn im nächsten Submodul benötigen werden. Genauer werden wir im nächsten Modul sehen, dass wir zum Testen von Zusammenhangshypothesen das Modell der einfachen linearen Regression als erweitertes Modell und das Modell des Mittelwerts der abhängigen Variable als kompaktes Modell verwenden werden.</p>
+</div>
+<div id="statistisches-modell-der-einfachen-linearen-regression" class="section level3" number="6.2.4">
+<h3>
+<span class="header-section-number">6.2.4</span> <strong>Statistisches Modell der einfachen linearen Regression</strong><a class="anchor" aria-label="anchor" href="#statistisches-modell-der-einfachen-linearen-regression"><i class="fas fa-link"></i></a>
+</h3>
+<p>Bisher haben wir das Modell der einfachen linearen Regression grafisch als Linie dargestellt. Als nächstes werden wir diese Linie als statistisches Modell darstellen. Und so sieht das Modell für unsere Daten aus:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/y.png"></div>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/y1.png"></div>
+<p>Um das Modell zu verstehen, beginnen wir mit dem <strong>Prädiktor</strong> <em>X<sub>i</sub></em>: Und wir stellen uns erneut unsere Studentin vor, die 200 Wörter während der Vorlesung aufgeschrieben hat. Für diese Studentin würden wir für den <strong>Prädiktor</strong> <em>X<sub>i</sub></em> die Zahl 200 einsetzen. Für diese Studentin würden wir eine Punktzahl von ungefähr 31% vorhersagen.</p>
+<p>Wir haben eben einen neuen Begriff etabliert: Den Begriff <strong>Prädiktor</strong>. Auch dieser Begriff wird uns immer wieder begegnen, wir müssen ihn zudem vom Begriff des Parameters unterscheiden.</p>
+<blockquote>
+<p><strong>Parameter</strong> (bzw. Koeffizienten) werden in statistischen Modellen als <em>ß</em> oder <em>b</em> dargestellt. Sie werden auf Grundlage der Daten berechnet. <strong>Prädiktoren</strong> werden in statistischen Modellen als <em>X</em> dargestellt und werden auch als <strong>unabhängige Variablen</strong> bezeichnet.</p>
+</blockquote>
+<p>Das Modell der einfachen linearen Regression hat daher einen Prädiktor und zwei Parameter. Nun, da wir Prädiktoren von Parametern unterscheiden können, müssen wir die beiden anderen Parameter im Modell der einfachen linearen Regression verstehen.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/y2.png"></div>
+<p><strong>Allgemeine Darstellung des Modells</strong></p>
+<p>Die beiden Parameter im Modell nennen wir <em>b<sub>0</sub></em> und <em>b<sub>1</sub></em>. Da es kleine <em>b</em>s sind, meinen wir damit die Parameter, die wir auf Grundlage unserer Daten ermittelt haben. Nicht die Parameter, die sich aus der gesamten Population ergeben. Achte ebenso darauf, dass wir bei diesem Modell ein <em>Y</em> mit einem Dach verwenden. Damit meinen wir die Werte, welche wir auf Grundlage des Modells schätzen. Nicht die tatsächlichen Werte einer jeden Person.</p>
+<p>Beginnen wir mit dem Parameter <em>b<sub>1</sub>. b<sub>1</sub></em> bezeichnen wir als Steigungskoeffizienten. Dieser Parameter gibt an, wie steil die Regressionsgerade ist. In unserem berechneten Modell beläuft sich der Steigungskoeffizient auf 0.0005387. Das bedeutet, für jedes weitere Wort, welches eine Person aufschreibt, sollte diese Person 0.05% mehr Punkte im Test erhalten (0.05%, da der Wert 0.0005387 mal 100 berechnet werden muss, um Prozente zu erhalten). Grafisch können wir uns diese Steigung folgendermaßen vorstellen (siehe nächste Grafik). Schreibt eine Person 100 Worte mehr im Test, erwarten wir, dass diese Person 5.387% mehr Punkte im Test erhält. 5.387%, da wir 0.0005387 mal 100 rechnen müssen (= 0.05387) um den prozentuellen Anteil zu erhalten und nochmal mal 100 rechnen müssen um die Prozentangabe zu erhalten (=5.387%).</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/visuerkl.png"></div>
+<p><em>b</em><sub>0</sub> wiederum kennzeichnet den y-Achsenabschnitt. Der y-Achsenabschnitt ist die Stelle, bei welcher die y-Achse durch die Regressionsgerade abgeschnitten wird. Bei unserer Regressionsgerade liegt dieser Wert bei 0.2037:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/visuerkl1.png"></div>
+<p>Wir haben damit etabliert, wie das statistische Modell der einfachen linearen Regression aussieht. Das Modell umfasst einen Prädiktor (<em>X<sub>i</sub></em>) und zwei Parameter (<em>b</em><sub>0</sub> und <em>b</em><sub>1</sub>). Dieses Modell können wir als Gerade darstellen.</p>
+</div>
+<div id="berechnung-der-regressionsgeraden" class="section level3" number="6.2.5">
+<h3>
+<span class="header-section-number">6.2.5</span> <strong>Berechnung der Regressionsgeraden</strong><a class="anchor" aria-label="anchor" href="#berechnung-der-regressionsgeraden"><i class="fas fa-link"></i></a>
+</h3>
+<p>Nun, warum ist diese blaue Gerade die “richtige” Regressionsgerade? Ich hätte unendlich viele solcher Regressionsgeraden wählen können. Beispielsweise folgende:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/reg3.png"></div>
+<p>Manche der roten Geraden bilden die Daten besser ab als andere. Dennoch, die blaue Gerade ist die “beste,” da sie eine Eigenschaft hat, die die anderen Geraden nicht haben: Die blaue Regresssionsgerade minimiert die quadrierten Abweichungen der einzelnen Punkte von der Regressionsgerade.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/ordinal.png"></div>
+<p><strong>Ordinal Least Squares</strong></p>
+<p>In einer Formel dargestellt, suchen wir daher diejenige Gerade, welche die quadrierten Fehler zwischen dem echten Wert (<em>Y<sub>i</sub></em>) und dem vorhergesagten Wert (<em>Y</em>-Dach<em>i</em>) maximal minimiert. Wir nennen diesen Prozess <a href="https://en.wikipedia.org/wiki/Ordinary_least_squares">Ordinal Least Squares</a> Methode.</p>
+<p>Die beste Regressionsgeraden sagt <em>Y</em><sub>i</sub> allerdings nicht perfekt voraus. Es ist schlicht die beste aller möglichen Regressionsgeraden. </p>
+<p>Es gibt nun verschiedene Methoden, diese beste Gerade zu finden. Nehmen wir zwei. Wir können die Gerade entweder in R berechnen oder anhand der Korrelation und der Standardabweichungen der beiden Variablen berechnen. In R können wir die Funktion lm verwenden, um die Gerade direkt zu erhalten:</p>
+<div class="figure">
+<img src="images/05_einfache_lineare_regression/inter.png" alt=""><p class="caption">Intercept steht für die Stelle, an der die Regressionsgerade die y-Achse schneidet. wordcount steht für die Variable, welche die Anzahl der Worte in der Mitschrift umfasst.</p>
+</div>
+<p>Linksder Tilde ~ tragen wir die abhängige Variable ein, rechts der Tilde den Prädiktor. Zusätzlich müssen wir angeben, aus welchem Datensatz wir die Variablen ziehen. Wie du siehst, erhält man mit der Funktion das gleiche Modell, welches wir weiter oben beschrieben haben.</p>
+<p>Eine weitere Möglichkeit zur Berechnung der Parameter bei einer einfachen linearen Regression liefern folgende Formeln:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/b1.png"></div>
+<p><em>b<sub>1</sub></em> können wir berechnen, indem wir den Quotienten der Standardaweichung der abhängigen Variable (<em>s<sub>y</sub></em>) und der unabhängigen Variable (<em>s<sub>x</sub></em>) mit der Korrelation der beiden Variablen (<em>r</em>) multiplizieren.</p>
+<p><em>b<sub>1</sub></em> können wir anhand dieser Formel beispielsweise selbst in R berechnen:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/r.png"></div>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/b0.png"></div>
+<p><em>b<sub>0</sub></em> können wir berechnen, indem wir das Produkt aus b1 und dem Mittelwert des Prädiktors von dem Mittelwert der abhängigen Variable abziehen.</p>
+<p>Erneut können wir den Koeffizienten in R berechnen und erhalten das gleiche Ergebnis, das wir weiter oben dargestellt haben:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/r1.png"></div>
+</div>
+<div id="zusammenfassung-8" class="section level3" number="6.2.6">
+<h3>
+<span class="header-section-number">6.2.6</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-8"><i class="fas fa-link"></i></a>
+</h3>
+<p>In diesem Submodul haben wir gezeigt, wie das statistische Modell der einfachen linearen Regression aussieht und wie es berechnet wird. Das Modell kann als Gerade in einem Koordinatensystem dargestellt werden. Die Koeffizienten oder Parameter des Modells kennzeichnen den y-Achsenabschnitt und die Steigung der Gerade (auch Intercept genannt). Der erste Parameter <em>b<sub>0</sub></em> kennzeichnet die Stelle, an der die Regressionsgrade die y-Achse schneidet. Der Parameter <em>b<sub>1</sub></em> kennzeichnet die Steigung der Regressionsgeraden. <em>X<sub>i</sub></em> im Modell kennzeichnet die unabhängige Variable oder das Kriterium, die wir in das Modell für jeden Datenpunkt einfügen. Die Regressionsgerade wird ermittelt, indem man diejenige Gerade findet, welche die geringsten Quadrierten Abweichungen der echten Punkte und der vorhergesagten Punkte hat. Diese Methode nennt man Ordinal Least Squares Methode. Zuletzt haben wir gesehen, wie diese Parameter berechnet werden können. Als nächstes werden wir statistische Hypothesen auf Grundlage dieses Modells testen.</p>
+</div>
+</div>
+<div id="statistisches-hypothesentesten-1" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Statistisches Hypothesentesten<a class="anchor" aria-label="anchor" href="#statistisches-hypothesentesten-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>In diesem Modul werden wir die Fragestellung prüfen, ob Studierende, die mehr in einer Vorlesung aufschreiben, auch mehr aus dieser Vorlesung lernen. Wir werden hierfür den Datensatz von <a href="https://link.springer.com/article/10.1007/s10648-019-09468-2">Morehead, Dunlosky und Rawson (2014)</a> verwenden, wie wir ihn zu Beginn dieses Moduls vorgestellt haben. Der Datensatz umfasst Daten von 84 Studierenden. Folgendermaßen werden wir vorgehen: Wir werden zunächst anhand einer Poweranalyse untersuchen, wie sensitiv unser Test ist, sprich, welche Effekte wir überhaupt durch die Größe unserer Stichprobe finden können. Anschließend werden wir unsere Hypothese statistisch modellieren und ein kompaktes und erweitertes Modell aufstellen. Von dort werden wir den empirischen <em>F</em>-Wert berechnen und prüfen, ob wir die Nullhypothese auf Grundlage der Daten ablehnen oder nicht. In diesem Zug werden wir ebenso zeigen, dass wir diese Fragestellung mit einem <em>t</em>-Test prüfen können und erklären warum. Zuletzt zeigen wir, wie die Ergebnisse des Tests in einem Fachartikel berichtet werden können.</p>
+<div id="poweranalyse" class="section level3" number="6.3.1">
+<h3>
+<span class="header-section-number">6.3.1</span> Poweranalyse<a class="anchor" aria-label="anchor" href="#poweranalyse"><i class="fas fa-link"></i></a>
+</h3>
+<p>Mit Power haben wir die Wahrscheinlichkeit bezeichnet, mit der wir bei einem Test die Nullhypothese korrekterweise ablehnen werden, sollte die Alternativhypothese gelten. Wir haben ebenso gesagt, dass wir in der Regel versuchen, eine Power größer als 80% in einem Test zu erzielen. Das bedeutet, sollte die Alternativhypothese stimmen, möchten wir in 80% der Fälle die richtige statistische Entscheidung treffen und die Nullhypothese zu Gunsten der Alternativhypothese ablehnen. In der Regel überlegen wir uns daher auf Grundlage vorheriger Forschung, welchen Effekt wir erwarten und bestimmen anschließend die Größe der Stichprobe. In unserem Fall ist die Stichprobengröße bereits bestimmt (84 Studierende). Wir können allerdings die Fragestellung umdrehen und uns überlegen, für welche Effekte, sprich Korrelationskoeffizienten, wir eine Power von 80% erreichen werden. Hierdurch können wir herausfinden, wie sensitiv unser Test ist, um bestimmte Zusammenhänge zwischen zwei Variablen zu prüfen. Ein Test der nämlich eine zu geringe Power hat, kann uns keine Aufschlüsse über unsere Hypothesen geben.</p>
+</div>
+<div id="poweranalyse-mit-gpower" class="section level3" number="6.3.2">
+<h3>
+<span class="header-section-number">6.3.2</span> Poweranalyse mit G*Power<a class="anchor" aria-label="anchor" href="#poweranalyse-mit-gpower"><i class="fas fa-link"></i></a>
+</h3>
+<p>In G*Power können wir die Sensitivität unseres Tests bestimmen, indem wir unter Test <em>Family: Exact</em>, unter <em>Statistical Test Correlation: Bivariate normal model</em> und unter <em>Type of Power analysis: Sensitivity</em> eingeben. Folgendermaßen sieht die Eingabe in G*Power aus:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/gpower.png"></div>
+<p>Das Ergebnis dieser Poweranalyse sagt uns nun folgendes: Nur bei einem Korrelationskoeffizienten von <em>r</em> = .268 oder größer in der Population werden wir bei einer Stichprobengröße von 84 Personen eine Power von 80% erzielen. In anderen Worten, ist der Korrelationskoeffizient in der Population geringer als <em>r</em> = .268, schwindet unsere Power zunehmend. Bei einem Korrelationskoeffizienten von <em>r</em> = .11 beispielsweise in der Population würden wir lediglich eine Power von 46% erzielen. Unsere Studie wäre in diesem Fall nicht sensitiv genug, den Effekt durch unser Verfahren des frequentistischen Wahrscheinlichkeitsbegriffs zu finden. Oder, wir könnten aus unserem Test nichts über die Gültigkeit unserer Nullhypothese lernen. Das heißt wiederum, dass unser Test mit 84 Personen nur zur Erkenntnisgewinnung hilfreich ist, sofern der Korrelationskoeffizient der beiden Variablen in der Population größer als .268 ist. Das allerdings wissen wir nicht.</p>
+</div>
+<div id="statistische-modellierung-der-hypothesen" class="section level3" number="6.3.3">
+<h3>
+<span class="header-section-number">6.3.3</span> <strong>Statistische Modellierung der Hypothesen</strong><a class="anchor" aria-label="anchor" href="#statistische-modellierung-der-hypothesen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Bevor wir unsere Fragestellung statistisch testen, beginnen wir mit einer Grafik. Im folgenden siehst du die statistischen Verfahren, die wir in diesem Kurs kennenlernen werden. Bisher haben wir den <em>t</em>-Test für eine Stichprobe kennengelernt. Die Grafik besagt, dass das statistische Modell (sprich das erweiterte Modell) bei diesem Test keine Prädiktoren umfasst (<em>X</em>). Ebenso kannst du erkennen, dass wir bei der einfachen linearen Regression ein erweitertes Modell mit einem kontinuierlichem Prädiktor definieren. Kontinuierlich bedeutet, dass wir für <em>X</em> in dem Modell metrische (intervall- und verhältnisskalierte) Variablen einsetzen. In unserem Fall wird <em>X</em> die Anzahl der Wörter sein, die die Studierenden während der Vorlesung aufschreiben.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/stat.png"></div>
+<p>Das erweiterte Modell bei der einfachen linearen Regression haben wir im letzten Submodul bereits beschrieben. Wiederholen wir es an dieser Stelle erneut.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/modela.png"></div>
+<p><strong>Erweitertes Modell (augmented)</strong></p>
+<p>Das erweiterte Modell, welches wir annehmen, umfasst einen Prädiktor <em>X<sub>i</sub></em> und zwei Parameter (hier Populationsparameter <em>ß<sub>0</sub></em> und <em>ß<sub>1</sub></em>). Genauer beschreibt der Parameter <em>ß<sub>1</sub></em> denZusammenhang der beiden Variablen.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/modelc.png"></div>
+<p><strong>Kompaktes Modell (compact)</strong></p>
+<p>Das kompakte Modell der Nullhypothese umfasst keinen Prädiktor. Wir nennen es Nullhypothese, da die Parameter, die wir prüfen möchten, in dem dazugehörigen Modell auf Null gesetzt werden. In diesem Fall nehmen wir im kompakten Modell an, dass die Korrelation der beiden Variablen, welche durch <em>ß<sub>1</sub></em> kodiert ist, 0 beträgt. Das kompakte Modell schätzt daher die abhängige Variable auf Grundlage des Mittelwerts der abhängigen Variable (<em>ß<sub>0</sub></em>).</p>
+<p>Um diesen Vergleich noch einmal genauer darzustellen, vergleichen wir das erweiterte und das kompakte Modell grafisch. Links siehst du das aus den Daten berechnete erweiterte Modell in blau dargestellt. Rechts siehst du das berechnete kompakte Modell in blau dargestellt. Du siehst, dass wir für jeden Wert <em>X</em> im kompakten Modell die gleiche Vorhersage für <em>Y</em> machen. Diese Idee ist konform mit unserem oben dargestellten kompakten Modell, da wir dort den Prädiktor <em>X</em> aus der Gleichung entfernt haben, indem wir <em>ß<sub>1</sub></em> auf 0 gesetzt haben.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/vgl.jpg"></div>
+<p>Eine solche horizontale Linie, wie sie durch das kompakte Modell dargestellt ist, beschreibt eine nicht-existierende Korrelation zwischen zwei Variablen. Schau dir dazu <a href="https://rpsychologist.com/d3/correlation/">folgende Simulation von Kristoffer Magnussen</a> an.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/cor.png"></div>
+<p>Besteht eine Korrelation von 0 zwischen zwei Variablen, ist die abhängige Variable unbeeinflusst vom Prädiktor X. Oder, das Wissen um die unabhängige Variable gibt uns keine Informationen über die abhängige Variable. Oder: Wie viel Worte einer Person in einer Vorlesung mitschreibt, hat keinen Einfluss auf das Abschneiden im späteren Test dieser Person.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/cor1.png"></div>
+<p>Besteht jedoch eine Korrelation zwischen zwei Variablen, sprich ist der Steigungskoeffizient nicht null, gibt uns die unabhängige Variable <em>X</em> Informationen über die abhängige Variable <em>Y</em>. In unserem Fall zeigt die Korrelation der beiden Variablen, dass das Abschneiden in dem Test teils durch die Anzahl der Wörter, die Studierende bei einer Vorlesung mitschreiben, erklärt werden kann. Wir werden später erklären, wofür die Prozentzahl 5.3 in der Grafik links steht.</p>
+<p>Wir haben nun auf verschiedenen Wegen gezeigt, dass das kompakte Modell und das erweiterte Modell unsere Annahmen über die Null- und Alternativhypothese darstellen. Wir haben damit einen formalen Weg gefunden, unsere Hypothesen in statistische Modelle zu übertragen. Als nächstes können wir den empirischen <em>F</em>-Wert berechnen, auf Grundlage dessen wir unsere Hypothese testen.</p>
+</div>
+<div id="empirischer-f-wert-ermitteln" class="section level3" number="6.3.4">
+<h3>
+<span class="header-section-number">6.3.4</span> <strong>Empirischer <em>F</em>-Wert ermitteln</strong><a class="anchor" aria-label="anchor" href="#empirischer-f-wert-ermitteln"><i class="fas fa-link"></i></a>
+</h3>
+<p>Als nächstes werden wir den empirischen <em>F</em>-Wert ermitteln. Der <em>F</em>-Wert wird uns zeigen, wie viel besser der Parameter <em>b<sub>1</sub></em> ist als willkürliche weitere Parameter, die keinen substantiellen Beitrag leisten, <em>Y</em> aufzuklären. Hierzu müssen wir die entsprechenden Werte in der folgenden Tabelle finden. Beginnen wir mit den Freiheitsgraden der beiden Modelle. Das erweiterte Modell hat insgesamt 2 Parameter bei 84 Datenpunkten. Das heißt, in dieses Modell können noch 84 - 2 = 82 Parameter hinzugefügt werden. Das kompakte Modell hat insgesamt 1 Parameter bei 84 Datenpunkten (<em>df</em><sub>2</sub>). Das heißt, in das kompakte Modell können noch 84 - 1  = 83 Parameter hinzugefügt werden. Zuletzt können wir feststellen, dass das erweiterte Modell einen Parameter mehr hat als das kompakte Modell (<em>df</em><sub>1</sub>).</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="34%">
+<col width="14%">
+<col width="21%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Source</strong></th>
+<th><strong>Sum of Squares</strong></th>
+<th><strong><em>df</em></strong></th>
+<th><strong><em>MS</em></strong></th>
+<th><strong><em>F</em></strong></th>
+<th><strong><em>p</em></strong></th>
+<th><strong>PRE</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Reduktion der Fehler durch erweitertes Modell</td>
+<td>-</td>
+<td>df<sub>1</sub> = PA - PC = 1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Restliche Fehler des erweiterten Modells</td>
+<td>-</td>
+<td>df<sub>2</sub> = n - PA = 84 - 2 = 82</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Fehler kompaktes Modell<br>
+</td>
+<td>-</td>
+<td>n - PC = 84 - 1 = 83<br>
+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<p>Als nächstes müssen wir die Fehler in beiden Modellen ermitteln und berechnen, wie viel mehr Fehler das kompakte Modell im Vergleich zum erweiterten Modell macht. Beginnen wir mit SSE<sub>C</sub> und SSE<sub>A</sub>. </p>
+</div>
+<div id="ssec" class="section level3" number="6.3.5">
+<h3>
+<span class="header-section-number">6.3.5</span> <strong><em>SSE<sub>C</sub></em></strong><a class="anchor" aria-label="anchor" href="#ssec"><i class="fas fa-link"></i></a>
+</h3>
+<p>Zunächst müssen wir die Fehler ermitteln, die das kompakte Modell macht. Im nächsten Bild sind diese Fehler als Quadrate für jede Person dargestellt. Die Summe dieser Quadrate kennzeichnet <em>SSE<sub>C</sub></em>.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/dia.jpg"></div>
+<p>Die Summe dieser Quadrate und damit die Fehler dieses kompakten Modells belaufen sich auf <em>SSE<sub>C</sub> =</em> 2.136042.</p>
+</div>
+<div id="ssea" class="section level3" number="6.3.6">
+<h3>
+<span class="header-section-number">6.3.6</span> <strong><em>SSE<sub>A</sub></em></strong><a class="anchor" aria-label="anchor" href="#ssea"><i class="fas fa-link"></i></a>
+</h3>
+<p>Ebenso macht das erweiterte Modell Fehler. Da das erweiterte Modell allerdings einen Prädiktor mehr hat als das kompakte Modell, wird dieses Modell insgesamt weniger Fehler machen als das kompakte Modell. Visuell können wir uns die Fehler erneut als den quadrierten Abstand der realen Werte von den vorhergesagten Werten des Modells vorstellen:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/dia1.png"></div>
+<p>Die Fehler belaufen sich auf ingesamt 2.026016 und sind damit wie erwartet kleiner als beim kompakten Modell.</p>
+</div>
+<div id="ssr-pre-und-tabellarische-darstellung" class="section level3" number="6.3.7">
+<h3>
+<span class="header-section-number">6.3.7</span> <strong><em>SSR, PRE</em></strong> <strong>und tabellarische Darstellung</strong><a class="anchor" aria-label="anchor" href="#ssr-pre-und-tabellarische-darstellung"><i class="fas fa-link"></i></a>
+</h3>
+<p>Für <em>SSR</em> ergibt sich daher folgender Wert:</p>
+<p><img src="images/05_einfache_lineare_regression/ssr.png"><br></p>
+<p>Das erweiterte Modell reduziert daher 0.11 der Fehler des kompakten Modells. Nun, da wir <em>SSR</em> kennen, können wir ebenso berechnen, wie viel Prozent der Fehler des kompakten Modells das erweiterte Modell reduziert:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/pre.png"></div>
+<p><em>PRE</em> liegt bei 5.15%. Das bedeutet, das erweiterte Modell reduziert 5.15% der Fehler des kompakten Modells. Beachte, dass <em>PRE</em> im Kontext der einfachen und multiplen linearen Regression auch als <em>R</em><sup>2</sup> bezeichnet wird. In der Berechnung ist es allerdings nichts anderes als <em>PRE</em>. Ebenso werden wir später sehen, dass die Effektgröße <em>η</em><sup>2</sup> nichts anderes ist als <em>PRE</em>.</p>
+<p>Unsere Ergebnisse können wir nun tabellarisch zusammenfassen:</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="42%">
+<col width="18%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="8%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Source</strong></th>
+<th><strong>Sum of Squares</strong></th>
+<th><strong>df</strong></th>
+<th><strong>MS</strong></th>
+<th><strong>F</strong></th>
+<th><strong>p</strong></th>
+<th><strong>PRE</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Reduktion der Fehler durch erweitertes Modell</td>
+<td>0.11</td>
+<td>1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>0.0515<br>
+</td>
+</tr>
+<tr class="even">
+<td>Restliche Fehler des erweiterten Modells</td>
+<td>2.026</td>
+<td>82</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Fehler kompaktes Modell<br>
+</td>
+<td>2.136</td>
+<td>83<br>
+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="f-wert-und-wahrscheinlichkeit-für-f-berechnen" class="section level3" number="6.3.8">
+<h3>
+<span class="header-section-number">6.3.8</span> <strong><em>F</em>-Wert und Wahrscheinlichkeit für <em>F</em> berechnen</strong><a class="anchor" aria-label="anchor" href="#f-wert-und-wahrscheinlichkeit-f%C3%BCr-f-berechnen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Nun, da wir die Fehlerwerte kennen, sind wir im Stande <em>MSR</em>, <em>MSE</em> und <em>F</em> zu berechnen. Erneut fragen wir uns, wie viel besser unser Parameter <em>b</em><sub>1</sub> ist als ein willkürlicher Parameter, welchen wir noch in das erweiterte Modell hinzufügen könnten?</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/f.png"></div>
+<p>Es zeigt sich, dass der Parameter <em>b</em><sub>1</sub>, welcher für den Zusammenhang der beiden Variablen steht, 4.45 mal besser ist als wir bei einem willkürlichen Parameter erwarten würden. Als Faustregel gilt, liegt der empirische F-Wert zwischen 4 und 5, wird der Test in der Regel signifikant. Prüfen wir dies als nächstes:</p>
+<p>In R können wir die Wahrscheinlichkeit für diesen Kennwert relativ schnell durch die Funktion <a href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/Fdist.html">pf</a> ermitteln. Wir müssen hierfür lediglich den empirischen <em>F</em>-Wert sowie die beiden Freiheitsgrade eingeben. Um die Fläche rechts des empirischen <em>F</em>-Wertes zu erhalten, müssen wir das Ganze von 1 abziehen:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/screen.png"></div>
+<p>Wir sehen, dass die Wahrscheinlichkeit für einen solchen Kennwert bei 3.78% liegt. Wir erhalten damit ein signifikantes Ergebnis. Die Annahme, dass es keinen Zusammenhang zwischen diesen beiden Variablen gibt, muss daher widerlegt werden. Wir müssen in anbetracht von <em>R</em><sup>2</sup> allerdings auch sagen, dass der Effekt der Anzahl der Wörter auf die Lernleistung relativ gering ist. Er klärt lediglich 5% der Varianz im kompakten Modell auf. Es müssen daher andere Faktoren deutlich besser die Leistung in dem Test erklären können als lediglich die Anzahl der Worte in der Mitschrift. Fassen wir die Ergebnisse zusammen:</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="36%">
+<col width="16%">
+<col width="8%">
+<col width="8%">
+<col width="7%">
+<col width="7%">
+<col width="14%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Source</strong></th>
+<th><strong>Sum of Squares</strong></th>
+<th><strong><em>df</em></strong></th>
+<th><strong><em>MS</em></strong></th>
+<th><strong><em>F</em></strong></th>
+<th><strong><em>p</em></strong></th>
+<th><strong><em>PRE / R<sup>2</sup></em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Reduktion der Fehler durch erweitertes Modell</td>
+<td>0.11</td>
+<td>1</td>
+<td>0.11</td>
+<td>4.45</td>
+<td>.038</td>
+<td>0.0515<br>
+</td>
+</tr>
+<tr class="even">
+<td>Restliche Fehler des erweiterten Modells</td>
+<td>2.026</td>
+<td>82</td>
+<td>0.0247</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Fehler kompaktes Modell<br>
+</td>
+<td>2.136</td>
+<td>83<br>
+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="äquivalenz-zum-t-test" class="section level3" number="6.3.9">
+<h3>
+<span class="header-section-number">6.3.9</span> <strong>Äquivalenz zum <em>t</em>-Test</strong><a class="anchor" aria-label="anchor" href="#%C3%A4quivalenz-zum-t-test"><i class="fas fa-link"></i></a>
+</h3>
+<p>Selten wird bei einer Korrelation ein <em>F</em>-Test berichtet. Viel häufiger ist der <em>t</em>-Test. Wir wissen allerdings jetzt, dass der <em>F</em>-Test und der <em>t</em>-Test die gleichen Ergebnisse liefern (zumindest für ungerichtete Hypothesen). Nichtsdestotroz sollten wir dies an dieser Stelle noch einmal zeigen.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/tn2.png"></div>
+<p><strong>t-Wert auf Grundlage von F ermitteln</strong></p>
+<p>Zunächst ist der <em>t</em>-Wert nichts anderes als die Wurzel aus <em>F</em>. Der <em>t</em>-Wert ist daher 2.11.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/tn21.png"></div>
+<p><strong>t-Wert auf Grundlage des Korrelationskoeffizienten der beiden Variablen</strong></p>
+<p>Ebenso können wir die Korrelation der beiden Variablen verwenden und erhalten den gleichen <em>t</em>-Wert.</p>
+</div>
+<div id="effektgröße-cohens-d-berechnen" class="section level3" number="6.3.10">
+<h3>
+<span class="header-section-number">6.3.10</span> <strong>Effektgröße Cohen’s <em>d</em> berechnen</strong><a class="anchor" aria-label="anchor" href="#effektgr%C3%B6%C3%9Fe-cohens-d-berechnen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir haben bereits mit <em>R</em><sup>2</sup> eine Effektgröße kennen gelernt, die wir für diesen Test berichten können. Allerdings wird bei einem <em>t</em>-Test eher die Effektgröße Cohen’s <em>d</em> berichtet. Wir haben die Formel für Cohen’s <em>d</em> bereits in vorherigen Modul kennen gelernt. Allerdings ist diese Formel geeignet, um Cohen’s <em>d</em> aus Mittelwerten zu ermitteln. Für die einfache lineare Regression kann folgende Formel verwendet werden (siehe <a href="https://psycnet.apa.org/doiLanding?doi=10.1037/h0087427">Rosnow et al., 2003</a>):</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/d.png"></div>
+<p>Wie du siehst, berechnet sich Cohen’s <em>d</em> aus dem empirischen <em>t</em>-Wert und dem Quotienten aus der Wurzel des Freiheitsgrades des erweiterten Modells und der Zahl 2. In unserem Fall handelt es sich bei uns um einen kleinen Effekt (siehe auch <a href="https://www.psychometrica.de/effect_size.html">hier</a>).</p>
+</div>
+<div id="ergebnis-berichten" class="section level3" number="6.3.11">
+<h3>
+<span class="header-section-number">6.3.11</span> Ergebnis berichten<a class="anchor" aria-label="anchor" href="#ergebnis-berichten"><i class="fas fa-link"></i></a>
+</h3>
+<p>Nun haben wir alle Ergebnisse zusammen und können die Ergebnisse unseres Tests berichten:</p>
+<blockquote>
+<p>“Um unsere Hypothese zu prüfen, wurde eine einfache lineare Regression berechnet. Als abhängige Variable wurde die Punktzahl der Probanden im Test direkt nach der Mitschrift und als unabhängige Variable die Anzahl der Wörter in der Mitschrift verwendet. Wir fanden eine signifikante Korrelation, <em>t</em>(82) = 2.11, <em>p</em> = .038, <em>d</em> = 0.47 (kleiner Effekt), was darauf hindeutet, dass die Anzahl der Wörter in einem positiven Zusammenhang mit der Punktzahl im Test steht.”</p>
+</blockquote>
+</div>
+<div id="zusammenfassung-9" class="section level3" number="6.3.12">
+<h3>
+<span class="header-section-number">6.3.12</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-9"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir haben in diesem Submodul statistisch getestet, ob zwei Variablen miteinander korrelieren. Zunächst haben wir die Sensitivität unseres Tests gegeben der Stichprobe von 84 Probanden ermittelt. Wir fanden dabei heraus, dass wir bei dieser Stichprobengröße erst eine Power von 80% erzielen, wenn die wahre Korrelation der beiden Variablen bei 0.268 liegt. Danach haben wir unseren <em>F</em>-Test berechnet und herausgefunden, dass die Korrelation der beiden Variablen signifikant ist. Das bedeutet, die Annahme, beide Variablen korrelieren nicht miteinander, ist unter Anbetracht unserer Daten nicht zu halten. Wir verwerfen in diesem Fall die Nullhypothese. Zuletzt haben wir gezeigt, dass der <em>F</em>-Test auch als <em>t</em>-Test dargestellt werden kann und gezeigt, wie wir die Ergebnisse des Tests in einem Fachartikel berichten können.</p>
+</div>
+</div>
+<div id="konfidenzintervalle-bei-der-einfachen-linearen-regression" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Konfidenzintervalle bei der einfachen linearen Regression<a class="anchor" aria-label="anchor" href="#konfidenzintervalle-bei-der-einfachen-linearen-regression"><i class="fas fa-link"></i></a>
+</h2>
+<p>Signifikanztest erlauben uns Aussagen darüber, wie unwahrscheinlich bestimmte Daten unter Annahme der Nullhypothese sind: P(D|H0). Finden wir in vielen Experimenten häufig, dass ein Ergebnis unter Annahme der Nullhypothese unwahrscheinlich ist, haben wir guten Grund zu denken, dass beispielsweise zwei Variablen miteinander korrelieren. Was wir allerdings meist wissen möchten ist, wie stark diese Werte miteinander korrelieren? Konfidenzintervalle helfen uns, dieser Frage näher zu kommen und erweitern damit unseren statistischen Werkzeugkasten. Folgende Information liefert uns ein Konfidenzintervall:</p>
+<blockquote>
+<p>In 95 von 100 Fällen befindet sich der <strong>wahre Populationsparameter</strong> innerhalb des Konfidenzintervalls.</p>
+</blockquote>
+<p>Konfidenzintervalle sagen damit <strong>nicht</strong>, dass sich der Populationsparameter zu 95% innerhalb des Konfidenzintervalls befinden. Diese Wahrscheinlichkeit ist entweder 0 oder 1. Zudem habe ich gerade willkürlich bestimmt, dass der Wert 95% festgeschrieben wird. Genausogut gibt es 99%ige oder 90%ige Konfidenzintervalle.</p>
+<div id="simulation-von-konfidenzintervallen" class="section level3" number="6.4.1">
+<h3>
+<span class="header-section-number">6.4.1</span> <strong>Simulation von Konfidenzintervallen</strong><a class="anchor" aria-label="anchor" href="#simulation-von-konfidenzintervallen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Versuchen wir Konfidenzintervalle an einem Beispiel genauer zu beschreiben. In der nächsten Visualisierung siehst du 100 Konfidenzintervalle. Stell dir vor, wir wiederholen die gleiche Studie, welche wir in diesem Modul untersucht haben, 100 mal. Jedes Mal werden wir ein leicht anderes erweitertes und kompaktes Modell erhalten. Für jede Studie werden wir zudem ein anderes Konfidenzintervall erhalten. In der folgenden Visualisierung sind die Konfidenzintervalle als schwarze und rote Striche gekennzeichnet. Der blaue vertikale Strich kennzeichnet den wahren Populationsparameter <em>ß<sub>1</sub></em>. Zudem liegt die wahre Korrelation der beiden Variablen bei <em>r</em> = 0.27. Bei einem 95%-igen Konfidenzintervall sollten wir in 95% der Fälle erwarten, dass der wahre Populationsparameter innerhalb des Intervalls liegt. In 5% der Fälle allerdings erwarten wir, dass der Populationsparameter außerhalb des Intervalls liegt. Rote Striche kennzeichnen daher Konfidenzintervalle, bei denen der wahre Populationsparameter nicht im Konfidenzintervall liegt. Sobald zudem einer der schwarzen Linien die schwarze gestrichelete Linie beim Wert 0 umschließt, begehen wir einen Betafehler und nehmen fälschlicherweise die Nullhypothese an. Beginnen wir mit einer Simulation von 100 Studien mit je einer Stichprobengröße von 84 Personen:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/konfi.png"></div>
+<p>Folgendes erkennen wir aus der Simulation. In drei Fällen liegt der wahre Populationsparameter außerhalb des Konfidenzintervalls. Würden wir unendlich viele Studien erhalten, würde dies in 5% der Fälle passieren. In unserer Simulation tritt dies in 3% der Fälle auf. Wir sehen zudem, dass wir in 25 von 100 Fällen einen Beta-Fehler begehen, da das Konfidenzintervall den Wert 0 umschließt. Auf Grundlage dieser Simulation müssten wir daher davon ausgehen, dass unsere Studie mit 84 Probanden eine Power von etwa 75% hat. </p>
+<p>Variieren wir als nächstes die Stichprobengröße, um zu sehen, wie sich die Konfidenzintervalle mit einer unterschiedlichen Stichprobengröße verändern. Und simulieren wir eine Stichprobe von 30, 100, 200 und 300 Probanden:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/konfi1.png"></div>
+<p>Je größer die Stichprobe wird, desto schmaller wird das Konfidenzintervall. Das heißt, mit steigender Stichprobengröße können wir den wahren Populationsparameter genauer erahnen. Zudem sehen wir, dass wir mit steigender Stichprobengröße weniger Beta-Fehler machen, sprich eine größere Power erhalten. Das sehen wir, da die Konfidenzintervalle mit steigender Stichprobengröße immer seltener den Wert 0 (keine Korrelation der beiden Variablen) schneiden. Bei einer Stichprobengröße von 300 und einem wahren Korrelationskoeffizient von <em>r</em> = 0.27 hätten wir damit fast eine Power von 100%. Ebenso sehen wir, dass bei einem 95%-igen Konfidenzintervall der wahre Populationsparameter in der Tat in etwa 95% der Fälle innerhalb des Intervalls liegt. Insgesamt haben wir 400 Konfidenzintervalle in dieser Simulation berechnet. In 24 der Fälle liegt der Populationsparameter außerhalb des Konfidenzintervalls. Das entspricht 6% der Fälle und kommt der 5%-Marke sehr nahe.</p>
+</div>
+<div id="berechnung-des-konfidenzintervalls-bei-der-einfachen-linearen-regression" class="section level3" number="6.4.2">
+<h3>
+<span class="header-section-number">6.4.2</span> <strong>Berechnung des Konfidenzintervalls bei der einfachen linearen Regression</strong><a class="anchor" aria-label="anchor" href="#berechnung-des-konfidenzintervalls-bei-der-einfachen-linearen-regression"><i class="fas fa-link"></i></a>
+</h3>
+<p>Berechnet wird das Konfidenzintervall bei einer einfachen linearen Regression durch folgende Formel:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/ci.png"></div>
+<p>Wir erhalten durch die Formel das untere und obere Ende des Konfidenzintervalls (upper/lower). Zum Verständnis der Formel, hilft es, die einzelnen Komponenten zu klären:</p>
+<ul>
+<li><p><em>b</em><sub>1</sub>: Der Steigungskoeffizient der unabhängigen Variable <em>x</em><sub>1</sub></p></li>
+<li><p><em>F<sub>crit</sub></em>: Der kritische <em>F</em>-Wert, welcher zu einem signifikanten Ergebnis führt. Diesen kann man mit der Funktion qf in R berechnen: qf(0.95, df1 = 1, df2 = 84) = 3.95</p></li>
+<li><p><em>MSE</em>: Die Fehler des erweiterten Modells, die die weiteren Parameter des erweiterten Modells durchschnittlich aufklären</p></li>
+<li><p><em>n</em>: Die Anzahl der Untersuchungsobjekte</p></li>
+<li><p><em>s</em><sub>x</sub><sup>2</sup>: Die Varianz der unabhängigen Variable <em>X</em></p></li>
+</ul>
+<p>Setzen wir diese Werte in die Formel ein, erhalten wir folgende Konfidenzintervalle:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/ci1.png"></div>
+<p>Wir haben daher eine starke Annahme, dass der wahre Populationsparameter <em>ß<sub>1</sub></em> zwischen den Werten 0.0000309 und 0.0010 liegt. Da das Konfidenzintervall den Wert 0 nicht schneidet, wissen wir zudem, dass das Ergebnis unseres Tests signifikant ist.</p>
+<p>Da <em>b<sub>1</sub></em> nichts anderes ist als der Steigungskoeffizient der einfachen linearen Regression, können wir das Konfidenzintervall ebenso grafisch darstellen. Im folgenden ist in grau das obere und untere Konfidenzintervall dargestellt.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/konfidenz.jpg"></div>
+<p>Die Visualisierung zeigt uns damit, in welchem Bereich sich der Zusammenhang in der Population vermutlich befinden wird.</p>
+</div>
+<div id="standardisiertes-konfidenzintervall" class="section level3" number="6.4.3">
+<h3>
+<span class="header-section-number">6.4.3</span> <strong>Standardisiertes Konfidenzintervall</strong><a class="anchor" aria-label="anchor" href="#standardisiertes-konfidenzintervall"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wie aber können wir diese Werte interpretieren? Die haben keinen Bezug zu Werten, die wir kennen. Um daher das Konfidenzintervall besser zu verstehen, können wir die abhängige und unabhängige Variable z-standardisieren.</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/y3.png"></div>
+<p>Indem wir die beiden Variablen standardisieren, erhalten wir folgendes erweitertes Modell. Der Koeffizient <em>b<sub>1</sub></em> ist hierdurch der Korrelationskoeffizient der beiden Variablen.</p>
+<p>Ein Konfidenzintervall von <em>b<sub>1</sub></em> hilft uns daher zu sagen, was der wahre Korrelationskoeffizient in der Population ist. Berechnen wir erneut einen <em>F</em>-Test mit den standardisierten Daten, erhalten wir folgenden Korrelationskoeffizienten:</p>
+<div class="inline-figure"><img src="images/05_einfache_lineare_regression/00.png"></div>
+<p>Die Korrelation der beiden Variablen bewegt sich daher vermutlich zwischen <em>r</em> = 0.013 und <em>r</em> = 0.441. Die Spannweite des Konfidenzintervalls ist noch relativ weit. Würden wir allerdings deutlich mehr Probanden erheben, würde sich die Breite des Konfidenzintervalls schmälern und wir könnten eine besser Aussage über <em>ß<sub>1</sub></em> treffen.</p>
+</div>
+<div id="zusammenfassung-10" class="section level3" number="6.4.4">
+<h3>
+<span class="header-section-number">6.4.4</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-10"><i class="fas fa-link"></i></a>
+</h3>
+<p>In diesem Submodul haben wir zum ersten Mal Konfidenzintervalle kennengelernt. Wir haben gelernt, dass Konfidenzintervalle Aussagen über den wahren Populationsparameter machen können. Bei einem 95%-igen Konfidenzintervall liegt in 95% der Fälle der wahre Populationsparameter innerhalb des Intervalls. Ebenso haben wir gesehen, dass Konfidenzintervalle genutzt werden können, um Hypothesen zu testen. Liegt wie in unserem Fall der Wert 0 innerhalb des Intervalls, handelt es sich um ein nicht-signifikantes Ereignis. Konfidenzintervalle liefern daher die gleichen Informationen wie der <em>F</em>-Test. Dann haben wir gesehen, wie ein Konfidenzintervall bei einer einfachen linearen Regression berechnet werden kann. Wir haben ebenso gesehen, dass wir durch die Standardisierung der Variablen heraus finden können, in welchem Bereich die wahre Korrelation der beiden Variablen vermutlich liegt.</p>
+</div>
+</div>
+<div id="berechnung-in-jamovi-1" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Berechnung in Jamovi<a class="anchor" aria-label="anchor" href="#berechnung-in-jamovi-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Zum Ende des Moduls zeige ich dir, wie die einfache lineare Regression in Jamovi berechnet wird. Du wirst gleich sehen, dass alle Ergebnisse in Jamovi identisch mit den Werten sind, die wir in diesem Modul berechnet haben. Falls du den Datensatz nochmal brauchst, du findest ihn hier:</p>
+<p>TODO: Einfügen Datei morehead_experiment1.csv</p>
+<p>TODO: Einfügen Video</p>
+</div>
+<div id="weitere-ressourcen" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Weitere Ressourcen<a class="anchor" aria-label="anchor" href="#weitere-ressourcen"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><a href="https://www.r-bloggers.com/2020/12/robust-regression/" class="uri">https://www.r-bloggers.com/2020/12/robust-regression/</a></li>
@@ -74,7 +543,48 @@
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#einfache-lineare-regression"><span class="header-section-number">6</span> Einfache lineare Regression</a></li>
-<li><a class="nav-link" href="#weitere-ressourcen"><span class="header-section-number">6.1</span> Weitere Ressourcen</a></li>
+<li>
+<a class="nav-link" href="#einf%C3%BChrung-4"><span class="header-section-number">6.1</span> Einführung</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#datensatz-dieses-moduls"><span class="header-section-number">6.1.1</span> Datensatz dieses Moduls</a></li>
+<li><a class="nav-link" href="#hypothese-und-datensatz-dieses-moduls"><span class="header-section-number">6.1.2</span> Hypothese und Datensatz dieses Moduls</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#das-statistische-modell-der-einfachen-linearen-regression"><span class="header-section-number">6.2</span> Das statistische Modell der einfachen linearen Regression</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#darstellung-der-regressionsgeraden-der-einfachen-linearen-regression"><span class="header-section-number">6.2.1</span> Darstellung der Regressionsgeraden der einfachen linearen Regression</a></li>
+<li><a class="nav-link" href="#vorhersagen-auf-grundlage-der-regressionsgeraden"><span class="header-section-number">6.2.2</span> Vorhersagen auf Grundlage der Regressionsgeraden</a></li>
+<li><a class="nav-link" href="#vergleich-des-modells-der-einfachen-linearen-regression-mit-dem-mittelwert-der-abh%C3%A4ngigen-variable-als-modell"><span class="header-section-number">6.2.3</span> Vergleich des Modells der einfachen linearen Regression mit dem Mittelwert der abhängigen Variable als Modell</a></li>
+<li><a class="nav-link" href="#statistisches-modell-der-einfachen-linearen-regression"><span class="header-section-number">6.2.4</span> Statistisches Modell der einfachen linearen Regression</a></li>
+<li><a class="nav-link" href="#berechnung-der-regressionsgeraden"><span class="header-section-number">6.2.5</span> Berechnung der Regressionsgeraden</a></li>
+<li><a class="nav-link" href="#zusammenfassung-8"><span class="header-section-number">6.2.6</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#statistisches-hypothesentesten-1"><span class="header-section-number">6.3</span> Statistisches Hypothesentesten</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#poweranalyse"><span class="header-section-number">6.3.1</span> Poweranalyse</a></li>
+<li><a class="nav-link" href="#poweranalyse-mit-gpower"><span class="header-section-number">6.3.2</span> Poweranalyse mit G*Power</a></li>
+<li><a class="nav-link" href="#statistische-modellierung-der-hypothesen"><span class="header-section-number">6.3.3</span> Statistische Modellierung der Hypothesen</a></li>
+<li><a class="nav-link" href="#empirischer-f-wert-ermitteln"><span class="header-section-number">6.3.4</span> Empirischer F-Wert ermitteln</a></li>
+<li><a class="nav-link" href="#ssec"><span class="header-section-number">6.3.5</span> SSEC</a></li>
+<li><a class="nav-link" href="#ssea"><span class="header-section-number">6.3.6</span> SSEA</a></li>
+<li><a class="nav-link" href="#ssr-pre-und-tabellarische-darstellung"><span class="header-section-number">6.3.7</span> SSR, PRE und tabellarische Darstellung</a></li>
+<li><a class="nav-link" href="#f-wert-und-wahrscheinlichkeit-f%C3%BCr-f-berechnen"><span class="header-section-number">6.3.8</span> F-Wert und Wahrscheinlichkeit für F berechnen</a></li>
+<li><a class="nav-link" href="#%C3%A4quivalenz-zum-t-test"><span class="header-section-number">6.3.9</span> Äquivalenz zum t-Test</a></li>
+<li><a class="nav-link" href="#effektgr%C3%B6%C3%9Fe-cohens-d-berechnen"><span class="header-section-number">6.3.10</span> Effektgröße Cohen’s d berechnen</a></li>
+<li><a class="nav-link" href="#ergebnis-berichten"><span class="header-section-number">6.3.11</span> Ergebnis berichten</a></li>
+<li><a class="nav-link" href="#zusammenfassung-9"><span class="header-section-number">6.3.12</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#konfidenzintervalle-bei-der-einfachen-linearen-regression"><span class="header-section-number">6.4</span> Konfidenzintervalle bei der einfachen linearen Regression</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#simulation-von-konfidenzintervallen"><span class="header-section-number">6.4.1</span> Simulation von Konfidenzintervallen</a></li>
+<li><a class="nav-link" href="#berechnung-des-konfidenzintervalls-bei-der-einfachen-linearen-regression"><span class="header-section-number">6.4.2</span> Berechnung des Konfidenzintervalls bei der einfachen linearen Regression</a></li>
+<li><a class="nav-link" href="#standardisiertes-konfidenzintervall"><span class="header-section-number">6.4.3</span> Standardisiertes Konfidenzintervall</a></li>
+<li><a class="nav-link" href="#zusammenfassung-10"><span class="header-section-number">6.4.4</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#berechnung-in-jamovi-1"><span class="header-section-number">6.5</span> Berechnung in Jamovi</a></li>
+<li><a class="nav-link" href="#weitere-ressourcen"><span class="header-section-number">6.6</span> Weitere Ressourcen</a></li>
 </ul>
 
       <div class="book-extra">
@@ -91,7 +601,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2021-02-01.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -111,6 +621,22 @@
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
 </html>

@@ -6,10 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 5 Statistische Modellierung | A Minimal Book Example</title>
 <meta name="author" content="Yihui Xie">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.6.4/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.3.9000/tabs.js"></script><script src="libs/bs3compat-0.2.3.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
+<meta name="description" content="5.1 Einführung Dieses Modul beschäftigt sich ausführlicher mit der statistischen Modellierung im Prozess des statistischen Hypothesentestens. Du wirst in diesem Modul lernen, wie du die Null- und...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 5 Statistische Modellierung | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="5.1 Einführung Dieses Modul beschäftigt sich ausführlicher mit der statistischen Modellierung im Prozess des statistischen Hypothesentestens. Du wirst in diesem Modul lernen, wie du die Null- und...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 5 Statistische Modellierung | A Minimal Book Example">
+<meta name="twitter:description" content="5.1 Einführung Dieses Modul beschäftigt sich ausführlicher mit der statistischen Modellierung im Prozess des statistischen Hypothesentestens. Du wirst in diesem Modul lernen, wie du die Null- und...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -39,7 +47,7 @@
 <li><a class="" href="einfache-lineare-regression.html"><span class="header-section-number">6</span> Einfache lineare Regression</a></li>
 <li><a class="" href="multiple-lineare-regression.html"><span class="header-section-number">7</span> Multiple lineare Regression</a></li>
 <li><a class="" href="einfaktorielle-varianzanalyse.html"><span class="header-section-number">8</span> Einfaktorielle Varianzanalyse</a></li>
-<li><a class="" href="mehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> Mehrfaktorielle Varianzanalyse</a></li>
+<li><a class="" href="tatusmehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> tatusMehrfaktorielle Varianzanalyse</a></li>
 <li><a class="" href="ancova.html"><span class="header-section-number">10</span> ANCOVA</a></li>
 <li><a class="" href="mediation.html"><span class="header-section-number">11</span> Mediation</a></li>
 <li><a class="" href="moderation.html"><span class="header-section-number">12</span> Moderation</a></li>
@@ -57,12 +65,492 @@
 <h1>
 <span class="header-section-number">5</span> Statistische Modellierung<a class="anchor" aria-label="anchor" href="#statistische-modellierung"><i class="fas fa-link"></i></a>
 </h1>
-<p>Vom allgemeinen linearen Modell sprechen</p>
-<div id="konfidenzintervalle" class="section level2" number="5.1">
+<div id="einführung-3" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">5.1</span> Konfidenzintervalle<a class="anchor" aria-label="anchor" href="#konfidenzintervalle"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Einführung<a class="anchor" aria-label="anchor" href="#einf%C3%BChrung-3"><i class="fas fa-link"></i></a>
 </h2>
-<p>anhand der Parameter erklÃ¤ren und was sie bedeuten</p>
+<p>Dieses Modul beschäftigt sich ausführlicher mit der statistischen Modellierung im Prozess des statistischen Hypothesentestens. Du wirst in diesem Modul lernen, wie du die Null- und Alternativhypothese in mathematische Modelle übertragen kannst und wie diese Modelle genutzt werden, um Hypothesen zu testen. Erneut werden wir uns mit Konzepten beschäftigen, die uns das ganze Semester begleiten werden. Je solider dieses Fundament sitzt, desto einfacher werden für dich die nächsten Module. Und erneut testen wir in diesem Modul die Fragestellung aus dem letzten Modul:</p>
+<blockquote>
+<p>Lesen Studierende mehr als 10 Bücher pro Jahr?</p>
+</blockquote>
+<p>Genauer werden wir in diesem Modul den <em>t</em>-Test für eine Stichprobe, welche wir im vorherigen Modul berechnet haben, anhand der statistischen Modellierung durchführen. In diesem Modul werden wir zeigen, wie wir diese Hypothese statistisch modellieren können und anhand des <em>F</em>-Wertes prüfen können. Im Verlaufe dieses Prozesses werden wir uns mit folgenden zentralen Konzepten beschäftigen:</p>
+<ul>
+<li><p><strong>Statistische Modelle</strong>: Wie können sprachliche Hypothesen in mathematische Modelle übertragen werden?</p></li>
+<li><p><strong>Freiheitsgrade</strong>: Wir werden lernen, dass Freiheitsgrade anzeigen, wie viele Parameter noch in ein Modell hinzugefügt werden können.</p></li>
+<li><p><strong>Fehler in Modellen</strong>: Wir werden die Konzepte SSE<sub>A</sub>, SSE<sub>C</sub> und SSR einführen, welche die Fehler beschreiben, die unsere Modelle noch in der Vorhersage der wahren Werte machen. Wir werden lernen, dass wir Fehler quadrieren, da dies vorteilhafte Eigenschaften hat.</p></li>
+<li><p><strong>PRE (Proportional Reduction in Error)</strong>: PRE ist ein Maß der Effektstärke. Wir werden lernen, dass PRE angibt, wie viele Prozent der Fehler des kompakten statistischen Modells das erweiterte Modell vorhersagt. </p></li>
+<li><p><strong><em>F</em>-Wert</strong>: Der <em>F</em>-Wert ist eine Erweiterung von PRE und gibt an, wie viel besser die Parameter des erweiterten Modells im Vergleich zu willkürlichen Parametern sind, die keinen Beitrag zur Vorhersage der abhängigen Variable leisten.</p></li>
+<li><p><strong>Äquivalenz F und <em>t</em></strong>: Wir werden lernen, dass der <em>F</em>-Wert und der <em>t</em>-Wert nah verwandt sind und am Beispiel des <em>t</em>-Test für eine Stichprobe diese Äquivalenz aufzeigen.</p></li>
+<li><p><strong>Tabelle der Ergebnisse</strong>: Wir werden lernen, wie all diese zentralen Konzepte in der Regel tabellarisch in Statistiksoftwares ausgegeben werden. Dies hilft uns später, den Output von Jamovi bzw. anderen Softwares besser zu verstehen.</p></li>
+<li><p><strong>Notation statistische Modelle</strong>: Zum Schluss werden wir das Vokabular der statistischen Modellierung vertiefen, indem wir lernen, welche Symbole für was stehen.</p></li>
+</ul>
+</div>
+<div id="übersicht-statistische-modellierung-und-prozess-des-statistischen-hypothesentestens" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> Übersicht statistische Modellierung und Prozess des statistischen Hypothesentestens<a class="anchor" aria-label="anchor" href="#%C3%BCbersicht-statistische-modellierung-und-prozess-des-statistischen-hypothesentestens"><i class="fas fa-link"></i></a>
+</h2>
+<p>In drei Videos versuche ich, dir zwei zentrale Ideen dieses Kurses zu erklären: Wie wir Hypothesen statistisch modellieren und wir diese Modelle nutzen, um Hypothesen zu testen.</p>
+<div id="statistische-modellierung-1" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> Statistische Modellierung<a class="anchor" aria-label="anchor" href="#statistische-modellierung-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>TODO: Einfügen Video</p>
+<p>TODO: Einfügen Datei: statistical_models.pdf</p>
+<p>TODO: Einfügen Video</p>
+</div>
+<div id="statistische-modellierung-2" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> Statistische Modellierung<a class="anchor" aria-label="anchor" href="#statistische-modellierung-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>TODO: Einfügen Video</p>
+<p>TODO: Einfügen Datei: statistisches_hypothenthesten.pdf</p>
+</div>
+</div>
+<div id="statistische-modellierung-der-null--und-alternativhypothese" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> Statistische Modellierung der Null- und Alternativhypothese<a class="anchor" aria-label="anchor" href="#statistische-modellierung-der-null--und-alternativhypothese"><i class="fas fa-link"></i></a>
+</h2>
+<div id="fragestellung-dieses-moduls" class="section level3" number="5.3.1">
+<h3>
+<span class="header-section-number">5.3.1</span> Fragestellung dieses Moduls<a class="anchor" aria-label="anchor" href="#fragestellung-dieses-moduls"><i class="fas fa-link"></i></a>
+</h3>
+<p>Im letzten Modul hatten wir die Fragestellung getestet, ob Studierende mehr als 10 Bücher pro Jahr lesen. Hierzu hatten wir 30 Studierende willkürlich gefragt, wie viele Bücher sie letztes Jahr gelesen haben. Wir fanden einen signifkanten Effekt und konnten damit zeigen, dass die Annahme, Studierende lesen 10 Bücher pro Jahr gegeben der Daten sehr unwahrscheinlich ist. Daher hatten wir die Nullhypothese abgelehnt. In diesem Modul wiederholen wir den gleichen Test, nur dass wir diesemal statistische Modelle verwenden, um die Hypothese zu beantworten. Am Ende des Moduls werden wir zeigen, dass wir mit diesem Verfahren zu den gleichen Ergebnissen wie mit dem <em>t</em>-Test für eine Stichprobe kommen. Zur Erinnerung, dies war das Ergebnis unseres Tests:</p>
+<blockquote>
+<p>“Um zu prüfen, ob Studierende pro Jahr mehr als 10 Bücher pro Jahr lesen, wurde ein <em>t</em>-Test für eine Stichprobe berechnet. Der <em>t</em>-Test ergab einen signifikanten Effekt, <em>t</em>(<strong>29</strong>) = 4.91, <em>p</em> &lt; .001, <em>d</em> = 0.90 (großer Effekt), was darauf hinweist, dass Studierende mehr als 10 Bücher pro Jahr lesen.”</p>
+</blockquote>
+<p>Achte darauf, dass wir momentan noch nicht wissen, was die Zahl 29 in diesem Output bedeutet. Wir werden am Ende dieses Submoduls nochmal darauf zu sprechen kommen.</p>
+</div>
+<div id="null--und-alternativhypothese-der-fragestellung" class="section level3" number="5.3.2">
+<h3>
+<span class="header-section-number">5.3.2</span> Null- und Alternativhypothese der Fragestellung<a class="anchor" aria-label="anchor" href="#null--und-alternativhypothese-der-fragestellung"><i class="fas fa-link"></i></a>
+</h3>
+<p>Zu Beginn eines jeden statistischen Tests müssen wir eine Null- und Alternativhypothese aufstellen. Bei unserer Hypothese handelt es sich zunächst um eine <em>Unterschiedshypothese</em>. Wir glauben, dass Studierende mehr als 10 Bücher pro Jahr lesen. Die Null- und Alternativhypothese lauten folgendermaßen:</p>
+<ul>
+<li><p><strong>Nullhypothese</strong>: Der Populationsmittelwert ist <em>gleich</em> 10 Bücher pro Jahr</p></li>
+<li><p><strong>Alternativhypothese</strong>: Der Populationsmittelwert ist <em>größer als</em> 10 Bücher pro Jahr</p></li>
+</ul>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/ablauf.png"></div>
+</div>
+<div id="data-model-error" class="section level3" number="5.3.3">
+<h3>
+<span class="header-section-number">5.3.3</span> DATA = MODEL + ERROR<a class="anchor" aria-label="anchor" href="#data-model-error"><i class="fas fa-link"></i></a>
+</h3>
+<p>Die statistische Modellierung kann in einem Satz zusammen gefasst werden: DATA = MODEL + ERROR. In anderen Worten, die wahren Werte setzten sich immer aus unserem mathematischen Modell und den Fehlern, die dieses Model macht, zusammen.</p>
+<p>Mit <strong>DATA</strong> bezeichnen wir die <strong>abhängige Variable</strong>, jene Werte, die wir vorhersagen möchten. Mit <strong>MODEL</strong> bezeichnen wir das mathematische Modell auf Grundlage dessen wir die abhängige Variable vorhersagen möchten.</p>
+<p>Da mathematische Modelle nie perfekt sind, gibt es immer Fehler in der Vorhersage. Diese Fehler nennen wir <strong>ERROR</strong>. Wenige Studierende lesen exakt 10 Bücher pro Jahr. In anderen Worten ist die abhängige Variable immer die Kombination aus einem mathematischen Modell und dem Fehler, den wir mit diesem Modell machen.</p>
+</div>
+<div id="statistische-modellierung-der-null--und-alternativhypothese-1" class="section level3" number="5.3.4">
+<h3>
+<span class="header-section-number">5.3.4</span> Statistische Modellierung der Null- und Alternativhypothese<a class="anchor" aria-label="anchor" href="#statistische-modellierung-der-null--und-alternativhypothese-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Das Ziel der statistischen Modellierung ist es, das sprachliche Hypothesenpaar in ein mathematisches Hypothesenpaar zu überführen. Beginnen wir mit der Frage, wie das kompakte und das erweiterte Modell statistisch modelliert werden.</p>
+<blockquote>
+<p>Wir nennen das statistische Modell der <strong>Nullhypothese</strong> das <strong>kompakte Modell</strong> und das statistische Modell der <strong>Alternativhypothese</strong> das <strong>erweiterte Modell.</strong></p>
+</blockquote>
+<div id="statistisches-modell-der-nullhypothese-das-kompakte-modelle" class="section level4" number="5.3.4.1">
+<h4>
+<span class="header-section-number">5.3.4.1</span> <strong>Statistisches Modell der Nullhypothese: Das kompakte Modelle</strong><a class="anchor" aria-label="anchor" href="#statistisches-modell-der-nullhypothese-das-kompakte-modelle"><i class="fas fa-link"></i></a>
+</h4>
+<p>Die Nullhypothese besagt, dass Studierende pro Jahr 10 Bücher lesen. Wir werden im Folgenden verschiedene Möglichkeiten beschreiben, diese Nullhypothese als kompaktes Modell statistisch darzustellen:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y.png"></div>
+<p><strong>Geschätze Anzahl der Bücher pro Jahr</strong></p>
+<p>Dieses Modell gibt an, dass jede Person pro Jahr 10 Bücher liest. Das <em>Y</em> mit dem Dach kennzeichnet einen <em>geschätzten Wert</em>. Wir nennen diesen Wert <strong>abhängige Variable</strong>. Das statistische Modell ist rechts des = Zeichens. Unser Modell besagt, dass jede Person exakt 10 Bücher pro Jahr liest.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y1.png"></div>
+<p><strong>Tatsächliche Anzahl der Bücher pro Jahr</strong></p>
+<p>Dieses Modell gibt an, wie viele Bücher jede Person pro Jahr <em>tatsächlich</em> liest. Achte darauf, dass die abhängige Variable kein Dach mehr hat. Damit sagen wir, dass dies der reale Wert der Anzahl der Bücher ist. Den realen Wert können wir nur korrekt schätzen, da wir ɛ (Epsilon) am Ende des Modells hinzufügen. ɛ steht für den Fehler (ERROR), den wir in der Schätzung der Anzahl der Bücher für jede Person machen. Wenn zum Beispiel Hans 12 Bücher pro Jahr liest, müsste ɛ den Wert 2 haben, damit wir für Hans exakt 12 Bücher pro Jahr vorhersagen.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y2.png"></div>
+<p><strong>Tatsächliche Anzahl der Bücher pro Jahr</strong></p>
+<p>Dieses Modell ist äquivalent zum vorherigen, nur dass wir anstatt von 10 <em>B<sub>0</sub></em> schreiben. Ein großes <em>B</em> steht immer für Werte, welche wir nicht auf Grundlage der Daten berechnen, sondern vorgeben. Die Aussage dieses Modells bleibt die gleiche: Der reale Wert setzt sich aus dem Modell und dem Fehler zusammen, den wir mit dem Modell machen.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y3.png"></div>
+<p><strong>Annahme <em>B<sub>0</sub></em> und <em>β<sub>0</sub></em></strong></p>
+<p>Bei der Nullhypothese nehmen wir an, dass der vorgegebene Wert 10 oder <em>B<sub>0</sub></em> dem Populationsmittelwert <em>β<sub>0</sub></em> entspricht. In anderen Worten, wir glauben bei der Nullhypothese, dass alle Studierenden (die Population) im Schnitt 10 Bücher pro Jahr lesen. <em>β</em>steht daher immer für Kennwerte der Population. In diesem Fall den Gruppenmittelwert der Population.</p>
+</div>
+<div id="statistisches-modell-der-alternativhypothese-das-erweiterte-modelle" class="section level4" number="5.3.4.2">
+<h4>
+<span class="header-section-number">5.3.4.2</span> <strong>Statistisches Modell der Alternativhypothese: Das erweiterte Modelle</strong><a class="anchor" aria-label="anchor" href="#statistisches-modell-der-alternativhypothese-das-erweiterte-modelle"><i class="fas fa-link"></i></a>
+</h4>
+<p>Die Alternativhypothese besagt, dass Studierende mehr als 10 Bücher pro Jahr lesen. Wie viel mehr? Das sagt uns der Mittelwert der Stichprobe.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y4.png"></div>
+<p><strong>Geschätzte Anzahl der Bücher auf Grundlage des erweiterten Modells</strong></p>
+<p>Das erweiterte Modell schätzt, dass jede Person 12.45 Bücher pro Jahr liest. 12.45, da dies der Mittelwert der Stichprobe der 30 Studierenden ist. Erneut ist dieses Modell natürlich nicht absolut genau, da manche Personen mehr oder weniger Bücher lesen. Genau deswegen sprechen wir von <em>Y</em>-Dach, um zu sagen, dass die abhängige Variable auf Grundlage des Modells geschätzt wird.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y5.png"></div>
+<p><strong>Geschätzte Anzahl der Bücher auf Grundlage des erweiterten Modells</strong></p>
+<p>Dieses Modell ist exakt gleich zum vorherigen Modell. Nur, in diesem Fall sprechen wir von <em>b<sub>0</sub></em> und nicht von 12.45. Ein kleines <em>b</em> steht immer für <strong>Parameter</strong>, die wir auf Grundlage der Daten schätzen. In unserem Fall ist der Parameter der Mittelwert der Stichprobe.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y6.png"></div>
+<p><strong>Tatsächliche Anzahl der Bücher auf Grundlage des erweiterten Modells</strong></p>
+<p>Dieses Modell gibt die tatsächliche Anzahl der Bücher an, die jede Person pro Jahr gelesen hat. Du siehst, dass <em>Y</em> kein Dach mehr hat und dass wir einen Fehlerterm hinzugefügt haben (<em>e<sub>i</sub></em>). Wir verwenden ein kleines <em>e</em> bei Fehlern, wenn wir die Fehler auf Grundlage unserer geschätzten und nicht der wahren Parameter verwenden. In unserem Fall haben wir <em>b<sub>0</sub></em> geschätzt und verwenden daher <em>e<sub>i</sub></em>.</p>
+</div>
+</div>
+<div id="freiheitsgrade" class="section level3" number="5.3.5">
+<h3>
+<span class="header-section-number">5.3.5</span> Freiheitsgrade<a class="anchor" aria-label="anchor" href="#freiheitsgrade"><i class="fas fa-link"></i></a>
+</h3>
+<p>An dieser Stelle müssen wir einen neuen Begriff einführen. Den Begriff der Freiheitsgrade. Um zu verstehen, was ein Freiheitsgrad ist, müssen wir zwei Feststellungen treffen:</p>
+<div id="feststellung-jedes-modell-kann-so-viele-parameter-aufnehmen-wie-es-datenpunkte-gibt" class="section level4" number="5.3.5.1">
+<h4>
+<span class="header-section-number">5.3.5.1</span> <strong>1. Feststellung: Jedes Modell kann so viele Parameter aufnehmen, wie es Datenpunkte gibt</strong><a class="anchor" aria-label="anchor" href="#feststellung-jedes-modell-kann-so-viele-parameter-aufnehmen-wie-es-datenpunkte-gibt"><i class="fas fa-link"></i></a>
+</h4>
+<p>Ein <strong>Parameter</strong> ist ein Koeffizient in einem statistischen Modell, welchen wir auf Grundlage der Daten schätzen und in die Modelle integrieren. Zum Beispiel:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y7.png"></div>
+<p>Dieses Modell hat beispielsweise <strong>einen Parameter</strong> <em>β<sub>0</sub></em>. <strong>Wir kürzen die Parameter des erweiterten Modells ab sofort mit <em>PA</em> ab.</strong> In unserem Beispiel steht <em>β<sub>0</sub></em> für die Anzahl der Bücher, die die Population der Studierenden pro Jahr liest. Als <strong>Faustregel: Alle Koeffizenten, die entweder mit einem <em>β</em> oder einem kleinen <em>b</em> geschrieben werden, sind Parameter. Alle Koeffizienten, die mit einem großen <em>B</em> geschrieben werden, sind keine Parameter.</strong></p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y8.png"></div>
+<p>Zum Vergleich: Das kompakte Modell, welches wir aus unserer Nullhypothese generiert haben, hat keine Parameter, da wir <em>B<sub>0</sub></em> nicht schätzen, sondern vorgegeben haben. <strong>Wir kürzen die Parameter des kompakten Modells ab sofort mit <em>PC</em> ab.</strong></p>
+<p>Nun, da wir wissen was Parameter sind, können wir zu unserer ersten Feststellung kommen: Es können nur so viele Parameter in ein Modell integriert werden, wie es Datenpunkte gibt. In unserem Fall haben wir 30 Datenpunkt bzw. Personen in den Daten. Das größtmöglichste Modell hätte daher maximal 30 Parameter. Warum? Da wir durch ein solches Modell die abhängige Variable perfekt vorhersagen könnten (wie das geht, besprechen wir an dieser Stelle nicht; die Lösung wäre, indem wir eine Dummykodierung verwenden - siehe einfaktorielle Varianzanalyse).</p>
+</div>
+<div id="feststellung-wir-können-nur-so-viele-parameter-hinzufügen-bis-die-maximale-anzahl-an-parametern-ausgeschöpft-ist." class="section level4" number="5.3.5.2">
+<h4>
+<span class="header-section-number">5.3.5.2</span> <strong>2. Feststellung: Wir können nur so viele Parameter hinzufügen, bis die maximale Anzahl an Parametern ausgeschöpft ist.</strong><a class="anchor" aria-label="anchor" href="#feststellung-wir-k%C3%B6nnen-nur-so-viele-parameter-hinzuf%C3%BCgen-bis-die-maximale-anzahl-an-parametern-ausgesch%C3%B6pft-ist."><i class="fas fa-link"></i></a>
+</h4>
+<p>Stell dir dazu erneut unsere Modelle bei 30 Versuchspersonen vor:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y9.png"></div>
+<p><strong>Erweitertes Modell</strong></p>
+<p>Das Modell hat <strong>einen Parameter</strong> bei 30 Versuchspersonen. Das bedeutet, wir können noch 29 Parameter hinzufügen.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/y10.png"></div>
+<p><strong>Kompaktes Modell</strong></p>
+<p>Das kompakte Modell hat <strong>keine Parameter</strong> bei 30 Versuchspersonen. Das bedeutet, wir können noch 30 Parameter hinzufügen.</p>
+<p>Wir haben gezeigt, dass das erweiterte Modell einen Parameter mehr hat als das kompakte Modell. Das wird im folgenden immer der Fall sein. Daher gilt:</p>
+<blockquote>
+<p>Das <strong>erweiterte Modell</strong> heißt erweitertes Modell, da es <strong>mehr Parameter</strong> hat als das <strong>kompakte Modell</strong>.</p>
+</blockquote>
+<p>Fassen wir dieses Ergebnis zusammen:</p>
+<div class="inline-figure"><img src="images/Bildschirmfoto%202021-02-02%20um%2014.08.23.png"></div>
+<blockquote>
+<p>Die <strong>Anzahl der Parameter</strong>, welche wir <strong>noch</strong> in ein Modell <strong>integrieren können</strong>, nennen wir <strong>Freiheitsgrade</strong>. Freiheitsgrade sind daher immer <strong>abhängig</strong> von der Anzahl der <strong>Datenpunkte</strong> in einem Datensatz.</p>
+</blockquote>
+<p>Nun können wir auflösen, was die <strong>Zahl 29</strong> in unserem Output bedeutet. Die Zahl 29 steht innerhalb der Klammer des <em>t</em>-Wertes. Die Zahl steht für den Freiheitsgrad des erweiterten Modells. Bei einem <em>t</em>-Test berichten wir immer nur den Freiheitsgrad des erweiterten Modells. Später bei dem <em>F</em>-Test, werden wir zwei Freiheitgrade in der Klammer berichten.</p>
+<blockquote>
+<p>“Um zu prüfen, ob Studierende pro Jahr mehr als 10 Bücher pro Jahr lesen, wurde ein <em>t</em>-Test für eine Stichprobe berechnet. Der <em>t</em>-Test ergab einen signifikanten Effekt, <em>t</em>(<strong>29</strong>) = 4.91, <em>p</em> &lt; .001, <em>d</em> = 0.90 (großer Effekt), was darauf hinweist, dass Studierende mehr als 10 Bücher pro Jahr lesen.”</p>
+</blockquote>
+</div>
+</div>
+<div id="zusammenfassung-4" class="section level3" number="5.3.6">
+<h3>
+<span class="header-section-number">5.3.6</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-4"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir haben nun etabliert, in welchen unterschiedlichen Formen statistische Modelle aufgeschrieben werden können. Wir haben gelernt, dass die Nullhypothese in ein kompaktes Modell und die Alternativhypothese in ein erweitertes Modell übersetzt wird. Das erweiterte Modell heißt so, da es immer mehr Parameter hat als das kompakte Modell. Ebenso haben wir erfahren, dass der Begriff Freiheitsgrad angibt, wie viele Parameter noch in ein Modell hinzufügt werden können. Im nächsten Submodul werden wir diese beiden Modelle visualisieren und was man in diesen Modellen unter Fehlern versteht.</p>
+</div>
+</div>
+<div id="fehler-in-statistischen-modellen-sse_a-sse_c-ssr-und-pre" class="section level2" number="5.4">
+<h2>
+<span class="header-section-number">5.4</span> Fehler in statistischen Modellen: SSE_A, SSE_C, SSR und PRE<a class="anchor" aria-label="anchor" href="#fehler-in-statistischen-modellen-sse_a-sse_c-ssr-und-pre"><i class="fas fa-link"></i></a>
+</h2>
+<p>Wir haben im letzten Modul bereits angedeutet, dass unsere Modelle nicht perfekt sind. Wenn wir vorhersagen, dass alle Studierende 10 Bücher pro Jahr liest, werden wir selten richtig liegen. Manche werden mehr lesen, manche werden weniger lesen. Ebenso haben wir gelernt, dass jedes Modell in der Formel DATA = MODEL + ERROR beschrieben werden kann. In diesem Submodul werden wir uns genauer mit dem Begriff des ERRORs auseinandersetzen und lernen, dass wir die Fehler berechnen, indem wir die quadrierte Abweichung der Fehler berechnen.</p>
+<div id="fehler-im-kompakten-modell" class="section level3" number="5.4.1">
+<h3>
+<span class="header-section-number">5.4.1</span> Fehler im kompakten Modell<a class="anchor" aria-label="anchor" href="#fehler-im-kompakten-modell"><i class="fas fa-link"></i></a>
+</h3>
+<p>Beginnen wir mit einer Visualisierung. In der folgenden Visualisierung siehst du für alle Studierende, wie akkurat das kompakte Modell die Anzahl der gelesenen Bücher geschätzt hat. Für die Studentin mit der ID 2 beispielsweise hat das kompakte Modell 10 Bücher geschätzt, die Studentin hat aber in Wirklichkeit 15 Bücher gelesen (siehe y-Achse).</p>
+<div class="figure">
+<img src="images/04_statistische_modellierung/fehler.png" alt=""><p class="caption">Die ID der Personen wird sowohl durch die x-Achse als auch durch die Zahl über jeder einzelnen Visualisierungen dargestellt.</p>
+</div>
+<p>Das Problem mit einem solchen Fehlerterm ist allerdings, dass sich positive und negative Werte aufheben können. Stell dir vor, es gibt nur zwei Versuchspersonen. Der Fehler der ersten Person ist 10 und der Fehler der zweiten Person ist -10. Die Summe dieser beiden Fehler wäre 0. Dieser Art von Fehler ist daher nicht zufriedenstellend. </p>
+<p>Stattdessen werden wir die quadrierte Abweichung der geschätzten und der realen Werte berechnen. Grafisch können wir uns die quadrierte Abweichung wie folgt vorstellen:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/fehler1.jpg"></div>
+<p>Du siehst anhand der Visualisierung, dass wir im kompakten Modell die Anzahl der gelesenen Bücher im Schnitt unterschätzen (das kompakte Modell liegt meist unter den realen Punkten). Bei Person 22 beispielsweise ist der quadrierte Fehler am größten (das Quadrat ist am größten). Für andere Personen schätzen wir die Anzahl der gelesenen Bücher hingegen perfekt. Person 27 beispielsweise liest 10 Bücher pro Jahr, genauso viele, wie wir vorhergesagt haben.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/sse.png"></div>
+<p><strong>SSE<sub>C</sub></strong></p>
+<p>Die Fehler des kompakten Modells definieren wir daher als die Summe der quadrierten Abweichungen der realen Werte von den geschätzten Werten des kompakten Modells. Im Bilde der obigen Visualisierung gesprochen, summieren wir die Fläche der blauen Quadrate (der Fehler) auf.</p>
+</div>
+<div id="fehler-im-erweiterten-modell" class="section level3" number="5.4.2">
+<h3>
+<span class="header-section-number">5.4.2</span> Fehler im erweiterten Modell<a class="anchor" aria-label="anchor" href="#fehler-im-erweiterten-modell"><i class="fas fa-link"></i></a>
+</h3>
+<p>Das Gegenstück der Fehler im kompakten Modell ist der Fehler im erweiterten Modell. Erinnere dich, dass das erweiterte Modell vorhergesagt hat, dass jede studierende Person jeweils 12.45 Bücher pro Jahr liest. Im unteren Bild haben wir dieses Modell als orangene Linie dargestellt. Die real gelesenen Bücher pro Person sind als orangener Punkt dargestellt. Die orangenen Flächen kennzeichnen die quadrierten Fehler für jede Person:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/fehler2.png"></div>
+<p>Wie du siehst, macht auch das erweiterte Modell Fehler. Die Berechnung der Fehler des erweiterten Modells ist ähnlich zur der Berechnung der Fehler des kompakten Modells:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/ssea.png"></div>
+<p><strong>SSE<sub>A</sub></strong></p>
+<p>Die Fehler des erweiterten Modells definieren wir daher als die Summe der quadrierten Abweichungen der realen Werte von den geschätzten Werten des erweiterten Modells. Im Bilde der obigen Visualisierung gesprochen,summieren wir die Fläche der orangenen Quadrate (der Fehler) auf.</p>
+</div>
+<div id="ssr-reduktion-des-fehlers" class="section level3" number="5.4.3">
+<h3>
+<span class="header-section-number">5.4.3</span> SSR: Reduktion des Fehlers<a class="anchor" aria-label="anchor" href="#ssr-reduktion-des-fehlers"><i class="fas fa-link"></i></a>
+</h3>
+<p>Legen wir nun beide Fehler übereinander und vergleichen diese miteinander. Uns fällt auf, dass das kompakte Modell größere Fehler macht als das erweiterte Modell. Beispielsweise ist der Fehler im kompakten Modell bei Person 2, 7, 9, 12 und 14 größer als im erweiterten Modell (die blauen Quadrate sind größer als die orangenen Quadrate)</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/fehler3.png"></div>
+<p>Tatsächlich wird der Fehler im kompakten Modell immer größer sein als der Fehler im erweiterten Modell. Dies liegt daran, dass wir mit mehr Parametern immer eine bessere Vorhersage der abhängigen Variable treffen können. Da das erweiterte Modell immer mehr Parameter hat als das kompakte Modell, werden die Fehler des erweiterten Modells immer kleiner sein als die Fehler des kompakten Modells.</p>
+<p>Wir können daher einen neuen Term etablieren: SSR. SSR gibt an, welcher Anteil der Fehler des kompakten Modells durch das erweiterte Modell aufgeklärt wurde:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/ssr.png"></div>
+<p>SSR berechnet sich aus der Differenz zwischen den Fehlern des kompakten Modells und den Fehlern des erweiterten Modells. SSE<sub>C</sub> steht immer vor SSE<sub>A</sub>, da SSE<sub>C</sub> immer größer ist als SSE<sub>A</sub>.</p>
+<p>Je größer SSR ist, desto genauer bildet das erweiterte Modell die echten Daten ab, oder, desto besser kann das erweiterte Modell die Daten im Vergleich zum kompakten Modell vorhersagen. Beachte allerdings, dass bei gleichem SSR ein erweitertetes Modell mit wenigen Parametern beeindruckender ist als ein erweitertes Modell mit vielen Parametern. Wir wissen, das mehr Parameter zu einer besseren Vorhersage der abhängigen Variable führen. Wenn also ein Modell mit einem weiteren Parameter die Fehler gleich stark reduziert wie ein Modell mit fünf weiteren Parametern, werden wir das erweiterte Modell mit weniger Parametern bevorzugen, da es einfacher ist als das komplexere Modell.</p>
+</div>
+<div id="pre-proportional-reduction-in-error" class="section level3" number="5.4.4">
+<h3>
+<span class="header-section-number">5.4.4</span> PRE (Proportional Reduction in Error)<a class="anchor" aria-label="anchor" href="#pre-proportional-reduction-in-error"><i class="fas fa-link"></i></a>
+</h3>
+<p>Als nächstes lernen wir den Begriff PRE kennen, welcher uns im Verlaufe des Seminars in anderen Worten immer wieder über den Weg laufen wird. PRE steht für Proportional Reduction in Error und ist ein Maß, welches angibt, wie viel Prozent der Fehler des kompakten Modells durch das erweiterte Modell aufgeklärt werden. Beispielsweise könnte PRE den Wert .80 annehmen. Dieser Wert würde bedeutet, dass das erweiterte Modell 80% der Fehler des kompakten Modells reduziert. Berechnet wird PRE wie folgt:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/pre.png"></div>
+<p>PRE berechnet sich aus dem Quotienten aus SSR und SSE<sub>C</sub>. In anderen Worten standardisieren wir die Fehler, des erweiterten Modell durch die Fehler des kompakten Modells.</p>
+<p>Zwei Dinge sind bei der Berechnung von PRE wichtig. Erstens, wir müssen SSE<sub>A</sub> von SSE<sub>C</sub> abziehen und nicht umgekehrt, da wir wissen, dass der Fehler des erweiterten Modells immer kleiner ist als der Fehler des kompakten Modells (da das erweiterte Modell mehr Parameter als das kompakte Modell hat), ansonsten würden wir einen negativen Wert erhalten. Zweitens teilen wir das Resultat aus der Subtraktion von SSE<sub>A</sub> − SSE<sub>C</sub> durch SSE<sub>C</sub>, um ein relatives Maß zu erhalten. Relativ abhängig vom kompakten Modell. </p>
+<p>PRE kann Werte zwischen 0 und 1 annehmen. 1 würde bedeuten, dass das erweiterte Modell alle Fehler des kompakten Modells erklärt. Nicht jedes PRE ist jedoch gleich beeindruckend. Nehmen wir an, du erhältst ein PRE von .02. Das erweiterte Modell hat fünf Parameter mehr als das kompakte Modell. Welches Modell ist nun besser? Wir gehen davon aus, dass das Modell, welches mit den wenigsten Parametern ähnliche Ergebnisse erzielt und daher sparsamer ist, besser ist. Aus diesem Grund würden wir in diesem Beispiel sagen, dass das kompakte Modell besser ist, schließlich hat es deutlich weniger Parameter als das erweitertes Modell und wir erhalten ein geringes PRE. Nur, ab welchem Wert ist PRE groß genug oder klein genug? Dies hängt von mehreren Faktoren ab. Wenn PRE substantiell durch nur einen Parameter reduziert wird, ist dies besser, als wenn PRE durch mehrere Parameter reduziert wird. Schließlich suchen wir sparsame Modelle mit wenigen Parametern.</p>
+</div>
+<div id="tabellarische-darstellung-der-ergebnisse" class="section level3" number="5.4.5">
+<h3>
+<span class="header-section-number">5.4.5</span> Tabellarische Darstellung der Ergebnisse<a class="anchor" aria-label="anchor" href="#tabellarische-darstellung-der-ergebnisse"><i class="fas fa-link"></i></a>
+</h3>
+<p>Fassen wir zum Schluss dieses Submoduls unsere Ergebnisse zusammen. Ich habe die Werte für dich berechnet. In der ersten Spalte stehen die drei verschiedenen Arten von Fehlern. SSR steht für die Fehler des kompakten Modells, welche durch das erweiterte Modell reduziert werden. Ebenso gibt es die Fehler, die das erweiterte Modell noch macht, SSE<sub>A</sub>. Zum Schluss, die Fehler, die das kompakte Modell macht. Zudem haben wir einen Freiheitsgrad, der sich aus PA - PC berechnet. Dieser Wert gibt an, wie viele Parameter das erweiterte Modell mehr hat als das kompakte Modell. PRE beläuft sich bei unserem Beispiel auf 0.45. Das heißt, das erweiterte Modell klärt 45% der Fehler im kompakten Modell auf.</p>
+<div class="inline-figure"><img src="images/Bildschirmfoto%202021-02-02%20um%2014.25.31.png"></div>
+</div>
+</div>
+<div id="zusammenfassung-5" class="section level2" number="5.5">
+<h2>
+<span class="header-section-number">5.5</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-5"><i class="fas fa-link"></i></a>
+</h2>
+<p>In diesem Submodul haben wir die Begriffe SSE<sub>C</sub>, SSE<sub>A</sub>, SSR und PRE etabliert. Fortan bezeichnen wir mit diesen Begriffen die Fehler, welche das kompakte und das erweiterte Modell machen. Mit SSR bezeichnen wir die Reduzierung der Fehler des kompakten Modells durch das erweiterte Modell.</p>
+</div>
+<div id="f-wert-und-f-verteilungen" class="section level2" number="5.6">
+<h2>
+<span class="header-section-number">5.6</span> F-Wert und F-Verteilungen<a class="anchor" aria-label="anchor" href="#f-wert-und-f-verteilungen"><i class="fas fa-link"></i></a>
+</h2>
+<p>Im letzten Modul haben wir verschiedene Fehler des kompakten und erweiterten Modells kennen gelernt. In unserem Prozess des statistischen Hypothesentestens müssen wir als nächstes einen Kennwert aus diesen Modellen berechnen. Wir werden fortan <em>F</em>- und <em>t</em>-Werte für unsere Hypothesen berechnen und sehen, dass beide äquivalent zueinander sind. In diesem Submodul werden unsere bisherige Bücherhypothese anhand der F-Verteilung prüfen. Das heißt, wir vollziehen den kompletten Prozess des statistischen Hypothesentestens und treffen eine statistische Entscheidung für oder gegen die Nullhypothese.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/ablauf.png"></div>
+<div id="die-größe-der-fehler-abhängig-der-parameter-des-modells" class="section level3" number="5.6.1">
+<h3>
+<span class="header-section-number">5.6.1</span> Die Größe der Fehler abhängig der Parameter des Modells<a class="anchor" aria-label="anchor" href="#die-gr%C3%B6%C3%9Fe-der-fehler-abh%C3%A4ngig-der-parameter-des-modells"><i class="fas fa-link"></i></a>
+</h3>
+<p>Bisher haben wir die quadrierten Fehler des kompakten Modells (SSE<sub>C</sub>) und die quadrierten Fehler des erweiterten Modells (SSE<sub>A</sub>) beschrieben. Zudem haben wir SSR als ein Maß definiert, welches angibt, wie viel Fehler des kompakten Modells durch das erweiterte Modell aufgeklärt werden. </p>
+<p>Versuchen wir ein Gedankenexperiment. Stell dir vor, dein erweitertes Modell hat fünf Parameter mehr als das kompakte Modell und es reduziert die Fehler des kompakten Modells um den Wert 30. Stell dir ebenso ein erweitertes Modell mit nur einem weiteren Parameter als das kompakte Modell vor und stell dir vor, dass dieses Modell ebenso die Fehler des kompakten Modells um den Wert 30 reduziert. Welches Modell würden wir bevorzugen? Das sparsamere Modell mit nur einem Parameter mehr. Dieser eine Parameter ermöglicht eine deutlich bessere Vorhersage als das Modell mit den fünf weiteren Parametern. Wie beeindruckend die Fehlerreduktion ist hängt daher von der Anzahl der Parameter ab, die das erweiterte Modell zusätzlich hat.</p>
+<p>Aus diesem Grund ist es sinnvoll, SSR nach der Anzahl der Parameter zu standardisieren. Diesen Fehlerterm nennen wir MSR:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/msr.png"></div>
+<p>MSR gibt an, wie viele Fehler die zusätzlichen Parameter des erweiterten Modells im Schnitt von den Fehlern des kompakten Modells aufklären. Bei nur einem SSR von 30 beispielsweise und nur einem Parameter beläuft sich MSR auf 30. Bei fünf weiteren Parametern auf 30/5 = 6. Die durchschnittliche Fehlerreduktion bei dem erweiterten Modell mit nur einem weiteren Parameter ist daher größer als mit dem erweiterte Modell mit fünf weiteren Parametern.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/msr1.png"></div>
+<p>In unserer Bücherstudie belief sich SSR auf 180.63. Das erweiterte Modell hatte einen Parameter mehr als das kompakte Modell (1). Das heißt, dieser weitere Parameter klärte den Wert 180.63 der Fehler im kompakten Modell auf.</p>
+<p>MSR sagt uns also, wie viele Fehler die zusätzlichen Parameter im Durchschnitt reduzieren. Wir haben allerdings noch die restlichen Fehler des erweiterten Modells (SSE<sub>A</sub>). Auch diesen Fehler können wir standarisieren. Wir tun dies, indem wir SSE<sub>A</sub> durch die Anzahl der Parameter teilen, die wir noch in das erweiterte Modell hinzufügen können.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/mse.png"></div>
+<p>MSE gibt uns folgende Aussage: Wie viele Fehler klären die restlichen Parameter, die wir noch in das erweiterte Modell hinzufügen können, durchschnittlich auf?</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/mse1.png"></div>
+<p>Unser bisheriges erweitertes Modell hatte noch 29 Parameter, die wir in das Modell hinzufügen können. SSE<sub>A</sub> belief sich auf <strong>217.38</strong>. MSE läge daher bei <strong>7.5</strong>. Das heißt, bei einem willkürlichen weiteren Parameter würden wir erwarten, dass dieser den Wert 7.5 der Fehler im kompakten Modell aufklärt.</p>
+</div>
+<div id="der-f-wert" class="section level3" number="5.6.2">
+<h3>
+<span class="header-section-number">5.6.2</span> Der F-Wert<a class="anchor" aria-label="anchor" href="#der-f-wert"><i class="fas fa-link"></i></a>
+</h3>
+<p>Nun kommen wir zu unserem eigentlichen Kennwert, dem <em>F</em>-Wert. Der <em>F</em>-Wert hat folgende Definition:</p>
+<blockquote>
+<p><strong>Definition F-Wert:</strong></p>
+<p>Wie viel besser klären die <strong>zusätzlichen</strong> <strong>Parameter</strong> des erweiterten Modells die Fehler des kompakten Modells auf als <strong>willkürliche Parameter</strong>, die noch in das erweiterte Modell hinzugefügt werden können.</p>
+</blockquote>
+<p>Lass uns diese Definition Stück für Stück aufschlüsseln. Zunächst müssen wir uns die Formel des <em>F</em>-Wertes ansehen:</p>
+<div class="figure">
+<img src="images/04_statistische_modellierung/f.png" alt=""><p class="caption">Umfangreiche Formel für F</p>
+</div>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/f1.png"></div>
+<p>In unserem Beispiel klärt der zusätzliche Parameter des erweiterten Modells die Fehler des kompakten Modells 24 mal besser auf als willkürliche Parameter. Das heißt, der Parameter ermöglicht eine deutlich bessere Vorhersage als wir für irgendeinen Parameter erwarten würden.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/f2.png"></div>
+<p>Der <em>F</em>-Wert ergibt sich aus dem Quotienten von MSR und MSE. In anderen Worten, wie gut ist dieser Parameter im Vergleich zu anderen willkürlichen Parametern? Ein Wert über eins sagt uns, dass dieser Parameter mehr Fehler aufklären als willkürliche Parameter. Ein Wert geringer als 1 sagt uns, dass diese Parameter weniger Fehler aufklären als willkürliche Parameter.</p>
+<p>Zusammengefasst können wir die Ergebnisse in einer Tabelle festhalten:</p>
+<div class="inline-figure"><img src="images/Bildschirmfoto%202021-02-02%20um%2014.37.09.png"></div>
+</div>
+<div id="f-verteilung" class="section level3" number="5.6.3">
+<h3>
+<span class="header-section-number">5.6.3</span> F-Verteilung<a class="anchor" aria-label="anchor" href="#f-verteilung"><i class="fas fa-link"></i></a>
+</h3>
+<p>Um diesen Wert von einer anderen Sichtweise zu verstehen, lass uns zurück zu unserer Hypothese gehen. Unsere Nullhypothese besagt, dass Studierende im Schnitt 10 Bücher pro Jahr lesen. Versuchen wir an dieser Stelle eine Simulation. Stell dir vor, es gibt wirklich keinen Effekt und Studierende lesen 10 Bücher pro Jahr. Dein erweitertes Modell würde in diesem Fall in den meisten Fällen <em>b<sub>0</sub></em> um die 10 bestimmen (ungefähr der Mittelwert der Population). In diesem Fall wäre dein erweitertes Modell fast identisch mit dem kompakten Modell. Das erweiterte Modell sollte von daher die Fehler des kompakten Modells nicht viel besser aufklären können als das kompakte Modell. In jedem Fall wird es die Fehler besser aufklären können, da das erweiterte Modell einen Parameter mehr hat als das kompakte Modell. Wir würden allerdings keinen großen <em>F</em>-Wert erwarten. Aus folgendem Grund: </p>
+<p>Der <em>F</em>-Wert kann auch folgendermaßen verstanden werden: <strong>Wie ist das Verhältnis zwischen den Fehlern, die das erweiterte Modell aufklären konnte und den Fehlern, die noch bleiben?</strong> Da beide Modelle in unserem Gedankenspiel fast identisch sind, sollte dieses Verhältnis gering sein. Das erweiterte Modell wird, da es fast identisch ist, die Fehler des kompakten Modells nicht deutlich aufklären. Und genau das zeigt sich, wenn wir <em>F</em>-Werte simulieren.</p>
+<p>Bleiben wir bei der Idee, dass es keinen Effekt gibt: Wir wiederholen die gleiche Studie (wir befragen 30 Studierende danach, wie viel Bücher sie pro Jahr lesen) unterschiedlich oft. 10 mal, 100 mal, 1000 mal und 10000 mal. Jedes Mal berechnen wir den <em>F</em>-Wert. Folgende Verteilungen ergeben sich daraus:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/verteilung.png"></div>
+<p>Du siehst, dass wir mit steigender Anzahl an Studierenden eine rechtschiefe Verteilung erhalten. Diese Verteilung nennen wir <em>F</em>-Verteilung. Die <em>F</em>-Verteilung zeigt uns an, wie das Verhältnis zwischen den aufgeklärten Fehlern und den übrigen Fehlern im kompakten Modell wäre, sollte die Nullhypothese stimmen. Du siehst an der Verteilung, dass wir in der Regel Werte zwischen 0 und 1 erwarten würden. Das heißt, der zusätzliche Parameter im erweiterten Modell sollte meist nicht besser sein als ein Parameter, der keinen Beitrag zur Fehleraufklärung leistet. Ganz selten erhalten wir <em>F</em>-Wete größer als 4 oder 5. In anderen Worten, <em>F</em>-Werte über 5 sind sehr ungewöhnlich, die Parameter leisten einen besseren Beitrag zur Fehlerreduktion als wir erwarten würden.</p>
+</div>
+<div id="beispiele-f-verteilungen" class="section level3" number="5.6.4">
+<h3>
+<span class="header-section-number">5.6.4</span> Beispiele F-Verteilungen<a class="anchor" aria-label="anchor" href="#beispiele-f-verteilungen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Ganz ähnlich zu der <em>t</em>-Verteilung gibt es unterschiedliche <em>F</em>-Verteilungen. Wie die <em>F</em>-Verteilung aussieht, hängt mit den beiden Freiheitsgraden des kompakten und des erweiterten Modells zusammen. In der nächsten Visualisierung siehst du beispielsweise drei verschiedene <em>F</em>-Verteilungen, welche sich in ihren Freiheitsgraden unterscheiden:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/bspf.png"></div>
+<p>Wie du siehst, sind alle Verteilungen rechtsschief, das heißt, <em>F</em>-Werte über 4 sind in der Regel sehr selten. Wie diese <em>F</em>-Verteilungen aussehen, ist für diesen Kurs nicht so wichtig, entscheidend ist allerdings, dass du verstehst, dass diese <em>F</em>-Verteilungen eine Stichprobenkennwertverteilung darstellen, anhand derer wir die Wahrscheinlichkeit des <em>F</em>-Wertes unter Annahme der Nullhypothese testen können.</p>
+</div>
+<div id="ermittlung-von-pdh0-auf-grundlage-von-f" class="section level3" number="5.6.5">
+<h3>
+<span class="header-section-number">5.6.5</span> <strong>Ermittlung von <em>P</em>(D|H<sub>0</sub>) auf Grundlage von <em>F</em></strong><a class="anchor" aria-label="anchor" href="#ermittlung-von-pdh0-auf-grundlage-von-f"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir haben nun unseren Kennwert <em>F</em>. Als nächstes müssen wir uns fragen, wie wahrscheinlich dieser <em>F</em>-Wert unter Annahme der Nullhypothese (10 Bücher pro Jahr) ist. Unser <em>F</em>-Wert beträgt 24.01.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/ablauf.png"></div>
+<p>Wenn wir nun unseren empirischen <em>F</em>-Wert in der <em>F</em>-Verteilung abtragen, sehen wir, dass ein solcher <em>F</em>-Wert unter der Annahme der Nullhypothese äußerst unwahrscheinlich ist. Wir sprechen daher von einem signifikanten Ereignis und lehnen die Nullhypothese ab.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/kritischf.png"></div>
+<p>Die Wahrscheinlichkeit für einen solchen Kennwert ist verschwindent gering. Erinnere dich daran, dass wir die Wahrscheinlichkeit als die Fläche unter dem Kennwert und größer als dem Kennwert berechnet haben. In unserem Fall ist diese Wahrscheinlichkeit deutlich unter 1%. Der p-Wert ist daher &lt; .001. Auf Grundlage dieses Ergebnisses lehnen wir daher die Annahme ab, dass Studierende 10 Bücher pro Jahr lesen. Vermutlich lesen sie mehr.</p>
+<p>An dieser Stelle führen wir einen weiteren neuen Begriff ein: Eta-Quadrat (<em>η</em><sup>2</sup>). Eta-Quadrat ist ein Effektstärkenmaß und ist identisch mit PRE:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/pre1.png"></div>
+<p>In unserem Fall belief sich PRE auf 0.45. Das heißt, das erweiterte Modell war in der Lage, 45% der Fehler im kompaten Modell aufzuklären.</p>
+</div>
+<div id="tabellarische-darstellung-der-ergebnisse-1" class="section level3" number="5.6.6">
+<h3>
+<span class="header-section-number">5.6.6</span> Tabellarische Darstellung der Ergebnisse<a class="anchor" aria-label="anchor" href="#tabellarische-darstellung-der-ergebnisse-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir sind damit an das Ende unseres Tests gekommen. Begonnen haben wir mit der Frage, ob Studierende mehr als 10 Bücher pro Jahr lesen. Mit Hilfe der statistischen Modellierung haben wir den <em>F</em>-Wert berechnet und sind zu dem Schluss gekommen, dass der Kennwert unter der Nullhypothese sehr unwahrscheinlich und damit signifikant ist. Wir verwerfen daher die Nullhypothese und gehen davon aus, dass Studierende mehr als 10 Bücher pro Jahr lesen. Fassen wir die Ergebnisse in einer Tabelle zusammen:</p>
+<div class="inline-figure"><img src="images/Bildschirmfoto%202021-02-02%20um%2014.43.08.png"></div>
+</div>
+<div id="zusammenfassung-6" class="section level3" number="5.6.7">
+<h3>
+<span class="header-section-number">5.6.7</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-6"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir haben in diesem Submodul den <em>F</em>-Wert und die <em>F</em>-Verteilung kennen gelernt. Fortan werden wir für alle Hypothesen einen <em>F</em>-Test rechnen und die gleichen Berechnungen mit ein paar Unterschieden ausführen. Den F-Wert haben wir in diesem Submodul als einen Wert kennen gelernt, der das Verhältnis zwischen den aufklärten Fehlern durch die weiteren Parameter und den restlichen Fehlern des kompakten Modells angibt. Hohe <em>F</em>-Werte sind unter der Annahme der Nullhypothese unwahrscheinlich. <em>F</em>-Werte unter 1 bedeuten, dass die zusätzlichen Parameter nicht viel besser sind als willkürliche Parameter, die keinen wesentlichen Beitrag zur Fehlerreduzierung leisten. Im nächsten Submodul werden wir zeigen, dass der <em>F</em>-Wert und der <em>t</em>-Wert äquivalent sind.</p>
+</div>
+</div>
+<div id="äquivalenz-f-und-t" class="section level2" number="5.7">
+<h2>
+<span class="header-section-number">5.7</span> Äquivalenz F und t<a class="anchor" aria-label="anchor" href="#%C3%A4quivalenz-f-und-t"><i class="fas fa-link"></i></a>
+</h2>
+<p>In diesem Submodul werden wir zeigen, dass der <em>F</em>- und der <em>t</em>-Wert äquivalent sind. Genauer werden wir zeigen, dass der <em>t</em>-Wert die Wurzel aus dem <em>F</em>-Wert ist. Für uns bedeutet dies, dass wir herkömmliche <em>t</em>-Tests immer als <em>F</em>-Tests darstellen können und damit den Prozess des statistischen Hypothesentestens, welchen wir in diesem Modul kennen gelernt haben, auch für Fragestellungen verwenden können, die herkömmlicherweise durch einen <em>t</em>-Test gelöst werden. Ebenso werden wir zeigen, wie man einen <em>F</em>-Test berichtet.</p>
+<div id="ergebnis-des-bisherigen-t-tests-für-eine-stichprobe" class="section level3" number="5.7.1">
+<h3>
+<span class="header-section-number">5.7.1</span> Ergebnis des bisherigen t-Tests für eine Stichprobe<a class="anchor" aria-label="anchor" href="#ergebnis-des-bisherigen-t-tests-f%C3%BCr-eine-stichprobe"><i class="fas fa-link"></i></a>
+</h3>
+<p>Beginnen wir dazu mit dem Ergebnis des <em>t</em>-Tests für eine Stichprobe, welchen wir im vorherigen Modul berechnet haben:</p>
+<blockquote>
+<p>“Um zu prüfen, ob Studierende pro Jahr mehr als 10 Bücher pro Jahr lesen, wurde ein <em>t</em>-Test für eine Stichprobe berechnet. Der <em>t</em>-Test ergab einen signifikanten Effekt, <em>t</em>(29) = 4.91, <em>p</em> &lt; .001, <em>d</em> = 0.90 (großer Effekt), was darauf hinweist, dass Studierende mehr als 10 Bücher pro Jahr lesen.”</p>
+</blockquote>
+<p>Würden wir die gleiche Hypothese in Jamovi rechnen, bekämen wir folgendes Ergebnis:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/sample.png"></div>
+<p>Bei dem Bericht des Ergebnisses haben wir demnach die Informationen aus Jamovi in einer bestimmten Schreibweise übertragen. Genauer haben wir den <em>t</em>-Test folgendermaßen berichtet:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/tdf.png"></div>
+<p>Zunächst schreiben wir ein <em>t</em> und in Klammern die restlichen Parameter, die das erweiterte Modell noch aufnehmen kann (df<sub>2</sub>). Anschließend schreiben wir die Wahrscheinlichkeit für diesen <em>t</em>-Wert unter der Nullhypothese auf (P<sub>WERT</sub>). Dann berichten wir die Effektgröße Cohen’s <em>d</em> (D<sub>WERT</sub>). Zudem werden sowohl der Buchstabe <em>t</em>, <em>p</em> als auch <em>d</em> kursiv geschrieben.</p>
+<p>Du siehst demnach, dass wir damals bei dem <em>t</em>-Test für eine Stichprobe bereits Informationen verwendet haben, die wir in diesem Modul gelernt haben. Genauer berichten wir bei dem <em>t</em>-Test immer die Freiheitsgrade des erweiterten Modells, das heißt die Anzahl der Parameter, die das erweiterte Modell noch aufnehmen kann. Zudem ist der <em>t</em>-Wert mit dem <em>F</em>-Wert verwandt.</p>
+</div>
+<div id="t-ist-die-wurzel-aus-f" class="section level3" number="5.7.2">
+<h3>
+<span class="header-section-number">5.7.2</span> <strong><em>t</em></strong> <strong>ist die Wurzel aus <em>F</em></strong><a class="anchor" aria-label="anchor" href="#t-ist-die-wurzel-aus-f"><i class="fas fa-link"></i></a>
+</h3>
+<p>Unser <em>F</em>-Test aus dem letzten Submodul hat folgende Ergebnisse erbracht. Zusätzlich habe ich der Tabelle den <em>t</em>-Wert und die Effektgröße Cohen’s <em>d</em> hinzugefügt. Ich will deine Aufmerksamkeit auf die Spalten <em>F</em> und <em>t</em> lenken.</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="32%">
+<col width="14%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="8%">
+<col width="6%">
+<col width="8%">
+<col width="8%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Source</strong></th>
+<th><strong>Sum of Squares</strong></th>
+<th><strong><em>df</em></strong></th>
+<th><strong><em>MS</em></strong></th>
+<th><strong><em>F</em></strong></th>
+<th><strong><em>t</em><br></strong></th>
+<th><strong><em>p</em></strong></th>
+<th><strong><em>PRE</em></strong></th>
+<th><strong><em>d</em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Reduktion der Fehler durch erweitertes Modell</td>
+<td>180.63</td>
+<td>1</td>
+<td>18.26</td>
+<td><strong>24.1</strong></td>
+<td><strong>4.91</strong></td>
+<td>&lt; .001</td>
+<td>0.450<br>
+</td>
+<td>0.896</td>
+</tr>
+<tr class="even">
+<td>Restliche Fehler des erweiterten Modells</td>
+<td>217.38</td>
+<td>29</td>
+<td>7.5</td>
+<td>-</td>
+<td>-</td>
+<td><h2 id="section"></h2></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Fehler kompaktes Modell<br>
+</td>
+<td>389.00</td>
+<td>30</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/tf.png"></div>
+<p>Der <em>F</em>-Wert ist 24.1 und der <em>t</em>-Wert ist 4.91. Der <em>t</em>-Wert ist demnach nichts anderes als die Wurzel aus dem <em>F</em>-Wert. Wir haben damit gezeigt, dass <em>F</em> und <em>t</em> direkt miteinander verwandt sind.</p>
+<p>Ob wir nun einen <em>F</em>-Test oder einen <em>t</em>-Test berechnen, macht für die Ergebnisse keinen Unterschied. Außer mit einer kleinen Ausnahme, zu der wir jetzt zu sprechen kommen.</p>
+</div>
+<div id="der-f-test-testet-ungerichtet" class="section level3" number="5.7.3">
+<h3>
+<span class="header-section-number">5.7.3</span> <strong>Der <em>F</em>-Test testet ungerichtet</strong><a class="anchor" aria-label="anchor" href="#der-f-test-testet-ungerichtet"><i class="fas fa-link"></i></a>
+</h3>
+<p>Hypothesen können entweder gerichtet oder ungerichtet getestet werden. Unsere Bücherhypothese war gerichtet, das heißt wir nahmen an, dass Studierende <strong>mehr</strong> als 10 Bücher pro Jahr lesen. Stellen wir uns ausnahmsweise vor, der empirische <em>t</em>-Wert lag bei dem Wert 2:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/pd.png"></div>
+<p>Die Wahrscheinlichkeit für ein <em>t</em>-Wert größer als 2 liegt bei 5.69%. Allerdings bei einer gerichteten Hypothese. Hätten wir ungerichtet getestet und wäre der empirische <em>t</em>-Wert bei 2, müssten wir auch die andere Annahme hinzufügen, dass Studierende weniger als 10 Bücher pro Jahr lesen:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/pdh.png"></div>
+<p>In diesem Fall läge die Wahrscheinlichkeit für P(D|H0) bei 5.69 * 2 = 11.38%. Während wir nun bei einem <em>t</em>-Test gerichtet als auch ungerichtet testen können, testet der <em>F</em>-Test immer nur ungerichtet. Das heißt, der <em>p</em>-Wert, welchen wir durch unseren <em>F</em>-Test erhalten haben, gibt uns an, wie wahrscheinlich es ist, dass Studierende mehr oder weniger als 10 Bücher pro Jahr lesen, sollte es stimmen, dass Studierende im Schnitt nur 10 Bücher pro Jahr lesen. Wir können den <em>p</em>-Wert bei einem F-Test teilen, wenn folgende Bedingung vorherrscht:</p>
+<p>Der Mittelwert der Stichprobe ist größer als der angenommene Mittelwert. Da der Mittelwert der Stichprobe bei 12.45 lag und wir einen Mittelwert von 10 angenommen haben, dürfen wir den <em>p</em>-Wert teilen. </p>
+<p>Achte daher bei jedem F-Test darauf, ob du eine gerichtete oder ungerichtete Hypothese testest. <em>F</em>-Tests berichten dir Jamovi und SPSS immer ungerichtete Hypothesen. Es ist allerdings legitim, bei einer gerichteten Hypothese unter bestimmten Bedinungen den <em>p</em>-Wert bei einem <em>F</em>-Test zu teilen.</p>
+</div>
+<div id="f-tests-berichten" class="section level3" number="5.7.4">
+<h3>
+<span class="header-section-number">5.7.4</span> <strong>F-Tests berichten</strong><a class="anchor" aria-label="anchor" href="#f-tests-berichten"><i class="fas fa-link"></i></a>
+</h3>
+<p>Zuletzt wollen wir noch lernen, wie der <em>F</em>-Test in Fachartikeln berichtet wird. Formulieren wir dazu ein Beispiel für unseren Test aus:</p>
+<blockquote>
+<p>“Um zu prüfen, ob Studierende pro Jahr mehr als 10 Bücher pro Jahr lesen, wurde ein <em>t</em>-Test für eine Stichprobe berechnet. Der <em>F</em>-Test ergab einen signifikanten Effekt, <em>F</em>(1, 29) = 24.1, <em>p</em> &lt; .001, <em>d</em> = 0.89 (großer Effekt), was darauf hinweist, dass Studierende mehr als 10 Bücher pro Jahr lesen.”</p>
+<p>Avani Sadana</p>
+</blockquote>
+<p>Du siehst, dass wir bei einem <em>F</em>-Test sowohl den Unterschied in den Parametern des kompakten und des erweiterten Modells angeben als auch den Freiheitsgrad des erweiterten Modells angeben. Allgemein können wir die Schreibweise wie folgt darstellen:</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/fdf.png"></div>
+</div>
+<div id="zusammenfassung-7" class="section level3" number="5.7.5">
+<h3>
+<span class="header-section-number">5.7.5</span> <strong>Zusammenfassung</strong><a class="anchor" aria-label="anchor" href="#zusammenfassung-7"><i class="fas fa-link"></i></a>
+</h3>
+<p>In diesem Submodul haben wir gezeigt, dass wir für jeden <em>t</em>-Test auch einen <em>F</em>-Test rechnen können und dass beide Kennwerte miteinander verwandt sind. Genauer haben wir festgestellt, dass der <em>t-</em>Wert die Wurzel des <em>F</em>-Wertes ist. Wir können daher jeden <em>t</em>-Test in eine <em>F</em>-Test übersetzen. Fortan werden wir allerdings hauptsächlich <em>F</em>-Tests zur Überprüfung von Hypothesen verwenden.</p>
+</div>
+</div>
+<div id="notation-statistische-modelle" class="section level2" number="5.8">
+<h2>
+<span class="header-section-number">5.8</span> Notation statistische Modelle<a class="anchor" aria-label="anchor" href="#notation-statistische-modelle"><i class="fas fa-link"></i></a>
+</h2>
+<p>Dieses Submodul fasst die wesentlichen Notationen der statistischen Modelle zusammen. Verwende diese Seite als Nachschlagewerk, wenn wir in den nächsten Wochen immer statistische Modellpaare aufstellen.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/yy.png"></div>
+<p>Steht für den Einzelwert von DATA, den Werten, welche wir vorhersagen, beziehungsweise den Werte unserer abhängigen Variable. Das kleine <em>i</em> steht für das Untersuchungsobjekt, welches wir gerade betrachten. In der Regel sind das einzelne Menschen beziehungsweise Probanden.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/yy1.png"></div>
+<p>Steht für unseren auf Grundlage des Modells vorhergesagten Werte. Der reale Wert setzt sich aus der Schätzung und dem Fehler zusammen.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/x.png"></div>
+<p>Steht für die Variablen, welche wir in unser Modell hinzufügen. <em>i</em> steht für das Untersuchungsobjekt, <em>j</em> steht für die Nummer der Variable (wir werden später mehrere dieser Variablen in unseren Modellen haben).</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/b0.png"></div>
+<p>Steht für die Parameter unseres Modells, welche wir finden möchten. Wir werden diese Werte allerdings nie exakt bestimmen können, da wir nie Daten von ganzen Populationen haben. Als Faustregel gilt: Sobald ein Epsilon in der Gleichung enthalten ist, spricht man von Parametern, die in der Population gelten.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/b.png"></div>
+<p>Stehen für die Parameter, welche man auf Grundlage der Stichproben berechnet. Beispielsweise schätzt man den Mittelwert der Population auf Grundlage des Mittelwerts einer Stichprobe.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/b1.png"></div>
+<p>Steht für keinen Parameter, sondern für einen Koeffizienten in einem Modell, den wir a-priori annehmen. Zum Beispiel, dass Studierende im Schnitt 10 Bücher pro Jahr lesen.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/e.png"></div>
+<p>Stehen für die Fehler, die wir aus dem Modell berechnen. <em>e</em> wird also immer im Zusammenhang mit <em>b</em> verwendet und nie mit β und wird immer im Zusammenhang mit Stichproben verwendet.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/e1.png"></div>
+<p>Steht für den Fehler, der sich ergibt, wenn man <em>β<sub>i</sub></em> kennt. Da sich <em>β<sub>i</sub></em> von <em>b<sub>i</sub></em> unterscheidet, unterscheidet sich auch <em>e</em> von ɛ . ɛ wird immer verwendet, wenn wir von der Population sprechen.</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/u.png"></div>
+<p>Mittelwert der Population </p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/mittel.png"></div>
+<p>Mittelwert der Stichprobe</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/o.png"></div>
+<p>Standardabweichung der Population</p>
+<div class="inline-figure"><img src="images/04_statistische_modellierung/s.png"></div>
+<p>Standardabweichung der Stichprobe </p>
+</div>
+<div id="berechnung-in-jamovi" class="section level2" number="5.9">
+<h2>
+<span class="header-section-number">5.9</span> Berechnung in Jamovi<a class="anchor" aria-label="anchor" href="#berechnung-in-jamovi"><i class="fas fa-link"></i></a>
+</h2>
+<p>In diesem Submodul zeige ich dir, wie du einen <em>t</em>-Test für eine Stichprobe in Jamovi und R berechnen kannst. Den Datensatz findest du hier:</p>
+<p>TODO: Einfügen Dokument books.csv</p>
+<p>TODO: Einfügen Video</p>
+</div>
+<div id="konfidenzintervalle" class="section level2" number="5.10">
+<h2>
+<span class="header-section-number">5.10</span> Konfidenzintervalle<a class="anchor" aria-label="anchor" href="#konfidenzintervalle"><i class="fas fa-link"></i></a>
+</h2>
+<p>TODO: Das Kapitel war vorher schon drin, soll das bleiben?</p>
+<p>anhand der Parameter erklären und was sie bedeuten</p>
 <ul>
 <li><a href="https://thenewstatistics.com/itns/2020/07/04/3-easy-ways-to-obtain-cohens-d-and-its-ci/" class="uri">https://thenewstatistics.com/itns/2020/07/04/3-easy-ways-to-obtain-cohens-d-and-its-ci/</a></li>
 <li><a href="http://www.tqmp.org/RegularArticles/vol14-4/p242/p242.pdf" class="uri">http://www.tqmp.org/RegularArticles/vol14-4/p242/p242.pdf</a></li>
@@ -76,7 +564,56 @@
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#statistische-modellierung"><span class="header-section-number">5</span> Statistische Modellierung</a></li>
-<li><a class="nav-link" href="#konfidenzintervalle"><span class="header-section-number">5.1</span> Konfidenzintervalle</a></li>
+<li><a class="nav-link" href="#einf%C3%BChrung-3"><span class="header-section-number">5.1</span> Einführung</a></li>
+<li>
+<a class="nav-link" href="#%C3%BCbersicht-statistische-modellierung-und-prozess-des-statistischen-hypothesentestens"><span class="header-section-number">5.2</span> Übersicht statistische Modellierung und Prozess des statistischen Hypothesentestens</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#statistische-modellierung-1"><span class="header-section-number">5.2.1</span> Statistische Modellierung</a></li>
+<li><a class="nav-link" href="#statistische-modellierung-2"><span class="header-section-number">5.2.2</span> Statistische Modellierung</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#statistische-modellierung-der-null--und-alternativhypothese"><span class="header-section-number">5.3</span> Statistische Modellierung der Null- und Alternativhypothese</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#fragestellung-dieses-moduls"><span class="header-section-number">5.3.1</span> Fragestellung dieses Moduls</a></li>
+<li><a class="nav-link" href="#null--und-alternativhypothese-der-fragestellung"><span class="header-section-number">5.3.2</span> Null- und Alternativhypothese der Fragestellung</a></li>
+<li><a class="nav-link" href="#data-model-error"><span class="header-section-number">5.3.3</span> DATA = MODEL + ERROR</a></li>
+<li><a class="nav-link" href="#statistische-modellierung-der-null--und-alternativhypothese-1"><span class="header-section-number">5.3.4</span> Statistische Modellierung der Null- und Alternativhypothese</a></li>
+<li><a class="nav-link" href="#freiheitsgrade"><span class="header-section-number">5.3.5</span> Freiheitsgrade</a></li>
+<li><a class="nav-link" href="#zusammenfassung-4"><span class="header-section-number">5.3.6</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#fehler-in-statistischen-modellen-sse_a-sse_c-ssr-und-pre"><span class="header-section-number">5.4</span> Fehler in statistischen Modellen: SSE_A, SSE_C, SSR und PRE</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#fehler-im-kompakten-modell"><span class="header-section-number">5.4.1</span> Fehler im kompakten Modell</a></li>
+<li><a class="nav-link" href="#fehler-im-erweiterten-modell"><span class="header-section-number">5.4.2</span> Fehler im erweiterten Modell</a></li>
+<li><a class="nav-link" href="#ssr-reduktion-des-fehlers"><span class="header-section-number">5.4.3</span> SSR: Reduktion des Fehlers</a></li>
+<li><a class="nav-link" href="#pre-proportional-reduction-in-error"><span class="header-section-number">5.4.4</span> PRE (Proportional Reduction in Error)</a></li>
+<li><a class="nav-link" href="#tabellarische-darstellung-der-ergebnisse"><span class="header-section-number">5.4.5</span> Tabellarische Darstellung der Ergebnisse</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#zusammenfassung-5"><span class="header-section-number">5.5</span> Zusammenfassung</a></li>
+<li>
+<a class="nav-link" href="#f-wert-und-f-verteilungen"><span class="header-section-number">5.6</span> F-Wert und F-Verteilungen</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#die-gr%C3%B6%C3%9Fe-der-fehler-abh%C3%A4ngig-der-parameter-des-modells"><span class="header-section-number">5.6.1</span> Die Größe der Fehler abhängig der Parameter des Modells</a></li>
+<li><a class="nav-link" href="#der-f-wert"><span class="header-section-number">5.6.2</span> Der F-Wert</a></li>
+<li><a class="nav-link" href="#f-verteilung"><span class="header-section-number">5.6.3</span> F-Verteilung</a></li>
+<li><a class="nav-link" href="#beispiele-f-verteilungen"><span class="header-section-number">5.6.4</span> Beispiele F-Verteilungen</a></li>
+<li><a class="nav-link" href="#ermittlung-von-pdh0-auf-grundlage-von-f"><span class="header-section-number">5.6.5</span> Ermittlung von P(D|H0) auf Grundlage von F</a></li>
+<li><a class="nav-link" href="#tabellarische-darstellung-der-ergebnisse-1"><span class="header-section-number">5.6.6</span> Tabellarische Darstellung der Ergebnisse</a></li>
+<li><a class="nav-link" href="#zusammenfassung-6"><span class="header-section-number">5.6.7</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%C3%A4quivalenz-f-und-t"><span class="header-section-number">5.7</span> Äquivalenz F und t</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ergebnis-des-bisherigen-t-tests-f%C3%BCr-eine-stichprobe"><span class="header-section-number">5.7.1</span> Ergebnis des bisherigen t-Tests für eine Stichprobe</a></li>
+<li><a class="nav-link" href="#t-ist-die-wurzel-aus-f"><span class="header-section-number">5.7.2</span> t ist die Wurzel aus F</a></li>
+<li><a class="nav-link" href="#der-f-test-testet-ungerichtet"><span class="header-section-number">5.7.3</span> Der F-Test testet ungerichtet</a></li>
+<li><a class="nav-link" href="#f-tests-berichten"><span class="header-section-number">5.7.4</span> F-Tests berichten</a></li>
+<li><a class="nav-link" href="#zusammenfassung-7"><span class="header-section-number">5.7.5</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#notation-statistische-modelle"><span class="header-section-number">5.8</span> Notation statistische Modelle</a></li>
+<li><a class="nav-link" href="#berechnung-in-jamovi"><span class="header-section-number">5.9</span> Berechnung in Jamovi</a></li>
+<li><a class="nav-link" href="#konfidenzintervalle"><span class="header-section-number">5.10</span> Konfidenzintervalle</a></li>
 </ul>
 
       <div class="book-extra">
@@ -93,7 +630,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2021-02-01.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -113,6 +650,22 @@
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
 </html>

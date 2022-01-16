@@ -6,10 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 8 Einfaktorielle Varianzanalyse | A Minimal Book Example</title>
 <meta name="author" content="Yihui Xie">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.6.4/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.3.9000/tabs.js"></script><script src="libs/bs3compat-0.2.3.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
+<meta name="description" content="8.1 Einführung Bisher haben wir drei verschiedene Testverfahren kennen gelernt: Der t-Test für eine Stichprobe, die einfache lineare Regression und die multiple lineare Regression. Durch diese...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 8 Einfaktorielle Varianzanalyse | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="8.1 Einführung Bisher haben wir drei verschiedene Testverfahren kennen gelernt: Der t-Test für eine Stichprobe, die einfache lineare Regression und die multiple lineare Regression. Durch diese...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 8 Einfaktorielle Varianzanalyse | A Minimal Book Example">
+<meta name="twitter:description" content="8.1 Einführung Bisher haben wir drei verschiedene Testverfahren kennen gelernt: Der t-Test für eine Stichprobe, die einfache lineare Regression und die multiple lineare Regression. Durch diese...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -39,7 +47,7 @@
 <li><a class="" href="einfache-lineare-regression.html"><span class="header-section-number">6</span> Einfache lineare Regression</a></li>
 <li><a class="" href="multiple-lineare-regression.html"><span class="header-section-number">7</span> Multiple lineare Regression</a></li>
 <li><a class="active" href="einfaktorielle-varianzanalyse.html"><span class="header-section-number">8</span> Einfaktorielle Varianzanalyse</a></li>
-<li><a class="" href="mehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> Mehrfaktorielle Varianzanalyse</a></li>
+<li><a class="" href="tatusmehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> tatusMehrfaktorielle Varianzanalyse</a></li>
 <li><a class="" href="ancova.html"><span class="header-section-number">10</span> ANCOVA</a></li>
 <li><a class="" href="mediation.html"><span class="header-section-number">11</span> Mediation</a></li>
 <li><a class="" href="moderation.html"><span class="header-section-number">12</span> Moderation</a></li>
@@ -57,17 +65,1208 @@
 <h1>
 <span class="header-section-number">8</span> Einfaktorielle Varianzanalyse<a class="anchor" aria-label="anchor" href="#einfaktorielle-varianzanalyse"><i class="fas fa-link"></i></a>
 </h1>
-<p>We have finished a nice book.</p>
+<div id="einführung-6" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> Einführung<a class="anchor" aria-label="anchor" href="#einf%C3%BChrung-6"><i class="fas fa-link"></i></a>
+</h2>
+<p>Bisher haben wir drei verschiedene Testverfahren kennen gelernt: Der <em>t</em>-Test für eine Stichprobe, die einfache lineare Regression und die multiple lineare Regression. Durch diese drei Testsverfahren können wir bereits eine Fülle an bildungswissenschaftlich relevanten Fragen beantworten. Zum Beispiel:</p>
+<ul>
+<li><p>Haben Gymnasiasten einen höheren Intelligenzquotienten als 100?</p></li>
+<li><p>Verringert sich das Stressempfinden von Studierenden, wenn sie mehr meditieren?</p></li>
+<li><p>Gibt es einen Zusammenhang zwischen der Zeit, die Studierende lernen und ihren Noten in Klausuren?</p></li>
+</ul>
+<p>Unser Werkzeugkasten ermöglicht es uns allerdings bisher nicht, Gruppenunterschiede zu testen. Beispielsweise können wir bisher keine Unterschiedshypothesen testen. In diesem Modul werden wir daher folgenden beiden Fragestellungen testen:</p>
+<blockquote>
+<p><strong>Lernen Studierende mehr, wenn sie ihr Wissen <a href="https://dorsch.hogrefe.com/stichwort/testungseffekt">testen </a>anstatt eine <a href="https://dorsch.hogrefe.com/stichwort/lernen-mit-concept-maps">Concept-Map</a> zu erstellen?</strong></p>
+<p><strong>Lernen Studierende, die während eines Vortrags handschriftlich mitschreiben mehr als Studierende, die mit einem Laptop bzw. einem E-Writer mitschreiben?</strong></p>
+</blockquote>
+<p>Um solche Fragestellungen statistisch zu testen, müssen wir uns überlegen, wie wir diese Gruppenunterschiede durch die Parameter in unseren statistischen Modellen kodieren können. Wir haben beispielsweise gesehen, dass <em>b<sub>1</sub></em> bei der einfachen linearen Regression den Zusammenhang zwischen zwei Variablen kodiert. Wir haben ebenso gesehen, dass wir bei der linearen und multiplen Regression Prädiktoren eingeführt haben (<em>X<sub>i</sub></em>), für welche wir die Werte einer metrischen Variable eingesetzt haben. Um nun Gruppenunterschiede statistisch zu testen, müssen wir zwei Probleme lösen:</p>
+<ol style="list-style-type: decimal">
+<li><p>Wir müssen einen Weg finden, Mittelwertsunterschiede von Gruppen als Parameter zu kodieren (z.B. <em>b<sub>1</sub></em>).</p></li>
+<li><p>Wir müssen einen Weg finden, kategoriale Variablen (handschriftliche Mitschrift vs. Mitschrift mit dem Laptop) in eine numerische Form zu bringen, die wir für <em>X<sub>i</sub></em> einfügen können (z.B. handschriftliche Mitschrift = 1, Mitschrift mit dem Laptop = -1). Das heißt, <em>X<sub>i</sub></em> ist im Gegensatz zur linearen und multiplen Regression nicht mehr kontinuierlich, sondern diskret skaliert.</p></li>
+</ol>
+<p>Um diese beiden Probleme zu lösen, werden wir sogenannte Kontrastkodierungen kennen lernen, welche uns ermöglichen, spezifische Gruppenunterschiede zu testen. Zum Beispiel werden wir am Ende des Moduls in der Lage sein, zu testen, ob Studierende, die handschriftlich mitschreiben mehr lernen als Studierende, die mit dem Laptop oder mit einem E-Writer mitschreiben.</p>
+<p>Wir werden in diesem Modul zwei verschiedene Tests kennen lernen, die allerdings das gleiche Verfahren anwenden, welches wir bisher kennen gelernt haben. Genauer werden wir den <strong><em>t</em>-Test für unabhängige Stichproben</strong> und die <strong>einfaktorielle Varianzanalyse</strong> kennen lernen. Für beide Verfahren werden wir <em>F</em>-Tests berechnen. Der Unterschied zwischen dem <em>t</em>-Test für unabhängige Stichproben und der einfaktoriellen Varianzanalyse liegt darin, dass sie sich darin unterscheiden, wie viel Gruppen man miteinander vergleicht. Beim <em>t</em>-Test für unabhängige Stichproben werden zwei Gruppen miteinander verglichen, bei der einfaktoriellen Varianzanalyse mehr als zwei Gruppen. Sobald du allerdings die Kontrastkodierung verstehst, wirst du sehen, dass beide Tests ähnlich statistisch modelliert werden.</p>
+<div id="datensätze-dieses-moduls" class="section level3" number="8.1.1">
+<h3>
+<span class="header-section-number">8.1.1</span> Datensätze dieses Moduls<a class="anchor" aria-label="anchor" href="#datens%C3%A4tze-dieses-moduls"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir werden in diesem Modul zwei verschiedene Datensätze verwenden. Bei beiden Datensätzen handelt es sich um Replikationsstudien bekannter Studien.</p>
+</div>
+<div id="t-test-für-unabhängige-stichproben-buttrick-et-al.-2018" class="section level3" number="8.1.2">
+<h3>
+<span class="header-section-number">8.1.2</span> <strong><em>t</em>-Test für unabhängige Stichproben: Buttrick et al. (2018)</strong><a class="anchor" aria-label="anchor" href="#t-test-f%C3%BCr-unabh%C3%A4ngige-stichproben-buttrick-et-al.-2018"><i class="fas fa-link"></i></a>
+</h3>
+<p>Zunächst werden wir uns mit der Studie von <a href="https://osf.io/2h3g6/">Buttrick et al. (2018) </a>beschäftigen. Buttrick und Kolleg*innen replizierten eine sehr bekannte Studie von <a href="https://science.sciencemag.org/content/sci/330/6002/335.full.pdf">Karpicke und Blunt (2011)</a>. In dieser Studie wurde unter anderem untersucht, ob das Testen von Wissen, das heißt der freie Abruf von Wissen, für das Erlernen konzeptuellen Wissens lernförderlicher ist als das Erstellen von Concept Maps. Diese Studie war der Beginn einer intensiven Diskussion zur Frage, ob der Testing-Effekt nicht nur für einfaches Lernmaterial wie Wortpaarliste, sondern auch für komplexes Lernmaterial funktioniert (z.B. konzeptuelles Wissen). Beispielsweise kritisierten <a href="https://repub.eur.nl/pub/92178/">van Gog und Sweller (2015)</a>, dass der Testing-Effekt bei komplexem Lernmaterial nicht zu finden ist. <a href="https://www.infona.pl/resource/bwmeta1.element.springer-27c4b436-8913-3d02-b003-c3e50ac8e537">Karpicke und Aue (2015)</a> verteidigten ihre Position anschließend mit dem Argument, dass die Studien von van Gog und Sweller methodologisch mangelhaft waren. Wir werden in diesem Modul den <em>t</em>-Test für unabhängige Stichproben verwenden, um die Ergebnisse von Buttrick et al. zu berechnen und die Frage beantworten, ob das Testen von Wissen zu einer besseren Erinnerungsleistung bei konzeptuellen Wissen ist als die Erstellung von Concept Maps.<br></p>
+<p>Die Prozedur des Experiments von Buttrick et al. (2018) sah folgendermaßen aus: Die Versuchspersonen wurden in Kleingruppen (1 bis 4 Personen) getestet und lasen einen kurzen Text zum Thema Seeotter. Sie hatten fünf Minuten Zeit, den Text zu studieren. Die Versuchspersonen wurden anschließend willkürlich in zwei Gruppen eingeteilt (Concept Map Gruppe vs. Testing Gruppe). Die Versuchspersonen in der Concept-Map Gruppe hatten anschließend 25 Minuten Zeit mit dem Text eine Concept-Map zu erstellen. Diejenigen Versuchspersonen in der Concept-Map Gruppe hatten 10 Minuten Zeit so viel aus dem Text aufzuschreiben, wie sie sich erinnern konnten. Anschließend bekamen sie 5 Minuten Zeit, den Text erneut zu studieren und erhielten erneut 10 Minuten, sich an die Inhalte des Textes frei zu erinnern. Eine Woche später erhielten die Versuchspersonen einen Follow-Up Test, welcher 14 Faktenfragen und zwei Inferenzfragen zum Thema des Textes beinhaltete. Beide Fragen testeten nach Aussage der Autoren konzeptuelles Wissen.</p>
+<p>Den Datenatz der Replikationsstudie von Buttrick et al. (2018) findest du hier:</p>
+<p>TODO: Einfügen Datei buttrick.csv</p>
+<p>Für diese Studie interessieren uns folgende Variablen:</p>
+<ul>
+<li><p><strong>condition</strong>: Diese Variable kodiert, ob Studierende entweder eine Concept Map erstellt haben (Concept) oder ihr Wissen getestet haben (Retrieval). condition ist die unabhängige Variable.</p></li>
+<li><p><strong>ts_avg</strong>: Diese Variable kodiert, wie viele richtige Antworten die Versuchspersonen bei den 16 Fragen des Abschlusstests in Prozent korrekt beantwortet haben. ts_avg ist die abhängige Variable.</p></li>
+</ul>
+<div id="einfaktorielle-varianzanalyse-morehead-dunlosky-und-rawson-2014" class="section level4" number="8.1.2.1">
+<h4>
+<span class="header-section-number">8.1.2.1</span> <strong>Einfaktorielle Varianzanalyse: Morehead, Dunlosky und Rawson (2014)</strong><a class="anchor" aria-label="anchor" href="#einfaktorielle-varianzanalyse-morehead-dunlosky-und-rawson-2014"><i class="fas fa-link"></i></a>
+</h4>
+<p>Für das Verfahren der einfaktoriellen Varianzanalyse werden wir erneut die Replikationsstudie von <a href="https://link.springer.com/article/10.1007/s10648-019-09468-2">Morehead, Dunlosky und Rawson (2014)</a> verwenden. Zur Erinnerung, in dieser Studie wiederholten Morehead et al. eine Studie, die ursprünglich von <a href="https://journals.sagepub.com/doi/full/10.1177/0956797614524581">Mueller und Oppenheimer (2014)</a> durchgeführt wurde. In beiden Studien wurde untersucht, ob die Mitschrift eines Vortrags mit verschiedenen Medien einen Einfluss auf die Erinnerungsleistung hat. Wir werden diese Replikationsstudie verwenden, um heraus zu finden, ob die handschriftliche Mitschrift während eines Vortrags lernförderlicher ist als die Mitschrift mit dem Laptop beziehungsweise einem E-Writer.</p>
+<p>Die Prodezur der Studie von Morhead et al. (2014) verlief wie folgt: Studierende sahen sich einen von fünf TED-Talks an, welche im Schnitt 17 Minuten dauerten. Versuchspersonen wurden willkürlich in einer der folgenden Gruppen eingeteilt. Entweder wurden die Versuchspersonen gebeten, während des Vortrags die Inhalte des Vortrags per Hand mitzuschreiben. Eine andere Gruppe wurde gebeten, die Inhalte des Vortrags mit dem Laptop mitzuschreiben. Eine dritte Gruppe wurde gebeten, die Inhalte des Vortrags mit einem E-Writer aufzuschreiben. Anschließend erhielten die Versuchspersonen für 30 Minuten eine Aufgabe, die nichts mit dem Experiment zu tun hatte. Anschließend füllten die Versuchspersonen einen Test aus, welcher aus Faktenfragen und konzeptuellen Fragen bestand. Zwei Tage später wurden die gleichen Fragen erneut abgefragt.</p>
+<p>Der Datensatz dieses Experiments befindet sich hier:</p>
+<p>TODO: Einfügen morehead_experiment1.csv</p>
+<p>Für diese Studie interessieren uns folgende Variablen:</p>
+<ul>
+<li><p><strong>method</strong>: Die Versuchsgruppe, in die die Versuchspersonen eingeordnet wurden: eWriter, laptop oder longhand.</p></li>
+<li><p><strong>test2tot</strong>: Prozentueller Anteil der korrekten Fragen des Tests zwei Tage nach dem Aufschreiben der Notizen.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="kontrastkodierungen" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> Kontrastkodierungen<a class="anchor" aria-label="anchor" href="#kontrastkodierungen"><i class="fas fa-link"></i></a>
+</h2>
+<p>In der Einführung dieses Moduls haben wir gesagt, dass wir zwei Probleme lösen müssen. Wir müssen kategorielle Werte, wie beispielsweise ob Studierende ihr Wissen getestet haben oder eine Concept-Map erstellt haben, in numerische Werte überführen. Ebenso müssen wir einen Weg finden, die Parameter in unseren statistischen Modellen als spezifische Hypothesen zu kodieren. Die Lösung dieser beider Probleme sind Kontrastkodierungen.</p>
+<div id="bei-k-gruppen-braucht-man-k---1-prädiktoren" class="section level3" number="8.2.1">
+<h3>
+<span class="header-section-number">8.2.1</span> <strong>Bei <em>k</em> Gruppen braucht man <em>k</em> - 1 Prädiktoren</strong><a class="anchor" aria-label="anchor" href="#bei-k-gruppen-braucht-man-k---1-pr%C3%A4diktoren"><i class="fas fa-link"></i></a>
+</h3>
+<p>Für Kontrastkodierungen gilt, dass wir bei einem <em>t</em>-Test für unabhängige Stichproben bzw. einer einfaktoriellen Varianzanalyse für <em>k</em> Gruppen <em>k</em> - 1 Prädiktoren benötigen. Wenn ich beispielsweise testen möchte, ob Probanden, die sich ihr Wissen testen, mehr konzeptuelles Wissen erwerben als Studierende, die Concept-Maps anfertigen, bräuche ich einen Prädiktor (2 -1 = 1) im erweiterten Modell. Würde ich untersuchen, ob Studierende, die bei einem Vortrag handschriftlich mitschreiben, mehr lernen als Studierende, die mit dem Laptop oder einem E-Writer mitschreiben, bräuchte ich zwei Prädiktoren (3 - 1 = 2).</p>
+</div>
+<div id="kategoriale-variablen-in-numerische-werte-überführen" class="section level3" number="8.2.2">
+<h3>
+<span class="header-section-number">8.2.2</span> <strong>Kategoriale Variablen in numerische Werte überführen</strong><a class="anchor" aria-label="anchor" href="#kategoriale-variablen-in-numerische-werte-%C3%BCberf%C3%BChren"><i class="fas fa-link"></i></a>
+</h3>
+<p>Während wir bei der einfachen linearen Regression für die Prädiktoren <em>X<sub>i</sub></em> die Werte der unabhängigen Variablen einfügen können (siehe Bild links), können wir die Gruppen, welche in der Regel als Text in Variablen gespeichert sind (<em>Concept</em> und <em>Retrieval</em>) nicht direkt für <em>X<sub>i</sub></em> eintragen (siehe Bild rechts), da diese Gruppen nicht numerisch vorliegen.</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/einfach.jpg"></div>
+<p>Wie wir Gruppen in numerische Werte überführen, entscheidet darüber, welche Hypothesen wir mit den Modellpaaren testen können. Nehmen wir beispielsweise die Frage, ob Studierende, die ihr Wissen testen, mehr konzeptuelles Wissen erwerben als Studierende, die eine Concept-Map anfertigen. Da wir zwei Gruppen haben, müssten wir <em>einen</em> Kontrast für den Parameter <em>X<sub>1</sub></em> definieren (2 -1 = 1). Beispielsweise könnten wir der Testing-Gruppe eine 1 und der Concept Map Gruppe eine -1 zuordnen.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th><strong><em>X<sub>1</sub></em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Testing</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Concept Map</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Die Werte dieses Kontrasts würden wir für <em>X<sub>1</sub></em> einfügen. <em>b<sub>1</sub></em> kodiert als Folge den Mittelwertsunterschied beider Gruppen. Indem wir nun <em>X<sub>1</sub></em> im kompakten Modell auf 0 setzen, können wir testen, ob dieser Mittelwertsunterschied 0 beträgt:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/y.png"></div>
+<p>In der unteren Tabelle siehst du nun eine Reihe an Kontrasten, die du für verschiedene spezifische Hypothesen verwenden kannst. Wir werden diese Kontraste einzeln durchgehen und an Beispielen zeigen, welche Fragestellungen mit ihnen beantwortet werden können. Das Ziel dieser Ausführungen ist, dass du lernst, wie statistische Modelle mit kategorialen Prädiktoren erstellt werden. In den nächsten Modulen wirst du sehen, wie wir diese Kontraste nutzen, um Hypothesen zu testen.</p>
+<p>Die folgenden Kontraste werden alle von Jamovi unterstützt. Die Tabelle enthält sowohl den Namen des Kontrasts, die Hypothese, welche man mit den Kontrasten testen kann und die Bedeutung der Regressionskoeffizienten des erweiterten Modells. Ebenso zeigt die Tabelle an, ob Kontraste orthogonal sind. Wir werden bei den Difference- bzw. Reverse-Helmert Kontrasten erklären, was damit gemeint ist.</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="15%">
+<col width="31%">
+<col width="15%">
+<col width="33%">
+<col width="4%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Kontrast</th>
+<th align="left">Hypothese</th>
+<th>Bedeutung <em>b<sub>0</sub></em>
+</th>
+<th>Bedeutung <em>b<sub>i</sub></em>
+</th>
+<th>orthogonal</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Deviation- oder Sum-Kontrast</td>
+<td align="left">Vergleicht den Mittelwert einer Gruppe gegen den Mittelwert aller Gruppen.</td>
+<td>Mittelwert aller Gruppen</td>
+<td>Die Abweichung des Mittelwerts einer Gruppe vom Mittelwert der Mittelwerte aller Gruppen.</td>
+<td>nein</td>
+</tr>
+<tr class="even">
+<td align="left">Dummy- oder Simple-Kontrast</td>
+<td align="left">Vergleicht den Mittelwert einer Gruppe durch den Mittelwert einer Referenzgruppe.</td>
+<td>Mittelwert einer Referenzgruppe</td>
+<td>Die Abweichung des Mittelwerts einer Gruppe vom Mittelwert der Referenzgruppe.</td>
+<td>nein</td>
+</tr>
+<tr class="odd">
+<td align="left">Difference-oder Reverse-Helmert Kontrast</td>
+<td align="left">Vergleicht den Mittelwert einer Gruppe mit dem Mittelwert der vorherigen Gruppen.</td>
+<td>Mittelwert des Mittelwerts aller Gruppen.</td>
+<td>Die Differenz der Mittelwerte zweier oder mehrerer Gruppen.</td>
+<td>ja</td>
+</tr>
+<tr class="even">
+<td align="left">Helmert-Kontrast</td>
+<td align="left">Vergleicht den Mittelwert einer Gruppe mit dem Mittelwert der nachfolgenden Gruppen.</td>
+<td>Mittelwert des Mittelwerts aller Gruppen.</td>
+<td>Die Differenz der Mittelwerte zweier oder mehrerer Gruppen.</td>
+<td>ja</td>
+</tr>
+</tbody>
+</table></div>
+<p>Im Folgenden gehen wir die einzelnen Kontraste einzeln durch, um zu erklären, für welche Hypothesen sie genutzt werden können. Für alle Beispiele werden wir die Studie von Morehead und Kollegen verwenden.</p>
+</div>
+<div id="deviation--oder-sum-kontrast" class="section level3" number="8.2.3">
+<h3>
+<span class="header-section-number">8.2.3</span> <strong>Deviation- oder Sum-Kontrast</strong><a class="anchor" aria-label="anchor" href="#deviation--oder-sum-kontrast"><i class="fas fa-link"></i></a>
+</h3>
+<p>Diese Kontraste eignen sich dazu, zu testen, ob sich ein Mittelwert einer Gruppe vom Mittelwert aller Gruppen unterscheidet. Du wirst eine solche Kontrastkodierung selten verwenden, da wir in der Regel daran interessiert sind, spezifische Gruppenunterschiede zu testen.</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="13%">
+<col width="31%">
+<col width="11%">
+<col width="37%">
+<col width="6%">
+</colgroup>
+<thead><tr class="header">
+<th align="left"><strong>Kontrast</strong></th>
+<th align="left"><strong>Hypothese</strong></th>
+<th><strong>Bedeutung <em>b<sub>0</sub></em><br></strong></th>
+<th><strong>Bedeutung <em>b<sub>i</sub></em></strong></th>
+<th><strong>orthogonal</strong></th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="left">Deviation- oder Sum-Kontrast<br>
+</td>
+<td align="left">Vergleicht den Mittelwert einer Gruppe gegen den Mittelwert aller Gruppen</td>
+<td>Mittelwert aller Gruppen<br>
+</td>
+<td>Die Abweichung des Mittelwerts einer Gruppe vom Mittelwert der Mittelwerte aller Gruppen.</td>
+<td>nein</td>
+</tr></tbody>
+</table></div>
+<p>Nehmen wir folgendes Beispiel: Du möchtest heraus finden, ob Studierende, die per Hand mitschreiben, sich an mehr oder weniger aus einem Vortrag erinnern als die Studierenden aller Gruppen zusammen. Um diese Hypothese zu testen, könntest du folgende Kontraste aufstellen:</p>
+<div class="inline-table"><table style="width:58%;" class="table table-sm">
+<colgroup>
+<col width="18%">
+<col width="18%">
+<col width="22%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th><strong><em>X<sub>1</sub></em></strong></th>
+<th><strong><em>X<sub>2</sub></em><br></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nun bist du vermutlich geneigt zu denken, dass man mit diesem Kontrast testet, ob Studierende, die mit dem Laptop mitschrieben sich besser an den Vortrag erinnern konnten als Studierende, die per Hand mitschrieben. Dem ist allerdings nicht so. Der Grund hierfür ist, dass diese Kontrastgewichte nicht orthogonal sind (wir kommen gleich darauf zu sprechen). </p>
+<p>Deviation- oder Sum-Kontraste erkennst du daran, dass die erste Zeile der Kontrastegewichte auf -1 gesetzt wird und für die Gruppe, die mit allen Gruppen verglichen werden soll eine 1 gesetzt wird. Alle anderen Gruppen werden auf 0 gesetzt. Das bedeutet, durch <em>X<sub>2</sub></em> testen wir, ob die Studierende mit E-Writern sich besser oder schlechter an den Vortrag erinnern konnten als alle Gruppen zusammen. </p>
+<p>Berechnen wir das erweiterte Modell auf Grundlage dieser Kontrastgewichte, erhalten wir dieses Modell:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/y1.png"></div>
+<p>Du siehst, dass das Modell drei Parameter und zwei Prädiktoren hat. <em>b<sub>1</sub></em> kodiert den Mittelwertsunterschied zwischen der Laptopgruppe mit allen anderen Gruppen. <em>b<sub>2</sub></em> kodiert den Mitelwertsunterschied zwischen der E-Writer Gruppe mit allen anderen Gruppen. Beweisen können wir dies dadurch, indem wir uns die Mittelwerte der Gruppen ansehen:</p>
+<div class="inline-table"><table style="width:71%;" class="table table-sm">
+<colgroup>
+<col width="56%">
+<col width="13%">
+</colgroup>
+<thead><tr class="header">
+<th>
+<strong>Gruppen</strong>\</th>
+<th><strong><em>M</em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>0.269</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>0.2333</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>0.250</td>
+</tr>
+<tr class="even">
+<td>Mittelwerte aller Mittelwerte (<em>b<sub>0</sub>)</em>
+</td>
+<td>0.2508</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>b<sub>0</sub></em> ist offensichtlich der Mittelwert aller Mittelwerte (0.2508). <em>b<sub>1</sub></em> wiederum ist die Differenz des Mittelwerts der Laptopgruppe vom Gruppenmittelwert: 0.2333- 0.2508 = -0.0175. <em>b<sub>2</sub></em> wiederum ist die Differenz des Mittelwerte der E-Writer Gruppe vom Gruppenmittelwert: 0.250 - 0.2508 = 0.00085. Wir haben damit gezeigt, dass die Parameter spezifische Gruppenunterschiede testen. Indem wir die Prädiktoren dieser Parameter im kompakten Modell auf 0 setzten, können wir ebendiese Hypothesen durch unseren bekannten <em>F</em>-Test bzw. <em>t</em>-Test testen.</p>
+</div>
+<div id="dummy--oder-simple-kontrast" class="section level3" number="8.2.4">
+<h3>
+<span class="header-section-number">8.2.4</span> <strong>Dummy- oder Simple-Kontrast</strong><a class="anchor" aria-label="anchor" href="#dummy--oder-simple-kontrast"><i class="fas fa-link"></i></a>
+</h3>
+<p>Dummy-Kontraste sind Kontraste, bei denen die Kontrastgewichte lediglich auf 0 und 1 gesetzt werden. Sie können verwendet werden, um Mittelwertsunterschiede zwischen einer Referenzgruppe und allen anderen Gruppen zu testen.</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="12%">
+<col width="33%">
+<col width="13%">
+<col width="33%">
+<col width="6%">
+</colgroup>
+<thead><tr class="header">
+<th align="left"><strong>Kontrast</strong></th>
+<th align="left"><strong>Hypothese</strong></th>
+<th><strong>Bedeutung <em>b<sub>0</sub></em><br></strong></th>
+<th><strong>Bedeutung <em>b<sub>i</sub></em></strong></th>
+<th><strong>orthogonal</strong></th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="left">Dummy- oder Simple-Kontrast</td>
+<td align="left">Vergleicht den Mittelwert einer Gruppe durch den Mittelwert einer Referengruppe.</td>
+<td>Mittelwert einer Referenzgruppe</td>
+<td>Die Abweichung des Mittelwerts einer Gruppe vom Mittelwert der Referenzgruppe.<br>
+</td>
+<td>nein</td>
+</tr></tbody>
+</table></div>
+<p>Für die Referenzgruppe werden in einer Dummy-Kodierung alle Kontrastgewichte auf 0 gesetzt. Für alle Gruppen, die mit dieser Referenzgruppe verglichen werden sollen, wird pro Kontrast eine 1 eingesetzt. In folgendem Beispiel wird jede Gruppe mit der Referenzgruppe derjenigen Studierenden verglichen, die per Hand mitgeschrieben haben.</p>
+<div class="inline-table"><table style="width:58%;" class="table table-sm">
+<colgroup>
+<col width="18%">
+<col width="18%">
+<col width="22%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th><strong><em>X<sub>1</sub></em></strong></th>
+<th><strong><em>X<sub>2</sub></em><br></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Berechnet man auf Grundlage dieser Kontraste das erweiterte Modell erhält man folgendes Modell:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/y2.png"></div>
+<p>Ein Blick auf die untere Tabelle verrät uns, dass <em>b<sub>0</sub></em> nichts anderes ist als der Mittelwert der Gruppe, welche per Hand mitgeschrieben hat. <em>b<sub>1</sub></em> kodiert den Mittelwertsunterschied zwischen der Laptopgruppe und der Gruppe, die per Hand mitgeschrieben hat: 0.2333 - 0.269 = -0.036. <em>b<sub>2</sub></em> kodiert den Mittelwertsunterschied der E-Book Gruppe und der Gruppe, die per Hand mitgeschrieben hab: 0.250 - 0.269 = -0.019.</p>
+<div class="inline-table"><table style="width:58%;" class="table table-sm">
+<colgroup>
+<col width="44%">
+<col width="13%">
+</colgroup>
+<thead><tr class="header">
+<th>
+<strong>Gruppen</strong>\</th>
+<th><strong><em>M</em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>0.269</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>0.2333</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>0.250</td>
+</tr>
+<tr class="even">
+<td>Mittelwerte aller Mittelwerte</td>
+<td>0.2508</td>
+</tr>
+</tbody>
+</table></div>
+<p>Durch die Wahl dieser Dummy-Kodierung können wir durch unser Verfahren daher zwei Hypothesen testen: Ob sich die Mittelwerte zwischen der Gruppen Laptop und E-Writer vom Mittelwert der händischen Gruppe unterscheidet. Wir testen diese beiden Hypothesen, indem wir den Prädiktor des jeweiligen Parameters im kompakten Modell auf 0 setzen.</p>
+</div>
+<div id="difference-oder-reverse-helmert-kontrast" class="section level3" number="8.2.5">
+<h3>
+<span class="header-section-number">8.2.5</span> <strong>Difference-oder Reverse-Helmert Kontrast</strong><a class="anchor" aria-label="anchor" href="#difference-oder-reverse-helmert-kontrast"><i class="fas fa-link"></i></a>
+</h3>
+<p>Der dritte Kontrast ermöglicht es uns ebenso Mittelwertsunterschiede einzelner Gruppen zu testen. Er ermöglicht es uns aber ebenso eine Gruppe mit mehreren anderen Gruppen zu vergleichen. Dies ist bei einer Dummykodierung und einer Differenzkodierung nicht möglich. Beispielsweise können wir einen Reverse-Helmert-Kontrast verwenden, um zu testen, ob sich die e-Writer Gruppe an mehr oder weniger aus dem Vortrag erinnert als die anderen beiden Gruppen.</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="17%">
+<col width="33%">
+<col width="17%">
+<col width="24%">
+<col width="6%">
+</colgroup>
+<thead><tr class="header">
+<th align="left"><strong>Kontrast</strong></th>
+<th align="left"><strong>Hypothese</strong></th>
+<th><strong>Bedeutung <em>b<sub>0</sub></em><br></strong></th>
+<th><strong>Bedeutung <em>b<sub>i</sub></em></strong></th>
+<th><strong>orthogonal</strong></th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="left">Difference-oder Reverse-Helmert Kontrast</td>
+<td align="left">Vergleicht den Mittelwert einer Gruppe mit dem Mittelwert der vorherigen Gruppen.<br>
+</td>
+<td>Mittelwert des Mittelwerts aller Gruppen.<br>
+</td>
+<td>Die Differenz der Mittelwerte zweier oder mehrerer Gruppen.</td>
+<td>ja</td>
+</tr></tbody>
+</table></div>
+<p>In der folgenden Tabelle siehst du einen Reverse-Helmert-Kontrast. Bisher konnten wir aus Kontrastgewichten, die für die einzelnen Prädiktoren eingesetzt werden nicht erahnen, welche Hypothesen mit ihnen getestet werden können. Mit einem Reverse-Helmert-Kontrast allerdings schon. Beispielsweise testen wir bei <em>X<sub>1</sub></em>, ob der Mittelwertunterschied der Laptopgruppe unterschiedlich vom Mittelwert der händischen Gruppe ist. Mit <em>X<sub>2</sub></em> testen wir, ob der Mittelwert der E-Writer Gruppe unterschiedlich vom Mittelwert der anderen beiden Gruppen ist.</p>
+<div class="inline-table"><table style="width:58%;" class="table table-sm">
+<colgroup>
+<col width="18%">
+<col width="18%">
+<col width="22%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th><strong><em>X<sub>1</sub></em></strong></th>
+<th><strong><em>X<sub>2</sub></em><br></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>1 </td>
+<td>-1</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>0</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Der Grund, dass diese Kontrastkodierung der einzelnen Prädiktoren interpretierbar sind, liegt darin, dass diese Kontraste orthogonal sind. Orthogonale Kontraste folgen zwei Regeln:</p>
+</div>
+<div id="erste-regel-bei-orthogonalen-kontrasten-muss-die-summe-der-kontrastgewichte-pro-prädiktor-0-ergeben" class="section level3" number="8.2.6">
+<h3>
+<span class="header-section-number">8.2.6</span> <strong>Erste Regel: Bei orthogonalen Kontrasten muss die Summe der Kontrastgewichte pro Prädiktor 0 ergeben</strong><a class="anchor" aria-label="anchor" href="#erste-regel-bei-orthogonalen-kontrasten-muss-die-summe-der-kontrastgewichte-pro-pr%C3%A4diktor-0-ergeben"><i class="fas fa-link"></i></a>
+</h3>
+<p>Die erste Regel lautet, dass die Summe der Kontrastgewichte für jeden Prädiktor 0 ergeben muss:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/k.png"></div>
+<p>In unserer Reverse-Helmert-Kodierung gilt daher, dass die Kontrastgewichte für <em>X<sub>1</sub></em> und <em>X<sub>2</sub></em> 0 ergibt:</p>
+<div class="inline-table"><table style="width:58%;" class="table table-sm">
+<colgroup>
+<col width="18%">
+<col width="18%">
+<col width="22%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th><strong><em>X<sub>1</sub></em></strong></th>
+<th><strong><em>X<sub>2</sub></em><br></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>1</td>
+<td>-1<br>
+</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><em>Summe:</em></td>
+<td><em>0</em></td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="zweite-regel-bei-mehr-als-zwei-gruppen-muss-das-produkt-der-kontrastgewichte-der-prädiktoren-bei-orthogonalen-kontrasten-0-ergeben." class="section level3" number="8.2.7">
+<h3>
+<span class="header-section-number">8.2.7</span> <strong>Zweite Regel: Bei mehr als zwei Gruppen muss das Produkt der Kontrastgewichte der Prädiktoren bei orthogonalen Kontrasten 0 ergeben.</strong><a class="anchor" aria-label="anchor" href="#zweite-regel-bei-mehr-als-zwei-gruppen-muss-das-produkt-der-kontrastgewichte-der-pr%C3%A4diktoren-bei-orthogonalen-kontrasten-0-ergeben."><i class="fas fa-link"></i></a>
+</h3>
+<p>Da wir zwei Prädiktoren haben, müssen wir das Produkt der Kontrastgewichte dieser Prädiktoren berechnen und prüfen, ob deren Summe 0 ergibt.</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/k1.png"></div>
+<p>In der unteren Tabelle siehst du, wie dieses Produkt berechnet wird. Du erkennst, dass die Summe des Produktes der beiden Kontraste 0 ergibt:</p>
+<div class="inline-table"><table style="width:92%;" class="table table-sm">
+<colgroup>
+<col width="18%">
+<col width="18%">
+<col width="22%">
+<col width="33%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th><strong><em>X<sub>1</sub></em></strong></th>
+<th><strong><em>X<sub>2</sub></em><br></strong></th>
+<th><strong><em>X<sub>1</sub> * X<sub>2</sub></em><br></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>-1</td>
+<td>-1</td>
+<td>(-1) * (-1) = 1</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>1</td>
+<td>-1<br>
+</td>
+<td>1 * (-1) = -1<br>
+</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>0</td>
+<td>2</td>
+<td>0 * 2 = 0</td>
+</tr>
+<tr class="even">
+<td><em>Summe:</em></td>
+<td><em>0</em></td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nun, stell dir eine andere Reverse-Helmert-Kodierung vor, welche für vier Gruppen definiert wird. Um einen orthogonalen Kontrast zu erzielen, müssten die Summe der Produkte <em>aller</em> Kontraste 0 ergeben:</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="10%">
+<col width="10%">
+<col width="12%">
+<col width="12%">
+<col width="18%">
+<col width="18%">
+<col width="18%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th><strong><em>X<sub>1</sub></em></strong></th>
+<th><strong><em>X<sub>2</sub></em><br></strong></th>
+<th><strong><em>X<sub>3</sub></em><br></strong></th>
+<th><strong><em>X<sub>1</sub> * X<sub>2</sub></em><br></strong></th>
+<th><strong><em>X<sub>1</sub> * X<sub>3</sub></em><br></strong></th>
+<th><strong><em>X<sub>2</sub> * X<sub>3</sub></em><br></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Gruppe 1<br>
+</td>
+<td>1</td>
+<td>1<br>
+</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Gruppe 2</td>
+<td>1</td>
+<td>1<br>
+</td>
+<td>-1</td>
+<td>1</td>
+<td>-1<br>
+</td>
+<td>-1</td>
+</tr>
+<tr class="odd">
+<td>Gruppe 3</td>
+<td>1</td>
+<td>-2</td>
+<td>0</td>
+<td>-2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Gruppe 4</td>
+<td>-3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td><em>Summe:</em></td>
+<td><em>0</em></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="alternative-berechnung-der-kontrastgewichte-bei-reverse-helmert-kontrasten" class="section level3" number="8.2.8">
+<h3>
+<span class="header-section-number">8.2.8</span> <strong>Alternative Berechnung der Kontrastgewichte bei Reverse-Helmert-Kontrasten</strong><a class="anchor" aria-label="anchor" href="#alternative-berechnung-der-kontrastgewichte-bei-reverse-helmert-kontrasten"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir könnten an dieser Stelle bereits das Modell auf Grundlage dieser Kontraste aufstellen. Allerdings wäre hierdurch die Interpretation der Parameter schwieriger. Damit die Parameter spezifische Mittelwertsunterschiede kodieren, müssen wir die einzelnen Kontraste durch die Anzahl der Gruppen teilen, die miteinander verglichen werden. Zum Beispiel werden im ersten Kontrast für <em>X<sub>1</sub></em> zwei Gruppen miteinander verglichen. Daher wird jedes Kontrastgewicht durch 2 geteilt. Im Prädiktor <em>X<sub>2</sub></em> wiederum wird die E-Writer Gruppe mit den anderen beiden Gruppen verglichen. Da wir für diesen Vergleich alle Gruppen betrachten, werden die Kontrastgewichte durch 3 geteilt.</p>
+<div class="inline-table"><table style="width:58%;" class="table table-sm">
+<colgroup>
+<col width="18%">
+<col width="18%">
+<col width="22%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th><strong><em>X<sub>1</sub></em></strong></th>
+<th><strong><em>X<sub>2</sub></em><br></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>-1 / 2</td>
+<td>-1 / 3</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>1 / 2</td>
+<td>-1 / 3</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>0</td>
+<td>2 / 3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Verwenden wir dieses Set an Kontrasten, erhalten wir folgendes Modell:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/y3.png"></div>
+<p>Mit Blick auf die untere Tabelle sehen wir erneut, dass <em>b<sub>0</sub></em> den Mittelwert der Gruppenmittelwerte kodiert. <em>b<sub>1</sub></em> kodiert den Mittelwertsunterschied der Laptopgruppe und der Gruppe, die per Hand mitgeschrieben hat: 0.2333 - 0.269 = -0.0357 (mit kleinen Rundungsfehlern). <em>b<sub>2</sub></em> kodiert den Mittelwertsunterschied zwischen der E-Writer Gruppe und den anderen beiden Gruppen: 0.250 - ((0.2692308+ 0.2333) / 2) = -0.00127.</p>
+<div class="inline-table"><table style="width:58%;" class="table table-sm">
+<colgroup>
+<col width="44%">
+<col width="13%">
+</colgroup>
+<thead><tr class="header">
+<th>
+<strong>Gruppen</strong>\</th>
+<th><strong><em>M</em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>0.269</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>0.2333</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>0.250</td>
+</tr>
+<tr class="even">
+<td>Mittelwerte aller Mittelwerte</td>
+<td>0.2508</td>
+</tr>
+</tbody>
+</table></div>
+<p>Wir haben damit erneut gezeigt, dass die Parameter für Mittelwertsunterschiede in den Gruppen stehen. Mit der richtigen Wahl der Reverse-Helmert-Kontrasten können wir entscheiden, welche Gruppen wir miteinander vergleichen.</p>
+</div>
+<div id="helmert-kontrast" class="section level3" number="8.2.9">
+<h3>
+<span class="header-section-number">8.2.9</span> <strong>Helmert-Kontrast</strong><a class="anchor" aria-label="anchor" href="#helmert-kontrast"><i class="fas fa-link"></i></a>
+</h3>
+<p>Helmert-Kontraste sind fast identisch mit Reverse-Helmert-Kontrasten, nur dass sie sozusagen spiegelverkehrt geschrieben werden. Für die Wahl der Hypothesen und die Interpretation der Ergebnisse machte es keinen Unterschied ob man Helmert- oder Reverse-Helmert-Kontraste verwendet.</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="8%">
+<col width="37%">
+<col width="19%">
+<col width="27%">
+<col width="7%">
+</colgroup>
+<thead><tr class="header">
+<th align="left"><strong>Kontrast</strong></th>
+<th align="left"><strong>Hypothese</strong></th>
+<th><strong>Bedeutung <em>b<sub>0</sub></em><br></strong></th>
+<th><strong>Bedeutung <em>b<sub>i</sub></em></strong></th>
+<th><strong>orthogonal</strong></th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="left">Helmert-Kontrast</td>
+<td align="left">Vergleicht den Mittelwert einer Gruppe mit dem Mittelwert der nachfolgenden Gruppen.</td>
+<td>Mittelwert des Mittelwerts aller Gruppen.<br>
+</td>
+<td>Die Differenz der Mittelwerte zweier oder mehrerer Gruppen.<br>
+</td>
+<td>ja</td>
+</tr></tbody>
+</table></div>
+<p>In der unteren Tabelle siehst du eine Helmert-Kontrastkodierung. Im Unterschied zur Reverse-Helmert-Kodierung wird die obere Gruppe mit restlichen Gruppen verglichen. Bei der Reverse-Helmert-Kodierung wird die untere Gruppe mit den restlichen Gruppen weiter oben in der Tabelle verglichen:</p>
+<div class="inline-table"><table style="width:58%;" class="table table-sm">
+<colgroup>
+<col width="18%">
+<col width="18%">
+<col width="22%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th><strong><em>X<sub>1</sub></em></strong></th>
+<th><strong><em>X<sub>2</sub></em><br></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>2 / 3</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>-1 / 3</td>
+<td>1 / 2</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>-1 / 3</td>
+<td>-1 / 2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Erneut können wir zeigen, dass wir durch diese Kodierung die in der Tabelle beschriebenen Mittelwertsunterschiede testen können:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/y4.png"></div>
+<p><em>b<sub>0</sub></em> kodiert erneut den Mittelwert der Gruppenmittelwerte. <em>b<sub>1</sub></em> kodiert den Mittelwertsunterschied der Gruppe, die per Hand mitschreibt und den anderen beiden Gruppen: 0.269 - ((0.23333+ 0.250) / 2) = 0.027. <em>b<sub>2</sub></em> kodiert den Mittelwertsunterschied zwischen der Laptopgruppe und der E-Writer-Gruppe: 0.2333 - 0.250 = -0.0167.</p>
+<div class="inline-table"><table style="width:58%;" class="table table-sm">
+<colgroup>
+<col width="44%">
+<col width="13%">
+</colgroup>
+<thead><tr class="header">
+<th>
+<strong>Gruppen</strong>\</th>
+<th><strong><em>M</em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand<br>
+</td>
+<td>0.269</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>0.2333</td>
+</tr>
+<tr class="odd">
+<td>E-Writer</td>
+<td>0.250</td>
+</tr>
+<tr class="even">
+<td>Mittelwerte aller Mittelwerte</td>
+<td>0.2508</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="zusammenfassung-13" class="section level3" number="8.2.10">
+<h3>
+<span class="header-section-number">8.2.10</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-13"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir haben in diesem Submodul gelernt, wie wir Gruppen als numerische Werte kodieren können. Dabei sind wir verschiedene Kontrastkodierungssysteme durchgegangen. Durch die Wahl der Kontrastekodierung stellen wir unterschiedliche statistische Modelle auf, mit denen wir unterschiedliche Hypothesen testen können. In diesem Submodul haben wir darauf verzichtet, zu zeigen, wie diese Parameter aus den Modellen berechnet werden. Das Prinzip bleibt allerdings das gleiche. Wir suchen das Modell, welches die geringste quadrierte Abweichung der tatsächlichen Werte von den vorhergesagten Werten hat (Ordinal Least Squares Methode). Auf Grundlage dieser berechneten Parameter haben gesehen, dass bei Helmert- bzw. Reverse-Helmert-Kontrasten die Parameter spezifische Mittelwertsunterschiede der Gruppen kodieren. Dieser Tatsache machen wir uns im nächsten Submodul zu Nutze, um sowohl einen <em>t</em>-Test für unabhängige Stichproben als auch eine einfaktorielle Varianzanalyse zu berechnen.</p>
+</div>
+</div>
+<div id="t-test-für-unabhängige-stichproben" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> t-Test für unabhängige Stichproben<a class="anchor" aria-label="anchor" href="#t-test-f%C3%BCr-unabh%C3%A4ngige-stichproben"><i class="fas fa-link"></i></a>
+</h2>
+<p>Das Ziel dieses Submoduls ist folgende Forschungsfrage zu beantworten: Lernen Studierende, die ihr Wissen testen, mehr konzeptuelles Wissen als Studierende, die eine Concept-Map anfertigen. Zur Erinnerung, <a href="https://osf.io/2h3g6/">Buttrick et al. (2018)</a> replizierten eine Studie von <a href="https://science.sciencemag.org/content/331/6018/772.abstract">Karpicke und Blunt (2011)</a>, welche genau dies herausgefunden hatte. Den vollständigen Bericht der Studie von Buttrick et al. findest du in der unteren Datei:</p>
+<p><br>
+TODO: Karpicke &amp; Blunt (2011) - Replication Report.pdf</p>
+<p>Karpicke berichten folgendes Ergebnis zu dieser Forschungsfrage:</p>
+<blockquote>
+<p>“The hypothesis that retrieval practice would lead to better recall one week later than concept-mapping was supported by the data. Those assigned to retrieval practice (<em>n</em> = 23) recalled more in the one-week follow-up test than those assigned to concept-mapping (<em>n</em> = 26): Retrieval <em>M</em> = 62.3% recalled, <em>SD</em> = 19%; Concept-Mapping <em>M</em> = 46.9% recalled, <em>SD</em> = 19%; <em>t</em>(48)=2.88, <em>p</em> = 0.006, <em>r</em> = 0.39 [95% CI: 0.11, 0.71].”</p>
+<p>Buttrick et al. (2018, S. 4)</p>
+</blockquote>
+<p>Wir werden in diesem Submodul zeigen, wie dieses Ergebnis zu Stande kommt, das heißt, wie es mit unserem bekannten Verfahren des Hypothesentestens berechnet werden kann.</p>
+<div id="aufstellen-der-kontrastkodierung" class="section level3" number="8.3.1">
+<h3>
+<span class="header-section-number">8.3.1</span> <strong>Aufstellen der Kontrastkodierung</strong><a class="anchor" aria-label="anchor" href="#aufstellen-der-kontrastkodierung"><i class="fas fa-link"></i></a>
+</h3>
+<p>Beginnen wir damit, die Kontraste zu kodieren. Wir wissen, dass wir zwei Gruppenmittelwerte miteinander vergleichen möchten, die Gruppe der Studierenden, die eine Concept-Map anfertigt mit der Gruppe der Studierenden, die ihr Wissen testet. Da wir zwei Gruppen haben, benötigen wir lediglich einen Prädiktor in unserem erweiterten Modell (<em>k</em> - 1 = 2 - 1 = 1). Wenngleich wir im letzten Submodul mehrere Kodierungssysteme kennen gelernt haben, haben wir bei zwei Gruppen nicht viele Möglichkeiten. Entweder verwenden wir eine Dummy-Kodierung mit einer 0 und einer 1, oder wir verwenden eine Helmert-Kodierung, bei der wir die Kodierung auf -1 und 1 setzen. Beide Kodierungen führen zu den gleichen Ergebnissen. Folgendermaßen könnten wir unsere Hypothese kodieren:</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th>
+<strong><em>X<sub>1</sub></em></strong>\</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Concept Map</td>
+<td>-1 / 2</td>
+</tr>
+<tr class="even">
+<td>Testing</td>
+<td>1 / 2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Diese Konstrastkodierung führt dazu, dass der Parameter <em>b<sub>1</sub></em> die Mittelwertsdifferenz der beiden Gruppen kodiert. Indem wir <em>b<sub>1</sub></em> im kompakten Modell auf 0 setzen, können wir testen, ob die Mittelwerte der beiden Gruppen gleich sind. Dies können wir tun, da eine 0 hieße, dass es keine Differenz zwischen den Mittelwerten der beiden Gruppen gibt.</p>
+</div>
+<div id="aufstellen-des-statistischen-hypothesenpaares" class="section level3" number="8.3.2">
+<h3>
+<span class="header-section-number">8.3.2</span> Aufstellen des statistischen Hypothesenpaares<a class="anchor" aria-label="anchor" href="#aufstellen-des-statistischen-hypothesenpaares"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir können den Mittelwertsunterschied der beiden Gruppen durch folgendes Modellpaar testen:</p>
+<p><img src="images/07_einfaktorielle_varianzanalyse/modela.png"><br></p>
+<p>Wie du siehst, umfasst das erweiterte Modell zwei Parameter und einen Prädiktor. Das kompakte Modell umfasst nur einen Parameter, da dort der Parameter <em>b<sub>1</sub></em> auf 0 gesetzt wurde. Im kompakten Modell kodiert <em>b<sub>0</sub></em> den Mittelwert der abhängigen Variable. Dies ist in unserem Fall das konzeptuelle Wissen, welches die Studierenden zum Thema Seeotter hatten.</p>
+</div>
+<div id="berechnung-der-sum-of-squares-und-der-kennwerte" class="section level3" number="8.3.3">
+<h3>
+<span class="header-section-number">8.3.3</span> <strong>Berechnung der Sum of Squares und der Kennwerte</strong><a class="anchor" aria-label="anchor" href="#berechnung-der-sum-of-squares-und-der-kennwerte"><i class="fas fa-link"></i></a>
+</h3>
+<p>Nun, da wir das erweiterte und das kompakte Modell kennen, können wir sowohl die Sum of Squares als auch die zentralen Kennwerte berechnen. Es stellt sich heraus, dass der <em>F</em>-Wert bei 8.33 liegt für einen solchen Mittelwertsunterschied dieser beiden Gruppen unter der Annahme, dass die Gruppen sich nicht im Mittelwert unterscheiden bei 0.6% liegt. Wir haben damit ein signifikantes Ergebnis.</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="43%">
+<col width="9%">
+<col width="9%">
+<col width="9%">
+<col width="8%">
+<col width="8%">
+<col width="10%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Source</strong></th>
+<th><strong><em>SS</em></strong></th>
+<th><strong><em>df</em></strong></th>
+<th><strong><em>MS</em></strong></th>
+<th><strong><em>F</em></strong></th>
+<th><strong><em>p</em></strong></th>
+<th><strong><em>PRE</em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Reduktion der Fehler durch das erweiterte Modell</td>
+<td>0.290</td>
+<td>1</td>
+<td>0.290</td>
+<td>8.33</td>
+<td>.006<br>
+</td>
+<td>0.15<br>
+</td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td>1.638</td>
+<td>47</td>
+<td>0.035<br>
+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Total Error<br>
+</td>
+<td>1.928</td>
+<td>48<br>
+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<p>Falls du diese Zahlen nachrechnen möchtest und sehen möchtest, wie ich auf dieses Ergebnis gekommen bin, schau dir die folgende R-Datei an. Dort sind alle Schritte in R nachgerechnet.</p>
+<p>TODO: Einfügen Datei buttrick_anova_in_r.R</p>
+<p>Nun Buttrick et al. (2018) berichten statt einem <em>F</em>-Test einen <em>t</em>-Test. Damit meinen sie einen <em>t</em>-Test für unabhängige Stichproben: <em>t</em>(48) = 2.88, <em>p</em> = .006, <em>r</em> = 0.39 [95% CI: 0.11, 0.71]. Dieser wird eingesetzt, wenn man die Mittelwerte zweier Gruppen vergleichen möchte. Ebenso berichten sie die Effektgröße <em>r</em> = 0.39 als auch ein Konfidenzintervall für die Effektgröße. Zunächst können wir den <em>t</em>-Wert berechnen, indem wir die Wurzel auf <em>F</em> ziehen. Die Wurzel aus 8.33 ist in der Tat 2.88. Als nächstes berichten Buttrick et al. die gleiche Wahrscheinlichkeit von <em>p</em> = .006. Da unser <em>F</em>-Test die gleiche Wahrscheinlichkeit ergibt, wissen wir, dass Buttrick et al. <em>ungerichtet</em> getestet haben. Sie haben daher getestet, ob Studierende, die sich testen <em>mehr</em> oder <em>weniger</em> konzeptuelles Wissen erwerben als Studierende, die Concept-Maps erstellen. In der <em>t</em>-Verteilung dargestellt, haben sie folgenden beiden Flächen abgetragen:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/pdh.png"></div>
+<p>Wäre ihre Hypothese gewesen, dass Studierende, die sich testen, <em>mehr</em> konzeptuelles Wissen erwerben als Studierende, die eine Concept-Map anfertigen, hätten sie gerichtet getestet. In diesem Fall hätten sie nur die Fläche rechts des empirischen <em>t</em>-Wertes abtragen müssen.</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/pdh1.png"></div>
+<p>Hierdurch hätte sich die Wahrscheinlichkeit für einen solchen <em>t</em>-Wert unter Annahme der Nullhypothese halbiert (von .006 auf 0.0029). </p>
+<p>Ebenso berichten Buttrick et al. eine Effektgröße von <em>r</em> = 0.39. Für <em>t</em>-Tests ist es in der Regel üblicher eine Effektgröße von Cohen’s <em>d</em> anzugeben. <a href="https://psycnet.apa.org/journals/met/1/4/331.html?uid=1996-06601-001">Rosnow und Rosenthal (2003)</a> berichten folgende Formel zur Berechnung der Effektgröße <em>r</em> bei einem <em>t</em>-Test für unabhängige Stichproben:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/r.png"></div>
+<p><em>t</em> kennzeichnet den empirischen <em>t</em>-Wert und <em>df</em> die Freiheitsgrade des erweiterten Modells. Setzen wir diese Werte in die Formel ein, erhalten wir das gleiche Ergebnis wie Buttrick et al. (2018):</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/r1.png"></div>
+<p>Wir hätten es uns aber auch einfacher machen können, indem wir <em>r</em> aus der Wurzel aus <em>PRE</em> berechnen. Erinnere dich aus dem Modul zur einfachen linearen Regression, dass <em>PRE</em> auch als <em>R<sup>2</sup></em> bezeichnet wird und das Quadrat des Korrelationskoeffizienten <em>r</em> ist. Wenn wir daher die Wurzel aus PRE ziehen, sollten wir <em>r</em> erhalten:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/r3.png"></div>
+<p>Und so ist es auch. Der Vollständigkeit halber können wir zudem noch die Effektgröße Cohen’s <em>d</em> berechnen. Du hast bereits gesehen, dass wir <em>r</em> dem <em>t</em>-Wert und den Freiheitsgraden des erweiterten Modells berechnen können. Ebenso können wir aus diesen beiden Werte durch folgende Formel Cohen’s <em>d</em> bei einem <em>t</em>-Test für unabhängige Stichproben berechnen:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/d.png"></div>
+<p>Mehr Informationen zur Umrechnung von Effektgrößen findest du <a href="https://www.psychometrica.de/effect_size.html">hier</a>.</p>
+</div>
+<div id="zusammenfassung-14" class="section level3" number="8.3.4">
+<h3>
+<span class="header-section-number">8.3.4</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-14"><i class="fas fa-link"></i></a>
+</h3>
+<p>Entscheidend für uns ist an dieser Stelle, dass wir gezeigt haben, dass wir den <em>t</em>-Test für unabhängige Stichproben durch unser gängiges Verfahren berechnen konnten. Ein entscheidender Schritt dorthin war die Aufstellung eines Kontrastes, der es ermöglicht die Gruppenzugehörigkeit in numerische Werte zu überführen. Durch die Wahl eines Helmert-Kontrasts konnten wir das erweiterte Modell so aufstellen, dass der Parameter <em>b<sub>1</sub></em> für den Mittelwertsunterschied der beiden Gruppen steht. Zum Schluss haben wir gezeigt, dass der <em>t</em>-Wert die Wurzel aus dem <em>F</em>-Wert ist und dass man Effektgrößen mit verschiedenen Formeln umrechnen kann.</p>
+</div>
+</div>
+<div id="einfaktorielle-varianzanalyse-anova" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">8.4</span> Einfaktorielle Varianzanalyse (ANOVA)<a class="anchor" aria-label="anchor" href="#einfaktorielle-varianzanalyse-anova"><i class="fas fa-link"></i></a>
+</h2>
+<p>Das Ziel dieses Submoduls ist folgende Forschungsfrage zu beantworten: Macht es für die Erinnerungsleistung aus einem Vortrag einen Unterschied, mit welchem Medium Studierende während des Vortrags mitschreiben. Genauer möchten wir in diesem Submodul mit Hilfe des Datensatzes von <a href="https://link.springer.com/article/10.1007/s10648-019-09468-2">Morehead et al. (2014)</a> klären, ob Studierende, die während einem Vortrag per Hand mitschreiben mehr aus einem Vortrag behalten als Studierende, die mit einem Laptop beziehungsweise einem E-Writer mitschreiben. Morehead et al. (2014) haben diese Fragestellung zwar nicht in dieser Form explizit in ihrem Artikel gestellt, da sie eine sogenannte mehrfaktorielle Varianzanalyse berechnet haben, allerdings zweckentfremden wir den Datensatz in diesem Fall für unsere Fragestellung, da wir bisher noch nichts über die mehrfaktorielle Varianzanalyse erfahren haben.</p>
+<p>Wir werden erneut folgendes Prozedere verwenden: Zunächst überlegen wir uns die Kontrastkodierung für unsere Gruppen. Anschließend berechnen wir das erweiterte und kompakte Modell auf Grundlage dieser Kontrastkodierung. Anschließend berechnen wir zwei Tests. Einen allgemeinen <em>F</em>-Test mit einem Freiheitsgrad von 2, mit welchem wir prüfen, ob es überhaupt Mittelwertsunterschiede zwischen den drei Gruppen gibt. Dieser Test wird allerdings nicht unsere eigentliche Fragestellung beantworten. Daher testen wir als nächstes einen spezifischen Kontrast, der prüft, ob Studierende, die während einem Vortrag per Hand mitschreiben mehr aus einem Vortrag behalten als Studierende, die mit einem Laptop beziehungsweise einem E-Writer mitschreiben.</p>
+<div id="aufstellen-der-kontrastkodierung-1" class="section level3" number="8.4.1">
+<h3>
+<span class="header-section-number">8.4.1</span> <strong>Aufstellen der Kontrastkodierung</strong><a class="anchor" aria-label="anchor" href="#aufstellen-der-kontrastkodierung-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Beginnen wir erneut damit, die Kontraste zu definieren. Und verwenden wir erneut einen Helmert-Kontrast, welcher uns ermöglicht, die Parameter des erweiterten Modells als Mittelwertsunterschiede der Gruppen darzustellen. Da wir drei Gruppen haben, benötigen wir in unserem erweiterten Modell zwei Prädiktoren und drei Parameter. Folgende Kontrastkodierung kodiert unsere Fragestellung (siehe <em>X<sub>1</sub></em>):</p>
+<div class="inline-table"><table style="width:54%;" class="table table-sm">
+<colgroup>
+<col width="18%">
+<col width="18%">
+<col width="18%">
+</colgroup>
+<thead><tr class="header">
+<th><strong>Gruppe</strong></th>
+<th><strong><em>X<sub>1</sub></em></strong></th>
+<th><strong><em>X<sub>2</sub></em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>per Hand</td>
+<td>2 / 3</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>-1 / 3</td>
+<td>1 / 2</td>
+</tr>
+<tr class="odd">
+<td>E-Writer<br>
+</td>
+<td>-1 / 3</td>
+<td>-1 / 2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Diese Konstrastkodierung führt dazu, dass der Parameter <em>b<sub>1</sub></em> die Mittelwertsdifferenz der Gruppe der Studierenden, welche per Hand schreiben und der anderen beiden Gruppen kodiert. Wir werden gleich zeigen, dass das stimmt. Der zweite Kontrast führt dazu, dass <em>b<sub>2</sub></em> die Mittelwertsdifferenz der Laptopgruppe und der E-Writer-Gruppe kodiert.</p>
+</div>
+<div id="allgemeiner-f-test" class="section level3" number="8.4.2">
+<h3>
+<span class="header-section-number">8.4.2</span> Allgemeiner F-Test<a class="anchor" aria-label="anchor" href="#allgemeiner-f-test"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir haben zu Beginn dieses Submoduls gesagt, dass wir zwei <em>F</em>-Tests berichten. Zunächst berechnen wir einen allgemeinen <em>F</em>-Test, durch welchen wir prüfen können, ob sich irgendwelche Mittelwerte zwischen den drei Gruppen unterscheiden. Dieser Test heißt allgemein, da der Freiheitsgrad des erweiterten Modells größer als 1 ist. Immer wenn dies der Fall ist, ist eine Interpretation der Ergebnisse schwierig. Beispielsweise können wir auf Grundlage dieses Ergebnisses nicht herausfinden, welche Gruppen sich voneinander unterscheiden. Dennoch, der allgemeine <em>F</em>-Test wird durch alle gängigen Softwares berichtet und wir sollten daher wissen, welche Fragestellung er testet.</p>
+<div id="aufstellen-des-hypothesenpaares" class="section level4" number="8.4.2.1">
+<h4>
+<span class="header-section-number">8.4.2.1</span> <strong>Aufstellen des Hypothesenpaares</strong><a class="anchor" aria-label="anchor" href="#aufstellen-des-hypothesenpaares"><i class="fas fa-link"></i></a>
+</h4>
+<p>Bei dem allgemeinen <em>F</em>-Test prüfen wir, ob es irgendwelche Mittelwertsunterschiede zwischen den drei Gruppen gibt. Hierzu setzen wir sowohl die Parameter <em>b<sub>1</sub></em> und <em>b<sub>2</sub></em> im kompakten Modell auf 0:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/modelac.png"></div>
+<p>Da wir einen Helmert-Kontrast verwenden, wissen wir, dass <em>b<sub>0</sub></em> im erweiterten Modell den Mittelwert der drei Gruppenmittelwerte kodiert. <em>b<sub>1</sub></em> kodiert den Mittelwertsunterschied zwischen den Studierenden, die per Hand mitschrieben und den Studierenden, die mit einem E-Writer bzw. einem Laptop mitschrieben. <em>b</em><sub>2</sub> kodiert den Mittelwertsunterschied zwischen diejenigen Studierenen, die mit dem Laptop mitschrieben und diejenigen Studierenden, die mit einem E-Writer mitschrieben. </p>
+<p><em>b<sub>0</sub></em> im kompakten Modell kodiert den Mittelwert der abhängigen Variable. In unserem Fall ist die abhängige Variable das konzeptuelle Wissen der Studierenden aus dem Vortrag.</p>
+<p>Folgende Modelle erhalten wir:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/modelac1.png"></div>
+<p>Ein Blick auf die Mittelwerte der Gruppen zeigt uns, dass die Parameter in der Tat die Mittelwertsunterschiede der Gruppen kodieren. Beispielsweise liegt <em>b<sub>1</sub></em> bei 0.028. Dies ist der Mittelwertsunterschied der per Hand-Gruppe und den restlichen beiden Gruppen: 0.269 - ((0.25 + 0.233) / 2) = 0.028.</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/morehead.png"></div>
+</div>
+<div id="berechnung-der-kennwerte" class="section level4" number="8.4.2.2">
+<h4>
+<span class="header-section-number">8.4.2.2</span> Berechnung der Kennwerte<a class="anchor" aria-label="anchor" href="#berechnung-der-kennwerte"><i class="fas fa-link"></i></a>
+</h4>
+<p>Nun, da wir das Modellpaar kennen, können wir den F-Wert berechnen:</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="43%">
+<col width="9%">
+<col width="9%">
+<col width="9%">
+<col width="8%">
+<col width="8%">
+<col width="10%">
+</colgroup>
+<thead><tr class="header">
+<th>
+<strong>Source</strong>\</th>
+<th><strong><em>SS</em></strong></th>
+<th><strong><em>df</em></strong></th>
+<th><strong><em>MS</em></strong></th>
+<th><strong><em>F</em></strong></th>
+<th><strong><em>p</em></strong></th>
+<th><strong><em>PRE</em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Reduktion der Fehler durch das erweiterte Modell</td>
+<td>0.017</td>
+<td>2</td>
+<td>0.0085</td>
+<td>0.386</td>
+<td>0.68</td>
+<td>0.01<br>
+</td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td>1.770</td>
+<td>80</td>
+<td>0.022</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Total Error</td>
+<td>1.787<br>
+</td>
+<td>82</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<p>Die genauen Schritte zur Berechnung dieser Kennwerte kannst du erneut in folgendem R-Skript nachrechnen. Ich erwarte nicht, dass du das Skript komplett verstehst. Es ist eher für interessierte Studierende gedacht, die wissen wollen, wie die Kennwerte berechnet werden.</p>
+<p>TODO: Einfügen Datei morehead_allgemeiner_f_test.R</p>
+<p>Wir erhalten ein nicht-signifkantes Ergebnis. Das heißt, der Mittelwertsunterschied, welchen wir in unserer Stichprobe erhalten haben, ist nicht sonderlich unwahrscheinlich, wenn wir annehmen, dass es in Wirklichkeit keinen Mittelwertsunterschied zwischen den Gruppen gibt. Wir bleiben daher bei der Nullhypothese, dass es keinen Mittelwertsunterschied zwischen den drei Gruppen gibt.</p>
+</div>
+</div>
+<div id="testen-der-spezifischen-hypothese" class="section level3" number="8.4.3">
+<h3>
+<span class="header-section-number">8.4.3</span> Testen der spezifischen Hypothese<a class="anchor" aria-label="anchor" href="#testen-der-spezifischen-hypothese"><i class="fas fa-link"></i></a>
+</h3>
+<p>Der allgemeine <em>F</em>-Test wird von fast allen Softwares berichtet, er beantwortet allerdings nicht unsere Fragestellung. Wir wollten wissen, ob Studierende, die per Hand mitschreiben mehr aus einem Vortrag lernen als Studierende, die mit einem technischen Gerät mitschreiben (Laptop oder E-Writer). Es kann der Fall eintreten, dass der allgemeine <em>F</em>-Test keine Signifikanz zeigt, ein spezifischer Kontrast aber schon. Prüfen wir daher diese Hypothese mit Hilfe einer Kontrastanalyse.</p>
+<div id="aufstellen-des-statistischen-modellpaares" class="section level4" number="8.4.3.1">
+<h4>
+<span class="header-section-number">8.4.3.1</span> <strong>Aufstellen des statistischen Modellpaares</strong><a class="anchor" aria-label="anchor" href="#aufstellen-des-statistischen-modellpaares"><i class="fas fa-link"></i></a>
+</h4>
+<p>Beginnen wir mit den beiden Modellen. Das erweiterte Modell ist das gleiche Modell wie beim allgemeinen <em>F</em>-Test. Die beiden Parameter <em>b<sub>1</sub></em> und <em>b<sub>2</sub></em> kodieren die im Helmert-Kontrast kodierten Kontraste. Im kompakten Modell nehmen wir an, dass der Mittelwertsunterschied zwischen den Studierenden, die per Hand mitschreiben mit den Studierenden, die mit einem technischen Gerät mitschreiben gleich ist. Wir berechnen daher ein Modell, bei dem <em>b<sub>1</sub></em> auf 0 gesetzt wird.</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/modela2.png"></div>
+<p>Folgende Modelle erhalten wir (siehe Bild unten). Wie du siehst, sind die Werte bei <em>b<sub>0</sub></em> und <em>b<sub>2</sub></em> zwischen beiden Modellen unterschiedlich. Dies ist dadurch zu erklären, dass wir die Parameter für jedes Modell eigens berechnen. Die Zahlen ändern sich allerdings nur minimal, da wir orthogonale Kontraste berechnet haben.</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/modela3.png"></div>
+</div>
+<div id="berechnung-der-kennwerte-1" class="section level4" number="8.4.3.2">
+<h4>
+<span class="header-section-number">8.4.3.2</span> Berechnung der Kennwerte<a class="anchor" aria-label="anchor" href="#berechnung-der-kennwerte-1"><i class="fas fa-link"></i></a>
+</h4>
+<p>Nun, da wir die Modelle berechnet haben, können wir die Kennwerte berechnen und berichten:</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="43%">
+<col width="9%">
+<col width="9%">
+<col width="9%">
+<col width="8%">
+<col width="8%">
+<col width="10%">
+</colgroup>
+<thead><tr class="header">
+<th>
+<strong>Source</strong>\</th>
+<th><strong><em>SS</em></strong></th>
+<th><strong><em>df</em></strong></th>
+<th><strong><em>MS</em></strong></th>
+<th><strong><em>F</em></strong></th>
+<th><strong><em>p</em></strong></th>
+<th><strong><em>PRE</em></strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Reduktion der Fehler durch das erweiterte Modell</td>
+<td>0.013</td>
+<td>1</td>
+<td>0.014</td>
+<td>0.61</td>
+<td>0.436</td>
+<td>0.008<br>
+</td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td>1.770</td>
+<td>80</td>
+<td>0.022</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Total Error</td>
+<td>1.784<br>
+</td>
+<td>81</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<p>Erneut findest du anbei das R-Skript, mit denen ich diese Kennwerte berechnet habe:</p>
+<p>TODO: Einfügen Datei morehead_spezifischer_test.R</p>
+<p>Wir erhalten erneut ein nicht-signifikantes Ergebnis. Dies bedeutet, dass wir weiter davon ausgehen, dass Studierende, die per Hand bei einem Vortrag mitschreiben sich an genauso viel aus dem Vortrag erinnern wie Studierende, die mit einem technischen Gerät mitschreiben.</p>
+<p>Zum Schluss müssen wir noch eine Korrektur vornehmen: Wir wollten wissen, ob Studierende, die per Hand mitschreiben <em>mehr</em> aus einem Vortrag lernen als Studierende, die mit einem technischen Gerät mitschreiben. Der <em>F</em>-Test testet allredings ungerichtet, weshalb wir in unserem Fall den <em>p</em>-Wert halbieren müssen. Das können wir, da die Mittelwerte der Gruppen hypothesenkonform sind. Das heißt, die Differenz des Mittelwerts der Studierenden, die per Hand mitgeschrieben haben ist um 0.02758 größer als der Studierenden, die mit einem technischen Gerät mitgeschrieben haben. Der korrekte <em>p</em>-Wert lautet daher <em>p</em> = .218.</p>
+</div>
+</div>
+<div id="zusammenfassung-15" class="section level3" number="8.4.4">
+<h3>
+<span class="header-section-number">8.4.4</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-15"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir haben in diesem Modul gezeigt, wie und was wir mit einer einfaktoriellen Varianzanalyse berechnen. Dabei haben wir gesehen, dass der <em>t</em>-Test für unabhängige Stichproben und die einfaktorielle Varianzanalyse sich nur in der Anzahl der Parameter im erweiterten Modell unterscheiden. Beim <em>t</em>-Test für unabhängige Stichproben hat das erweiterte Modell zwei Parameter und maximal einen Kontrast. Bei einer einfaktoriellen Varianzanalyse gibt es unendliche viele Möglichkeiten in der Anzahl der Parameter. Beide Tests verwenden allerdings die gleiche Prozedur, welche wir bereits kennen.</p>
+</div>
+</div>
+<div id="post-hoc-analysen" class="section level2" number="8.5">
+<h2>
+<span class="header-section-number">8.5</span> Post-Hoc Analysen<a class="anchor" aria-label="anchor" href="#post-hoc-analysen"><i class="fas fa-link"></i></a>
+</h2>
+<p>In den letzten beiden Submodulen haben wir Hypothesen getestet. Das heißt, wir hatten Annahmen, die wir statistisch geprüft haben. Das Gegenteil dieser Vorgehensweise sind sogenannte Post-Hoc Tests oder explorative Tests. Manchmal haben wir keine konkrete Hypothese und möchten alle Gruppenvergleiche in einer einfaktoriellen Varianzanalyse testen. Dies schafft allerdings das Problem der Alpha-Fehler Kumulierung.</p>
+<div id="alpha-fehler-kumulierung" class="section level3" number="8.5.1">
+<h3>
+<span class="header-section-number">8.5.1</span> Alpha-Fehler Kumulierung<a class="anchor" aria-label="anchor" href="#alpha-fehler-kumulierung"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir wissen aus dem Modul zum statistischen Hypothesentesten, dass wir bei einem Alpha-Niveau von 5% in 5% der Fälle die Nullhypothese fälschlicherweise ablehnen. Beispielsweise könnte es sein, dass Studierende, die per Hand mitschreiben tatsächlich mehr aus einem Vortrag lernen als Studierende, die mit einem technischen Gerät mitschreiben. Je mehr Tests wir allerdings rechnen, desto höher wird die Wahrscheinlichkeit, dass wir einen Alpha-Fehler erhalten. Wir können diese Wahrscheinlichkeit berechnen. Im folgenden siehst du, wie diese sogenannte Family-Wise-Error-Rate berechnet wird:</p>
+<p><img src="images/07_einfaktorielle_varianzanalyse/fwe.png"><br></p>
+<p>α steht für das Alpha-Niveau und <em>c</em> für die Anzahl der Tests. Nehmen wir an, du hast zu Beginn deiner Studie keine Hypothesen und vergleichst 3 Gruppen nach ihrer Signifikanz. Beispielsweise jene drei Gruppen aus unserem letzten Submodul (Mitschrift per Hand, Laptop und E-Writer). In diesem Fall läge die Wahrscheinlichkeit für einen Alpha-Fehler (sofern die Nullhypothese stimmt) bei 14.3%. Bei 10 Tests wiederum läge diese Wahrscheinlichkeit bei 40%. Bei 20 Tests wiederum bei 64%. Grafisch dargestellt siehst du, dass bei 80 Tests die Chance für einen Alpha-Fehler bei fast 100% liegt.</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/alpha.png"></div>
+</div>
+<div id="bedeutung-der-alpha-fehler-kumulierung-für-die-statistische-praxis" class="section level3" number="8.5.2">
+<h3>
+<span class="header-section-number">8.5.2</span> <strong>Bedeutung der Alpha-Fehler Kumulierung für die statistische Praxis</strong><a class="anchor" aria-label="anchor" href="#bedeutung-der-alpha-fehler-kumulierung-f%C3%BCr-die-statistische-praxis"><i class="fas fa-link"></i></a>
+</h3>
+<p>Stell dir folgenden ethisch-fragwürdigen Forscher mit dem Namen Professor Müller vor: Professur Müller möchte auf jeden Fall zeigen, dass er signifikante Ergebnisse in einem Experiment gefunden hast. Zwar weißt du mittlerweile, dass die Signifikanz nicht mit der praktischen Bedeutsamkeit gleichzusetzen ist, allerdings glaubt Professor Müller dennoch, signifikanz bedeutet wichtig. Herr Müller hatte eine Hypothese, die er anhand von 5 Gruppen und einer einfaktoriellen Varianzanalyse getestet hat. Er erhielt ein nicht-signifikantes Ergebnis und war enttäuscht. Er will jedoch etwas “rausbekommen.” Daher vergleicht er einfach alle Mittelwertsvergleiche durch <em>t</em>-Tests. Bei fünf Tests liegt die Wahrscheinlichkeit für einen Alpha-Fehler bei 22,6%. Tatsächlich findet er ein signifikantes Ergebnis und schreibt seinen Artikel so um als hätte er von Beginn an, an diesen Mittelwertsunterschied geglaubt.</p>
+<p>Dieses Verfahren wird auch als <a href="https://journals.sagepub.com/doi/pdf/10.1207/s15327957pspr0203_4">Harking </a>bezeichnet (Hypothesizing after the results are known). Harking geschieht, wenn Wissenschaftler*innen explorative Analysen als Hypothesen ausgeben, die sie von Anfang an aufgestellt haben. Harking ist problematisch, da es dazu führt, dass mehr Alpha-Fehler als Effekte berichtet werden als wenn Wissenschaftler*innen bei ihren Hypothesen bleiben, die sie vor einem Experiment aufgestellt haben. Und eine Methode hierfür ist, bei einer einfaktoriellen Varianzanalyse alle Gruppenvergleiche zu rechnen und nur die signifikanten zu berichten. In anderen Worten, eine explorative Analyse wird als Hypothese ausgegeben (siehe auch <a href="https://journals.sagepub.com/doi/abs/10.1177/2515245918754485">Gernsbacher, 2018)</a>. Wir sollten daher bei explorativen Analysen immer sogenannte Post-Hoc Tests (explorative Analysen) die Alpha-Fehler-Kumulierung kontrollieren. Es gibt viele Tests, die uns das ermöglichen. Wir lernen an dieser Stelle die bekannteste kennen: Die Bonferroni-Korrektur.</p>
+</div>
+<div id="bonferroni-korrektur" class="section level3" number="8.5.3">
+<h3>
+<span class="header-section-number">8.5.3</span> Bonferroni-Korrektur<a class="anchor" aria-label="anchor" href="#bonferroni-korrektur"><i class="fas fa-link"></i></a>
+</h3>
+<p>Die einfachste Methode, um sicher zu stellen, dass sich die Alpha-Fehler nicht mit der Anzahl der Tests kumulieren ist die Bonferroni-Korrektur. Bei der Bonferroni-Korrektur wird der Alpha-Fehler durch die Anzahl der Tests geteilt:</p>
+<div class="inline-figure"><img src="images/07_einfaktorielle_varianzanalyse/bon.png"></div>
+<p>Wenn du beispielsweise drei Gruppenvergleiche explorativ testest, teilst du das Alpha-Niveau von 0.05 durch 3. Dadurch entscheidest du dich für ein signifikantes Ereignis nur dann, wenn <em>p</em> für jeden Test unter den Wert 0.0167 fällt. </p>
+<p>Die Bonferroni-Korrektur hat den Nachteil, dass sie sehr konservativ ist und zu einer geringeren Power führt (siehe <a href="https://academic.oup.com/aje/article/188/3/617/5193218">VanderWeele &amp; Mathur, 2019</a>). Falls also ein Effekt vorliegt, verringert sich durch dieses Korrekturverfahren die Wahrscheinlichkeit, dass wir diesen Effekt finden. Dies ist dadurch zu erklären, dass wir die Nullhypothese erst ablehnen, wenn der empirische <em>p</em>-Wert unter dem korrigiertem kritischen <em>p</em>-Wert fällt.</p>
+<p>In Jamovi wird die Bonferroni-Korrektur nicht dadurch angegeben, dass der kritische <em>p</em>-Wert adjustiert wird, sondern, indem der empirische <em>p</em>-Wert angepasst wird. Dies geschieht, indem der empirische <em>p</em>-Wert mal der Anzahl der Tests gerechnet wird. Erhält man aus drei Tests beispielsweise die <em>p</em>-Werte .03, .01 und .02, dann werden diese jeweils mal drei gerechnet: .09, .03, .06.</p>
+</div>
+<div id="zusammenfassung-und-weitere-korrekturmethoden" class="section level3" number="8.5.4">
+<h3>
+<span class="header-section-number">8.5.4</span> Zusammenfassung und weitere Korrekturmethoden<a class="anchor" aria-label="anchor" href="#zusammenfassung-und-weitere-korrekturmethoden"><i class="fas fa-link"></i></a>
+</h3>
+<p>Es gibt eine ganze Reihe weiterer Korrekturverfahren, die wir in diesem Seminar nicht beantworten werden. Mehr Informationen zu diesen Testverfahren kannst du bei <a href="https://www.annualreviews.org/doi/pdf/10.1146/annurev.ps.46.020195.003021">Shaffer (1995)</a> finden. Für unsere Zwecke ist es wichtig zu wissen, dass der Alpha-Fehler bei einer Reihe explorativer Tests kontrolliert werden sollte. Ansonsten läuft man Gefahr, zu oft Alpha-Fehler zu machen.</p>
+</div>
+</div>
+<div id="berechnung-in-jamovi-3" class="section level2" number="8.6">
+<h2>
+<span class="header-section-number">8.6</span> Berechnung in Jamovi<a class="anchor" aria-label="anchor" href="#berechnung-in-jamovi-3"><i class="fas fa-link"></i></a>
+</h2>
+<p>In den folgenden Videos erkläre ich dir, wie die drei Tests dieses Moduls in Jamovi berechnet werden.</p>
+<div id="t-test-für-unabhängige-stichproben-1" class="section level3" number="8.6.1">
+<h3>
+<span class="header-section-number">8.6.1</span> t-Test für unabhängige Stichproben<a class="anchor" aria-label="anchor" href="#t-test-f%C3%BCr-unabh%C3%A4ngige-stichproben-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>TODO: Einfügen Video</p>
+</div>
+<div id="einfaktorielle-varianzanalyse-1" class="section level3" number="8.6.2">
+<h3>
+<span class="header-section-number">8.6.2</span> einfaktorielle Varianzanalyse<a class="anchor" aria-label="anchor" href="#einfaktorielle-varianzanalyse-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>TODO: Einfügen Video</p>
+</div>
+<div id="kontrastanalyse" class="section level3" number="8.6.3">
+<h3>
+<span class="header-section-number">8.6.3</span> Kontrastanalyse<a class="anchor" aria-label="anchor" href="#kontrastanalyse"><i class="fas fa-link"></i></a>
+</h3>
+<p>TODO: Einfügen Video</p>
+<p>TODO: Stand vorher schon drin:</p>
 <ul>
 <li>Welch-Test nicht vergessen</li>
 </ul>
 </div>
+</div>
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="multiple-lineare-regression.html"><span class="header-section-number">7</span> Multiple lineare Regression</a></div>
-<div class="next"><a href="mehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> Mehrfaktorielle Varianzanalyse</a></div>
+<div class="next"><a href="tatusmehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> tatusMehrfaktorielle Varianzanalyse</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#einfaktorielle-varianzanalyse"><span class="header-section-number">8</span> Einfaktorielle Varianzanalyse</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#einfaktorielle-varianzanalyse"><span class="header-section-number">8</span> Einfaktorielle Varianzanalyse</a></li>
+<li>
+<a class="nav-link" href="#einf%C3%BChrung-6"><span class="header-section-number">8.1</span> Einführung</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#datens%C3%A4tze-dieses-moduls"><span class="header-section-number">8.1.1</span> Datensätze dieses Moduls</a></li>
+<li><a class="nav-link" href="#t-test-f%C3%BCr-unabh%C3%A4ngige-stichproben-buttrick-et-al.-2018"><span class="header-section-number">8.1.2</span> t-Test für unabhängige Stichproben: Buttrick et al. (2018)</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#kontrastkodierungen"><span class="header-section-number">8.2</span> Kontrastkodierungen</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#bei-k-gruppen-braucht-man-k---1-pr%C3%A4diktoren"><span class="header-section-number">8.2.1</span> Bei k Gruppen braucht man k - 1 Prädiktoren</a></li>
+<li><a class="nav-link" href="#kategoriale-variablen-in-numerische-werte-%C3%BCberf%C3%BChren"><span class="header-section-number">8.2.2</span> Kategoriale Variablen in numerische Werte überführen</a></li>
+<li><a class="nav-link" href="#deviation--oder-sum-kontrast"><span class="header-section-number">8.2.3</span> Deviation- oder Sum-Kontrast</a></li>
+<li><a class="nav-link" href="#dummy--oder-simple-kontrast"><span class="header-section-number">8.2.4</span> Dummy- oder Simple-Kontrast</a></li>
+<li><a class="nav-link" href="#difference-oder-reverse-helmert-kontrast"><span class="header-section-number">8.2.5</span> Difference-oder Reverse-Helmert Kontrast</a></li>
+<li><a class="nav-link" href="#erste-regel-bei-orthogonalen-kontrasten-muss-die-summe-der-kontrastgewichte-pro-pr%C3%A4diktor-0-ergeben"><span class="header-section-number">8.2.6</span> Erste Regel: Bei orthogonalen Kontrasten muss die Summe der Kontrastgewichte pro Prädiktor 0 ergeben</a></li>
+<li><a class="nav-link" href="#zweite-regel-bei-mehr-als-zwei-gruppen-muss-das-produkt-der-kontrastgewichte-der-pr%C3%A4diktoren-bei-orthogonalen-kontrasten-0-ergeben."><span class="header-section-number">8.2.7</span> Zweite Regel: Bei mehr als zwei Gruppen muss das Produkt der Kontrastgewichte der Prädiktoren bei orthogonalen Kontrasten 0 ergeben.</a></li>
+<li><a class="nav-link" href="#alternative-berechnung-der-kontrastgewichte-bei-reverse-helmert-kontrasten"><span class="header-section-number">8.2.8</span> Alternative Berechnung der Kontrastgewichte bei Reverse-Helmert-Kontrasten</a></li>
+<li><a class="nav-link" href="#helmert-kontrast"><span class="header-section-number">8.2.9</span> Helmert-Kontrast</a></li>
+<li><a class="nav-link" href="#zusammenfassung-13"><span class="header-section-number">8.2.10</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#t-test-f%C3%BCr-unabh%C3%A4ngige-stichproben"><span class="header-section-number">8.3</span> t-Test für unabhängige Stichproben</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#aufstellen-der-kontrastkodierung"><span class="header-section-number">8.3.1</span> Aufstellen der Kontrastkodierung</a></li>
+<li><a class="nav-link" href="#aufstellen-des-statistischen-hypothesenpaares"><span class="header-section-number">8.3.2</span> Aufstellen des statistischen Hypothesenpaares</a></li>
+<li><a class="nav-link" href="#berechnung-der-sum-of-squares-und-der-kennwerte"><span class="header-section-number">8.3.3</span> Berechnung der Sum of Squares und der Kennwerte</a></li>
+<li><a class="nav-link" href="#zusammenfassung-14"><span class="header-section-number">8.3.4</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#einfaktorielle-varianzanalyse-anova"><span class="header-section-number">8.4</span> Einfaktorielle Varianzanalyse (ANOVA)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#aufstellen-der-kontrastkodierung-1"><span class="header-section-number">8.4.1</span> Aufstellen der Kontrastkodierung</a></li>
+<li><a class="nav-link" href="#allgemeiner-f-test"><span class="header-section-number">8.4.2</span> Allgemeiner F-Test</a></li>
+<li><a class="nav-link" href="#testen-der-spezifischen-hypothese"><span class="header-section-number">8.4.3</span> Testen der spezifischen Hypothese</a></li>
+<li><a class="nav-link" href="#zusammenfassung-15"><span class="header-section-number">8.4.4</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#post-hoc-analysen"><span class="header-section-number">8.5</span> Post-Hoc Analysen</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#alpha-fehler-kumulierung"><span class="header-section-number">8.5.1</span> Alpha-Fehler Kumulierung</a></li>
+<li><a class="nav-link" href="#bedeutung-der-alpha-fehler-kumulierung-f%C3%BCr-die-statistische-praxis"><span class="header-section-number">8.5.2</span> Bedeutung der Alpha-Fehler Kumulierung für die statistische Praxis</a></li>
+<li><a class="nav-link" href="#bonferroni-korrektur"><span class="header-section-number">8.5.3</span> Bonferroni-Korrektur</a></li>
+<li><a class="nav-link" href="#zusammenfassung-und-weitere-korrekturmethoden"><span class="header-section-number">8.5.4</span> Zusammenfassung und weitere Korrekturmethoden</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#berechnung-in-jamovi-3"><span class="header-section-number">8.6</span> Berechnung in Jamovi</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#t-test-f%C3%BCr-unabh%C3%A4ngige-stichproben-1"><span class="header-section-number">8.6.1</span> t-Test für unabhängige Stichproben</a></li>
+<li><a class="nav-link" href="#einfaktorielle-varianzanalyse-1"><span class="header-section-number">8.6.2</span> einfaktorielle Varianzanalyse</a></li>
+<li><a class="nav-link" href="#kontrastanalyse"><span class="header-section-number">8.6.3</span> Kontrastanalyse</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -83,7 +1282,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2021-02-01.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -103,6 +1302,22 @@
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
 </html>
