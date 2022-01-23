@@ -41,7 +41,7 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Einführung</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Über den Kurs</a></li>
-<li><a class="" href="grundlagen-r-r-studio-und-jamovi.html"><span class="header-section-number">3</span> Grundlagen R, R-Studio und jamovi</a></li>
+<li><a class="" href="grundlagen-r-r-studio-und-jamovi.html"><span class="header-section-number">3</span> Grundlagen R, R-Studio und Jamovi</a></li>
 <li><a class="" href="statistisches-hypothesentesten.html"><span class="header-section-number">4</span> Statistisches Hypothesentesten</a></li>
 <li><a class="" href="statistische-modellierung.html"><span class="header-section-number">5</span> Statistische Modellierung</a></li>
 <li><a class="" href="einfache-lineare-regression.html"><span class="header-section-number">6</span> Einfache lineare Regression</a></li>
@@ -143,9 +143,9 @@
 <p>Der Regressionskoeffizient <em>b<sub>1</sub></em> der multiplen linearen Regression ist demnach nichts anderes als der Steigungskoeffizient einer linearen Regression welche das Verhältnis zwischen der Anzahl der Worte in der Mitschrift und der Punktzahl im Test in Abhängigkeit davon angibt, was man in Anbetracht der Überlappung der Mitschrift erwarten würde. </p>
 <p>Ebenso müssen wir <em>b<sub>2</sub></em> in Abhängigkeit der anderen Variable definieren. Diese würden wir wie folgt definieren: Für jedes Prozent Überlappung, welches eine Studentin in Anbetracht der Worte ihrer Mitschrift mehr hat, erwarten wir, dass diese Studentin 0.061134 Prozentpunkte besser abschneidet als man für die Anzahl der Wörter in der Mitschrift erwarten würde.</p>
 </div>
-<div id="zusammenfassung-11" class="section level3" number="7.3.3">
+<div id="zusammenfassung-12" class="section level3" number="7.3.3">
 <h3>
-<span class="header-section-number">7.3.3</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-11"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.3</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-12"><i class="fas fa-link"></i></a>
 </h3>
 <p>Wir haben in diesem Submodul gezeigt, dass der Regressionskoeffizient einer einfachen linearen Regression bei dem gleichen Prädiktor nicht mit dem Regressionskoeffizient einer multiplen linearen Regression gleichzusetzen ist. Dies liegt darin, dass Prädiktoren in der Regel miteinander korrelieren und daher einen Teil der Varianz in der abhängigen Variable gemeinsam aufklären. Was wir in der multiplen linearen Regression erhalten sind partielle Regressionskoeffizienten. Das bedeutet, die Regressionskoeffizienten in der multiplen linearen Regression werden immer in Abhängigkeit des anderen Prädiktors definiert. Im statistischen Sprachgebrauch würden wir auch sagen, wir <em>kontrollieren für einen anderen Prädiktor</em>. Das heißt, wir fragen uns, welchen Einfluss ein Prädiktor auf die abhängige Variable hat, wenn der andere Prädiktor gleich gehalten wird. Für die Interpretation der statistischen Tests macht diese veränderte Definition der Koeffizienten keinen Unterschied. Indem wir die Prädiktoren bei der Nullhypothese auf Null setzen, können wir immer noch den Zusammenhang zweier Variablen testen.</p>
 </div>
@@ -396,9 +396,9 @@ Berechnen wir das angepasste <em>R<sup>2</sup></em> erhalten wir einen Wert von 
 <p>Wir könnten das gleiche für den anderen Parameter des Prädiktors machen. Dies überlasse ich allerdings dir. Die Lösung findest du in der nächsten Datei:</p>
 <p>TODO: Einfügen Datei ci_overlap.R</p>
 </div>
-<div id="zusammenfassung-12" class="section level3" number="7.4.8">
+<div id="zusammenfassung-13" class="section level3" number="7.4.8">
 <h3>
-<span class="header-section-number">7.4.8</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-12"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4.8</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-13"><i class="fas fa-link"></i></a>
 </h3>
 <p>Wir haben in diesem Submodul drei Fragestellungen der multiplen linearen Regression getestet. Zunächst haben wir einen allgemeinen <em>F</em>-Test mit einem Freiheitsgrad von 2 gerechnet und erkannt, dass dieser Test uns keine hilfreichen Informationen zu unseren Hypothesen gibt. Im Anschluss haben wir zwei Tests gerechnet, bei denen wir getestet haben, ob die Anzahl der Worte und die Überlappung in der Mitschrift mit der Erinnerungsleistung aus dem Vortrag korreliert. Wir haben erkannt, dass wir für beide Tests ebenso einen <em>t</em>-Test berechnen können, da bei beiden Modellpaaren das erweiterte Modell einen Parameter mehr hat als das kompakte Modell. Ebenso haben wir gezeigt, dass wir bei der Interpretation des <em>p</em>-Wertes immer die Hypothese im Hinterkopf behalten müssen, um den p-Wert korrekt zu ermitteln. Am Ende des Submoduls haben wir gezeigt, wie standardisierte Konfidenzintervalle bei der multiplen Regression berechnet werden.</p>
 </div>
@@ -429,7 +429,7 @@ Berechnen wir das angepasste <em>R<sup>2</sup></em> erhalten wir einen Wert von 
 <a class="nav-link" href="#partielle-regressionskoeffizienten"><span class="header-section-number">7.3</span> Partielle Regressionskoeffizienten</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#b1-der-einfachen-regression-ist-nicht-b1-der-multiplen-regression-mit-dem-gleichen-pr%C3%A4diktor"><span class="header-section-number">7.3.1</span> b1 der einfachen Regression ist nicht b1 der multiplen Regression mit dem gleichen Prädiktor</a></li>
 <li><a class="nav-link" href="#bedeutung-von-b1-und-b2-bei-der-multiplen-linearen-regression"><span class="header-section-number">7.3.2</span> Bedeutung von b1 und b2 bei der multiplen linearen Regression</a></li>
-<li><a class="nav-link" href="#zusammenfassung-11"><span class="header-section-number">7.3.3</span> Zusammenfassung</a></li>
+<li><a class="nav-link" href="#zusammenfassung-12"><span class="header-section-number">7.3.3</span> Zusammenfassung</a></li>
 </ul>
 </li>
 <li>
@@ -441,7 +441,7 @@ Berechnen wir das angepasste <em>R<sup>2</sup></em> erhalten wir einen Wert von 
 <li><a class="nav-link" href="#der-zusammenhang-zwischen-der-anzahl-der-worte-und-der-erinnerungsleistung-aus-dem-vortrag-1"><span class="header-section-number">7.4.5</span> Der Zusammenhang zwischen der Anzahl der Worte und der Erinnerungsleistung aus dem Vortrag</a></li>
 <li><a class="nav-link" href="#konfidenzintervalle-1"><span class="header-section-number">7.4.6</span> Konfidenzintervalle</a></li>
 <li><a class="nav-link" href="#berechnung-des-standardisierten-konfidenzintervalls-f%C3%BCr-den-parameter-der-anzahl-der-worte-in-der-mitschrift"><span class="header-section-number">7.4.7</span> Berechnung des standardisierten Konfidenzintervalls für den Parameter der Anzahl der Worte in der Mitschrift</a></li>
-<li><a class="nav-link" href="#zusammenfassung-12"><span class="header-section-number">7.4.8</span> Zusammenfassung</a></li>
+<li><a class="nav-link" href="#zusammenfassung-13"><span class="header-section-number">7.4.8</span> Zusammenfassung</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#berechnung-in-jamovi-2"><span class="header-section-number">7.5</span> Berechnung in Jamovi</a></li>
@@ -461,7 +461,7 @@ Berechnen wir das angepasste <em>R<sup>2</sup></em> erhalten wir einen Wert von 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-16.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-23.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

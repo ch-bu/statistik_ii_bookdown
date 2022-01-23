@@ -38,7 +38,23 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 3</span> Grundlagen R, R-Studio und Jamovi</a></li></ul>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Einführung</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Über den Kurs</a></li>
+<li><a class="active" href="grundlagen-r-r-studio-und-jamovi.html"><span class="header-section-number">3</span> Grundlagen R, R-Studio und Jamovi</a></li>
+<li><a class="" href="statistisches-hypothesentesten.html"><span class="header-section-number">4</span> Statistisches Hypothesentesten</a></li>
+<li><a class="" href="statistische-modellierung.html"><span class="header-section-number">5</span> Statistische Modellierung</a></li>
+<li><a class="" href="einfache-lineare-regression.html"><span class="header-section-number">6</span> Einfache lineare Regression</a></li>
+<li><a class="" href="multiple-lineare-regression.html"><span class="header-section-number">7</span> Multiple lineare Regression</a></li>
+<li><a class="" href="einfaktorielle-varianzanalyse.html"><span class="header-section-number">8</span> Einfaktorielle Varianzanalyse</a></li>
+<li><a class="" href="tatusmehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> tatusMehrfaktorielle Varianzanalyse</a></li>
+<li><a class="" href="ancova.html"><span class="header-section-number">10</span> ANCOVA</a></li>
+<li><a class="" href="mediation.html"><span class="header-section-number">11</span> Mediation</a></li>
+<li><a class="" href="moderation.html"><span class="header-section-number">12</span> Moderation</a></li>
+<li><a class="" href="statistische-voraussetzungen.html"><span class="header-section-number">13</span> Statistische Voraussetzungen</a></li>
+<li><a class="" href="was-du-sonst-noch-wissen-musst.html"><span class="header-section-number">14</span> Was du sonst noch wissen musst</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
 
         <div class="book-extra">
           
@@ -123,7 +139,7 @@
 </h3>
 <p>R-Studio ist eine Entwicklungsumgebung für die Programmiersprache R. R-Studio vereinfacht dir die Arbeit mit R, indem es beispielsweise einen Editor integriert, in welchen du R-Code schreiben kannst. R-Studio hat vier zentrale Fenster:</p>
 <div class="figure">
-<span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="images/02_grundlagen/rstudio_panels.jpg" alt="Die vier zentralen Fenster von R-Studio" width="640"><p class="caption">
 Figure 3.1: Die vier zentralen Fenster von R-Studio
 </p>
@@ -140,7 +156,7 @@ Figure 3.1: Die vier zentralen Fenster von R-Studio
 <span class="header-section-number">3.5.2</span> Befehle aus der Konsole ausführen<a class="anchor" aria-label="anchor" href="#befehle-aus-der-konsole-ausf%C3%BChren"><i class="fas fa-link"></i></a>
 </h3>
 <p>Befehle lassen sich sowohl in der Konsole als auch im Skript ausführen. Als Faustregel: Die Konsole dient dem Herumspielen mit den Daten, im Skript schreibst du alle Befehle auf, die du gerne behalten möchtest. Nehmen wir an, du möchtest die Zahl 5 mit der Zahl 8 addieren:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">5</span> <span class="op">+</span> <span class="fl">8</span></code></pre></div>
 <pre><code>## [1] 13</code></pre>
 <p>Um den Befehl in der Konsole auszuführen, drückst du die <strong>ENTER-Taste</strong></p>
@@ -186,7 +202,7 @@ Figure 3.1: Die vier zentralen Fenster von R-Studio
 <p>Um Pakete zu installieren, kannst du in R-Studio auf Install unter dem Fenster Packages klicken:</p>
 <div class="inline-figure"><img src="images/02_grundlagen/install_pakete.png" width="577"></div>
 <p>Trage zunächst das Paket unter Packages ein und drücke anschließend auf Install. Installiere sowohl tidyverse, janitor, jmv als auch styler. Alternativ kannst du direkt den Befehl in die Konsole eingeben, um die Pakete zu installieren (führe die Befehle am besten nacheinander aus):</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span>
 <span class="co"># Dann</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"janitor"</span><span class="op">)</span>
@@ -205,7 +221,7 @@ Figure 3.1: Die vier zentralen Fenster von R-Studio
 <pre><code>&gt;     library(tidyverse)
 &gt;     library(jmv)</code></pre>
 <p>Um anschließend zu prüfen, welche Pakete gerade geladen sind, kannst du den Befehl sessionInfo() ausführen:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## R version 4.1.0 (2021-05-18)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
@@ -252,18 +268,18 @@ Figure 3.1: Die vier zentralen Fenster von R-Studio
 <span class="header-section-number">3.5.5</span> Das Arbeitsverzeichnis<a class="anchor" aria-label="anchor" href="#das-arbeitsverzeichnis"><i class="fas fa-link"></i></a>
 </h3>
 <p>Wenn du R öffnest, legt R im Hintergrund immer einen Ordner fest, aus dem du alle Dateien importierst und exportierst. Diesen Ordner nennt man das Arbeitsverzeichnis. Du kannst dir das Arbeitsverzeichnis in R anzeigen lassen, indem du folgenden Befehl in der Konsole ausführst:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "C:/Users/Christian Burkhart/repositories/statistik_ii_bookdown"</code></pre>
 <p>Als Output erhältst du das Verzeichnis des Ordners, welcher gerade als Arbeitsverzeichnis bestimmt ist.</p>
 <p>Solange du in R nicht mit <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">Projekten</a> arbeitest, musst du wissen, wo das Arbeitsverzeichnis liegt, um Dateien zu importieren. Wenn du beispielsweise folgenden Befehl verwendest, um die Datei human_resources.csv einzulesen, nimmt R automatisch an, dass sich diese Datei im Arbeitsverzeichnis befindet:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Nehmen wir an, dass sich das Arbeitsverzeichnis </span>
 <span class="co"># in folgendem Ordner befindet: </span>
 <span class="co">#    C:/Users/Christian/Dropbox/Lehre</span>
 <span class="va">human_resources</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"human_resources.csv"</span><span class="op">)</span></code></pre></div>
 <p>Der Text zwischen den Anführungszeichen wird auch als relativer Pfad bezeichnet. Liegt die Datei beispielsweise einen Ordner über dem Arbeitsverzeichnis (in unserem Beispiel im Ordner Dropbox), verwenden wir zwei Punkte, um einen Ordner nach oben zu klettern:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Nehmen wir an, dass sich das Arbeitsverzeichnis </span>
 <span class="co"># in folgendem Ordner befindet: </span>
 <span class="co">#    C:/Users/Christian/Dropbox/Lehre</span>
@@ -286,7 +302,7 @@ nn08se21,5,6</code></pre>
 <div class="inline-figure"><img src="images/02_grundlagen/table.jpg" width="840"></div>
 <p>Diesen kopierten Code fügst du in dein R-Skript ein. Achte darauf, dass du vorher das Paket tidyverse lädst:</p>
 <div class="figure">
-<span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<span style="display:block;" id="fig:unnamed-chunk-23"></span>
 <img src="images/02_grundlagen/load_dataset.jpg" alt="Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse" width="323"><p class="caption">
 Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 </p>
@@ -309,19 +325,19 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 </h4>
 <p>R umfasst die typischen Rechenoperatoren, die du aus der Schule kennst. Du kannst mit R Plus, Minus oder Geteilt rechnen.</p>
 <p>Zahlen voneinander teilen:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op">/</span> <span class="fl">9</span></code></pre></div>
 <pre><code>## [1] 0.3333333</code></pre>
 <p>Das Produkt zweier Zahlen berechnen:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op">*</span> <span class="fl">4</span></code></pre></div>
 <pre><code>## [1] 12</code></pre>
 <p>Zwei Zahlen miteinander addieren:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op">+</span> <span class="fl">4</span> </code></pre></div>
 <pre><code>## [1] 7</code></pre>
 <p>Die Zeichen +, -, / oder * nennen wir Operatoren. Operatoren sind nichts anderes als besondere Symbole, die eine bestimmte Aufgabe haben. Zum Beispiel hat der Operator + die Aufgabe, zwei Zahlen zu addieren. Wir können ebenso mehrere Operatoren miteinander verschachteln:</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="op">(</span><span class="fl">3</span> <span class="op">/</span> <span class="fl">9</span><span class="op">)</span> <span class="op">*</span> <span class="fl">4</span> <span class="op">+</span> <span class="fl">3</span></code></pre></div>
 <pre><code>## [1] 4.333333</code></pre>
 </div>
@@ -330,7 +346,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.5.7.2</span> Der Zuordnungsoperator<a class="anchor" aria-label="anchor" href="#der-zuordnungsoperator"><i class="fas fa-link"></i></a>
 </h4>
 <p>Der Zuordnungsoperator &lt;- wird verwendet, um Variablen zu kreiieren. Variablen kannst du dir wie Boxen bei einem Umzug vorstellen, die etwas enthalten. Jede Box bekommt ein Label, hier einen Variablennamen. Was in der Box steckt, kannst du erfahren, indem du die Box aufmachst, bzw. dir die Variable in R ausgeben lässt. Erstellen wir hierzu eine neue Variable mit dem Namen sum_score:</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sum_score</span> <span class="op">&lt;-</span> <span class="fl">3</span> <span class="op">+</span> <span class="fl">4</span></code></pre></div>
 <p>Jede Variable umfasst drei Elemente:</p>
 <ol style="list-style-type: decimal">
@@ -339,28 +355,28 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <li><p><strong>Der Inhalt der Variable:</strong> 3 + 4. Der Inhalt kann im Prinzip alles sein: Text: “Hallo,” ein Datensatz: read_csv(…) oder der Output einer Funktion: mean(c(1, 3, 4))</p></li>
 </ol>
 <p>Wenn du eine Variable erstellst, passiert zunächst nichts. R speichert intern das Produkt in der Variable sum_score. Um das Ergebnis der Berechnung zu sehen, führe die Variable in R aus:</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sum_score</span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
 <p>Variablennamen sollten immer so geschrieben sein, dass man weiß, was in der Variable steckt:</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">3</span> <span class="op">+</span> <span class="fl">2</span> <span class="co"># schlecht</span>
 <span class="va">summe_zahlen</span> <span class="op">&lt;-</span> <span class="fl">3</span> <span class="op">+</span> <span class="fl">2</span> <span class="co"># besser</span></code></pre></div>
 <p>Trenne einzelne Wörter in der Variable mit einem Unterstrich:</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_age</span> <span class="op">&lt;-</span> <span class="fl">24</span>  <span class="co"># gut</span>
 
 <span class="va">my.age</span> <span class="op">&lt;-</span> <span class="fl">24</span> <span class="co"># schlecht</span>
 <span class="va">my</span><span class="op">-</span><span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">24</span> <span class="co"># schlecht</span>
 <span class="va">my</span><span class="op">/</span><span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">24</span> <span class="co"># schlecht</span></code></pre></div>
 <p>Schreibe Variablen am besten alle Buchstaben des Variablennamen in Kleinschreibung:</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_age</span> <span class="op">&lt;-</span> <span class="fl">24</span>
 
 <span class="co"># nicht:</span>
 <span class="va">My_age</span> <span class="op">&lt;-</span> <span class="fl">24</span></code></pre></div>
 <p>Variablen sollten exakt angegeben werden. Kleinste Fehler führen zu Fehlern. Zum Beispiel macht die Groß- oder Kleinschreibung einen Unterschied:</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_age</span> <span class="op">&lt;-</span> <span class="fl">24</span>
 <span class="va">My_age</span>
 <span class="co"># Error: object 'My_age' not found</span></code></pre></div>
@@ -370,15 +386,15 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.5.7.3</span> Der == Operator<a class="anchor" aria-label="anchor" href="#der-operator"><i class="fas fa-link"></i></a>
 </h4>
 <p>Wir können ebenso prüfen, ob zwei Werte gleich sind, indem wir den == Operator verwenden:</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op">==</span> <span class="fl">4</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>Oder:</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op">==</span> <span class="fl">3</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Oder:</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">2</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Später werden wir diesen Operator verwenden, um Reihen in einem Datensatz zu filtern. Eine volle Liste der restlichen Operatoren findest du <a href="https://www.statmethods.net/management/operators.html">hier</a>.</p>
@@ -389,7 +405,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.5.8</span> Funktionen<a class="anchor" aria-label="anchor" href="#funktionen"><i class="fas fa-link"></i></a>
 </h3>
 <p>Jede Programmiersprache ist nur so umfangreich, wie viele Funktionen sie hat. Funktionen werden von Menschen geschrieben, deren Ziel es ist, verschiedenste Berechnungen zu automatisieren. Gib zum Beispiel einmal in deine Konsole nur die Funktion mean ein. Was du erhältst ist der Beginn einer Funktion, die Menschen für die Programmiersprache R geschrieben haben. Funktionen haben immer den gleichen Aufbau:</p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">function_name</span><span class="op">(</span>argument1 <span class="op">=</span> <span class="va">value1</span>, argument2 <span class="op">=</span> <span class="va">value2</span><span class="op">)</span></code></pre></div>
 <ul>
 <li>
@@ -400,36 +416,36 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <strong>value1</strong>: Jedes dieser Rohmaterialien hat bestimmte Werte. Beispielsweise kann value1 eine Zahl (3) oder ein Text sein (“Hallo”). Wir werden später andere Datentypen kennen lernen, die ebenso in Funktionen gespeist werden können (z.B. Vektoren oder Dataframes - mehr dazu gleich).</li>
 </ul>
 <p>Beispielsweise umfasst R die Funktion sqrt mit der wir die Wurzel einer Zahl berechnen können:</p>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">9</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>Mit Hilfe des ? Zeichens können wir die Funktion näher betrachten und uns ansehen, welche Argumente eine Funktion annimmt:</p>
 <div class="inline-figure"><img src="images/02_grundlagen/funktion.png" width="550"></div>
 <p>Die Funktion sqrt hat demnach nur ein Argument mit dem Namen x. x kann sowohl eine einzelne Zahl als auch mehrere Zahlen sein. Wir müssen das Argument nicht immer angeben. Wir hätten die Funktion daher auch so formulieren können:</p>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">9</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>Achte darauf, dass jede Funktion mit einer Klammer schließt. Tust du dies nicht, denkt R, dass dein Befehl noch nicht zu Ende ist und zeigt Dir dies mit einem + an:</p>
 <pre><code>sqrt(9
 +</code></pre>
 <p>Eine andere Funktion heißt sum. Mit sum kannst du mehrere Zahlen miteinander addieren:</p>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 12</code></pre>
 <p>Wenn du dir die Funktion unter der Hilfe mit ?sum anschaust, erkennst du, dass die Funktion unendlich viele Argumente hat. Dies wird mit einem … gekennzeichnet:</p>
 <div class="inline-figure"><img src="images/02_grundlagen/sum.png" width="333"></div>
 <p>Wir könnten daher ebenso die Summe von fünf Zahlen zusammen rechnen:</p>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
 <p>Lade als nächstes das Paket tidyverse (library(tidyverse)). Das Paket tidyverse umfasst die Funktion select. Mit Hilfe von select werden wir später Variablen aus einem Datensatz selektieren. Wenn du dir die Dokumentation der Funktion mit Hilfe von ?select anschaust, erkennst du, dass die Funktion mehrere Argumente hat:</p>
 <div class="inline-figure"><img src="images/02_grundlagen/select.png" width="536"></div>
 <p>Das erste Argument heißt .data. Hierfür fügen wir später den Datensatz ein. Das zweite Argument hat keinen expliziten Namen, sondern umfasst eine mit Komma getrennte Liste an Variablennamen. Schauen wir uns ein Beispiel an. Hierfür laden wir zunächst das Paket tidyverse und den Datensatz <em>human_resources</em>:</p>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="va">human_resources</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"human_resources.csv"</span><span class="op">)</span></code></pre></div>
 <p>Anschließend können wir die Funktion select ausführen, um verschiede Variablen aus dem Datensatz zu nehmen (Um zu sehen, welche Variablen im Datensatz stecken, gebe colnames(human_resources) in die Konsole ein):</p>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>.data <span class="op">=</span> <span class="va">human_resources</span>, <span class="va">id</span>, <span class="va">age</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 2
 ##       id   age
@@ -446,7 +462,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 10    10    36
 ## # ... with 1,460 more rows</code></pre>
 <p>Du erkennst das erste Argument .data, in welches wir den Datensatz einfügen. Zusätzlich geben wir mehrere Variablennamen ein, indem wir die Variablennamen durch ein Komma trennen. Wir hätten ebenso die Argumente umdrehen können:</p>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">age</span>, .data <span class="op">=</span> <span class="va">human_resources</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 2
 ##       id   age
@@ -463,7 +479,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 10    10    36
 ## # ... with 1,460 more rows</code></pre>
 <p>Generell ist es allerdings ratsam, die Reihenfolge der Argumente beizubehalten. Wenn wir dies tun, können wir die Namen der Argumente ignorieren:</p>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">human_resources</span>, <span class="va">id</span>, <span class="va">age</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 2
 ##       id   age
@@ -480,16 +496,16 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 10    10    36
 ## # ... with 1,460 more rows</code></pre>
 <p>Versuchen wir nochmal von diesem Beispiel zu abstrahieren. Funktionen haben einen Namen und eine umgebende Klammer:</p>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">function_name</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Fasst alle Funktionen haben Argumente. Die Anzahl der Argumente ist abhängig von der Funktion. Hier siehst du das Schema einer Funktion mit zwei Argumenten:</p>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">function_name</span><span class="op">(</span>argument1 <span class="op">=</span> <span class="va">value1</span>, argument2 <span class="op">=</span> <span class="va">value2</span><span class="op">)</span></code></pre></div>
 <p>Die Reihenfolge der Argumente ist egal, solange wir die Argumente explizit benennen:</p>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">function_name</span><span class="op">(</span>argument2 <span class="op">=</span> <span class="va">value2</span>, argument1 <span class="op">=</span> <span class="va">value1</span><span class="op">)</span></code></pre></div>
 <p>Bennenen wir die Argumente nicht, müssen wir die Reihenfolge beachten, die in der Funktion (siehe ?function_name) vorgegeben ist:</p>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">function_name</span><span class="op">(</span><span class="va">value1</span>, <span class="va">value2</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="grundlegende-funktionen-in-r" class="section level3" number="3.5.9">
@@ -498,15 +514,15 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 </h3>
 <p>Es gibt ein paar wenige Befehle, die du immer wieder in R benötigst. Wir werden die Befehle anhand des Datensatzes <a href="data/human_resources.csv">human_resources</a> kennen lernen.</p>
 <p>Zunächst müssen wir tidyverse laden und den Datensatz importieren:</p>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="va">human_resources</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"human_resources.csv"</span><span class="op">)</span></code></pre></div>
 <p>Mit <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.1/topics/View">View</a>kannst du Dir den Datensatz in einem Excel-ähnlichen Format betrachten:</p>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">human_resources</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="images/02_grundlagen/view_hr.png" width="384"></div>
 <p>Du kannst dir die Variablennamen mit der Funktion colnames ausgeben lassen:</p>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">human_resources</span><span class="op">)</span></code></pre></div>
 <pre><code>##  [1] "id"                         "age"                       
 ##  [3] "department"                 "distance_from_home"        
@@ -518,15 +534,15 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## [15] "work_life_balance"          "years_at_company"          
 ## [17] "years_since_last_promotion"</code></pre>
 <p>Manchmal möchte man wissen, wie viele Reihen in einem Datensatz stecken. Hierfür kannst du die Funktion <a href="https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/nrow">nrow</a>verwenden:</p>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">human_resources</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 1470</code></pre>
 <p>Genausogut lassen sich die Anzahl der Variablen (bzw. Spalten) in einem Datensatz mit der Funktion <a href="https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/nrow">ncol</a>ausgeben lassen:</p>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">human_resources</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 17</code></pre>
 <p>Zuletzt benötigen wir noch die Funktion head. Mithilfe von head können wir uns die ersten Reihen eines Datensatzes ansehen:</p>
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">human_resources</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 17
 ##      id   age department      distance_from_ho~ education  employee_count gender
@@ -550,13 +566,13 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <blockquote>
 <p>Achte darauf, dass du die Funktion nur verwenden kannst, wenn du das Paket tidyverse geladen hast.</p>
 </blockquote>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">path</span><span class="op">)</span></code></pre></div>
 <ul>
 <li>x steht für den Datensatz, den wir der Funktion überführen.</li>
 <li>path steht für den Dateinamen in denen wir die Datei speichern. Achte darauf, diesen Pfad immer mit Anführungsstrichen " zu umrunden.</li>
 </ul>
-<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">NAME_GEREINIGER_DATENSATZ</span>, <span class="st">"datensatz_gereinigt.csv"</span><span class="op">)</span></code></pre></div>
 <blockquote>
 <p>R speichert die Datei immer in das aktuelle Arbeitsverzeichnis. Diese kannst du verändern, indem du mit dem Shortcut STRG + Umschalt + H (für Mac COMMAND + Umschalt + H) das Arbeitsverzeichnis wechselt. In diesen Ordner wird die Datei anschließend gespeichert.</p>
@@ -594,41 +610,41 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.6.1</span> Der Pipe %&gt;% Operator<a class="anchor" aria-label="anchor" href="#der-pipe-operator"><i class="fas fa-link"></i></a>
 </h3>
 <p>Häufig führen wir nur eine Funktion aus, wenn wir einfache Berechnungen in R umsetzen möchten. Beispielsweise kann man mit einer Zeile den Mittelwert einer Variable berechnen. Was passiert allerdings, wenn wir mehrere Funktionen nacheinander ausführen müssen? Ein Beispiel: Stell Dir vor, du möchtest aus einem Vektor mit Zahlen den Mittelwert berechnen, aus dem Mittelwert anschließend die Wurzel ziehen und diesen Wert mit der Zahl 5 addieren. Dies wäre ein möglicher Lösungsweg:</p>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, <span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 7.236068</code></pre>
 <p>Dieser Code sieht nicht nur kompliziert aus, er ist es auch. Beispielsweise ist es schwer zu erkennen, welche Klammer zu welcher Funktion gehört. Alternativ könnten wir den Output der Funktionen (z.B. mean(c(4, 5, 6))) in Variablen speichern und die Berechnung sequentiell ausführen:</p>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mittelwert</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span><span class="op">)</span>
 <span class="va">wurzel</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">mittelwert</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">wurzel</span>, <span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 7.236068</code></pre>
 <p>Die Lösung ist bereits eleganter aber immer noch nicht perfekt, da wir Variablen erstellen, die wir später nicht mehr benötigen; wir möchten schließlich nur das Ergebnis wissen. Eine Alternative, dieses Problem zu lösen, ist der Pipe-Operator. Unser Problem der verschachtelten Funktionen können wir mit Hilfe des Pipe-Operators folgendermaßen lösen:</p>
-<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">.</span>, <span class="fl">5</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 7.236068</code></pre>
 <p>Was ist hier passiert? Die Idee ist folgende: Jede Funktion nimmt Daten auf, verarbeitet diese und gibt diese weiter. Eine Analogie wären Fabriken. Die erste Fabrik fällt Holz und fertigt aus diesem Holz Bretter an. Das Holz ist der Input der Fabrik, Bretter der Output. Diese Bretter werden nun an die nächste Fabrik geschickt, welche anschließend die Bretter schleift. Die geschliffenen Bretter gehen anschließen an die Gitarrenbauerin, die aus ihnen eine Gitarre baut. Das Prinzip ist folgendes: Es gibt eine serielle Verarbeitung der Produkte. Genauso funktioniert der Pipe-Operator. Er übergibt den Output einer Funktion in die nächste Funktion. Hier ein weiteres Beispiel:</p>
-<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">9</span>, <span class="fl">10</span>, <span class="fl">8</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>Die Funktion mean(c(9, 10, 8)) berechnet den Mittelwert aus dem Vektor mit den Zahlen 9, 10, 8 (= 9). Diese Zahl 9 wird an die Funktion sqrt übergeben. Du siehst, dass in der Funktion sqrt(.) ein Punkt notiert ist. Dieser Punkt steht für den Output der vorherigen Funktion (hier mean -&gt; 9). Wir könnten diesen Punkt ebenso weglassen:</p>
-<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">9</span>, <span class="fl">10</span>, <span class="fl">8</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>Ein anderes Beispiel: Wir berechnen die Summe aus zwei Zahlen mit der Funktion sum. Die erste Zahl der Summe übergeben wir allerdings mithilfe des Pipe-Operators:</p>
-<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">.</span>, <span class="fl">3</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
 <p>Alternativ können wir den Punkt . entfernen:</p>
-<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
 <p>Diese Befehle sind äquivalent zu folgendem Code:</p>
-<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">3</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
 <p>Der Vorteil des Pipe-Operators wird dir vermutlich erst im Verlaufe des Kurses deutlich, wenn wir mehrere Manipulationen an Daten vornehmen. An dieser Stelle sei gesagt, dass wir den Pipe-Operator immer wieder verwenden werden, da er die Lesbarkeit unseres Codes erhöht. In den nächsten Erklärungen wirst du sehen, weshalb der Operator so wichtig ist.</p>
@@ -646,7 +662,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.6.2.1</span> Glimpse: Variablen in einem Datensatz ansehen<a class="anchor" aria-label="anchor" href="#glimpse-variablen-in-einem-datensatz-ansehen"><i class="fas fa-link"></i></a>
 </h4>
 <p>In Excel sieht man die Daten jederzeit, in R nicht. Um einen Datensatz beispielsweise in R zu sehen, musst du ihn über die Konsole ausgeben lassen:</p>
-<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 17
 ##       id   age department     distance_from_ho~ education  employee_count gender
@@ -667,7 +683,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   total_working_years &lt;dbl&gt;, work_life_balance &lt;chr&gt;, years_at_company &lt;dbl&gt;,
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
 <p>Das funktioniert, allerdings wirst du nicht immer alle Variablen sehen können. Von den 17 Variablen in diesem Datensatz sind 9 nur namentlich erwähnt und du siehst nicht, was in den Variablen steckt. Eine Möglichkeit alle Variablen anzusehen ist die <a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse-Funktion</a>. Glimpse ordnet die Variablen in Reihen und nicht in Spalten an und erlaubt dir dadurch einen umfassenderen Einblick in die Daten:</p>
-<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">human_resources</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 1,470
 ## Columns: 17
@@ -695,7 +711,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.6.2.2</span> <strong><em>count:</em></strong> <strong>Diskrete Variablen zählen</strong><a class="anchor" aria-label="anchor" href="#count-diskrete-variablen-z%C3%A4hlen"><i class="fas fa-link"></i></a>
 </h4>
 <p>Mit Hilfe von <a href="https://dplyr.tidyverse.org/reference/tally.html">count</a>können wir die Häufigkeit diskreter (nominalskalierter) Daten zählen. Beispielsweise können wir in unserem Datensatz prüfen, wie viele Männer und wie viele Frauen in der Firma arbeiten:</p>
-<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   gender     n
@@ -707,7 +723,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <div class="inline-figure"><img src="images/02_grundlagen/count.png" width="370"></div>
 <p>Die ersten beiden Argumente der Funktion sind x und … x steht für einen Datensatz, die drei Punkte … für Variablen des Datensatzes (wenn du wissen möchtest, woher ich das weiß tippe ?count in der Konsole und schaube bei Help unter Arguments).</p>
 <p>Wir hätten aus diesem Grund ebenso den Datensatz innerhalb der Funktion als Argument übergeben können und zudem die Variablen nennen können, für die wir die einzelnen Ausprägungen (z.B. Mann und Frau) zählen möchten:</p>
-<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">human_resources</span>, <span class="va">gender</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   gender     n
@@ -715,7 +731,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 1 Female   588
 ## 2 Male     882</code></pre>
 <p>Wie du siehst, haben wir nun das erste Argument x explizit angegeben. Wir sagen R damit: “Bitte berechne mir die Häufigkeit der Ausprägungen der Variable gender für den Datensatz human_resources.”</p>
-<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">.</span>, <span class="va">gender</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   gender     n
@@ -723,14 +739,14 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 1 Female   588
 ## 2 Male     882</code></pre>
 <p>Da der Pipe-Operator nichts anderes macht als Informationen von einer Funktion oder einem Befehl in eine andere Funktion zu übergeben, können wir nun den Datensatz in die Funktion count übergeben. Was der Pipe-Operator übergibt, wird immer mit einem Punkt (.) gekennzeichnet.</p>
-<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">gender</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   gender     n
 ##   &lt;chr&gt;  &lt;int&gt;
 ## 1 Female   588
 ## 2 Male     882</code></pre>
-<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   gender     n
@@ -740,7 +756,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <p>Da nun x das erste Argument der Funktion count ist, können wir es weglassen und nur den Punkt erwähnen. Ebenso können wir den Punkt weglassen und erhalten dennoch unseren Output.</p>
 <p>Die Logik dieses Pipe-Operators gilt für alle nachfolgenden Funktionen. Versuche daher selbst einmal mit dem Pipe-Operator und dem count-Befehl zu spielen, um zu verstehen, wie der Pipe-Operator arbeitet.</p>
 <p>Zuletzt können wir mit dem count-Befehl ebenso weitere, komplexere Fragen beantworten. Beispielsweise können wir uns fragen, welche Ausbildung Männer und Frauen haben. Im Datensatz gibt es eine Variable mit dem Namen education, in der der höchste Bildungsabschluss für jeden Mitarbeiter / jede Mitarbeiterin gespeichert ist:</p>
-<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">gender</span>, <span class="va">education</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 10 x 3
 ##    gender education         n
@@ -763,7 +779,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.6.2.3</span> <strong>select: Variablen aus einem Datensatz selektieren</strong><a class="anchor" aria-label="anchor" href="#select-variablen-aus-einem-datensatz-selektieren"><i class="fas fa-link"></i></a>
 </h4>
 <p>Datensätze haben manchmal viele Variablen. Um den Überblick zu behalten, können wir uns mit <a href="https://dplyr.tidyverse.org/reference/select.html">select</a>nur ein paar wenige Variablen ansehen. Zum Beispiel können wir aus unserem Datensatz nur die Variablen id und age selektieren:</p>
-<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">age</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 2
 ##       id   age
@@ -780,7 +796,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 10    10    36
 ## # ... with 1,460 more rows</code></pre>
 <p>Der Aufbau der select-Funktion ist identisch mit den Funktionen glimpse und count. Das erste Argument ist der Datensatz, dann werden die Variablen aufgelistet, mit der die Funktion rechnen soll.</p>
-<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">age</span>, <span class="va">department</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 3
 ##       id   age department            
@@ -801,7 +817,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <p>Im Übrigen. Wenn du dich fragt, woher man weiß, welche Variablen in einem Dtensatz sind. Mit der glimpse-Funktion kannst du dir die Variablennamen in einem Datensatz immer wieder ansehen.</p>
 </blockquote>
 <p>Manchmal wollen wir allerdings genau das Gegenteil. Variablen aus einem Datensatz entfernen. Dies können wir mit select erreichen, indem wir ein Minus vor die Variable setzen, die wir entfernen möchten:</p>
-<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">gender</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 16
 ##       id   age department   distance_from_ho~ education employee_count job_role 
@@ -822,7 +838,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   work_life_balance &lt;chr&gt;, years_at_company &lt;dbl&gt;,
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
 <p>Oder, stell dir vor, du möchtest mehrere Variablen aus dem Datensatz entfernen, die beieinander liegen. Nehmen wir beispielsweise an, du möchtest die Variablen education bis monthly_income aus dem Datensatz selektieren, welche laut dem glimpse-Befehl hintereinander stehen:</p>
-<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">human_resources</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 1,470
 ## Columns: 17
@@ -843,7 +859,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## $ work_life_balance          &lt;chr&gt; "Bad", "Better", "Better", "Better", "Bette~
 ## $ years_at_company           &lt;dbl&gt; 6, 10, 0, 8, 2, 7, 1, 1, 9, 7, 5, 9, 5, 2, ~
 ## $ years_since_last_promotion &lt;dbl&gt; 0, 1, 0, 3, 2, 3, 0, 0, 1, 7, 0, 0, 4, 1, 0~</code></pre>
-<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">education</span><span class="op">:</span><span class="va">monthly_income</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 7
 ##    education  employee_count gender job_role     job_satisfaction marital_status
@@ -860,7 +876,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 10 Bachelor                1 Male   Healthcare ~ High             Married       
 ## # ... with 1,460 more rows, and 1 more variable: monthly_income &lt;dbl&gt;</code></pre>
 <p>Um diese Variablen aus dem Datensatz zu selektieren, musst du die erste und die letzte Variable benennen und mit einem Doppelpunkt trennen.</p>
-<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="va">education</span><span class="op">:</span><span class="va">monthly_income</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 10
 ##       id   age department    distance_from_ho~ num_companies_w~ performance_rat~
@@ -885,7 +901,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.6.2.4</span> arrange: Datensätze nach Variablen sortieren<a class="anchor" aria-label="anchor" href="#arrange-datens%C3%A4tze-nach-variablen-sortieren"><i class="fas fa-link"></i></a>
 </h4>
 <p>Stell dir vor, du möchtest wissen, wer die ältesten Mitarbeitende in der Firma sind. In Excel würdest du hierfür den Datensatz nach dem Alter der Mitarbeitenden sortieren. In tidyverse kannst du das gleiche mit der Funktion arrange schaffen:</p>
-<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">age</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 17
 ##       id   age department     distance_from_ho~ education  employee_count gender
@@ -906,7 +922,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   total_working_years &lt;dbl&gt;, work_life_balance &lt;chr&gt;, years_at_company &lt;dbl&gt;,
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
 <p>Wie du siehst sind die Mitarbeitenden von jung nach alt sortiert. Dich interessieren allerdings die älteren Mitarbeitende. Hierfür müssen wir arrange zusätzlich sagen, dass die Variable von hoch nach niedrig angezeigt wird.</p>
-<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">age</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 17
 ##       id   age department     distance_from_ho~ education  employee_count gender
@@ -928,7 +944,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
 <p>Nun siehst du, dass die ältesten Mitarbeitende 60 Jahre alt sind. Ebenso erkennst du, dass die Mitarbeitende von alt nach jung sortiert sind.</p>
 <p>Wir können aber genausogut zwei Variablen sortieren. Die Reihenfolge der Variablen, die wir in die Funktion arrange eingeben, gibt an, welche Variable zuerst sortiert wird. Zum Beispiel können diejenigen Mitarbeitende innerhalb eines Alters (z.B. alle 60 Jahre alt) nach der Distanz sortieren, die sie zur Arbeit fahren müssen:</p>
-<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">age</span><span class="op">)</span>, <span class="va">distance_from_home</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 1,470 x 17
 ##       id   age department     distance_from_ho~ education  employee_count gender
@@ -955,7 +971,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.6.2.5</span> filter: Reihen aus einem Datensatz filtern<a class="anchor" aria-label="anchor" href="#filter-reihen-aus-einem-datensatz-filtern"><i class="fas fa-link"></i></a>
 </h4>
 <p>Eine weitere häufige Funktion ist das Filtern von Daten. Stell dir beispielsweise vor, du möchtest alle Männer aus dem Datensatz entfernen. Das heißt, jede Reihe bzw. Person, für die in der Variable gender Male steht, soll aus dem Datensatz entfernt werden. Dies können wir mit <a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a> erreichen:</p>
-<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">!=</span> <span class="st">"Male"</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 588 x 17
 ##       id   age department     distance_from_ho~ education  employee_count gender
@@ -977,16 +993,16 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
 <p>Die Funktion lässt sich am besten verstehen, wenn wir die Operatoren ==, !=, &gt;, &lt; und %in% im einzelnen durchgehen. Beginnen wir mit dem Operator !=. != steht für “ist nicht.” In unserem Beispiel haben wir tidyverse gesagt: “Behalte alle Reihen, in der die Variable gender nicht”Male" ist.</p>
 <p>Etwas einfacher sehen wir den gleichen Effekt, wenn wir uns fragen, ob zwei Zahlen gleich oder verschieden ist. Du weißt, dass 3 nicht 4 ist (TRUE). Du weißt ebenso, dass die Aussage 3 ist nicht 3 falsch ist (FALSE). Ebenso würdest du zustimmen, wenn ich sage 4 ist gleich 4 (TRUE). Wenn ich aber sage, dass 3 gleich 4 ist würdest du sagen, dass ist falsch (FALSE).</p>
-<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op">!=</span> <span class="fl">4</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op">!=</span> <span class="fl">3</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb122"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">4</span> <span class="op">==</span> <span class="fl">4</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb124"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">3</span> <span class="op">==</span> <span class="fl">4</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>Auf Variablen übertragen fragen wir uns bei der Funktion filter immer, ob die Ausprägung einer Variable gleich oder ungleich eines bestimmten Wertes ist. Diejenigen Berechnungen, die TRUE ergeben, werden behalten, diejenigen, die FALSE ergeben, werden aus dem Datensatz entfernt. Wenn ich demnach sage gender != “Male” entferne ich alle Reihen, in denen die Ausprägung der Variable gender “Male” ist.</p>
@@ -994,7 +1010,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <p>Wenn du übrigens nicht weißt, welche Ausprägungen es für eine Variable gibt, kannst du diese mit der count-Funktion finden: z.B. count(human_resources, gender)</p>
 </blockquote>
 <p>Mit dem Wissen um TRUE und FALSE können wir komplexere Berechnungen mit filter durchführen. Zum Beispiel möchten wir nur Mitarbeitende in dem Datensatz behalten, die älter als 50 Jahre sind.</p>
-<div class="sourceCode" id="cb126"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb127"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">age</span> <span class="op">&gt;</span> <span class="fl">50</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 143 x 17
 ##       id   age department     distance_from_ho~ education  employee_count gender
@@ -1016,7 +1032,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
 <p>Wie du siehst, hat der Datensatz nur noch 143 Mitarbeitende. Zwar haben wir in diesem Beispiel nicht den Operator != oder ==, sondern den Operator &gt; verwendet. Dennoch gibt uns die Aussage age &gt; 50 einen wahren Wert (TRUE) oder einen falschen Wert (FALSE) zurück. Wer beispielsweise 30 Jahre alt ist, wird nicht in den Datensatz übernommen (30 &gt; 50 -&gt; FALSE). Eine Mitarbeiterin, die 52 Jahre alt ist, wird in den Datensatz übernommen (52 &gt; 50 -&gt; TRUE).</p>
 <p>Manchmal möchten wir allerdings mehrere Zeilen gleichzeitig aus einem Datensatz entfernen beziehungsweise behalten. Stell dir vor, wir möchten alle Mitarbeitende aus dem Datensatz filtern, die über 50 Jahre sind und die weiblich sind. Hierfür haben wir zwei Möglichkeiten:</p>
-<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb129"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">age</span> <span class="op">&gt;</span> <span class="fl">50</span> <span class="op">&amp;</span> <span class="va">gender</span> <span class="op">==</span> <span class="st">"Female"</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 64 x 17
 ##       id   age department     distance_from_ho~ education  employee_count gender
@@ -1036,7 +1052,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   num_companies_worked &lt;dbl&gt;, performance_rating &lt;chr&gt;,
 ## #   total_working_years &lt;dbl&gt;, work_life_balance &lt;chr&gt;, years_at_company &lt;dbl&gt;,
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
-<div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">age</span> <span class="op">&gt;</span> <span class="fl">50</span>, <span class="va">gender</span> <span class="op">==</span> <span class="st">"Female"</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 64 x 17
 ##       id   age department     distance_from_ho~ education  employee_count gender
@@ -1058,7 +1074,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
 <p>Einerseits können wir die Aussagen mit einem Komma trennen, andererseits können wir ein &amp; (und) dazwischen setzen. Beide Varianten behalten nur diejenigen Mitarbeiterinnen, die über 50 sind und weiblich sind.</p>
 <p>Das Gegenteil wären Mitarbeitende, die entweder über 50 Jahre alt sind oder weiblich sind. Hierfür verwenden wir den | (oder) Operator:</p>
-<div class="sourceCode" id="cb132"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">age</span> <span class="op">&gt;</span> <span class="fl">50</span> <span class="op">|</span> <span class="va">gender</span> <span class="op">==</span> <span class="st">"Female"</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 667 x 17
 ##       id   age department     distance_from_ho~ education  employee_count gender
@@ -1080,7 +1096,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
 <p>Du siehst, dass der Datensatz nun 667 Mitarbeitende enthält. Bei unserem vorherigen und-Befehl waren es 64 Mitarbeitende.</p>
 <p>Stell dir weiterhin vor, du möchtest alle Mitarbeitende aus dem Datensatz filtern, die entweder einen Bachelor- oder Masterabschluss haben. Momentan können wir diese Frage mit dem Oder-Operator (|) beantworten. Es geht allerdings eleganter mit dem %in%-Operator:</p>
-<div class="sourceCode" id="cb134"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">education</span> <span class="op">==</span> <span class="st">"Bachelor"</span> <span class="op">|</span> <span class="va">education</span> <span class="op">==</span> <span class="st">"Master"</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 970 x 17
 ##       id   age department       distance_from_h~ education employee_count gender
@@ -1100,7 +1116,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   num_companies_worked &lt;dbl&gt;, performance_rating &lt;chr&gt;,
 ## #   total_working_years &lt;dbl&gt;, work_life_balance &lt;chr&gt;, years_at_company &lt;dbl&gt;,
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
-<div class="sourceCode" id="cb136"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb137"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">education</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Bachelor"</span>, <span class="st">"Master"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 970 x 17
 ##       id   age department       distance_from_h~ education employee_count gender
@@ -1127,7 +1143,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.6.2.6</span> mutate: Neue Variablen berechnen<a class="anchor" aria-label="anchor" href="#mutate-neue-variablen-berechnen"><i class="fas fa-link"></i></a>
 </h4>
 <p>Manchmal möchten wir neue Variablen aus einem Datensatz berechnen. Stell dir vor, du möchtest das Einkommen der Mitarbeitenden von Dollar in Euro umrechnen. Oder, du möchtest aus dem monatlichen Einkommen der Mitarbeiter, das Jahreseinkommen berechnen. Diese Berechnungen kannst du mit dem <a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a> Befehl umsetzen. Berechnen wir einmal das Jahreseinkommen der Mitarbeitenden:</p>
-<div class="sourceCode" id="cb138"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>
     yearly_income <span class="op">=</span> <span class="va">monthly_income</span> <span class="op">*</span> <span class="fl">12</span>
@@ -1152,7 +1168,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   years_since_last_promotion &lt;dbl&gt;, yearly_income &lt;dbl&gt;</code></pre>
 <p>Zunächst musst du den Namen der neuen Variable linksseitig nennen (yearly_income). Anschließend folgt ein =. Hinter dem = schreibst du auf, wie die Variable berechnet wird. In diesem Fall haben wir das monatliche Einkommen mal 12 berechnet, da ein Jahr 12 Monate hat.</p>
 <p>Ein anders Beispiel. Stell dir vor, wir möchten eine Variable erstellen, die anzeigt, ob eine Mitarbeiterin / ein Mitarbeiter mehr oder weniger als das Jahreseinkommen verdient:</p>
-<div class="sourceCode" id="cb140"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb141"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>
     yearly_income        <span class="op">=</span> <span class="va">monthly_income</span> <span class="op">*</span> <span class="fl">12</span>,
@@ -1191,7 +1207,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 </h3>
 <p>Mit diesen Befehlen können wir bereits recht komplexere Operationen an Datensätzen ausführen. Nur, bei einem Befehl bleibt es selten, häufig möchten wir mehrere dieser Befehle nacheinander ausführen. Nur wie?</p>
 <p>Der Trick besteht darin, mehrere dieser Befehle mit dem Pipe-Operator zusammen zu führen. Nehmen wir ein Beispiel: Du möchtest aus dem Datensatz alle Frauen filtern und anschließend prüfen, welchen Bildungsabschluss die Frauen in dem Unternehmen haben:</p>
-<div class="sourceCode" id="cb142"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"Female"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">education</span><span class="op">)</span></code></pre></div>
@@ -1204,7 +1220,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 4 Doctor           22
 ## 5 Master          154</code></pre>
 <p>Wie du siehst, habe ich zunächst den Datensatz nach den Frauen gefiltert und anschließend gezählt, welcher Bildungsabschluss unter den Frauen wie häufig auftritt. Vlt. möchest du die Häufigkeit zusätzlich sortieren?</p>
-<div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"Female"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">education</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
@@ -1219,7 +1235,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 5 Doctor           22</code></pre>
 <p>Wie du siehst, haben wir nun zusätzlich die Funktion arrange verwendet, um die Häufigkeit von hoch nach niedrig zu sortieren. Die meisten Frauen in der Firma haben offensichtlich einen Bachelor-Abschluss.</p>
 <p>Oder, stell dir vor, du möchtest wissen, welche Mitarbeitende besonders weit von der Arbeitsstelle wohnen, um ihnen evtl. die Möglichkeit für zusätzliche Home-Office Tage zu geben. Dabei interessiert dich das Alter der Mitarbeitenden, deren id und deren Distanz zum Arbeitsort:</p>
-<div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">distance_from_home</span> <span class="op">&gt;</span> <span class="fl">25</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">age</span>, <span class="va">distance_from_home</span><span class="op">)</span></code></pre></div>
@@ -1238,7 +1254,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 10   182    34                 27
 ## # ... with 77 more rows</code></pre>
 <p>Insgesamt wohnen 25 Mitarbeitende mehr als 25 Kilometer vom Arbeitsort entfernt. Wer wohnt eigentlich am weitesten entfernt?</p>
-<div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">distance_from_home</span> <span class="op">&gt;</span> <span class="fl">25</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">age</span>, <span class="va">distance_from_home</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
@@ -1258,7 +1274,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## 10   426    50                 29
 ## # ... with 77 more rows</code></pre>
 <p>Es sind mehrere Personen, mit einer Distanz von 29 Kilometer. Und wie alt ist die älteste Person, die so weit zur Arbeit fahren muss?</p>
-<div class="sourceCode" id="cb150"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">distance_from_home</span> <span class="op">&gt;</span> <span class="fl">25</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">age</span>, <span class="va">distance_from_home</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
@@ -1279,7 +1295,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## # ... with 77 more rows</code></pre>
 <p>57 Jahre alt. Wie du siehst, können wir mit diesen Befehlen bereits sehr schnell Fragen an den Datensatz beantworten. Tidyverse hat noch eine Vielzahl an Funktionen, mit denen wir noch viel komplexere Berechnungen ausführen können (siehe <a href="https://www.tidyverse.org/">tidyverse</a>). Für diesen Kurs beschränken wir uns auf diese zentralen Funktionen und werden diese immer wieder in diesem Kurs verwenden.</p>
 <p>Solange du den Output dieser Funktionen nicht speicherst, geht er verloren. Stell dir vor, du möchtest einen neuen Datensatz speichern, der nur die weiblichen Mitarbeiterinnen enthält. Diese Variante würde zwar die Berechnungen ausführen, allerdings den Datensatz nicht dauerhaft speichern:</p>
-<div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb153"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"Female"</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 588 x 17
@@ -1302,12 +1318,12 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 ## #   years_since_last_promotion &lt;dbl&gt;</code></pre>
 <p>Mit dieser Variante würdest du den neuen Datensatz mit allen weiblichen Mitarbeiterinnen zwar in der Konsole ausgeben. Sobald R-Studio schließt, ist der Datensatz allerdings wieder verloren.</p>
 <p>Um den Datensatz dauerhaft zu behalten, hast du zwei Möglichkeiten. Zunächst kannst du den neuen Datensatz als Variable speichern:</p>
-<div class="sourceCode" id="cb154"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb155"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">hr_women</span> <span class="op">&lt;-</span> <span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"Female"</span><span class="op">)</span></code></pre></div>
 <p>Indem du den Datensatz in einer Variable speicherst, kannst du ihn innerhalb einer R-Session (so lange du R geöffnet hast) aufrufen. Speicherst du den Code in einem Skript, kannst du den Datensatz jedes mal neu berechnen. In der Konsole geht der Code verloren, sobald du R schließt.</p>
 <p>Um den Datensatz dauerhaft zu speichern, kannst du ihn als CSV-Datei exportieren (siehe vorheriges Submodul). Hierfür solltest du allerdings wissen, in welchen Order der Datensatz gespeichert wird. Dies kannst du mit getwd() erfahren. Um das Arbeitsverzeichnis zu wechseln, drücke Strg + Umschalt + H auf deiner Tastatur (siehe auch <a href="https://stackoverflow.com/questions/22432344/how-do-you-change-the-default-directory-in-rstudio-or-r">hier</a>).</p>
-<div class="sourceCode" id="cb155"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb156"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># getwd(), um zu sehen, in welchen Ordner die Daten gespeichert werden </span>
 <span class="co"># Strg + Umschalt + H um das Arbeitsverzeinis zu wechseln</span>
 <span class="va">human_resources</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
@@ -1391,16 +1407,59 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <span class="header-section-number">3.7.5</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung"><i class="fas fa-link"></i></a>
 </h3>
 <p>Die eben beschriebenen Schritte wirst du in diesem Semester immer wieder ausführen, bis du sie auswendig kennst. In diesem Submodul hast du einen kurzen Überblick über die Möglichkeiten von Jamovi erhalten und du hast gesehen, wie Daten in Jamovi importiert werden können. Ebenso hast du gelernt, wie man deskriptive Daten in Jamovi berechnet und in R überführt.</p>
+</div>
+</div>
+<div id="quiz" class="section level2" number="3.8">
+<h2>
+<span class="header-section-number">3.8</span> Quiz<a class="anchor" aria-label="anchor" href="#quiz"><i class="fas fa-link"></i></a>
+</h2>
+<p>Dieses Quiz dient dir zur Auffrischung deines Wissens aus Statistik I und als Grundlage für diesen Kurs. Das Quiz beinhaltet nicht alle Inhalte aus Statistik I, sondern nur diejenigen, welche in diesem Seminar vorausgesetzt werden. Versuche das Quiz ohne begleitendes Material auszufüllen und wenn nötig, wiederhole wichtige Konzepte, solltest du sie noch nicht verstanden haben.</p>
 
 </div>
 </div>
-</div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="empty"></div>
+<div class="prev"><a href="intro.html"><span class="header-section-number">2</span> Über den Kurs</a></div>
+<div class="next"><a href="statistisches-hypothesentesten.html"><span class="header-section-number">4</span> Statistisches Hypothesentesten</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <div id="book-on-this-page"></div>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#grundlagen-r-r-studio-und-jamovi"><span class="header-section-number">3</span> Grundlagen R, R-Studio und Jamovi</a></li>
+<li><a class="nav-link" href="#einf%C3%BChrung-1"><span class="header-section-number">3.1</span> Einführung</a></li>
+<li><a class="nav-link" href="#software-des-seminars"><span class="header-section-number">3.2</span> Software des Seminars</a></li>
+<li><a class="nav-link" href="#download-der-software"><span class="header-section-number">3.3</span> Download der Software</a></li>
+<li><a class="nav-link" href="#warum-so-viele-softwares"><span class="header-section-number">3.4</span> Warum so viele Softwares?</a></li>
+<li>
+<a class="nav-link" href="#grundlagen-r"><span class="header-section-number">3.5</span> Grundlagen R</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#umgang-mit-r-studio"><span class="header-section-number">3.5.1</span> Umgang mit R-Studio</a></li>
+<li><a class="nav-link" href="#befehle-aus-der-konsole-ausf%C3%BChren"><span class="header-section-number">3.5.2</span> Befehle aus der Konsole ausführen</a></li>
+<li><a class="nav-link" href="#befehle-aus-dem-skript-ausf%C3%BChren"><span class="header-section-number">3.5.3</span> Befehle aus dem Skript ausführen</a></li>
+<li><a class="nav-link" href="#pakete-installieren-und-laden"><span class="header-section-number">3.5.4</span> Pakete installieren und laden</a></li>
+<li><a class="nav-link" href="#das-arbeitsverzeichnis"><span class="header-section-number">3.5.5</span> Das Arbeitsverzeichnis</a></li>
+<li><a class="nav-link" href="#datens%C3%A4tze-importieren"><span class="header-section-number">3.5.6</span> Datensätze importieren</a></li>
+<li><a class="nav-link" href="#grundlegende-operatoren-in-r"><span class="header-section-number">3.5.7</span> Grundlegende Operatoren in R</a></li>
+<li><a class="nav-link" href="#funktionen"><span class="header-section-number">3.5.8</span> Funktionen</a></li>
+<li><a class="nav-link" href="#grundlegende-funktionen-in-r"><span class="header-section-number">3.5.9</span> Grundlegende Funktionen in R</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#grundlagen-tidyverse"><span class="header-section-number">3.6</span> Grundlagen tidyverse</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#der-pipe-operator"><span class="header-section-number">3.6.1</span> Der Pipe %&gt;% Operator</a></li>
+<li><a class="nav-link" href="#grundlegende-tidyverse-befehle"><span class="header-section-number">3.6.2</span> Grundlegende tidyverse-Befehle</a></li>
+<li><a class="nav-link" href="#mehrere-befehle-nacheinander-ausf%C3%BChren"><span class="header-section-number">3.6.3</span> Mehrere Befehle nacheinander ausführen</a></li>
+<li><a class="nav-link" href="#weitere-informationen-zu-den-tidyverse-befehlen"><span class="header-section-number">3.6.4</span> Weitere Informationen zu den tidyverse Befehlen</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#grundlagen-jamovi"><span class="header-section-number">3.7</span> Grundlagen Jamovi</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#datens%C3%A4tze-mit-jamovi-einlesen"><span class="header-section-number">3.7.1</span> Datensätze mit Jamovi einlesen</a></li>
+<li><a class="nav-link" href="#die-benutzeroberfl%C3%A4che-von-jamovi"><span class="header-section-number">3.7.2</span> Die Benutzeroberfläche von Jamovi</a></li>
+<li><a class="nav-link" href="#deskriptive-daten-mit-jamovi-berechnen"><span class="header-section-number">3.7.3</span> Deskriptive Daten mit Jamovi berechnen</a></li>
+<li><a class="nav-link" href="#jamovi-in-r-exportieren"><span class="header-section-number">3.7.4</span> Jamovi in R exportieren</a></li>
+<li><a class="nav-link" href="#zusammenfassung"><span class="header-section-number">3.7.5</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#quiz"><span class="header-section-number">3.8</span> Quiz</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -1416,7 +1475,7 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-16.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-23.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -1424,6 +1483,34 @@ Figure 3.2: Beispiel für das Laden eines Datensatzes mit dem Paket tidyverse
   </div>
 
 </div></div>
-</footer>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
 </body>
 </html>

@@ -41,7 +41,7 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Einführung</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Über den Kurs</a></li>
-<li><a class="" href="grundlagen-r-r-studio-und-jamovi.html"><span class="header-section-number">3</span> Grundlagen R, R-Studio und jamovi</a></li>
+<li><a class="" href="grundlagen-r-r-studio-und-jamovi.html"><span class="header-section-number">3</span> Grundlagen R, R-Studio und Jamovi</a></li>
 <li><a class="" href="statistisches-hypothesentesten.html"><span class="header-section-number">4</span> Statistisches Hypothesentesten</a></li>
 <li><a class="" href="statistische-modellierung.html"><span class="header-section-number">5</span> Statistische Modellierung</a></li>
 <li><a class="" href="einfache-lineare-regression.html"><span class="header-section-number">6</span> Einfache lineare Regression</a></li>
@@ -206,9 +206,9 @@
 <p>Ein weiterer Test zur Prüfung der Normalverteilung ist der <a href="https://www.statisticshowto.com/shapiro-wilk-test/">Shapiro-Wilk Test</a>. Allerdings weicht dieser Test ein wenig von der eben vorgestellten Idee der Normalverteilung ab, da er testet, ob die Daten, nicht die Residuen normalverteilt sind. Der Test beantwortet daher eine etwas andere Frage und macht eine Aussage über die Normalverteilung der Daten. Bei einem nicht-signifikanten Ergebnis wird davon ausgegangen, dass die Daten normalverteilt sind. In Jamovi können wir den Shapiro-Wilk Test berechnen, indem wir unter Assumption Checks auf Normality (Shapiro-Wilk) klicken. In den Ergebnissen erhalten wir anschließend das Ergebnis. Im folgenden Bild habe ich den Shapiro-Wilk Test für die Testing-Hypothese (Testing vs. Concept-Map) berechnet. Du siehst, dass das Ergebnis nicht signifikant ist, daher kann von einer Normalverteilung der Daten ausgegangen werden.</p>
 <div class="inline-figure"><img src="images/12_voraussetzungen/anova1.jpg"></div>
 </div>
-<div id="zusammenfassung-23" class="section level3" number="13.4.5">
+<div id="zusammenfassung-24" class="section level3" number="13.4.5">
 <h3>
-<span class="header-section-number">13.4.5</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-23"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4.5</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-24"><i class="fas fa-link"></i></a>
 </h3>
 <p>Die Annahme der Normalverteilung der Residuen geht davon aus, dass die Fehler des erweiterten Modells eine Normalverteilung darstellen. Wir haben drei Wege kennen gelernt, diese Annahme zu prüfen. Die Darstellung der Fehler in einem Histogramm, den Q-Q Plot und den Shapiro-Wilk Test. Am besten schaust du dir sowohl grafische Verfahren an und prüfst die Annahme durch einen Test wie den Shapiro-Wilk Test. Inwieweit Verletzungen der Normalität die Ergebnisse verfälschen, ist eine <a href="https://www.researchgate.net/post/How_robust_is_ANOVA_to_deviations_from_normality">umfangreiche Debatte</a> (siehe auch <a href="https://econtent.hogrefe.com/doi/full/10.1027/1614-2241/a000016">Schmider et al., 2010</a> und <a href="https://stats.stackexchange.com/questions/62918/two-way-anova-robustness-against-normality-violations">diesen Beitrag</a>). Du solltest daher immer abwägen und recherchieren, ob dein Test Gefahr läuft, durch Verletzungen der Annahme der Normalverteilung verfälschte Ergebnisse zu liefern.</p>
 </div>
@@ -245,9 +245,9 @@
 <p>Der Levene-Test ist erneut ein statistischer Hypothesentest, der folgende Ergebnisse liefert. Ist das Ergebnis signifikant, ist keine Homoskedastizität gegeben. Ist das Ergebnis nicht signfikant, ist Homoskedastizität gegeben. Jamovi erlaubt für jede Varianzanalyse den Levene-Test zu berechnen. Klicke dazu auf Assumption Checks und dann auf Homogeneity tests. In folgendem Beispiel erhalten wir kein signifikantes Ergebnis, daher kann von der Annahme der Homoskedastizität ausgegangen werden.</p>
 <div class="inline-figure"><img src="images/12_voraussetzungen/anova2.jpg"></div>
 </div>
-<div id="zusammenfassung-24" class="section level3" number="13.5.4">
+<div id="zusammenfassung-25" class="section level3" number="13.5.4">
 <h3>
-<span class="header-section-number">13.5.4</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-24"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.5.4</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-25"><i class="fas fa-link"></i></a>
 </h3>
 <p>Die Homoskedastizität ist eine der weiteren Annahmen des allgemeinen linearen Modells und daher von allen Tests, die wir in diesem Kurs kennen gelernt haben. Die Annahme ist umgesetzt, wenn die Varianz der verschiedenen Ausprägungen der Prädiktoren gleichmäßig ist. Bei der linearen Regression können wir diese Annahme grafisch prüfen, bei der Varianzanalyse können wir den Levene-Test verwenden.</p>
 </div>
@@ -415,9 +415,9 @@
 </table></div>
 <p>Stell dir ein Beispiel vor: Du möchtest eine Messwiederholungsanalyse mit gekreuzten Daten rechnen. Innerhalb der Daten herrscht eine positive Abhängigkeit. Beispielsweise indem man die Entwicklung der intrinsischen Motivation von Studierenden über eine längere Zeit testet. Wer am Anfang intrinsisch motiviert ist, wird wohl auch später intrinsisch motiviert sein. Verletzt du nun die Annahme der Abhängigkeit und berechnest statt einer Messwiederholungsanalyse eine einfaktorielle Varianzanalyse, erhältst du in der Regel einen zu kleinen <em>F</em>-Wert. Dies bedeutet, du bist mit einer geringeren Wahrscheinlichkeit in der Lage, einen möglichen Effekt zu finden, da deine Power geringer wird. Als Folge könntest du über viele Experimente zu dem Entschluss kommen, dass es zu keiner Veränderung in der intrinsischen Motivation kommt, obwohl dieser Effekt existiert. Du solltest daher von vorneherein überlegen, ob dein Design abhängig oder unabhängig ist. Erst dann kannst du die korrekten Verfahren zum Testen deiner Hypothese auswählen.</p>
 </div>
-<div id="zusammenfassung-25" class="section level3" number="13.6.4">
+<div id="zusammenfassung-26" class="section level3" number="13.6.4">
 <h3>
-<span class="header-section-number">13.6.4</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-25"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.6.4</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-26"><i class="fas fa-link"></i></a>
 </h3>
 <p>Wir haben in diesem Modul die Vorraussetzungen der allgemeinen linearen Modelle und damit unserer Testverfahren kennen gelernt. Manchmal werden diese Annahmen verletzt und dann müssen wir uns Gedanken machen, wie wir damit umgehen. Es gibt dabei keine festen Regeln, wie mit Verletzungen der Annahmen umgegangen werden soll. Forschende verfahren sehr unterschiedlich. Manche nehmen es sehr ernst mit den Verletzungen der Annahmen, andere weniger. In jedem Fall solltest du darüber informiert sein, dass es diese Annahmen gibt und dass diese deine Ergebnisse verfälschen können. </p>
 <p>Mit diesem Modul haben wir diesen Kurs abgeschlossen. Du solltest nun in der Lage sein, die meisten statistischen Fragestellungen durch die besprochenen Testverfahren prüfen zu können. Die wichtigste Botschaft dieses Kurses ist, dass wir nie Theorien bestätigen können, sondern nur falsifizeren können. Der Begriff der Signifikanz ist nur ein statistischer Ausdruck für diese Idee. Die andere zentrale Botschaft dieses Kurses ist, dass alle Testverfahren dieses Kurses durch das allgemeine lineare Modell geprüft werden können, indem wir erweiterte und kompakte Modelle aufstellen. Hast du diese Idee einmal verstanden, wirst du erkennen, dass ein <em>t</em>-Test für unabhängige Stichproben nur ein Sonderfall der einfaktoriellen Varianzanalyse ist. Und dass die einfache lineare Regression mit der einfaktoriellen Varianzanalyse zu vergleichen ist, nur dass die Prädiktoren anders definiert sind. Ich hoffe, ich konnte dir diese beiden Ideen in diesem Kurs vermitteln.</p>
@@ -441,7 +441,7 @@
 <li><a class="nav-link" href="#q-q-plot"><span class="header-section-number">13.4.2</span> Q-Q Plot</a></li>
 <li><a class="nav-link" href="#was-ist-mit-anderen-testverfahren"><span class="header-section-number">13.4.3</span> Was ist mit anderen Testverfahren?</a></li>
 <li><a class="nav-link" href="#shapiro-wilk-test"><span class="header-section-number">13.4.4</span> Shapiro-Wilk Test</a></li>
-<li><a class="nav-link" href="#zusammenfassung-23"><span class="header-section-number">13.4.5</span> Zusammenfassung</a></li>
+<li><a class="nav-link" href="#zusammenfassung-24"><span class="header-section-number">13.4.5</span> Zusammenfassung</a></li>
 </ul>
 </li>
 <li>
@@ -449,7 +449,7 @@
 <li><a class="nav-link" href="#residual-plots"><span class="header-section-number">13.5.1</span> Residual Plots</a></li>
 <li><a class="nav-link" href="#pr%C3%BCfung-der-homoskedastizit%C3%A4t-durch-die-darstellung-der-regressionsgerade"><span class="header-section-number">13.5.2</span> Prüfung der Homoskedastizität durch die Darstellung der Regressionsgerade</a></li>
 <li><a class="nav-link" href="#pr%C3%BCfung-der-homoskedastizit%C3%A4t-durch-den-levene-test"><span class="header-section-number">13.5.3</span> Prüfung der Homoskedastizität durch den Levene-Test</a></li>
-<li><a class="nav-link" href="#zusammenfassung-24"><span class="header-section-number">13.5.4</span> Zusammenfassung</a></li>
+<li><a class="nav-link" href="#zusammenfassung-25"><span class="header-section-number">13.5.4</span> Zusammenfassung</a></li>
 </ul>
 </li>
 <li>
@@ -457,7 +457,7 @@
 <li><a class="nav-link" href="#gekreuzte-daten"><span class="header-section-number">13.6.1</span> Gekreuzte Daten</a></li>
 <li><a class="nav-link" href="#genestete-daten"><span class="header-section-number">13.6.2</span> Genestete Daten</a></li>
 <li><a class="nav-link" href="#folgen-gekreuzter-und-genesteter-daten-f%C3%BCr-die-power-einer-studie"><span class="header-section-number">13.6.3</span> Folgen gekreuzter und genesteter Daten für die Power einer Studie</a></li>
-<li><a class="nav-link" href="#zusammenfassung-25"><span class="header-section-number">13.6.4</span> Zusammenfassung</a></li>
+<li><a class="nav-link" href="#zusammenfassung-26"><span class="header-section-number">13.6.4</span> Zusammenfassung</a></li>
 </ul>
 </li>
 </ul>
@@ -476,7 +476,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-16.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-23.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
