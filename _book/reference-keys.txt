@@ -11,6 +11,7 @@ fig:unnamed-chunk-138
 fig:unnamed-chunk-140
 fig:unnamed-chunk-142
 fig:unnamed-chunk-143
+fig:unnamed-chunk-168
 einführung
 intro
 aufbau
@@ -114,7 +115,6 @@ statistische-modellierung
 einführung-3
 übersicht-statistische-modellierung-und-prozess-des-statistischen-hypothesentestens
 statistische-modellierung-1
-statistische-modellierung-2
 statistische-modellierung-der-null--und-alternativhypothese
 fragestellung-dieses-moduls
 null--und-alternativhypothese-der-fragestellung
@@ -138,7 +138,7 @@ die-größe-der-fehler-abhängig-der-parameter-des-modells
 der-f-wert
 f-verteilung
 beispiele-f-verteilungen
-ermittlung-von-pdh0-auf-grundlage-von-f
+ermittlung-von-pdh_0-auf-grundlage-von-f
 tabellarische-darstellung-der-ergebnisse-1
 zusammenfassung-7
 äquivalenz-f-und-t
@@ -149,7 +149,6 @@ f-tests-berichten
 zusammenfassung-8
 notation-statistische-modelle
 berechnung-in-jamovi
-konfidenzintervalle
 einfache-lineare-regression
 einführung-4
 datensatz-dieses-moduls
@@ -195,7 +194,7 @@ angepasstes-r2-adjusted-r2
 der-zusammenhang-zwischen-der-anzahl-der-worte-und-der-erinnerungsleistung-aus-dem-vortrag
 t-test-als-alternative
 der-zusammenhang-zwischen-der-anzahl-der-worte-und-der-erinnerungsleistung-aus-dem-vortrag-1
-konfidenzintervalle-1
+konfidenzintervalle
 berechnung-des-standardisierten-konfidenzintervalls-für-den-parameter-der-anzahl-der-worte-in-der-mitschrift
 zusammenfassung-13
 berechnung-in-jamovi-2

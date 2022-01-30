@@ -1,29 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 10 ANCOVA | A Minimal Book Example</title>
-<meta name="author" content="Yihui Xie">
-<meta name="description" content="10.1 Einführung Bisher haben wir Hypothesen getestet, in deren Modellen entweder nur kontinuierliche oder nur diskrete Prädiktoren eingesetzt wurden. Bei der linearen Regression haben wir...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 10 ANCOVA | A Minimal Book Example">
-<meta property="og:type" content="book">
-<meta property="og:description" content="10.1 Einführung Bisher haben wir Hypothesen getestet, in deren Modellen entweder nur kontinuierliche oder nur diskrete Prädiktoren eingesetzt wurden. Bei der linearen Regression haben wir...">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 10 ANCOVA | A Minimal Book Example">
-<meta name="twitter:description" content="10.1 Einführung Bisher haben wir Hypothesen getestet, in deren Modellen entweder nur kontinuierliche oder nur diskrete Prädiktoren eingesetzt wurden. Bei der linearen Regression haben wir...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Chapter 10 ANCOVA | A Minimal Book Example</title>
+
+    <meta name="author" content="Yihui Xie" />
+  
+   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+   <meta name="generator" content="placeholder" />
+  <meta property="og:title" content="Chapter 10 ANCOVA | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 ANCOVA | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script>
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+    <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+    <script src="libs/bs3compat-0.3.1/transition.js"></script>
+    <script src="libs/bs3compat-0.3.1/tabs.js"></script>
+    <script src="libs/bs3compat-0.3.1/bs3compat.js"></script>
+    <link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet" />
+    <script src="libs/bs4_book-1.0.0/bs4_book.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  
 </head>
+
 <body data-spy="scroll" data-target="#toc">
 
 <div class="container-fluid">
 <div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book">
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
@@ -35,40 +59,24 @@
     <div id="main-nav" class="collapse-lg">
       <form role="search">
         <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-</form>
+      </form>
 
-      <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> Einführung</a></li>
-<li><a class="" href="intro.html"><span class="header-section-number">2</span> Über den Kurs</a></li>
-<li><a class="" href="grundlagen-r-r-studio-und-jamovi.html"><span class="header-section-number">3</span> Grundlagen R, R-Studio und Jamovi</a></li>
-<li><a class="" href="statistisches-hypothesentesten.html"><span class="header-section-number">4</span> Statistisches Hypothesentesten</a></li>
-<li><a class="" href="statistische-modellierung.html"><span class="header-section-number">5</span> Statistische Modellierung</a></li>
-<li><a class="" href="einfache-lineare-regression.html"><span class="header-section-number">6</span> Einfache lineare Regression</a></li>
-<li><a class="" href="multiple-lineare-regression.html"><span class="header-section-number">7</span> Multiple lineare Regression</a></li>
-<li><a class="" href="einfaktorielle-varianzanalyse.html"><span class="header-section-number">8</span> Einfaktorielle Varianzanalyse</a></li>
-<li><a class="" href="tatusmehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> tatusMehrfaktorielle Varianzanalyse</a></li>
-<li><a class="active" href="ancova.html"><span class="header-section-number">10</span> ANCOVA</a></li>
-<li><a class="" href="mediation.html"><span class="header-section-number">11</span> Mediation</a></li>
-<li><a class="" href="moderation.html"><span class="header-section-number">12</span> Moderation</a></li>
-<li><a class="" href="statistische-voraussetzungen.html"><span class="header-section-number">13</span> Statistische Voraussetzungen</a></li>
-<li><a class="" href="was-du-sonst-noch-wissen-musst.html"><span class="header-section-number">14</span> Was du sonst noch wissen musst</a></li>
-<li><a class="" href="references.html">References</a></li>
-</ul>
+      <nav aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        <div id="book-toc"></div>
 
         <div class="book-extra">
-          
+          <p><a id="book-repo" href="#">View book source <i class="fab fa-github"></i></a></li></p>
         </div>
       </nav>
-</div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="ancova" class="section level1" number="10">
-<h1>
-<span class="header-section-number">10</span> ANCOVA<a class="anchor" aria-label="anchor" href="#ancova"><i class="fas fa-link"></i></a>
-</h1>
+    </div>
+  </header>
+
+  <main class="col-sm-12 col-md-9 col-lg-7" id="content">
+<div id="ancova" class="section level1" number="10">
+<h1><span class="header-section-number">Chapter 10</span> ANCOVA</h1>
 <div id="einführung-8" class="section level2" number="10.1">
-<h2>
-<span class="header-section-number">10.1</span> Einführung<a class="anchor" aria-label="anchor" href="#einf%C3%BChrung-8"><i class="fas fa-link"></i></a>
-</h2>
+<h2><span class="header-section-number">10.1</span> Einführung</h2>
 <p>Bisher haben wir Hypothesen getestet, in deren Modellen entweder nur kontinuierliche oder nur diskrete Prädiktoren eingesetzt wurden. Bei der linearen Regression haben wir kontinuierliche Prädiktoren verwendet, bei der ein- und mehrfaktoriellen Varianzanalyse diskrete Prädiktoren. Dies wird sich in diesem Modul ändern. Unser Ziel in diesem Modul ist es, die gleiche Fragestellung aus dem letzten Modul zu beantworten, nur diesmal, indem wir ein erweitertes Modell verwenden, das sowohl diskrete als auch kontinuierliche Prädiktoren umfasst. Solche Modelle werden als Kovarianzanalysen (ANCOVAs) bezeichnet. Übersetzt können wir eine ANCOVA auch als eine Varianzanalyse mit Kovariaten (stetig skalierte Variablen) bezeichnen. Erinnern wir uns erneut an die Fragestellung aus dem letzten Modul:</p>
 <blockquote>
 <p><strong>Ist direkte Instruktion effektiver als problem- bzw. projektbasiertes Lernen und ist dieser Effekt abhängig vom Vorwissen der Lernenden?</strong></p>
@@ -76,9 +84,7 @@
 <p>Ein Grund dafür, dass wir die gleiche Fragestellung mit einem anderen Modell testen werden, ist, dass wir durch die mehrfaktorielle Varianzanalyse nicht erfahren können, wie stark der Zusammenhang zwischen dem Vorwissen (Kovariate) der Lernenden und dem Wissen eine Woche nach dem Training ist. Eine der zentralsten Kenntnisse der Lehr- und Lernforschung ist, dass Vorwissen der wichtigste Prädiktor für Lernen ist. Je mehr ich schon über ein Thema weiß, desto besser kann ich mir neues Wissen zu diesem Thema aneignen. Wir konnten diesen Zusammenhang allerdings im letzten Modul nicht testen, da wir als abhängige Variable den Wissenserwerb vor und nach dem Training verwendet haben. Vermutlich gibt es jedoch einen starken Zusammenhang zwischen dem, was eine Person bereits über natürliche Selektion weiß, und dem was die gleiche Person eine Woche später darüber weiß. Wir werden in diesem Modul daher das Wissen vor dem Training in das erweiterte Modell als Kovariate einbauen und das Wissen eine Woche nach dem Training als abhängige Variable verwenden.</p>
 <p>Ein weiterer Grund für die Verwendung der Kovarianzanalyse (ANCOVA) ist, dass wir dadurch eine höhere Power haben, unter der Bedingung, dass es keinen Zusammenhang zwischen der Kovariate (hier Vorwissen - stetig skaliert) und den Versuchsbedingungen (hier Lehrstrategiemethode) gibt. Eine höhere Power bedeutet, dass wir mit einer größeren Wahrscheinlichkeit einen Effekt finden werden, sofern er existiert. In der Regel möchten wir eine hohe Power erzielen.</p>
 <div id="datensatz-1" class="section level3" number="10.1.1">
-<h3>
-<span class="header-section-number">10.1.1</span> Datensatz<a class="anchor" aria-label="anchor" href="#datensatz-1"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.1.1</span> Datensatz</h3>
 <p>Der Datensatz für dieses Modul ist genau der gleiche wie im letzten Modul:</p>
 <p>TODO: Einfügen Datei expert_study.csv</p>
 <p>Wir werden in diesem Modul die Variablen method, test_prior, test_delay und expertise verwenden. Unsere abhängige Variable ist die Variable test_delay, die Kovariate wird die Variable test_prior sein.</p>
@@ -94,40 +100,39 @@
 </div>
 </div>
 <div id="post--und-pre-werte-vs.-differenzmaße" class="section level2" number="10.2">
-<h2>
-<span class="header-section-number">10.2</span> Post- und Pre Werte vs. Differenzmaße<a class="anchor" aria-label="anchor" href="#post--und-pre-werte-vs.-differenzma%C3%9Fe"><i class="fas fa-link"></i></a>
-</h2>
+<h2><span class="header-section-number">10.2</span> Post- und Pre Werte vs. Differenzmaße</h2>
 <p>In diesem Submodul möchte ich zeigen, dass wir die gleiche Fragestellung aus dem letzten Modul mit zwei verschiedenen erweiterten Modellen beantworten können. Wir werden ebenso klären, weshalb man überhaupt eine Kovarianzanalyse berechnen sollte.</p>
 <div id="modell-mit-differenzmaß-als-abhängige-variable-ohne-kovariate" class="section level3" number="10.2.1">
-<h3>
-<span class="header-section-number">10.2.1</span> Modell mit Differenzmaß als abhängige Variable (ohne Kovariate)<a class="anchor" aria-label="anchor" href="#modell-mit-differenzma%C3%9F-als-abh%C3%A4ngige-variable-ohne-kovariate"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.2.1</span> Modell mit Differenzmaß als abhängige Variable (ohne Kovariate)</h3>
 <p>Beginnen wir mit unserem erweiterten Modell aus dem letzten Modul. Das Modell umfasste sechs Parameter und fünf Prädiktoren. Wir hatten das Modell so gewählt, dass die Parameter für spezifische Gruppenunterschiede stehen. Beispielsweise haben wir <em>X<sub>1</sub></em> so kodiert, dass <em>b<sub>1</sub></em> für den Mittelwertsunterschied zwischen der direkten Instruktion und den anderen beiden Lehrstrategien steht. Ebenso haben wir <em>X<sub>4</sub></em> so kodiert, dass <em>b<sub>4</sub></em> für die Frage steht, ob der Effekt von <em>b<sub>1</sub></em> für Expert*innen und Noviz*innen gleich ist.</p>
-<div class="inline-figure"><img src="images/09_ancova/y.png"></div>
+<p><img src="images/09_ancova/y.png" /></p>
 <p>Das Modell ist im oberen Bild so notiert, dass die abhängige Variable der geschätzte Wert des Modells ist. Wir können das Modell umschreiben, so dass die abhängige Variable der tatsächliche Wert ist, sprich der tatsächliche Wissenswerb der Proband*innen:</p>
-<div class="inline-figure"><img src="images/09_ancova/y1.png"></div>
+<p><img src="images/09_ancova/y1.png" /></p>
 <p>Du kannst erkennen, dass wir das Dach auf der abhängigen Variable entfernt haben und zudem einen Fehlerterm am Ende des Modells hinzugefügt haben (<em>e<sub>i</sub></em>). <em>Y<sub>i</sub></em> steht hier für den Wissenswerb der Proband*innen. Wir könnten diesen alternativ auch als die Differenz zwischen dem Vorwissen und dem Wissen eine Woche nach dem Training angeben. Wir bezeichnen <em>Z<sub>i</sub></em> im unteren Bild zukünftig als die <strong>Kovariate</strong>. Die Kovariate ist in unserem Fall das Vorwissen der Proband*innen vor dem Training:</p>
-<div class="inline-figure"><img src="images/09_ancova/y2.png"></div>
+<p><img src="images/09_ancova/y2.png" /></p>
 <p>Nun haben wir eine akkuratere Darstellung der abhängigen Variable. Es ist ein Differenzmaß aus zwei Werten: Dem Vorwissen und dem Wissen eine Woche nach dem Training. Ein positiver Wert bedeutet, dass die Proband*innen etwas dazu gelernt haben, ein negativer, dass die Proband*innen nach dem Training weniger wissen als vor dem Training. Mit diesem erweiterten Modell haben wir im letzten Modul folgende Ergebnisse erzielt:</p>
-<div class="inline-table"><table style="width:100%;" class="table table-sm">
+<table style="width:100%;">
 <colgroup>
-<col width="41%">
-<col width="9%">
-<col width="9%">
-<col width="9%">
-<col width="8%">
-<col width="8%">
-<col width="12%">
+<col width="41%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+<col width="8%" />
+<col width="12%" />
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th align="left"><strong><em>Source</em></strong></th>
 <th align="right"><strong><em>SS</em></strong></th>
 <th align="right"><strong><em>df</em></strong></th>
 <th align="right"><strong><em>MS</em></strong></th>
 <th align="right"><strong><em>F</em></strong></th>
 <th align="right"><strong><em>p</em></strong></th>
-<th align="right"><strong><em>PRE</em><br></strong></th>
-</tr></thead>
+<th align="right"><strong><em>PRE</em><br />
+</strong></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left">Model</td>
@@ -151,7 +156,7 @@
 <td align="left">Expertise</td>
 <td align="right">0.428</td>
 <td align="right">1</td>
-<td align="right">0.428<br>
+<td align="right">0.428<br />
 </td>
 <td align="right">0.08</td>
 <td align="right">.779</td>
@@ -161,7 +166,7 @@
 <td align="left">Lehrstrategie*Expertise</td>
 <td align="right">33.904</td>
 <td align="right">2</td>
-<td align="right">16.952<br>
+<td align="right">16.952<br />
 </td>
 <td align="right">3.1532</td>
 <td align="right">.049</td>
@@ -204,17 +209,16 @@
 <td align="right">-</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Ein Ergebnis unserer Tests war, dass es eine signifikante Interaktion der Lehrstrategie und der Expertise gibt. Ebenso haben wir heraus gefunden, dass es einen signifikanten Effekt der direkten Instruktion gibt. Das heißt, die direkte Instruktion schien lernförderlicher zu sein als die anderen beiden Lehrstrategien. Dieser Effekt wiederum interagiert mit dem Vorwissen der Lernenden. Bei Noviz*innen finden wir den Effekt der direkten Instruktion, bei Expert*innen nicht. Du könntest nun zufrieden sein und diese Ergebnisse in deiner Bachelorarbeit berichten. Allerdings solltest du wissen, welche Auswirkungen es hat, Differenzmaße zu verwenden und keine Kovariate zu verwenden, um die gleichen Hypothesen zu testen.</p>
 </div>
 <div id="kovarianzanalysen-haben-unter-bestimmten-bedingungen-mehr-power" class="section level3" number="10.2.2">
-<h3>
-<span class="header-section-number">10.2.2</span> Kovarianzanalysen haben unter bestimmten Bedingungen mehr Power<a class="anchor" aria-label="anchor" href="#kovarianzanalysen-haben-unter-bestimmten-bedingungen-mehr-power"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.2.2</span> Kovarianzanalysen haben unter bestimmten Bedingungen mehr Power</h3>
 <p>Zu Beginn des Kurses hatten wir gesagt, dass wir wenn möglich eine hohe Power (&gt; 80%) erzielen möchten. Das heißt, wir möchten wenn möglich eine hohe Wahrscheinlichkeit bei einem Test erzielen, ein signifikantes Ergebnis zu erhalten. Sofern der Effekt natürlich auch existiert. Die Power können wir manipulieren, indem wir die Stichprobengröße anpassen. In unserem Fall können wir die Power allerdings auch erhöhen, indem wir das Vorwissen als Kovariate in das erweiterte Modell einfügen und als abhängige Variable das Wissen über natürliche Selektion eine Woche nach dem Training definieren.</p>
 <p>Nicht jede Kovarianzanalyse hat allerdings eine höhere Power. Entscheidend ist, dass die Ausprägungen des Faktors Lehrstrategie nicht mit dem Vorwissen korrelieren. Bei einem Experiment, in welchem Proband*innen randomisiert den Versuchsgruppen zugeordnet werden, ist dies meistens gegeben. In unserem Experiment beispielsweise haben wir zunächst das Vorwissen der Lernenden getestet und die Proband*innen <em>danach</em> willkürlich in eine der drei Versuchsgruppen eingeteilt. Wenn wir daher eine einfaktorielle Varianzanalyse der Versuchsgruppen mit dem Vorwissen als abhängige Variable berechnen, erhalten wir keinen signifikanten Effekt. Dies bedeutet, dass die Gruppen sich nicht im Vorwissen unterscheiden:</p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th align="left"><em>Source</em></th>
 <th align="right"><em>SS</em></th>
 <th align="right"><em>df</em></th>
@@ -222,7 +226,8 @@
 <th align="right"><em>F</em></th>
 <th align="right"><em>p</em></th>
 <th align="right"><em>PRE</em></th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left">Model</td>
@@ -252,11 +257,12 @@
 <td align="right">-</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Dieses signifikante Ergebnis bedeutet zudem, dass das Vorwissen und die Gruppenzugehörigkeit eine geringe gemeinsame Varianz des kompakten Modells aufklären und damit eine der Bedingungen erfüllen, die zu einer höheren Power führt.</p>
 <p>Eine zweite Bedingung für höhere Power ist, dass die Kovariate hoch mit der abhängigen Variable korreliert. Dies können wir annehmen, da das Vorwissen in der Regel hoch prädiktiv für weitere Lernerfahrungen ist. Um sicher zu sein, berechnen wir eine einfache lineare Regression zwischen dem Vorwissen und dem Wissen eine Woche nach dem Training und schauen uns das Ergebnis an:</p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th align="left"><em>Source</em></th>
 <th align="right"><em>SS</em></th>
 <th align="right"><em>df</em></th>
@@ -264,7 +270,8 @@
 <th align="right"><em>F</em></th>
 <th align="right"><em>p</em></th>
 <th align="right"><em>PRE</em></th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left">Model</td>
@@ -294,45 +301,36 @@
 <td align="right">-</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Wir klären unglaubliche 91% der Varianz des kompakten Modells auf. Das heißt, das Vorwissen erklärt den Lernzuwachs der Personen fast vollständig.</p>
 </div>
 <div id="weitere-gründe-kovariaten-in-ein-modell-zu-integrieren" class="section level3" number="10.2.3">
-<h3>
-<span class="header-section-number">10.2.3</span> Weitere Gründe, Kovariaten in ein Modell zu integrieren<a class="anchor" aria-label="anchor" href="#weitere-gr%C3%BCnde-kovariaten-in-ein-modell-zu-integrieren"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.2.3</span> Weitere Gründe, Kovariaten in ein Modell zu integrieren</h3>
 <p>Unser Argument war gerade, dass wir bei einem Experiment, in dem wir die Gruppenzugehörigkeit randomisieren, eine höhere Power haben. Es können allerdings noch weitere Argumente für eine Kovarianzanalyse gemacht werden. Beispielsweise bei einem quasi-experimentellen Design. </p>
 <p>Bei einem quasi-experimentellem Design werden Gruppen Proband*innen nicht willkürlich zugeordnet, sondern die Gruppen gibt es bereits vor einem Experiment. Stell dir beispielsweise vor, du testest, ob sich Republikaner*innen und Demokrat*innen in der Frage unterscheiden, wie viel Einfluss der Staat auf die Gesundheitsversorgung der Bevölkerung haben sollte. Beide Gruppen gibt es bereits vor der Erhebung der Daten. Ebenso könntest du vergleichen, wie viele Stunden Menschen mit Abitur und Menschen mit einem Werkrealschulabschluss pro Woche lesen. Erneut handelt es sich um natürliche Gruppen, die vor der Datenerhebung existierten. Solche Gruppen unterscheiden sich häufig ebenso in anderen Variablen, die einen Einfluss auf die abhängige Variable haben können. Beispielsweise gibt es vermutlich einen hohen Zusammenhang zwischen der Zustimmung zu der Frage, ob der Staat eine verpflichtende Gesundheitsversorgung umsetzt und der persönlichen Kranheitsgeschichte einer Person. Sprich, wer bereits öfters auf die Gesundheitsversorgung angewiesen war, befürwortet eine stärkere staatliche Versorgung der Gesundheit der Bevölkerung. Eine Kovarianzanalyse, in der Republikaner*innen mit Demokrat*innen verglichen werden, ermöglicht in diesem Fall den Effekt der politischen Zugehörigkeit für die persönliche Krankheitsgeschichte zu <em>kontrollieren</em>. Mit einem solchen Test könnten wir prüfen, ob die Zustimmung einer gesetzlichen Krankenversicherung von der politischen Zugehörigkeit abhängt, wenn Personen sich nicht in ihrer Krankheitsgeschichte unterscheiden. Kontrollieren bedeutet daher, dass wir einen Prädiktor in Abhängigkeit eines anderen Prädiktors interpretieren: Wenn sich Personen nicht in ihrer Krankheitsgeschichte unterscheiden, dannn erwarten wir folgende Zustimmung zur gesetzlichen Krankenversicherung. Würden wir keine Kovariate einfügen, könnte es sein, dass der Unterschied der politischen Zugehörigkeit durch eine andere Variable erklärt werden kann. Sprich, dass wir einen falschen Inferenzschluss machen. Dies ist nur ein Beispiel und die Möglichkeiten der statistischen Analyse sind ungleich komplizierter als es hier kurz angerissen wurde. Es zeigt aber sehr gut, dass wir bei quasiexperimentellen Designs immer überlegen sollten, welche Kovariaten in ein Modell hinzuzufügen sind.</p>
 </div>
 <div id="modell-der-kovarianzanalyse-mit-kovariate" class="section level3" number="10.2.4">
-<h3>
-<span class="header-section-number">10.2.4</span> Modell der Kovarianzanalyse (mit Kovariate)<a class="anchor" aria-label="anchor" href="#modell-der-kovarianzanalyse-mit-kovariate"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.2.4</span> Modell der Kovarianzanalyse (mit Kovariate)</h3>
 <p>Nun, da wir die Gründe kennen, eine Kovarianzanalyse zu berechnen, können wir uns das erweiterte Modell für unsere Kovarianzanalyse aufstellen. Hierzu bringen wir die Kovariate <em>Z</em> von der linken Seite der Gleichung auf die rechte Seite der Gleichung:</p>
-<div class="inline-figure"><img src="images/09_ancova/y3.png"></div>
+<p><img src="images/09_ancova/y3.png" /></p>
 <p>Im Vergleich zum vorherigen Modell haben sich ein paar Dinge geändert:</p>
-<div class="inline-figure"><img src="images/09_ancova/ohneko.png"></div>
+<p><img src="images/09_ancova/ohneko.png" /></p>
 <p>Zunächst hat das erweiterte Modell mit der Kovariate einen Parameter und einen Prädiktor mehr. Hierdurch ändern sich ebenso die Freiheitsgrade in unserem Test. Beispielsweise kann dem erweiterten Modell durch den weiteren Parameter nur noch ein Parameter weniger hinzugefügt werden. Das heißt der Freiheitsgrad des erweiterten Modells reduziert sich um die Zahl 1. Ebenso werden wir durch das erweiterte Modell die Fehler des kompakten Modells besser aufklären können. Wie bereits zu Beginn des Kurses erwähnt, je mehr Parameter wir haben, desto besser können wir die Fehler des kompakten Modells aufklären. Des Weiteren ändern sich die Parameter der beiden Modelle selbst. Ohne die Kovariate stehen die Parameter für die Gruppenmittelwertsunterschiede. Mit der Kovariate stehen die Parameter für die Gruppenmittelwertsunterschiede, allerdings kontrolliert für die Kovariate. Wir würden beispielsweise <em>b<sub>1</sub></em> folgendermaßen interpretieren: Wenn zwei Personen das gleiche Vorwissen haben, beträgt der Mittelwertsunterschied zwischen der direkten Instruktion und den anderen beiden Lehrstrategien <em>b<sub>1</sub></em>. Das heißt, wir können die Parameter nur noch in Abhängigkeit der Kovariate interpretieren.</p>
 </div>
 <div id="zusammenfassung-22" class="section level3" number="10.2.5">
-<h3>
-<span class="header-section-number">10.2.5</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-22"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.2.5</span> Zusammenfassung</h3>
 <p>In diesem Submodul haben wir gezeigt, dass wir die mehrfaktorielle Varianzanalyse, welche wir im letzten Modul kennen gelernt haben, auch als Kovarianzanalyse berechnen können. Wir haben zunächst gezeigt, wie das Modell der mehrfaktoriellen Varianzanalyse in ein Modell mit einer Kovariate überführt werden kann. Ebenso haben wir gezeigt, weshalb es Sinn macht, eine Kovarianzanalyse zu berechnen. Zunächst hilft es unter bestimmten Bedingungen, die Power des Tests zu erhöhen, des Weiteren ermöglicht uns eine Kovarianzanalyse, für andere Variablen zu kontrollieren, die mit den Ausprägungen von Gruppen im Zusammenhang stehen können.</p>
 </div>
 </div>
 <div id="statistisches-hypothesentesten-3" class="section level2" number="10.3">
-<h2>
-<span class="header-section-number">10.3</span> Statistisches Hypothesentesten<a class="anchor" aria-label="anchor" href="#statistisches-hypothesentesten-3"><i class="fas fa-link"></i></a>
-</h2>
+<h2><span class="header-section-number">10.3</span> Statistisches Hypothesentesten</h2>
 <p>In diesem Modul werden wir die gleichen Fragestellungen testen, die wir im letzten Modul getestet haben. Allerdings diesmal, indem wir eine Kovarianzanalyse berechnen. Im Grunde genommen berechnen wir eine mehrfaktorielle Varianzanalyse mit einem Interaktionseffekt und einer Kovariate. Wir werden dabei nicht jeden einzelnen Test einzeln berechnen, sondern alle Ergebnisse auf einmal präsentieren und genau untersuchen, worin sich die Ergebnisse zwischen der mehrfaktoriellen Varianzanalyse aus dem letzten Modul und der Kovarianzanalyse in diesem Modul unterscheiden.</p>
 <div id="darstellung-der-ergebnisse-der-beiden-tests" class="section level3" number="10.3.1">
-<h3>
-<span class="header-section-number">10.3.1</span> Darstellung der Ergebnisse der beiden Tests<a class="anchor" aria-label="anchor" href="#darstellung-der-ergebnisse-der-beiden-tests"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.3.1</span> Darstellung der Ergebnisse der beiden Tests</h3>
 <p>In der folgenden Tabelle siehst du die zentralen Ergebnisse der mehrfaktoriellen Varianzanalyse aus dem letzten Modul und der Kovarianzanalyse, wie wir sie in diesem Modul rechnen. Wir werden die Tabelle gleich im Einzelnen durchgehen. Achte auf die unterschiedlichen Freiheitsgrade und <em>p</em>-Werte:</p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th style="text-align: left;">
 <p>
 <strong>Source</strong>
@@ -388,7 +386,8 @@
 <em><strong>PRE<sub>mit</sub></strong></em>
 </p>
 </th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">
@@ -418,7 +417,8 @@ Model
 </td>
 <td>
 <p>
-3.52<br></p>
+3.52<br />
+</p>
 </td>
 <td>
 <p>
@@ -427,7 +427,8 @@ Model
 </td>
 <td>
 <p>
-.007<br></p>
+.007<br />
+</p>
 </td>
 <td>
 <p>
@@ -436,11 +437,13 @@ Model
 </td>
 <td>
 <p>
-.20<br></p>
+.20<br />
+</p>
 </td>
 <td>
 <p>
-.20<br></p>
+.20<br />
+</p>
 </td>
 </tr>
 <tr class="even">
@@ -471,7 +474,8 @@ Lehrstrategie
 </td>
 <td>
 <p>
-4.62<br></p>
+4.62<br />
+</p>
 </td>
 <td>
 <p>
@@ -480,7 +484,8 @@ Lehrstrategie
 </td>
 <td>
 <p>
-.013<br></p>
+.013<br />
+</p>
 </td>
 <td>
 <p>
@@ -489,7 +494,8 @@ Lehrstrategie
 </td>
 <td>
 <p>
-.12<br></p>
+.12<br />
+</p>
 </td>
 <td>
 <p>
@@ -505,7 +511,8 @@ Expertise
 </td>
 <td>
 <p>
-0.428<br></p>
+0.428<br />
+</p>
 </td>
 <td>
 <p>
@@ -524,7 +531,8 @@ Expertise
 </td>
 <td>
 <p>
-0.08<br></p>
+0.08<br />
+</p>
 </td>
 <td>
 <p>
@@ -533,7 +541,8 @@ Expertise
 </td>
 <td>
 <p>
-.779<br></p>
+.779<br />
+</p>
 </td>
 <td>
 <p>
@@ -542,7 +551,8 @@ Expertise
 </td>
 <td>
 <p>
-.00<br></p>
+.00<br />
+</p>
 </td>
 <td>
 <p>
@@ -558,7 +568,8 @@ Lehrstrategie*Expertise
 </td>
 <td>
 <p>
-33.904<br></p>
+33.904<br />
+</p>
 </td>
 <td>
 <p>
@@ -577,7 +588,8 @@ Lehrstrategie*Expertise
 </td>
 <td>
 <p>
-3.1532<br></p>
+3.1532<br />
+</p>
 </td>
 <td>
 <p>
@@ -586,7 +598,8 @@ Lehrstrategie*Expertise
 </td>
 <td>
 <p>
-.049<br></p>
+.049<br />
+</p>
 </td>
 <td>
 <p>
@@ -595,7 +608,8 @@ Lehrstrategie*Expertise
 </td>
 <td>
 <p>
-.08<br></p>
+.08<br />
+</p>
 </td>
 <td>
 <p>
@@ -611,7 +625,8 @@ direkte Instruktion vs. problem- bzw. projekt
 </td>
 <td>
 <p>
-49.67<br></p>
+49.67<br />
+</p>
 </td>
 <td>
 <p>
@@ -630,7 +645,8 @@ direkte Instruktion vs. problem- bzw. projekt
 </td>
 <td>
 <p>
-9.24<br></p>
+9.24<br />
+</p>
 </td>
 <td>
 <p>
@@ -639,19 +655,23 @@ direkte Instruktion vs. problem- bzw. projekt
 </td>
 <td>
 <p>
-.003<br></p>
+.003<br />
+</p>
 </td>
 <td>
 <p>
-.002<br></p>
+.002<br />
+</p>
 </td>
 <td>
 <p>
-.12<br></p>
+.12<br />
+</p>
 </td>
 <td>
 <p>
-.13<br></p>
+.13<br />
+</p>
 </td>
 </tr>
 <tr class="even">
@@ -662,7 +682,8 @@ Interaktion direkte Instruktion und Expertise
 </td>
 <td>
 <p>
-31.18<br></p>
+31.18<br />
+</p>
 </td>
 <td>
 <p>
@@ -681,7 +702,8 @@ Interaktion direkte Instruktion und Expertise
 </td>
 <td>
 <p>
-5.80<br></p>
+5.80<br />
+</p>
 </td>
 <td>
 <p>
@@ -690,7 +712,8 @@ Interaktion direkte Instruktion und Expertise
 </td>
 <td>
 <p>
-.019<br></p>
+.019<br />
+</p>
 </td>
 <td>
 <p>
@@ -699,7 +722,8 @@ Interaktion direkte Instruktion und Expertise
 </td>
 <td>
 <p>
-.08<br></p>
+.08<br />
+</p>
 </td>
 <td>
 <p>
@@ -710,7 +734,8 @@ Interaktion direkte Instruktion und Expertise
 <tr class="odd">
 <td style="text-align: left;">
 <p>
-Vorwissen<br></p>
+Vorwissen<br />
+</p>
 </td>
 <td>
 <p>
@@ -771,7 +796,8 @@ Error
 </td>
 <td>
 <p>
-376.329<br></p>
+376.329<br />
+</p>
 </td>
 <td>
 <p>
@@ -827,7 +853,8 @@ Total
 </td>
 <td>
 <p>
-40.929<br></p>
+40.929<br />
+</p>
 </td>
 <td>
 <p>
@@ -876,15 +903,14 @@ Total
 </td>
 </tr>
 </tbody>
-</table></div>
+</table>
 </div>
 <div id="der-effekt-der-expertise" class="section level3" number="10.3.2">
-<h3>
-<span class="header-section-number">10.3.2</span> Der Effekt der Expertise<a class="anchor" aria-label="anchor" href="#der-effekt-der-expertise"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.3.2</span> Der Effekt der Expertise</h3>
 <p>Zunächst müssen wir feststellen, dass wir im letzten Modul keinen Effekt der Expertise hatten, nun allerdings finden wir diesen Effekt (da wir ein signifikanes Ereignis haben):</p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th align="left">Source</th>
 <th><em>SS<sub>ohne</sub></em></th>
 <th><em>SS<sub>mit</sub></em></th>
@@ -896,7 +922,8 @@ Total
 <th><em>p<sub>mit</sub></em></th>
 <th><em>PRE<sub>ohne</sub></em></th>
 <th><em>PRE<sub>mit</sub></em></th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left">Model</td>
@@ -951,16 +978,15 @@ Total
 <td>-</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Zu erklären ist diese Änderung, indem wir uns fragen, was die abhängige Variable ist und welche Hypothesen wir mit den beiden Tests gerechnet haben. Bei der mehrfaktoriellen Varianzanalyse war die abhängige Variable der <em>Wissenszuwachs</em> vom Pre- zum Posttest. Dieser war offensichtlich zwischen Noviz*innen und Expert*innen gleich. Mit der Kovarianzanalyse allerdings ist die abhängige Variable das Wissen zum Thema natürliche Selektion eine Woche nach dem Training. Das Ergebnis der Kovarianzanalyse sagt uns nun, dass Expert*innen mehr über natürliche Selektion wissen als Noviz*innen. Oder anders gesagt, wenn Noviz*innen und Expert*innen gleich viel vor dem Training über natürliche Selektion wissen, werden Expert*innen nach dem Training mehr wissen als Noviz*innen. Genau dies ist die Bedeutung der Kovariate. Zusammengefasst prüfen wir daher mit der Kovarianzanalyse eine andere Fragestellung als bei der mehrfaktoriellen Varianzanalyse.</p>
 </div>
 <div id="der-freiheitsgrad-des-allgemeinen-f-tests-erweitert-sich-um-1" class="section level3" number="10.3.3">
-<h3>
-<span class="header-section-number">10.3.3</span> Der Freiheitsgrad des allgemeinen F-Tests erweitert sich um 1<a class="anchor" aria-label="anchor" href="#der-freiheitsgrad-des-allgemeinen-f-tests-erweitert-sich-um-1"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.3.3</span> Der Freiheitsgrad des allgemeinen F-Tests erweitert sich um 1</h3>
 <p>Du siehst ebenso, dass sich beim allgemeinen Modell, bei dem wir alle Prädiktoren auf 0 setzen, der Freiheitsgrad von 5 (ohne Kovariate) auf 6 (mit Kovariate) steigert:</p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th align="left">Source</th>
 <th><em>SS<sub>ohne</sub></em></th>
 <th><em>SS<sub>mit</sub></em></th>
@@ -972,7 +998,8 @@ Total
 <th><em>p<sub>mit</sub></em></th>
 <th><em>PRE<sub>ohne</sub></em></th>
 <th><em>PRE<sub>mit</sub></em></th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left">Model</td>
@@ -1014,20 +1041,20 @@ Total
 <td>-</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Zur Erinnerung, Model meint hier, dass wir das erweiterte Modell mit der Kovariate mit dem einfachsten kompakten Modell vergleichen, bei dem wir nur einen Parameter haben, der für den Mittelwert der abhängigen Variable steht:</p>
 <div class="figure">
-<img src="images/09_ancova/modela.png" alt=""><p class="caption">Modelle der Kovarianzanalyse</p>
+<img src="images/09_ancova/modela.png" alt="" />
+<p class="caption">Modelle der Kovarianzanalyse</p>
 </div>
 <p>Du siehst, dass das erweiterte Modell sieben Parameter hat. Das kompakte Modell hat einen Parameter. Daher hat das erweiterte Modell sechs Parameter mehr als das kompakte Modell. Dieser Test beantwortet unsere Fragestellungen nicht, daher ist er nicht so wichtig. Er zeigt allerdings durch die Freiheitsgrade, dass das zu Grunde liegende Modell anders ist.</p>
 </div>
 <div id="die-p-werte-werden-größer-bzw.-kleiner" class="section level3" number="10.3.4">
-<h3>
-<span class="header-section-number">10.3.4</span> Die p-Werte werden größer bzw. kleiner<a class="anchor" aria-label="anchor" href="#die-p-werte-werden-gr%C3%B6%C3%9Fer-bzw.-kleiner"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.3.4</span> Die p-Werte werden größer bzw. kleiner</h3>
 <p>Ebenso kannst du erkennen, dass die <em>p</em>-Werte anders sind und dass sich teilweise auch die Signifikanz ändert. Beispielsweise ist sowohl der <em>p</em>-Wert der Lehrstrategie, der Expertise und des Effekts der direkten Instruktion kleiner:</p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th style="text-align: left;">
 <p>
 <strong>Source</strong>
@@ -1083,7 +1110,8 @@ Total
 <em><strong>PRE<sub>mit</sub></strong></em>
 </p>
 </th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">
@@ -1113,7 +1141,8 @@ Lehrstrategie
 </td>
 <td>
 <p>
-4.62<br></p>
+4.62<br />
+</p>
 </td>
 <td>
 <p>
@@ -1122,7 +1151,8 @@ Lehrstrategie
 </td>
 <td>
 <p>
-.013<br></p>
+.013<br />
+</p>
 </td>
 <td>
 <p>
@@ -1131,7 +1161,8 @@ Lehrstrategie
 </td>
 <td>
 <p>
-.12<br></p>
+.12<br />
+</p>
 </td>
 <td>
 <p>
@@ -1147,7 +1178,8 @@ Expertise
 </td>
 <td>
 <p>
-0.428<br></p>
+0.428<br />
+</p>
 </td>
 <td>
 <p>
@@ -1166,7 +1198,8 @@ Expertise
 </td>
 <td>
 <p>
-0.08<br></p>
+0.08<br />
+</p>
 </td>
 <td>
 <p>
@@ -1175,7 +1208,8 @@ Expertise
 </td>
 <td>
 <p>
-.779<br></p>
+.779<br />
+</p>
 </td>
 <td>
 <p>
@@ -1184,7 +1218,8 @@ Expertise
 </td>
 <td>
 <p>
-.00<br></p>
+.00<br />
+</p>
 </td>
 <td>
 <p>
@@ -1200,7 +1235,8 @@ Lehrstrategie*Expertise
 </td>
 <td>
 <p>
-33.904<br></p>
+33.904<br />
+</p>
 </td>
 <td>
 <p>
@@ -1219,7 +1255,8 @@ Lehrstrategie*Expertise
 </td>
 <td>
 <p>
-3.1532<br></p>
+3.1532<br />
+</p>
 </td>
 <td>
 <p>
@@ -1228,7 +1265,8 @@ Lehrstrategie*Expertise
 </td>
 <td>
 <p>
-.049<br></p>
+.049<br />
+</p>
 </td>
 <td>
 <p>
@@ -1237,7 +1275,8 @@ Lehrstrategie*Expertise
 </td>
 <td>
 <p>
-.08<br></p>
+.08<br />
+</p>
 </td>
 <td>
 <p>
@@ -1253,7 +1292,8 @@ direkte Instruktion vs. problem- bzw. projekt
 </td>
 <td>
 <p>
-49.67<br></p>
+49.67<br />
+</p>
 </td>
 <td>
 <p>
@@ -1272,7 +1312,8 @@ direkte Instruktion vs. problem- bzw. projekt
 </td>
 <td>
 <p>
-9.24<br></p>
+9.24<br />
+</p>
 </td>
 <td>
 <p>
@@ -1281,19 +1322,23 @@ direkte Instruktion vs. problem- bzw. projekt
 </td>
 <td>
 <p>
-.003<br></p>
+.003<br />
+</p>
 </td>
 <td>
 <p>
-.002<br></p>
+.002<br />
+</p>
 </td>
 <td>
 <p>
-.12<br></p>
+.12<br />
+</p>
 </td>
 <td>
 <p>
-.13<br></p>
+.13<br />
+</p>
 </td>
 </tr>
 <tr class="odd">
@@ -1304,7 +1349,8 @@ Interaktion direkte Instruktion und Expertise
 </td>
 <td>
 <p>
-31.18<br></p>
+31.18<br />
+</p>
 </td>
 <td>
 <p>
@@ -1323,7 +1369,8 @@ Interaktion direkte Instruktion und Expertise
 </td>
 <td>
 <p>
-5.80<br></p>
+5.80<br />
+</p>
 </td>
 <td>
 <p>
@@ -1332,7 +1379,8 @@ Interaktion direkte Instruktion und Expertise
 </td>
 <td>
 <p>
-.019<br></p>
+.019<br />
+</p>
 </td>
 <td>
 <p>
@@ -1341,7 +1389,8 @@ Interaktion direkte Instruktion und Expertise
 </td>
 <td>
 <p>
-.08<br></p>
+.08<br />
+</p>
 </td>
 <td>
 <p>
@@ -1357,7 +1406,8 @@ Error
 </td>
 <td>
 <p>
-376.329<br></p>
+376.329<br />
+</p>
 </td>
 <td>
 <p>
@@ -1413,7 +1463,8 @@ Total
 </td>
 <td>
 <p>
-40.929<br></p>
+40.929<br />
+</p>
 </td>
 <td>
 <p>
@@ -1462,17 +1513,16 @@ Total
 </td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Allerdings findest du auch, dass die Interaktion zwischen Lehrstrategie und Expertise nicht mehr signifikant ist, da sie nun die 5%-Schwelle übersteigt. Der Grund hierfür liegt darin, dass die beiden Interaktionseffekte (<em>df</em> = 2) wenige Fehler des kompakten Modells aufklären (27.6 anstatt 33.9) und, dass das erweiterte Modell einen Parameter weniger aufnehmen kann (<em>df</em> = 69 anstatt <em>df</em> = 70). Ersteres hat zur Folge, dass der F-Wert kleiner wird, zweiteres hat zur Folge, dass wir eine andere <em>F</em>-Verteilung zur Prüfung der Hypothese verwenden müssen.</p>
 <p>Alle anderen binären statistischen Entscheidungen bleiben allerdings gleich. Das Beispiel zeigt allerdings schon, dass die Entscheidung über eine Kovariate oder ein Differenzmaß bei einer mehrfaktoriellen Varianzanalyse einen Einfluss auf die statistische Entscheidung haben kann. Ohne die Kovariate finden wir eine signifikante Interaktion, mit der Kovariate nicht. Forschende haben dadurch manche Möglichkeiten, die sie darin unterstützen, ein Verfahren zu wählen, welches doch zu einem signifikanten Ergebnis führt (siehe <a href="https://journals.sagepub.com/doi/abs/10.1207/s15327957pspr0203_4?casa_token=N68R6DcJTeQAAAAA:hkubNI-Bls4lkGV2s8VHvm9ei5fXqKrNmGoVfgjy_gNzZlbZgw52DC7olJm1a_G7o2x9nM8OjQkd">Kerr, 1998</a>). So sollte es allerdings nicht sein. Die Modelle, welche Forschende aufstellen, sollten inhaltlich begründet sein und weniger aufgrund des Wunsches, ein signifikantes Ergebnis zu erzielen.</p>
 </div>
 <div id="das-vorwissen-ist-prädiktiv-für-das-wissen-nach-dem-training" class="section level3" number="10.3.5">
-<h3>
-<span class="header-section-number">10.3.5</span> Das Vorwissen ist prädiktiv für das Wissen nach dem Training<a class="anchor" aria-label="anchor" href="#das-vorwissen-ist-pr%C3%A4diktiv-f%C3%BCr-das-wissen-nach-dem-training"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.3.5</span> Das Vorwissen ist prädiktiv für das Wissen nach dem Training</h3>
 <p>Mit der Kovariate können wir zudem eine weitere interessante Frage beantworten: Wie wichtig ist das Vorwissen für das Wissen zum Thema natürliche Selektion nach dem Training? Und die Antwort ist: “Sehr wichtig”:</p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th align="left">Source</th>
 <th><em>SS<sub>ohne</sub></em></th>
 <th><em>SS<sub>mit</sub></em></th>
@@ -1484,7 +1534,8 @@ Total
 <th><em>p<sub>mit</sub></em></th>
 <th><em>PRE<sub>ohne</sub></em></th>
 <th><em>PRE<sub>mit</sub></em></th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left">Vorwissen</td>
@@ -1526,72 +1577,45 @@ Total
 <td>-</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Wie du siehst, klärt allein der Prädiktor Vorwissen (nur ein Prädiktor!) 83% der Varianz im Test eine Woche nach dem Training auf. Wer sozusagen bereits viel über ein Thema weiß, wird auch eine Woche später sehr viel über dieses Thema wissen. In den Kennwerten gesprochen könnten wir auch sagen: Der Prädiktor Vorwissen ist 330 mal besser in der Lage, die Fehler des kompakten Modells aufzuklären als wir für einen weiteren Prädiktor erwarten würden. Oder: Die Wahrscheinlichkeit, dass wir ein solches Ergebnis erhalten, wenn das Vorwissen keinen Einfluss auf das Wissen eine Woche nach dem Training hat, liegt bei unter 0.00001% (oder sogar noch geringer). Die mehrfaktorielle Varianzanalyse mit einem Differenzmaß als abhängige Variable konnte uns dieses Ergebnis nicht liefern. Eine Kovarianzanalyse allerdings schon.</p>
 </div>
 <div id="zusammenfassung-23" class="section level3" number="10.3.6">
-<h3>
-<span class="header-section-number">10.3.6</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-23"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">10.3.6</span> Zusammenfassung</h3>
 <p>Wir haben in diesem Submodul gesehen, wie sich die statistischen Ergebnisse eines Tests ändern, wenn wir eine Kovarianzanalyse berechnen. Genauer haben wir die Ergebnisse der mehrfaktoriellen Varianzanalyse aus dem letzten Modul mit einer Kovarianzanalyse verglichen. Im Vergleich haben wir heraus gefunden, dass das erweiterte Modell bei einer Kovarianzanalyse einen Parameter und einen Prädiktor mehr hat als das kompakte Modell. Ein weiteres Ergebnis war, dass die Ergebnisse der Tests teilweise andere Hypothesen beantworten. Beispielsweise haben wir am Beispiel des Effekts der Expertise gesehen, dass dieser Test eine andere Fragestellung beantwortet und die dramatische Änderung der statistischen Entscheidung dadurch zu erklären ist. Ebenso haben wir gesehen, dass wir durch eine Kovarianzanalyse den Effekt der Kovariate testen können und dadurch mehr statistische Fragen beantworten können als mit einem Differenzmaß als abhängige Variable.</p>
 </div>
 </div>
 <div id="berechnung-in-jamovi-5" class="section level2" number="10.4">
-<h2>
-<span class="header-section-number">10.4</span> Berechnung in Jamovi<a class="anchor" aria-label="anchor" href="#berechnung-in-jamovi-5"><i class="fas fa-link"></i></a>
-</h2>
+<h2><span class="header-section-number">10.4</span> Berechnung in Jamovi</h2>
 <p>TODO: Einfügen Video 1</p>
 <p>TODO: Einfügen Video 2</p>
 
 </div>
 </div>
-  <div class="chapter-nav">
-<div class="prev"><a href="tatusmehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> tatusMehrfaktorielle Varianzanalyse</a></div>
-<div class="next"><a href="mediation.html"><span class="header-section-number">11</span> Mediation</a></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ancova"><span class="header-section-number">10</span> ANCOVA</a></li>
-<li>
-<a class="nav-link" href="#einf%C3%BChrung-8"><span class="header-section-number">10.1</span> Einführung</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#datensatz-1"><span class="header-section-number">10.1.1</span> Datensatz</a></li></ul>
-</li>
-<li>
-<a class="nav-link" href="#post--und-pre-werte-vs.-differenzma%C3%9Fe"><span class="header-section-number">10.2</span> Post- und Pre Werte vs. Differenzmaße</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#modell-mit-differenzma%C3%9F-als-abh%C3%A4ngige-variable-ohne-kovariate"><span class="header-section-number">10.2.1</span> Modell mit Differenzmaß als abhängige Variable (ohne Kovariate)</a></li>
-<li><a class="nav-link" href="#kovarianzanalysen-haben-unter-bestimmten-bedingungen-mehr-power"><span class="header-section-number">10.2.2</span> Kovarianzanalysen haben unter bestimmten Bedingungen mehr Power</a></li>
-<li><a class="nav-link" href="#weitere-gr%C3%BCnde-kovariaten-in-ein-modell-zu-integrieren"><span class="header-section-number">10.2.3</span> Weitere Gründe, Kovariaten in ein Modell zu integrieren</a></li>
-<li><a class="nav-link" href="#modell-der-kovarianzanalyse-mit-kovariate"><span class="header-section-number">10.2.4</span> Modell der Kovarianzanalyse (mit Kovariate)</a></li>
-<li><a class="nav-link" href="#zusammenfassung-22"><span class="header-section-number">10.2.5</span> Zusammenfassung</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#statistisches-hypothesentesten-3"><span class="header-section-number">10.3</span> Statistisches Hypothesentesten</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#darstellung-der-ergebnisse-der-beiden-tests"><span class="header-section-number">10.3.1</span> Darstellung der Ergebnisse der beiden Tests</a></li>
-<li><a class="nav-link" href="#der-effekt-der-expertise"><span class="header-section-number">10.3.2</span> Der Effekt der Expertise</a></li>
-<li><a class="nav-link" href="#der-freiheitsgrad-des-allgemeinen-f-tests-erweitert-sich-um-1"><span class="header-section-number">10.3.3</span> Der Freiheitsgrad des allgemeinen F-Tests erweitert sich um 1</a></li>
-<li><a class="nav-link" href="#die-p-werte-werden-gr%C3%B6%C3%9Fer-bzw.-kleiner"><span class="header-section-number">10.3.4</span> Die p-Werte werden größer bzw. kleiner</a></li>
-<li><a class="nav-link" href="#das-vorwissen-ist-pr%C3%A4diktiv-f%C3%BCr-das-wissen-nach-dem-training"><span class="header-section-number">10.3.5</span> Das Vorwissen ist prädiktiv für das Wissen nach dem Training</a></li>
-<li><a class="nav-link" href="#zusammenfassung-23"><span class="header-section-number">10.3.6</span> Zusammenfassung</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#berechnung-in-jamovi-5"><span class="header-section-number">10.4</span> Berechnung in Jamovi</a></li>
-</ul>
+  </main>
+
+  <div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <div id="book-on-this-page"></div>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-          
+          <li><a id="book-source" href="#">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="#">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
-</div>
+      </div>
     </nav>
-</div>
+  </div>
 
 </div>
 </div> <!-- .container -->
 
-<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+<footer class="bg-primary text-light mt-5">
+  <div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-23.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-30.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -1599,7 +1623,11 @@ Total
   </div>
 
 </div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+</footer>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -1611,7 +1639,8 @@ Total
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
-</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+</script>
+<script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
 for (let popover of popovers) {
   const div = document.createElement('div');
   div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
@@ -1629,4 +1658,5 @@ for (let popover of popovers) {
 }
 </script>
 </body>
+
 </html>

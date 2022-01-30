@@ -1,29 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 13 Statistische Voraussetzungen | A Minimal Book Example</title>
-<meta name="author" content="Yihui Xie">
-<meta name="description" content="13.1 Einführung Das allgemeine lineare Modell, welches wir in diesem Kurs kennen gelernt haben (kompaktes und erweitertes Modell), ist eine der beliebtesten Methoden in der Sozialforschung, um...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 13 Statistische Voraussetzungen | A Minimal Book Example">
-<meta property="og:type" content="book">
-<meta property="og:description" content="13.1 Einführung Das allgemeine lineare Modell, welches wir in diesem Kurs kennen gelernt haben (kompaktes und erweitertes Modell), ist eine der beliebtesten Methoden in der Sozialforschung, um...">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 13 Statistische Voraussetzungen | A Minimal Book Example">
-<meta name="twitter:description" content="13.1 Einführung Das allgemeine lineare Modell, welches wir in diesem Kurs kennen gelernt haben (kompaktes und erweitertes Modell), ist eine der beliebtesten Methoden in der Sozialforschung, um...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Chapter 13 Statistische Voraussetzungen | A Minimal Book Example</title>
+
+    <meta name="author" content="Yihui Xie" />
+  
+   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+   <meta name="generator" content="placeholder" />
+  <meta property="og:title" content="Chapter 13 Statistische Voraussetzungen | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 13 Statistische Voraussetzungen | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script>
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+    <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+    <script src="libs/bs3compat-0.3.1/transition.js"></script>
+    <script src="libs/bs3compat-0.3.1/tabs.js"></script>
+    <script src="libs/bs3compat-0.3.1/bs3compat.js"></script>
+    <link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet" />
+    <script src="libs/bs4_book-1.0.0/bs4_book.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  
 </head>
+
 <body data-spy="scroll" data-target="#toc">
 
 <div class="container-fluid">
 <div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book">
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
@@ -35,67 +59,51 @@
     <div id="main-nav" class="collapse-lg">
       <form role="search">
         <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-</form>
+      </form>
 
-      <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> Einführung</a></li>
-<li><a class="" href="intro.html"><span class="header-section-number">2</span> Über den Kurs</a></li>
-<li><a class="" href="grundlagen-r-r-studio-und-jamovi.html"><span class="header-section-number">3</span> Grundlagen R, R-Studio und Jamovi</a></li>
-<li><a class="" href="statistisches-hypothesentesten.html"><span class="header-section-number">4</span> Statistisches Hypothesentesten</a></li>
-<li><a class="" href="statistische-modellierung.html"><span class="header-section-number">5</span> Statistische Modellierung</a></li>
-<li><a class="" href="einfache-lineare-regression.html"><span class="header-section-number">6</span> Einfache lineare Regression</a></li>
-<li><a class="" href="multiple-lineare-regression.html"><span class="header-section-number">7</span> Multiple lineare Regression</a></li>
-<li><a class="" href="einfaktorielle-varianzanalyse.html"><span class="header-section-number">8</span> Einfaktorielle Varianzanalyse</a></li>
-<li><a class="" href="tatusmehrfaktorielle-varianzanalyse.html"><span class="header-section-number">9</span> tatusMehrfaktorielle Varianzanalyse</a></li>
-<li><a class="" href="ancova.html"><span class="header-section-number">10</span> ANCOVA</a></li>
-<li><a class="" href="mediation.html"><span class="header-section-number">11</span> Mediation</a></li>
-<li><a class="" href="moderation.html"><span class="header-section-number">12</span> Moderation</a></li>
-<li><a class="active" href="statistische-voraussetzungen.html"><span class="header-section-number">13</span> Statistische Voraussetzungen</a></li>
-<li><a class="" href="was-du-sonst-noch-wissen-musst.html"><span class="header-section-number">14</span> Was du sonst noch wissen musst</a></li>
-<li><a class="" href="references.html">References</a></li>
-</ul>
+      <nav aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        <div id="book-toc"></div>
 
         <div class="book-extra">
-          
+          <p><a id="book-repo" href="#">View book source <i class="fab fa-github"></i></a></li></p>
         </div>
       </nav>
-</div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="statistische-voraussetzungen" class="section level1" number="13">
-<h1>
-<span class="header-section-number">13</span> Statistische Voraussetzungen<a class="anchor" aria-label="anchor" href="#statistische-voraussetzungen"><i class="fas fa-link"></i></a>
-</h1>
+    </div>
+  </header>
+
+  <main class="col-sm-12 col-md-9 col-lg-7" id="content">
+<div id="statistische-voraussetzungen" class="section level1" number="13">
+<h1><span class="header-section-number">Chapter 13</span> Statistische Voraussetzungen</h1>
 <div id="einführung-9" class="section level2" number="13.1">
-<h2>
-<span class="header-section-number">13.1</span> Einführung<a class="anchor" aria-label="anchor" href="#einf%C3%BChrung-9"><i class="fas fa-link"></i></a>
-</h2>
+<h2><span class="header-section-number">13.1</span> Einführung</h2>
 <p>Das allgemeine lineare Modell, welches wir in diesem Kurs kennen gelernt haben (kompaktes und erweitertes Modell), ist eine der beliebtesten Methoden in der Sozialforschung, um Hypothesen zu testen. Die Idee des linearen Modells ist allerdings eine menschliche Erfindung und daher nicht perfekt.Beispielsweise hat jeder Test, den wir mit Hilfe des linearen Modells gerechnet haben, bestimmte Annahmen, die wir beachten sollten.</p>
 <p>Nehmen wir die Skalierung der abhängigen Variable. In allen Tests dieses Kurses war die abhängige Variable metrisch (intervall- oder verhältnisskaliert) skaliert. Wäre die abhängige Variable diskret skaliert (z.B. Parteizugehörigkeit), könnten wir keines unserer Testverfahren dieses Kurses verwenden. Ebenso könnte es sein, dass die abhängige Variable binär skaliert ist, dass heißt, dass es nur zwei Ausprägungen gibt. Stell dir vor, du möchstest ein Modell aufstellen, dass vorhersagt, ob eine Person den Untergang der Titanic überlebt hat. Solche Fragen lassen sich beispielsweise mit der <a href="https://de.wikipedia.org/wiki/Logistische_Regression#:~:text=Unter%20logistischer%20Regression%20oder%20Logit,der%20Verteilung%20abh%C3%A4ngiger%20diskreter%20Variablen.">logistischen Regression</a> prüfen, nicht aber mit dem allgemeinen linearen Modell.</p>
 <p>Das allgemeine lineare Modell hat allerdings noch weitere Annahmen, die wir zumindest bei jedem Test kennen sollten. Diese Annahmen sind die Linearität des Modells, die Normalverteilung der Residuen, die Homoskedastizität und die Unabhängigkeit der Daten. Sind diese Annahmen nicht getroffen, kann es im schlimmsten Fall sein, dass unsere Ergebnisse verfälscht sind. Beispielsweise, indem die Verletzungen der Annahmen den Beta-Fehler verringern bzw. die Power der Studie reduzieren. Wir werden diese Annahmen in diesem letzten Modul des Kurses besprechen und auch erfahren, wie robust unsere Tests sind, das heißt, wie stark die Ergebnisse der Tests verändert werden, sollten die Annahmen nicht umgesetzt sein.</p>
 <p>Bevor wir beginnen, ein kleiner Hinweis: Der Umgang mit Verletzungen der Annahmen wird unter Forschenden unterschiedlich gehandhabt. Manche Forschende wissen nicht, dass diese Annahmen überhaupt existieren, andere sehen es nicht so streng mit den Verletzungen der Annahmen. Andere wiederum nehmen es sehr genau und versuchen, den besten Weg zu finden, wie mit diesen Verletzungen umgegangen wird. Ich werde in diesem Modul keine Position dazu beziehen. Mir ist es wichtig, dass du über die Annahmen Bescheid weißt. Wie mit Verletzungen der Annahmen umgegangen wird, solltest du mit dir oder der Betreuerin / dem Betreuer deiner Forschungsarbeiten besprechen.</p>
 </div>
 <div id="übersicht-der-annahmen-des-allgemeinen-linearen-modells" class="section level2" number="13.2">
-<h2>
-<span class="header-section-number">13.2</span> Übersicht der Annahmen des allgemeinen linearen Modells<a class="anchor" aria-label="anchor" href="#%C3%BCbersicht-der-annahmen-des-allgemeinen-linearen-modells"><i class="fas fa-link"></i></a>
-</h2>
+<h2><span class="header-section-number">13.2</span> Übersicht der Annahmen des allgemeinen linearen Modells</h2>
 <p>In der folgenden Tabelle siehst du die Annahmen, welche das allgemeine lineare Modell (alle Modelle, die wir in diesem Kurs kennenlernen werden) annimmt. Für jeden Test ist dargestellt, wie diese Annahmen herkömmlicherweise geprüft werden. Beispielsweise lässt sich die Normalität der Residuen durch den <a href="https://de.wikipedia.org/wiki/Shapiro-Wilk-Test">Shapiro-Wilk Test</a> bei den meisten Tests prüfen.</p>
-<div class="inline-table"><table class="table table-sm">
+<table>
 <colgroup>
-<col width="21%">
-<col width="11%">
-<col width="18%">
-<col width="14%">
-<col width="17%">
-<col width="16%">
+<col width="21%" />
+<col width="11%" />
+<col width="18%" />
+<col width="14%" />
+<col width="17%" />
+<col width="16%" />
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>Testverfahren</th>
 <th>Abhängige Variable metrisch skaliert</th>
 <th>Linearität</th>
 <th>Normalverteilung der Residuen</th>
 <th>Homoskedastizität</th>
 <th>Unabhängigkeit der Daten</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>-</td>
@@ -106,8 +114,7 @@
 <td>Die Beobachtungen sind voneinander unabhängig.</td>
 </tr>
 <tr class="even">
-<td>
-<em>t</em>-Test für eine Stichprobe</td>
+<td><em>t</em>-Test für eine Stichprobe</td>
 <td>erfüllt</td>
 <td>-</td>
 <td>Shapiro-Wilk Test / Q-Q plot</td>
@@ -155,114 +162,90 @@
 <td>Durch die Sichtung des experimentellen Designs erkennbar</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Wie du erkennst, ist die erste Annahme bei allen Tests erfüllt. Dies liegt daran, dass alle unsere Tests auf Grundlage des <a href="https://de.wikipedia.org/wiki/Allgemeines_lineares_Modell">allgemeinen linearen Modells</a> berechnet werden, welches immer eine metrisch skalierte abhängige Variable umfasst. Die Linearität der Daten prüfen wir in der Regel für die einfache und lineare Regression. Die Linearität bei der einfachen linearen Regression kann man prüfen, indem man sich die Daten grafisch betrachtet. Die Normalität der Residuen kann sowohl durch grafische Plots als auch durch den Shapiro-Wilk Test (und weitere) geprüft werden. Diese Annahme besagt, dass die Fehler der Modelle normalverteilt sind. Homoskedastizität ist eine der schwierigsten Annahmen. Diese Anname besagt, dass die Varianz der Residuen (der Fehler) für jeden Wert <em>X</em> in etwa gleich sein sollten. Für die Regressionsanalysen heißt dies, dass die Fehler sich gleichmäßig im Modell verteilen. Für die Varianzanalyse heißt dies, dass die Varianzen der einzelnen Gruppen ähnlich zueinander sind. Geprüft wird diese Annahme häufig durch den Levene Test. Zuletzt nehmen die Tests die Unabhängigkeit der Daten an. Die Unabhängigkeit kann man nur durch die Sichtung des experimentellen Designs prüfen. Wenn du beispielsweise in Schulklassen Daten erhebst, sind diese Daten selten unabhängig, da Schüler*innen innerhalb einer Klasse mehr Ähnlichkeiten aufweisen als Schüler*innen zwischen Klassen (indem beispielsweise eine Klasse mehr Wissen über eine Thematik hat als eine andere Klasse). In diesem Kurs haben wir keine Tests kennen gelernt, mit denen Hypothesen mit abhängigen Daten gerechnet werden könnten. Dies wäre für dich ein nächster Schritt, wenn du über die Inhalte dieses Kurses hinaus gehen möchtest (siehe <a href="https://en.wikipedia.org/wiki/Repeated_measures_design">Repeated Measures Design</a>). Im Folgenden werden wir die einzelnen Testverfahren kennen lernen.</p>
 </div>
 <div id="linearität" class="section level2" number="13.3">
-<h2>
-<span class="header-section-number">13.3</span> Linearität<a class="anchor" aria-label="anchor" href="#linearit%C3%A4t"><i class="fas fa-link"></i></a>
-</h2>
+<h2><span class="header-section-number">13.3</span> Linearität</h2>
 <p>Beginnen wir mit der Linearität. Und schauen wir uns dazu nochmal das erweiterte Modell der linearen Regression aus diesem Kurs an. In diesem Modell hatten wir die Hypothese aufgestellt, dass es einen positiven Zusammenhang zwischen der Anzahl der Worte in einer Mitschrift von Studierenden und der Erinnerungsleistung aus einem Vortrag gibt. Folgendes Modell hatte sich damals ergeben:</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/wo%CC%88rter.png"></div>
+<p><img src="images/12_voraussetzungen/wo%CC%88rter.png" /></p>
 <p>Du siehst, dass das erweiterte Modell (hier blau dargestellt) eine Linie darstellt. Genau dies meinen wir mit Linearität. Wir nehmen an, dass die Daten eine lineare Beziehung haben. Um besser zu verstehen, was eine lineare Beziehung ist, schau dir folgende Datenvisualisierungen an:</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/dino.png"></div>
+<p><img src="images/12_voraussetzungen/dino.png" /></p>
 <p>Diese Darstellung ist an das <a href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">Anscombe Quartett</a> angelehnt, welches vom Statistiker Francis Anscombe entwickelt wurde. Die Daten selbst stammen von <a href="http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html">Albert Cairo</a>, einem Datenvisualisierer, welcher mit diesen Beispielen zeigen möchte, wie wichtig es ist, Daten zu visualisieren. Uns zeigt diese Darstellung, dass Daten nicht immer linear sind. Allerdings ist dies eine Annahme des allgemeinen linearen Modells. </p>
 <p>Nun, warum ist eine Verletzung dieser Annahme ein Problem? Es ist ein Problem, da das lineare Modell manchmal eine lineare Beziehung annimmt, die nicht linear ist. Nehmen wir einmal den exponentiellen Anstieg der Covid Fälle weltweit. <a href="https://www.youtube.com/watch?v=Kas0tIxDvrg">Exponentiell </a>bedeutet, dass für jede Wertsteigerung von <em>X</em>, <em>Y</em> höher ansteigt. Modelle sollen allerdings immer einen Teil der Wirklichkeit darstellen. Ein lineares Modell stellt in diesem Beispiel diese Wirklichkeit nicht dar und ist daher nicht geeignet, als Modell der Daten zu dienen. </p>
 <p>Für dich als Forscher*in heißt dies, dass es bei jeder linearen oder multiplen Regression notwendig ist, die Daten zu visualisieren, bevor du einen Test rechnest. Ist die Beziehung zwischen <em>X</em> und <em>Y</em> offensichtlich nicht linear, ist das allgemeine lineare Modell evtl. nicht passend und du solltest ein anderes Modell verwenden (siehe <a href="https://en.wikipedia.org/wiki/Nonlinear_regression">hier</a>).</p>
 </div>
 <div id="normalverteilung-der-residuen" class="section level2" number="13.4">
-<h2>
-<span class="header-section-number">13.4</span> Normalverteilung der Residuen<a class="anchor" aria-label="anchor" href="#normalverteilung-der-residuen"><i class="fas fa-link"></i></a>
-</h2>
+<h2><span class="header-section-number">13.4</span> Normalverteilung der Residuen</h2>
 <p>Die erste Annahme ist die Normalverteilung der Residuen. Diese Annahme bedeutet, dass die Fehler der Modelle normalverteilt sind:</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/e.png"></div>
+<p><img src="images/12_voraussetzungen/e.png" /></p>
 <p>Wir prüfen demnach, ob die Abstände einer jeden Vorhersage des Modells mit den wahren Werten der Stichprobe eine Normalverteilung darstellen.</p>
 <div id="prüfung-der-annahme-durch-ein-histogramm-der-residuen" class="section level3" number="13.4.1">
-<h3>
-<span class="header-section-number">13.4.1</span> Prüfung der Annahme durch ein Histogramm der Residuen<a class="anchor" aria-label="anchor" href="#pr%C3%BCfung-der-annahme-durch-ein-histogramm-der-residuen"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.4.1</span> Prüfung der Annahme durch ein Histogramm der Residuen</h3>
 <p>Schauen wir uns dazu die Verteilung der Residuen der einfachen linearen Regression zu Beginn des Kurses an. Bei diesem Modell hatten wir den Zusammenhang zwischen der Anzahl der Worte in einer Mitschrift und der Erinnerungsleistung aus einen Vortrag geprüft. Wenn ich die Fehler des erweiterten Modells <em>e<sub>i</sub></em> als Histogramm darstelle, erhalte ich folgendes Ergebnis:</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/ha%CC%88ufigkeit.png"></div>
+<p><img src="images/12_voraussetzungen/ha%CC%88ufigkeit.png" /></p>
 <p>Nun, die Fehler verteilen sich nicht perfekt in einer Normalverteilung. Die Verteilung ist ein wenig rechtsschief, da mehr Werte links der Mitte der Verteilung zu finden sind. Ein Histogramm ist allerdings nur eine Möglichkeit, die Normalverteilung der Residuen zu prüfen. Häufig wird auch der Q-Q Plot verwendet.</p>
 </div>
 <div id="q-q-plot" class="section level3" number="13.4.2">
-<h3>
-<span class="header-section-number">13.4.2</span> Q-Q Plot<a class="anchor" aria-label="anchor" href="#q-q-plot"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.4.2</span> Q-Q Plot</h3>
 <p>Die Einzelheiten eines <a href="https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot">Q-Q Plots</a> sind kompliziert, für dich als Forscher*in ist zunächst wichtig, wie man mit einem Q-Q Plot umgeht: Je näher die Punkte des Q-Q Plots an der dargestellten Gerade liegen, desto stärker sind die Residuen normalverteilt. In der folgenden Darstellung siehst du den Q-Q Plot für die Daten der einfachen linearen Regression, welche wir weiter oben vorgestellt haben. Wie du siehst, gibt es Abweichungen der Punkte von der Linie, allerdings sind diese Abweichungen nicht erstaunlich groß. Es kann daher argumentiert werden, dass die Annahme der Normalverteilung der Residuen nicht verletzt wurde.</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/resi.png"></div>
+<p><img src="images/12_voraussetzungen/resi.png" /></p>
 </div>
 <div id="was-ist-mit-anderen-testverfahren" class="section level3" number="13.4.3">
-<h3>
-<span class="header-section-number">13.4.3</span> Was ist mit anderen Testverfahren?<a class="anchor" aria-label="anchor" href="#was-ist-mit-anderen-testverfahren"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.4.3</span> Was ist mit anderen Testverfahren?</h3>
 <p>Wir haben gerade das Beispiel der einfachen linearen Regression verwendet. Das Argument kann jedoch für alle unsere Tests verwendet werden, da wir wissen, dass das erweiterte Modell Vorhersagen macht, die von den realen Werten abweichen. Wir können daher für jeden Test sowohl ein Histogramm als auch ein Q-Q Plot erstellen. Genau deswegen findest du bei der ANOVA in Jamovi ebenso unter Assumption Checks eine Checkbox, bei der du dir einen Q-Q Plot ausgeben lassen kannst. Zum Beispiel haben wir im Modul zur einfaktoriellen Varianzanalyse getestet, ob das Testen von Wissen für den Erwerb konzeptuellen Wissens wirksamer ist als die Erstellung einer Concept-Map. Im folgenden Bild siehst du, dass wir ebenso für diesen Test die Normalität mit Hilfe eines Q-Q Plots testen können.</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/anova.jpg"></div>
+<p><img src="images/12_voraussetzungen/anova.jpg" /></p>
 </div>
 <div id="shapiro-wilk-test" class="section level3" number="13.4.4">
-<h3>
-<span class="header-section-number">13.4.4</span> Shapiro-Wilk Test<a class="anchor" aria-label="anchor" href="#shapiro-wilk-test"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.4.4</span> Shapiro-Wilk Test</h3>
 <p>Ein weiterer Test zur Prüfung der Normalverteilung ist der <a href="https://www.statisticshowto.com/shapiro-wilk-test/">Shapiro-Wilk Test</a>. Allerdings weicht dieser Test ein wenig von der eben vorgestellten Idee der Normalverteilung ab, da er testet, ob die Daten, nicht die Residuen normalverteilt sind. Der Test beantwortet daher eine etwas andere Frage und macht eine Aussage über die Normalverteilung der Daten. Bei einem nicht-signifikanten Ergebnis wird davon ausgegangen, dass die Daten normalverteilt sind. In Jamovi können wir den Shapiro-Wilk Test berechnen, indem wir unter Assumption Checks auf Normality (Shapiro-Wilk) klicken. In den Ergebnissen erhalten wir anschließend das Ergebnis. Im folgenden Bild habe ich den Shapiro-Wilk Test für die Testing-Hypothese (Testing vs. Concept-Map) berechnet. Du siehst, dass das Ergebnis nicht signifikant ist, daher kann von einer Normalverteilung der Daten ausgegangen werden.</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/anova1.jpg"></div>
+<p><img src="images/12_voraussetzungen/anova1.jpg" /></p>
 </div>
 <div id="zusammenfassung-24" class="section level3" number="13.4.5">
-<h3>
-<span class="header-section-number">13.4.5</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-24"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.4.5</span> Zusammenfassung</h3>
 <p>Die Annahme der Normalverteilung der Residuen geht davon aus, dass die Fehler des erweiterten Modells eine Normalverteilung darstellen. Wir haben drei Wege kennen gelernt, diese Annahme zu prüfen. Die Darstellung der Fehler in einem Histogramm, den Q-Q Plot und den Shapiro-Wilk Test. Am besten schaust du dir sowohl grafische Verfahren an und prüfst die Annahme durch einen Test wie den Shapiro-Wilk Test. Inwieweit Verletzungen der Normalität die Ergebnisse verfälschen, ist eine <a href="https://www.researchgate.net/post/How_robust_is_ANOVA_to_deviations_from_normality">umfangreiche Debatte</a> (siehe auch <a href="https://econtent.hogrefe.com/doi/full/10.1027/1614-2241/a000016">Schmider et al., 2010</a> und <a href="https://stats.stackexchange.com/questions/62918/two-way-anova-robustness-against-normality-violations">diesen Beitrag</a>). Du solltest daher immer abwägen und recherchieren, ob dein Test Gefahr läuft, durch Verletzungen der Annahme der Normalverteilung verfälschte Ergebnisse zu liefern.</p>
 </div>
 </div>
 <div id="homoskedastizität" class="section level2" number="13.5">
-<h2>
-<span class="header-section-number">13.5</span> Homoskedastizität<a class="anchor" aria-label="anchor" href="#homoskedastizit%C3%A4t"><i class="fas fa-link"></i></a>
-</h2>
+<h2><span class="header-section-number">13.5</span> Homoskedastizität</h2>
 <p>Eine der kryptischsten Annahmen ist die Homoskedastizität. Der Begriff klingt bereits so neu, dass man sich keine Vorstellung machen kann, was er bedeutet. Machen wir einen Versuch in diesem Submodul. Die Definition der Annahme ist, dass die Varianz der Residuen für jeden Wert von <em>X</em> gleich sein soll.</p>
 <div id="residual-plots" class="section level3" number="13.5.1">
-<h3>
-<span class="header-section-number">13.5.1</span> Residual Plots<a class="anchor" aria-label="anchor" href="#residual-plots"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.5.1</span> Residual Plots</h3>
 <p>Beginnen wir, uns diese Definition am Beispiel der linearen Regression klar zu machen. Im nächsten Bild siehst du einen sogenannten Residual Plot. In dieser Darstellung ist auf der X-Achse die unabhängige Variabe (Anzahl der Worte der Mitschrift) dargestellt. Auf der Y-Achse sind die Residuen abgetragen. Schau dir beispielsweise den Punkt ganz rechts der X-Achse an. Der Punkt befindet sich auf der Y-Achse auf der Höhe von etwa 0.1. Das heißt, für den Wert X wurde der wahre Wert Y um 0.1 Punkte überschätzt.</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/residuen.png"></div>
+<p><img src="images/12_voraussetzungen/residuen.png" /></p>
 <p>Wir können diesen Residual Plot nutzen, um die Homoskedastizität zu prüfen. An dem Plot können wir diese Annahme prüfen, indem wir folgendermaßen vorgehen: Wir fragen uns, ob die Abstände der Punkte zu der Linie für die verschiedenen Werte auf der X-Achse gleichmäßig sind? In der oberen Visalisierung siehst du beispielsweise, dass die Abstände der Residuen zu der Linie für kleine Werte von X weiter sind als für hohe Werte von X. In der Tendenz herrscht daher keine perfekte Homoskedastizität vor. </p>
 <p>Residual plots werden allerdings meist nicht anhand der Werte der Prädiktoren, sondern durch sogenannte Fitted Values dargestellt. Fitted Values sind nichts anderes als die vorhergesagte Werte in einem Modell. In der folgenden Visualisierung siehst du einen Residual Plot, in dem statt des Prädiktors auf der X-Achse die Fitted Values dargestellt sind.</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/residuen1.png"></div>
+<p><img src="images/12_voraussetzungen/residuen1.png" /></p>
 <p>Wie du siehst, sieht diese Darstellung exakt gleich aus wie oben. Dies liegt allerdings daran, dass wir eine einfache lineare Regression verwendet haben. Bei einer einfaktoriellen Varianzanalyse sähe diese Darstellung anders aus. Du solltest daher wenn möglich auf die Fitted Values zurück greifen.</p>
 <p>Um ein extremes Beispiel zu sehen, empfehle ich dir <a href="https://socratic.org/questions/what-is-homoskedasticity">diesen Link</a>. Dort wird anhand von zwei Grafiken sehr schnell ersichtlich, wie eine Verletzung der Homoskedastizität aussieht.</p>
 </div>
 <div id="prüfung-der-homoskedastizität-durch-die-darstellung-der-regressionsgerade" class="section level3" number="13.5.2">
-<h3>
-<span class="header-section-number">13.5.2</span> Prüfung der Homoskedastizität durch die Darstellung der Regressionsgerade<a class="anchor" aria-label="anchor" href="#pr%C3%BCfung-der-homoskedastizit%C3%A4t-durch-die-darstellung-der-regressionsgerade"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.5.2</span> Prüfung der Homoskedastizität durch die Darstellung der Regressionsgerade</h3>
 <p>Bei der einfachen linearen Regression können wir diese Annahme zudem prüfen, indem wir uns die Abstände der Punkte von der Regressionsgerade ansehen. Dieses Verfahren ist den Residual Plots sehr ähnlich, nur dass wir die Visualisierung anders betrachten müssen. Wenn du nun diese Darstellung mit dem Residual Plot vergleichst, siehst du in der rechten Hälfte der beiden Visualisierungen, dass die Abstände der Punkte von der Regressionsgerade ähnlich aussehen, und dass diese Abstände auf der rechten Hälfte der X-Achse kleiner sind als auf der linken Hälfte der X-Achse. Grafisch ist der Residual Plot daher nichts anderes als wenn du die Regressionsgerade horizontal richtest und die Daten entsprechend der Regressionsgerade angepasst werden.</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/gru%CC%88n.png"></div>
+<p><img src="images/12_voraussetzungen/gru%CC%88n.png" /></p>
 </div>
 <div id="prüfung-der-homoskedastizität-durch-den-levene-test" class="section level3" number="13.5.3">
-<h3>
-<span class="header-section-number">13.5.3</span> Prüfung der Homoskedastizität durch den Levene-Test<a class="anchor" aria-label="anchor" href="#pr%C3%BCfung-der-homoskedastizit%C3%A4t-durch-den-levene-test"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.5.3</span> Prüfung der Homoskedastizität durch den Levene-Test</h3>
 <p>Bei der einfachen linearen Regression lassen sich sehr einfach grafische Verfahren einsetzen. Bei den Verfahren der Varianzanalsye ist dies etwas schwieriger. Daher gibt es Tests, die prüfen können, ob die Varianzen der Prädiktoren bei unterschiedlichen Ausprägungen ähnlich sind. Gehen wir einen Schritt zurück in die erweiterten Modelle der Varianzanalyse. Bei diesen Modellen mussten wir Gruppen als Kontraste kodieren, indem wir Gruppen in numerische Werte überführt haben. Wenn wir nun sagen, dass die Varianzen der Prädiktoren bei unterschiedlichen Ausprägungen der Prädiktoren gleich sein sollen, meinen wir folgendes: Die Varianzen der Gruppen sollten zwischen den Gruppen gleich sein. Wenn du beispielsweise eine einfaktorielle Varianzanalyse mit zwei Gruppen rechnest (<em>t</em>-Test für unabhängige Stichproben), prüfst du für die Feststellung der Homoskedastizität, ob die Varianzen von Gruppe 1 und von Gruppe 2 ähnlich sind. Die Idee bleibt die selbe wie bei der einfachen linearen Regression, nur dass wir bei der Varianzanalyse von den Varianzen der Gruppen und nicht von Ausprägungen der Werte des Prädiktoren denken müssen. Und wir testen diese Annahme mit Hilfe des <a href="https://de.wikipedia.org/wiki/Levene-Test">Levene-Tests</a>.</p>
 <p>Der Levene-Test ist erneut ein statistischer Hypothesentest, der folgende Ergebnisse liefert. Ist das Ergebnis signifikant, ist keine Homoskedastizität gegeben. Ist das Ergebnis nicht signfikant, ist Homoskedastizität gegeben. Jamovi erlaubt für jede Varianzanalyse den Levene-Test zu berechnen. Klicke dazu auf Assumption Checks und dann auf Homogeneity tests. In folgendem Beispiel erhalten wir kein signifikantes Ergebnis, daher kann von der Annahme der Homoskedastizität ausgegangen werden.</p>
-<div class="inline-figure"><img src="images/12_voraussetzungen/anova2.jpg"></div>
+<p><img src="images/12_voraussetzungen/anova2.jpg" /></p>
 </div>
 <div id="zusammenfassung-25" class="section level3" number="13.5.4">
-<h3>
-<span class="header-section-number">13.5.4</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-25"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.5.4</span> Zusammenfassung</h3>
 <p>Die Homoskedastizität ist eine der weiteren Annahmen des allgemeinen linearen Modells und daher von allen Tests, die wir in diesem Kurs kennen gelernt haben. Die Annahme ist umgesetzt, wenn die Varianz der verschiedenen Ausprägungen der Prädiktoren gleichmäßig ist. Bei der linearen Regression können wir diese Annahme grafisch prüfen, bei der Varianzanalyse können wir den Levene-Test verwenden.</p>
 </div>
 </div>
 <div id="unabhängigkeit-der-daten" class="section level2" number="13.6">
-<h2>
-<span class="header-section-number">13.6</span> Unabhängigkeit der Daten<a class="anchor" aria-label="anchor" href="#unabh%C3%A4ngigkeit-der-daten"><i class="fas fa-link"></i></a>
-</h2>
+<h2><span class="header-section-number">13.6</span> Unabhängigkeit der Daten</h2>
 <p>Alle bisherigen Tests dieses Kurses sind davon ausgegangen, dass unsere Daten unabhängig voneinander sind. Unabhängigkeit tritt immer dann auf, wenn uns das Auftreten eines Wertes <em>X<sub>i</sub></em> keine Aussage über eine andere Ausprägung von <em>X<sub>i</sub></em> macht. Stell dir einen <em>t</em>-Test für unabhängige Stichproben vor, bei dem wir <em>vor</em> einer Intervention das Vorwissen von zwei Gruppen vergleichen. Die Kenntnis über das Vorwissen einer Person ermöglicht dir nicht, das Vorwissen einer anderen Person vor der Intervention zu bestimmen. Allerdings sind nicht alle Daten immer unabhängig voneinander. Stell dir vor, du möchtest vergleichen, ob Männer und Frauen unterschiedlich zufrieden in ihrer Beziehung sind. Hierzu befragst du sowohl Männer und Frauen aus vier Paaren nach ihrer Beziehungszufriedenheit:</p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th>Paar</th>
 <th>Männer</th>
 <th>Frauen</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>1</td>
@@ -285,22 +268,22 @@
 <td>6</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Wenn du nun den Wert eines Partners kennst, erhältst du automatisch Informationen über den Wert des anderen Partners. Da sich Paare zu einem gewissen Teil übereinstimmen, wie zufrieden sie in ihrer Beziehung sind, sind die Daten voneinander abhängig. Ist ein Partner unter dem Mittelwert der abhängigen Variable, wird der Partner oder die Partnerin vermutlich ebenso unter dem Mittelwert sein. Wir nennen diese Art der Abhängigkeit positive Abhängigkeit, da die Daten ähnlich zueinander sind. Eine negative Abhängigkeit würde auftreten, wenn Werte gegensätzlich voneinander abhängig sind. Stell dir zum Beispiel vor, du testest die Breite von Baumkronen. Deine Daten umfassen Baumpaare, die sehr eng beieinander stehen. Wenn nun ein Baum eine sehr breite Krone hat, wird der benachbarte Baum vermutlich eine kleinere Krone haben, da beide um das Sonnenlicht kämpfen. In diesem Fall sprechen wir von einer negativen Abhängigkeit.</p>
 <p>Abhängigkeit kann einerseits entstehen, wenn Daten wie in diesen Beispielen gruppiert sind, andererseits tritt Abhängigkeit auf, wenn Daten sequentiell erhoben werden. Stell dir hierzu vor, du erhebst die Cholesterinwerte von Proband*innen über mehrere Messzeitpunkte, um zu prüfen, ob der Cholesterinspiegel der Personen steigt oder sinkt. Eine Person, die bereits beim ersten Messzeitpunkt einen hohen Cholesterinspiegel hat, wird vermutlich auch beim zweiten Messzeitpunkt einen hohen Cholesterspiegel haben. Genausogut wird eine Person, die einen niedrigen Cholesterinspiegel beim ersten Messzeitpunkt hat, vermutlich auch beim zweiten Messzeitpunkt einen niedrigen Cholesterinspiegel haben. Die Folge ist, dass die Daten abhängig voneinander sind. </p>
 <p>Aus den Daten allein können wir nicht sagen, ob die Abhängigkeit durch eine Gruppierung oder durch sequentielle Messzeitpunkte geschieht. Es ist unser Versuchsdesign, welches uns Hinweise liefert, welche Abhängigkeit vorherrscht. Wir nennen diese zwei Möglichkeiten gekreuzte Daten und genestete Daten.</p>
 <div id="gekreuzte-daten" class="section level3" number="13.6.1">
-<h3>
-<span class="header-section-number">13.6.1</span> Gekreuzte Daten<a class="anchor" aria-label="anchor" href="#gekreuzte-daten"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.6.1</span> Gekreuzte Daten</h3>
 <p>Normalerweise treten gekreuzte Daten auf, wenn wir Daten einer Versuchsperson mehrmals erheben. Wir haben gerade eben bereits das Beispiel des Cholesterins kennen gelernt. Der Cholesterinspiegel von Proband*innen wird mehrmals gemessen. Stell dir ein anderes Beispiel vor: Du möchtest untersuchen, ob eine bestimmte Übung einen Einfluss darauf hat, wie schnell Proband*innen in einen Meditationszustand kommen. Du gehst davon aus, dass Proband*innen, die diese Übung über längere Zeit durchführen, schneller in einen Meditationszustand kommen. Alle Proband*innen führen die Übung über drei Wochen durch. Du testest die Dauer bis die Proband*innen in den Meditationszustand kommen je einmal wöchentlich. Folgende Ergebnisse erhältst du: </p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th>ID</th>
 <th>Woche 1</th>
 <th>Woche 2</th>
 <th>Woche 3</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>1</td>
@@ -339,22 +322,22 @@
 <td>340</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Zunächst kannst du anhand der Tabelle erkennen, dass die Proband*innen im Schnitt über die Wochen schneller in den Meditationszustand kommen. Die Probandin mit der ID 4 zum Beispiel benötigt am Anfang 250 Sekunden, dann 230 Sekunden, dann 210 Sekunden. Ebenso erkennst du, dass die Daten abhängig voneinander sind. Beispielsweise fällt auf, dass die Werte der Probandin mit der ID 4 relativ hoch bleiben, wenn wir sie mit der Probandin mit der ID 2 vergleichen. Wer bereits lange Zeit beim ersten Messzeitpunkt benötigt, wird auch beim nächsten Messzeitpunkt mehr Zeit benötigen.</p>
 <p>Wann sind die Daten allerdings gekreuzt? Wir sprechen von gekreuzten Daten, wenn die Werte einzelner Personen in verschiedenen Ausprägungen eines Faktors vorliegen. In diesem Fall haben wir den Faktor Zeitpunkt mit drei Ausprägungen (Woche 1, Woche 2, Woche 3). Für jede*n Proband*in liegt ein Wert in jeder Ausprägung vor. Die Daten wären nicht gekreuzt, wenn Daten nur in einer Ausprägung eines Faktors vorlägen. Stell dir zum Beispiel mehrere Schulklassen vor, die unterschiedliche Lernstrategien erhalten. Schulklasse A, B und C erhalten Lernstrategie <em>Z u</em>nd Schulklasse D, E und F erhalten Lernstrategie <em>Q</em>. Die Abhängigkeit der Daten entsteht dadurch, dass die Schüler*innen jeweils in der gleichen Klasse stecken. Diese Daten sind nicht gekreuzt, da die Schüler*innen nur in je einer Ausprägung des Faktors Schulklasse stecken.</p>
 <p>Ein anderes Beispiel: Du möchtest prüfen, ob sich das Verhalten von Schüler*innen ändert, wenn man ihnen öfter Lob gibt. Bisher hätten wir solche Fragestellungen getestet, indem wir zwei unabhängige Gruppen umgesetzt hätten, welche entweder gelobt werden oder nicht gelobt werden. Durch ein solches Design könnten wir allerdings nicht prüfen, ob Lob über die Zeit zu einer Veränderung des Verhaltens der Schüler*innen führt. In deinem neuen Design gibst du daher allen Schüler*innen über fünf Messzeitpunkte Lob. Erneut sind die Daten gekreuzt, da für jede Ausprägung des Faktors Messzeitpunkt ein Datenpunkt je eines Schülers / einer Schülerin steckt. In den Lehrbüchern spricht man dann in der Regel von Messwiederholungsdesigns. Diese sind in der einfachsten Form immer dadurch erkennbar, dass die Daten gekreuzt sind.</p>
 </div>
 <div id="genestete-daten" class="section level3" number="13.6.2">
-<h3>
-<span class="header-section-number">13.6.2</span> Genestete Daten<a class="anchor" aria-label="anchor" href="#genestete-daten"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.6.2</span> Genestete Daten</h3>
 <p>Wir hatten genestete Daten bereits mit unserem Schulklassenbeispiel kennen gelernt. Schüler*innen innerhalb einer Schulklasse erhalten entweder die Lernstrategie <em>Q</em> oder die Lernstrategie <em>Z</em>. Genestete Daten zeichnen sich dadurch aus, dass die Proband*innen bzw. Datenpunkte nur in einer Ausprägung eines Faktors vorliegen. In diesem Fall erhalten die Schüler*innen der jeweiligen Gruppen nur eine der beiden Lernstrategien. Diese Aussage gilt nur für den Fall, wenn wir entweder gekreuzte oder genestete Daten vorliegen haben. Es gibt auch Designs, die beide Strukturen beinhalten. Über diese Designs werden wir allerdings in diesem Modul nicht sprechen. Um genestete Daten besser zu verstehen, siehst du hier in Beispiel des Lernstrategietrainings:</p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th>-</th>
 <th>Treatment Q</th>
 <th>Treatment Z</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>y</td>
@@ -382,20 +365,20 @@
 <td>7</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>In der Tabelle kannst du erkennen, dass die Schüler*innen innerhalb einer Schule immer nur entweder Treatment <em>Q</em> oder Treatment <em>Z</em> bekommen. Die Daten sind daher nicht gekreuzt. Allerdings sind die Daten unter dem Faktor der Schulklasse genested, was dazu führst, dass sich Schüler*innen innerhalb einer Klasse ähnlich sind. Manche Klassen sind im Schnitt besser als die anderen Klassen. Hierdurch wissen wir, dass beispielsweise eine Schülerin aus Klasse A, die sehr gut ist, vermutlich besser sein wird, als eine Schülerin aus Klasse B, die etwas schlechter ist. </p>
 <p>Genestete Daten finden sich sehr häufig in großen Schulstudien, in denen Erhebungen in Klassen erhoben werden. Stell dir beispielsweise die PISA-Studie vor, in der nicht nur Klassen, sondern auch Schulen genested vorliegen können. Die statistischen Verfahren in solchen Designs werden zunehmend komplexer.</p>
 </div>
 <div id="folgen-gekreuzter-und-genesteter-daten-für-die-power-einer-studie" class="section level3" number="13.6.3">
-<h3>
-<span class="header-section-number">13.6.3</span> Folgen gekreuzter und genesteter Daten für die Power einer Studie<a class="anchor" aria-label="anchor" href="#folgen-gekreuzter-und-genesteter-daten-f%C3%BCr-die-power-einer-studie"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.6.3</span> Folgen gekreuzter und genesteter Daten für die Power einer Studie</h3>
 <p>Ignoriert man die gekreuzte oder genestete Struktur von Daten, hat dies Einfluss auf den <em>F</em>-Wert und damit auch auf die Power einer Studie. Verletzung der Annahme der Unabhängigkeit sind die gravierendsten und sollten auf jeden Fall beachtet werden, wenn man die Daten mit Hilfe verschiedener statistischer Verfahren auswertet. Eine Übersicht der Auswirkungen siehst du in der folgenden Tabelle: </p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
+<table>
+<thead>
+<tr class="header">
 <th>-</th>
 <th>Arten der Abhängigkeit</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><strong>Gruppe</strong></td>
@@ -403,80 +386,48 @@
 </tr>
 <tr class="even">
 <td>Genestete Daten</td>
-<td>
-<em>F</em> zu groß</td>
+<td><em>F</em> zu groß</td>
 </tr>
 <tr class="odd">
 <td>Gekreuzte Daten</td>
-<td>
-<em>F</em> zu klein</td>
+<td><em>F</em> zu klein</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Stell dir ein Beispiel vor: Du möchtest eine Messwiederholungsanalyse mit gekreuzten Daten rechnen. Innerhalb der Daten herrscht eine positive Abhängigkeit. Beispielsweise indem man die Entwicklung der intrinsischen Motivation von Studierenden über eine längere Zeit testet. Wer am Anfang intrinsisch motiviert ist, wird wohl auch später intrinsisch motiviert sein. Verletzt du nun die Annahme der Abhängigkeit und berechnest statt einer Messwiederholungsanalyse eine einfaktorielle Varianzanalyse, erhältst du in der Regel einen zu kleinen <em>F</em>-Wert. Dies bedeutet, du bist mit einer geringeren Wahrscheinlichkeit in der Lage, einen möglichen Effekt zu finden, da deine Power geringer wird. Als Folge könntest du über viele Experimente zu dem Entschluss kommen, dass es zu keiner Veränderung in der intrinsischen Motivation kommt, obwohl dieser Effekt existiert. Du solltest daher von vorneherein überlegen, ob dein Design abhängig oder unabhängig ist. Erst dann kannst du die korrekten Verfahren zum Testen deiner Hypothese auswählen.</p>
 </div>
 <div id="zusammenfassung-26" class="section level3" number="13.6.4">
-<h3>
-<span class="header-section-number">13.6.4</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-26"><i class="fas fa-link"></i></a>
-</h3>
+<h3><span class="header-section-number">13.6.4</span> Zusammenfassung</h3>
 <p>Wir haben in diesem Modul die Vorraussetzungen der allgemeinen linearen Modelle und damit unserer Testverfahren kennen gelernt. Manchmal werden diese Annahmen verletzt und dann müssen wir uns Gedanken machen, wie wir damit umgehen. Es gibt dabei keine festen Regeln, wie mit Verletzungen der Annahmen umgegangen werden soll. Forschende verfahren sehr unterschiedlich. Manche nehmen es sehr ernst mit den Verletzungen der Annahmen, andere weniger. In jedem Fall solltest du darüber informiert sein, dass es diese Annahmen gibt und dass diese deine Ergebnisse verfälschen können. </p>
 <p>Mit diesem Modul haben wir diesen Kurs abgeschlossen. Du solltest nun in der Lage sein, die meisten statistischen Fragestellungen durch die besprochenen Testverfahren prüfen zu können. Die wichtigste Botschaft dieses Kurses ist, dass wir nie Theorien bestätigen können, sondern nur falsifizeren können. Der Begriff der Signifikanz ist nur ein statistischer Ausdruck für diese Idee. Die andere zentrale Botschaft dieses Kurses ist, dass alle Testverfahren dieses Kurses durch das allgemeine lineare Modell geprüft werden können, indem wir erweiterte und kompakte Modelle aufstellen. Hast du diese Idee einmal verstanden, wirst du erkennen, dass ein <em>t</em>-Test für unabhängige Stichproben nur ein Sonderfall der einfaktoriellen Varianzanalyse ist. Und dass die einfache lineare Regression mit der einfaktoriellen Varianzanalyse zu vergleichen ist, nur dass die Prädiktoren anders definiert sind. Ich hoffe, ich konnte dir diese beiden Ideen in diesem Kurs vermitteln.</p>
 
 </div>
 </div>
 </div>
-  <div class="chapter-nav">
-<div class="prev"><a href="moderation.html"><span class="header-section-number">12</span> Moderation</a></div>
-<div class="next"><a href="was-du-sonst-noch-wissen-musst.html"><span class="header-section-number">14</span> Was du sonst noch wissen musst</a></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#statistische-voraussetzungen"><span class="header-section-number">13</span> Statistische Voraussetzungen</a></li>
-<li><a class="nav-link" href="#einf%C3%BChrung-9"><span class="header-section-number">13.1</span> Einführung</a></li>
-<li><a class="nav-link" href="#%C3%BCbersicht-der-annahmen-des-allgemeinen-linearen-modells"><span class="header-section-number">13.2</span> Übersicht der Annahmen des allgemeinen linearen Modells</a></li>
-<li><a class="nav-link" href="#linearit%C3%A4t"><span class="header-section-number">13.3</span> Linearität</a></li>
-<li>
-<a class="nav-link" href="#normalverteilung-der-residuen"><span class="header-section-number">13.4</span> Normalverteilung der Residuen</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#pr%C3%BCfung-der-annahme-durch-ein-histogramm-der-residuen"><span class="header-section-number">13.4.1</span> Prüfung der Annahme durch ein Histogramm der Residuen</a></li>
-<li><a class="nav-link" href="#q-q-plot"><span class="header-section-number">13.4.2</span> Q-Q Plot</a></li>
-<li><a class="nav-link" href="#was-ist-mit-anderen-testverfahren"><span class="header-section-number">13.4.3</span> Was ist mit anderen Testverfahren?</a></li>
-<li><a class="nav-link" href="#shapiro-wilk-test"><span class="header-section-number">13.4.4</span> Shapiro-Wilk Test</a></li>
-<li><a class="nav-link" href="#zusammenfassung-24"><span class="header-section-number">13.4.5</span> Zusammenfassung</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#homoskedastizit%C3%A4t"><span class="header-section-number">13.5</span> Homoskedastizität</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#residual-plots"><span class="header-section-number">13.5.1</span> Residual Plots</a></li>
-<li><a class="nav-link" href="#pr%C3%BCfung-der-homoskedastizit%C3%A4t-durch-die-darstellung-der-regressionsgerade"><span class="header-section-number">13.5.2</span> Prüfung der Homoskedastizität durch die Darstellung der Regressionsgerade</a></li>
-<li><a class="nav-link" href="#pr%C3%BCfung-der-homoskedastizit%C3%A4t-durch-den-levene-test"><span class="header-section-number">13.5.3</span> Prüfung der Homoskedastizität durch den Levene-Test</a></li>
-<li><a class="nav-link" href="#zusammenfassung-25"><span class="header-section-number">13.5.4</span> Zusammenfassung</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#unabh%C3%A4ngigkeit-der-daten"><span class="header-section-number">13.6</span> Unabhängigkeit der Daten</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#gekreuzte-daten"><span class="header-section-number">13.6.1</span> Gekreuzte Daten</a></li>
-<li><a class="nav-link" href="#genestete-daten"><span class="header-section-number">13.6.2</span> Genestete Daten</a></li>
-<li><a class="nav-link" href="#folgen-gekreuzter-und-genesteter-daten-f%C3%BCr-die-power-einer-studie"><span class="header-section-number">13.6.3</span> Folgen gekreuzter und genesteter Daten für die Power einer Studie</a></li>
-<li><a class="nav-link" href="#zusammenfassung-26"><span class="header-section-number">13.6.4</span> Zusammenfassung</a></li>
-</ul>
-</li>
-</ul>
+  </main>
+
+  <div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <div id="book-on-this-page"></div>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-          
+          <li><a id="book-source" href="#">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="#">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
-</div>
+      </div>
     </nav>
-</div>
+  </div>
 
 </div>
 </div> <!-- .container -->
 
-<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+<footer class="bg-primary text-light mt-5">
+  <div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-23.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by Yihui Xie. It was last built on 2022-01-30.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -484,7 +435,11 @@
   </div>
 
 </div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+</footer>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -496,7 +451,8 @@
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
-</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+</script>
+<script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
 for (let popover of popovers) {
   const div = document.createElement('div');
   div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
@@ -514,4 +470,5 @@ for (let popover of popovers) {
 }
 </script>
 </body>
+
 </html>
